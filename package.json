@@ -1,0 +1,12 @@
+{
+  "name": "angular-plugins",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "~1.2.6"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

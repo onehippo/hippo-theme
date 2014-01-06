@@ -1,0 +1,66 @@
+{
+
+    "includes": {
+        "external": [
+            "http://maps.google.com/maps/api/js?sensor=true",
+            "http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer_compiled.js"
+        ],
+        "libraries": {
+            "prefix": "vendors",
+            "items": [
+                {
+                    "component": "ExplorerCanvas",
+                    "file": "excanvas.js",
+                    "browser": "IE"
+                },
+                {
+                    "component": "html5shiv",
+                    "file": "dist/html5shiv-printshiv.js",
+                    "browser": "IE <= 8"
+                },
+                {
+                    "component": "respond",
+                    "file": "respond.src.js",
+                    "browser": "IE <= 8"
+                },
+                {
+                    "component": "es5-shim",
+                    "browser": "IE <= 8"
+                },
+
+                {
+                    "component": "angular-bootstrap",
+                    "file": "ui-bootstrap-tpls.js"
+                },
+                "angular-mocks",
+                {
+                    "component": "bootstrap",
+                    "file": "dist/js/bootstrap.js"
+                },
+                {
+                    "component": "chosen",
+                    "file": ["dist/chosen.jquery.js"]
+                }
+            ]
+        },
+        "shared": {
+            "prefix": "shared",
+            "items": [
+                "divider",
+                "responsive",
+                "urlparser",
+                "chart",
+                "map",
+                "panel-default",
+                "focus-me",
+                "select-box"
+            ]
+        }
+    },
+
+    "modules": {
+    },
+
+    "application": "angular.plugin"
+
+}
