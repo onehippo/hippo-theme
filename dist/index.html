@@ -1,0 +1,62 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns:ng="http://angularjs.org"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" xmlns:ng="http://angularjs.org"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" xmlns:ng="http://angularjs.org"> <![endif]-->
+<!--[if IE 9]>
+<html class="no-js lt-ie10" xmlns:ng="http://angularjs.org"> <![endif]-->
+<!--[if IE 10]>
+<html class="no-js lt-ie11" xmlns:ng="http://angularjs.org"> <![endif]-->
+<!--[if gt IE 10]><!-->
+<html class="no-js" xmlns:ng="http://angularjs.org"> <!--<![endif]-->
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <title>Experience Optimizer - Hippo CMS</title>
+    <meta name="description" content="AngularJS skeleton"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Force IE to NOT run in compatibility mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="app/assets/styling/styles.css"/>
+
+    <!-- IE Detector -->
+    <script src="vendors/js-detect-ie/detect-ie.js"></script>
+
+    <!-- touch devices -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+
+</head>
+<body>
+<div id="container">
+    hello world
+</div>
+
+<script src="vendors/jquery/jquery.js"></script>
+<script src="vendors/angular/angular.js"></script>
+
+<script src="loader.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+
+        // eliminate 300ms delay on mobile browsers
+        FastClick.attach(document.body);
+
+        // LiveReload
+        if (!IE.isTheBrowser) {
+            var http = location.protocol;
+            var slashes = http.concat("//");
+            var host = slashes.concat(window.location.hostname);
+            $.getScript(host + ":35729/livereload.js?snipver=1");
+        }
+    });
+</script>
+
+</body>
+</html>

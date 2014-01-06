@@ -1,4 +1,7 @@
-angular.module('hippo.app')
+(function() {
+    "use strict";
+
+    angular.module('hippo.app')
 
     /**
      * @ngdoc directive
@@ -24,3 +27,4 @@ angular.module('hippo.app')
             }
         };
     });
+})();

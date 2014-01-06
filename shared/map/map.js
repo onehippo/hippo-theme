@@ -1,4 +1,8 @@
-angular.module('hippo.app')
+/* global MarkerClusterer: true, google: true */
+(function() {
+    "use strict";
+
+    angular.module('hippo.app')
 
     /**
      * @ngdoc directive
@@ -65,3 +69,5 @@ angular.module('hippo.app')
             }
         };
     }]);
+
+})();

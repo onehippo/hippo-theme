@@ -1,4 +1,7 @@
-angular.module('hippo.app')
+(function() {
+    "use strict";
+
+    angular.module('hippo.app')
 
     /**
      * @ngdoc directive
@@ -49,8 +52,8 @@ angular.module('hippo.app')
                 scope.$watch('data', function (v) {
                     // re-map data, ready to be parsed by the flot library
                     if (v) {
-                        var data = _.map(_.keys(v['termFreq']), function (key) {
-                            return { label: key, data: v['termFreq'][key] };
+                        var data = _.map(_.keys(v.termFreq), function (key) {
+                            return { label: key, data: v.termFreq[key] };
                         });
 
                         if (!chart) {
@@ -66,3 +69,4 @@ angular.module('hippo.app')
             }
         };
     }]);
+})();

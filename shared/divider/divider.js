@@ -1,4 +1,7 @@
-angular.module('hippo.app')
+(function() {
+    "use strict";
+
+    angular.module('hippo.app')
     /**
      * @ngdoc directive
      * @name hippo.app.directive:divider
@@ -16,5 +19,6 @@ angular.module('hippo.app')
                     elem.before('<li role="presentation" class="divider"></li>');
                 }
             }
-        }
+        };
     }]);
+})();
