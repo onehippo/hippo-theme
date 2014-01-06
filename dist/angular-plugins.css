@@ -7647,3 +7647,10 @@ td.visible-print {
 .panel {
   box-shadow: none;
 }
+div[chart] {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 10px;
+}

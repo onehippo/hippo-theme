@@ -29,6 +29,7 @@ module.exports = function (grunt) {
                 src: [
                     'loader.js',
                     'shared/**/*.js',
+                    'shared/**/*.html',
                     '*.html',
                     '*.css'
                 ],
