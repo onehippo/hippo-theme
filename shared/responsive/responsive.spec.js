@@ -2,7 +2,7 @@ describe('In the application module', function () {
 
     beforeEach(function () {
         // load modules
-        module('hippo.app');
+        module('hippo.theme');
 
         // load the default page template file, otherwise the tests will fail
         module('app/modules/pages/visitor-analysis/visitor-analysis-overview.html');

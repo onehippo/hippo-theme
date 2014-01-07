@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    angular.module('hippo.app')
+    angular.module('hippo.theme')
 
     /**
      * @ngdoc directive
