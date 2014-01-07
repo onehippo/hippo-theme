@@ -3,10 +3,6 @@ describe('In the Visitor Analysis module', function () {
     beforeEach(function () {
         // modules
         module('hippo.theme');
-        module('hippo.app.pages.visitor-analysis');
-
-        // load templates
-        module('app/modules/pages/visitor-analysis/visitor-analysis-overview.html');
     });
 
     describe('the directive map', function () {

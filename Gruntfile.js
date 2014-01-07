@@ -31,7 +31,8 @@ module.exports = function (grunt) {
                     'shared/**/*.js',
                     'shared/**/*.html',
                     '*.html',
-                    '*.css'
+                    '*.css',
+                    '!shared/**/*.spec.js'
                 ],
                 dest: 'dist/'
             }
@@ -46,6 +47,23 @@ module.exports = function (grunt) {
             ],
             options: {
                 "jshintrc": true
+            }
+        },
+
+        // testing with karma
+        karma: {
+            options: {
+                //logLevel: 'debug',
+                configFile: 'karma.conf.js',
+                autoWatch: true
+            },
+
+            single: {
+                singleRun: true
+            },
+
+            continuous: {
+                singleRun: false
             }
         }
 
@@ -65,5 +83,14 @@ module.exports = function (grunt) {
 
         grunt.task.run(tasks);
     });
+
+    // test
+    grunt.registerTask('test:unit', [
+        'karma:single'
+    ]);
+
+    grunt.registerTask('test:unit:continuous', [
+        'karma:continuous'
+    ]);
 
 };
