@@ -6,12 +6,7 @@
         dataType: 'json'
     }).done(function (data) {
                 var includes = data.includes,
-                    modules = data.modules,
                     app = data.application;
-
-                $.each(modules, function(name, dependencies) {
-                    angular.module(name, dependencies);
-                });
 
                 $.each(includes, function (name, include) {
                     if ($.isArray(include)) {
