@@ -42,7 +42,7 @@
                 files = [ component + '.js' ];
             }
             $.each(files, function (index, file) {
-                getScript((prefix ? prefix + '/' : '') + folder + '/' + file);
+                getScript((prefix ? prefix + '/' : '') + (folder ? folder + '/' : '') + file);
             });
         });
     }
