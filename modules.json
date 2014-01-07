@@ -57,10 +57,6 @@
         }
     },
 
-    "modules": {
-        "hippo.theme": []
-    },
-
     "application": "angular.plugin"
 
 }
