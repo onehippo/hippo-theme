@@ -16,7 +16,7 @@
                 restrict: 'A',
                 replace: true,
                 transclude: true,
-                templateUrl: 'app/modules/shared/panel-default/panel-default.html',
+                templateUrl: 'components/angular-plugins/dist/shared/panel-default/panel-default.html',
                 scope: {
                     title: '='
                 },
