@@ -1,4 +1,4 @@
-describe('In the Visitor Analysis module', function () {
+describe('Hippo Theme map', function () {
 
     beforeEach(function () {
         // modules

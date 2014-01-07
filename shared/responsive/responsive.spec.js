@@ -1,4 +1,4 @@
-describe('In the application module', function () {
+describe('Hippo Theme map', function () {
 
     beforeEach(function () {
         // load modules
