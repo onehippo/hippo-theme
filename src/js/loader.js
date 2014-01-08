@@ -9,18 +9,26 @@
         return document.getElementsByTagName('script');
     }
 
+    function filenameFromPath(path) {
+        return path.substring(path.lastIndexOf('/') + 1);
+    }
+
     function getConfigurationFile() {
         var scriptTags = scripts();
         for (var i = scriptTags.length - 1; i > 0; i --) {
+            var filename = filenameFromPath(scriptTags[i].src);
             var dataMain = scriptTags[i].getAttribute('data-modules');
-            if (dataMain) {
-                config.modulesFileSrc = dataMain;
-            } else {
-                throw 'No modules file specified for the loader. Example: <script src="loader.js" data-modules="modules.json"';
+
+            if (filename == 'loader.js') {
+                if (dataMain) {
+                    config.modulesFileSrc = dataMain;
+                } else {
+                    throw 'No modules file specified for the plugin loader script. Example: <script src="loader.js" data-modules="modules.json"></script>';
+                }
             }
         }
     }
-
+    
     function loadModules(items, prefix) {
         $.each(items, function (index, component) {
             var folder, files;
