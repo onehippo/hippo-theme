@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         less: {
             src: {
                 files: {
-                    'dist/hippo-theme.css': 'src/less/main.less'
+                    'dist/css/hippo-theme.css': 'src/less/main.less'
                 }
             }
         },
