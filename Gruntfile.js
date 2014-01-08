@@ -28,7 +28,7 @@ module.exports = function (grunt) {
             main: {
                 src: [
                     'loader.js',
-		    'hippo-theme.js',
+		            'hippo-theme.js',
                     'shared/**/*.js',
                     'shared/**/*.html',
                     '*.html',
@@ -77,6 +77,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', function (target) {
         var tasks = [
             'jshint',
+            'karma:single',
             'clean',
             'copy',
             'less'

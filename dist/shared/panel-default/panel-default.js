@@ -5,7 +5,7 @@
 
         /**
          * @ngdoc directive
-         * @name hippo.app.directive:panelDefault
+         * @name hippo.theme.directive:panelDefault
          * @restrict A
          *
          * @description
