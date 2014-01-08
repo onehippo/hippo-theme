@@ -99,6 +99,7 @@
             dataType: 'json'
         }).done(function (data) {
             var includes = data.includes;
+            var app = data.application;
 
             $.each(includes, function (name, include) {
                 if ($.isArray(include)) {
@@ -109,7 +110,7 @@
             });
 
             // TODO: test if we still need to manually trigger the angular application to run
-            //$('head').append('<script>angular.bootstrap(document.getElementById(\'container\'), [\'' + app + '\']);</' + 'script>');
+            $('head').append('<script>angular.bootstrap(document.getElementById(\'container\'), [\'' + app + '\']);</' + 'script>');
         });
     }
 
