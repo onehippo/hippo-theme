@@ -1,22 +1,24 @@
 (function () {
     'use strict';
 
-    $.ajax({
-        url: 'modules.json',
-        dataType: 'json'
-    }).done(function (data) {
-                var includes = data.includes;
+    var config = {
+        modulesFileSrc: ''
+    };
 
-                $.each(includes, function (name, include) {
-                    if ($.isArray(include)) {
-                        loadScripts(include);
-                    } else {
-                        loadModules(include.items, include.prefix);
-                    }
-                });
+    function scripts() {
+        return document.getElementsByTagName('script');
+    }
 
-                $('head').append('<script>angular.bootstrap(document.getElementById(\'container\'), [\'' + app + '\']);</' + 'script>');
-            });
+    function getConfigurationFile() {
+        scripts().forEach(function (script) {
+            var dataMain = script.getAttribute('data-modules');
+            if (dataMain) {
+                config.modulesFileSrc = dataMain;
+            } else {
+                throw 'No modules file specified for the loader. Example: <script src="loader.js" data-modules="modules.json"';
+            }
+        });
+    }
 
     function loadModules(items, prefix) {
         $.each(items, function (index, component) {
@@ -79,5 +81,33 @@
     function getScript(url) {
         $('head').append('<script src=\"' + url + '\" />');
     }
+
+    function loader(config) {
+        var config = config || {};
+        $.ajax({
+            url: config.modulesFileSrc,
+            dataType: 'json'
+        }).done(function (data) {
+            var includes = data.includes;
+
+            $.each(includes, function (name, include) {
+                if ($.isArray(include)) {
+                    loadScripts(include);
+                } else {
+                    loadModules(include.items, include.prefix);
+                }
+            });
+
+            // TODO: test if we still need to manually trigger the angular application to run
+            //$('head').append('<script>angular.bootstrap(document.getElementById(\'container\'), [\'' + app + '\']);</' + 'script>');
+        });
+    }
+
+
+    // setup config settings
+    getConfigurationFile();
+
+    // run with config info
+    loader(config);
 
 })();
