@@ -53,7 +53,5 @@
                 "select-box"
             ]
         }
-    },
-
-    "application": "angular.plugin"
+    }
 }

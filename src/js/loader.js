@@ -5,8 +5,7 @@
         url: 'modules.json',
         dataType: 'json'
     }).done(function (data) {
-                var includes = data.includes,
-                    app = data.application;
+                var includes = data.includes;
 
                 $.each(includes, function (name, include) {
                     if ($.isArray(include)) {
