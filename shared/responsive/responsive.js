@@ -3,14 +3,14 @@
 
     angular.module('hippo.theme')
 
-    /**
-     * @ngdoc service
-     * @name hippo.app.service:ViewportSizes
-     *
-     * @description
-     * Holds the different possible viewport sizes.
-     * It is able to return the current viewport size and provides a method to set the current viewport size.
-     */
+        /**
+         * @ngdoc service
+         * @name hippo.theme.service:ViewportSizes
+         *
+         * @description
+         * Holds the different possible viewport sizes.
+         * It is able to return the current viewport size and provides a method to set the current viewport size.
+         */
         .service('ViewportSizes', [function () {
             var viewportSizes = {};
 
@@ -42,8 +42,8 @@
 
             /**
              * @ngdoc method
-             * @name hippo.app#getAll
-             * @methodOf hippo.app.service:ViewportSizes
+             * @name hippo.theme#getAll
+             * @methodOf hippo.theme.service:ViewportSizes
              *
              * @description
              * Returns all the possible viewport sizes
@@ -57,7 +57,7 @@
             /**
              * @ngdoc method
              * @name hippo.app#setCurrent
-             * @methodOf hippo.app.service:ViewportSizes
+             * @methodOf hippo.theme.service:ViewportSizes
              * @param {Object} viewport The viewport to set as active
              *
              * @description
@@ -71,8 +71,8 @@
 
             /**
              * @ngdoc method
-             * @name hippo.app#getCurrent
-             * @methodOf hippo.app.service:ViewportSizes
+             * @name hippo.theme#getCurrent
+             * @methodOf hippo.theme.service:ViewportSizes
              *
              * @description
              * Fetches the current active viewport
@@ -88,18 +88,18 @@
             return viewportSizes;
         }])
 
-    /**
-     * @ngdoc directive
-     * @name hippo.app.directive:viewportTest
-     * @restrict A
-     * @requires $window
-     *
-     * @description
-     * Detects the current active viewport by creating an empty div-element and attaching Bootstrap 3 classes to it.
-     * When the created element is hidden, the related viewport for the class given is set to active.
-     *
-     * When the window gets resized, the possible new viewport will automatically be detected and set as active.
-     */
+        /**
+         * @ngdoc directive
+         * @name hippo.theme.directive:viewportTest
+         * @restrict A
+         * @requires $window
+         *
+         * @description
+         * Detects the current active viewport by creating an empty div-element and attaching Bootstrap 3 classes to it.
+         * When the created element is hidden, the related viewport for the class given is set to active.
+         *
+         * When the window gets resized, the possible new viewport will automatically be detected and set as active.
+         */
         .directive('viewportTest', ['$window', 'ViewportSizes', function ($window, ViewportSizes) {
             return {
                 restrict: 'A',
