@@ -1,0 +1,12 @@
+// Paths
+@chosenPath: "@{vendorsPath}/bootstrap-chosen";
+
+// Default theme
+@import "@{chosenPath}/bootstrap-chosen-variables";
+@chosen-sprite-path: '/components/bootstrap-chosen/chosen-sprite.png';
+@import "@{chosenPath}/bootstrap-chosen";
+
+// Overrides
+div.chosen-container ul.chosen-choices {
+  border-radius: @chosen-border-radius;
+}

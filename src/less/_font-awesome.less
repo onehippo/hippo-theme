@@ -1,12 +1,10 @@
+// fontawesome variables
 @import "@{vendorsPath}/font-awesome/less/variables";
 
-// only bundle fonts with end application
-// assume that the css file is in
-//    vendors/angular-plugins/dist/angular-plugins.css
-// with the fonts being included in
-//    vendors/font-awesome/
+// override the fa-font-path from the variables
 @fa-font-path: "../../../font-awesome/fonts";
 
+// other imports
 @import "@{vendorsPath}/font-awesome/less/mixins";
 @import "@{vendorsPath}/font-awesome/less/path";
 @import "@{vendorsPath}/font-awesome/less/core";
