@@ -13,10 +13,6 @@ module.exports = function (config) {
 
         // files to load in the browser
         files: [
-            // external sources
-            'http://maps.google.com/maps/api/js?sensor=true',
-            'http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer_compiled.js',
-
             // components
             hippo.bowerComponents + '/jquery/jquery.js',
             hippo.bowerComponents + '/jasmine-jquery/lib/jasmine-jquery.js',
@@ -25,10 +21,8 @@ module.exports = function (config) {
             hippo.bowerComponents + '/angular-bootstrap/**/*.js',
             hippo.bowerComponents + '/js-detect-ie/detect-ie.js',
 
-            'hippo-theme.js',
-
-            // components under development
-            'shared/**/*.js'
+            'src/js/hippo-theme.js',
+            'src/shared/**/*.js',
         ],
 
         // generate js files from html templates to expose them during testing
