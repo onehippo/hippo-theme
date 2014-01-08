@@ -10,14 +10,15 @@
     }
 
     function getConfigurationFile() {
-        scripts().forEach(function (script) {
-            var dataMain = script.getAttribute('data-modules');
+        var scriptTags = scripts();
+        for (var i = scriptTags.length - 1; i > 0; i --) {
+            var dataMain = scriptTags[i].getAttribute('data-modules');
             if (dataMain) {
                 config.modulesFileSrc = dataMain;
             } else {
                 throw 'No modules file specified for the loader. Example: <script src="loader.js" data-modules="modules.json"';
             }
-        });
+        }
     }
 
     function loadModules(items, prefix) {
@@ -84,7 +85,7 @@
 
     function loader(config) {
         config = config || {};
-        
+
         $.ajax({
             url: config.modulesFileSrc,
             dataType: 'json'
