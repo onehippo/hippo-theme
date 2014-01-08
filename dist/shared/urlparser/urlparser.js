@@ -5,7 +5,7 @@
 
         /**
          * @ngdoc service
-         * @name hippo.app.service:URLParser
+         * @name hippo.theme.service:URLParser
          *
          * @description
          * Whenever the current state changes, the URLParser service will parse the new URL and provide an array containing each part,
@@ -37,8 +37,8 @@
 
             /**
              * @ngdoc method
-             * @name hippo.app#getAll
-             * @methodOf hippo.app.service:URLParser
+             * @name hippo.theme#getAll
+             * @methodOf hippo.theme.service:URLParser
              *
              * @description
              * Get all the URL parts
@@ -51,8 +51,8 @@
 
             /**
              * @ngdoc method
-             * @name hippo.app#getFirst
-             * @methodOf hippo.app.service:URLParser
+             * @name hippo.theme#getFirst
+             * @methodOf hippo.theme.service:URLParser
              *
              * @description
              * Get the first part of the URL
@@ -65,8 +65,8 @@
 
             /**
              * @ngdoc method
-             * @name hippo.app#getAllWithoutLast
-             * @methodOf hippo.app.service:URLParser
+             * @name hippo.theme#getAllWithoutLast
+             * @methodOf hippo.theme.service:URLParser
              *
              * @description
              * Get all the URL parts without the last part. This can be useful when the last part is an id that you don't want to use.
@@ -81,8 +81,8 @@
 
             /**
              * @ngdoc method
-             * @name hippo.app#getParent
-             * @methodOf hippo.app.service:URLParser
+             * @name hippo.theme#getParent
+             * @methodOf hippo.theme.service:URLParser
              *
              * @description
              * Get the parent / previous state of the current view

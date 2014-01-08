@@ -5,7 +5,7 @@
 
         /**
          * @ngdoc directive
-         * @name hippo.app.directive:selectBox
+         * @name hippo.theme.directive:selectBox
          * @restrict A
          *
          * @description

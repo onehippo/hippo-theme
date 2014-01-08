@@ -83,7 +83,8 @@
     }
 
     function loader(config) {
-        var config = config || {};
+        config = config || {};
+        
         $.ajax({
             url: config.modulesFileSrc,
             dataType: 'json'

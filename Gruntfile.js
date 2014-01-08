@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         less: {
             src: {
                 files: {
-                    'dist/hippo-theme.css': 'less/main.less'
+                    'dist/hippo-theme.css': 'src/less/main.less'
                 }
             }
         },
@@ -26,14 +26,15 @@ module.exports = function (grunt) {
         // copy files
         copy: {
             main: {
+                expand: true,
+                cwd: 'src',
                 src: [
-                    'loader.js',
-		            'hippo-theme.js',
+                    'js/loader.js',
+		            'js/hippo-theme.js',
                     'shared/**/*.js',
                     'shared/**/*.html',
-                    '*.html',
-                    '*.css',
-                    '!shared/**/*.spec.js'
+                    'css/*.css',
+                    '!**/*.spec.js'
                 ],
                 dest: 'dist/'
             }
@@ -42,12 +43,12 @@ module.exports = function (grunt) {
         // jshint
         jshint: {
             all: [
-                'loader.js',
-                'shared/**/*.js',
+                'src/js/loader.js',
+                'src/shared/**/*.js',
                 '!**/*.spec.js'
             ],
             options: {
-                "jshintrc": true
+                'jshintrc': true
             }
         },
 
