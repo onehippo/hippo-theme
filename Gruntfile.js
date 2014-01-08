@@ -21,7 +21,7 @@ module.exports = function (grunt) {
         },
 
         // clean target (distribution) folder
-        clean: [ 'dist/*' ],
+        clean: [ 'dist/**/*' ],
 
         // copy files
         copy: {
