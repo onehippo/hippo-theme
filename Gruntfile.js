@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         less: {
             src: {
                 files: {
-                    'dist/css/hippo-theme.css': 'src/less/main.less'
+                    'dist/css/main.css': 'src/less/main.less'
                 }
             }
         },
@@ -39,10 +39,6 @@ module.exports = function (grunt) {
                 cwd: 'src',
                 src: [
                     'js/loader.js',
-		            'js/hippo-theme.js',
-                    'shared/**/*.js',
-                    'shared/**/*.html',
-                    'css/*.css',
                     '!**/*.spec.js'
                 ],
                 dest: 'dist/'
@@ -99,6 +95,44 @@ module.exports = function (grunt) {
                 path: 'http://localhost:<%= connect.options.port %>/example/'
             }
         },
+
+        concat: {
+            dist: {
+                src: [
+                    'src/shared/chart/chart.js',
+                    'src/shared/divider/divider.js',
+                    'src/shared/focus-me/focus-me.js',
+                    'src/shared/map/map.js',
+                    'src/shared/panel-default/panel-default.js',
+                    'src/shared/responsive/responsive.js',
+                    'src/shared/select-box/select-box.js',
+                    'src/js/hippo-theme.js'
+                ],
+                dest: 'dist/js/main.js'
+            }
+        },
+
+        uglify: {
+            mangle: false,
+
+            dist: {
+                files: {
+                    'dist/js/main.min.js': ['dist/js/main.js'],
+                    'dist/js/loader.min.js': ['dist/js/loader.js']
+                }
+            }
+        },
+
+        cssmin: {
+            options: {
+                report: 'min'
+            },
+            dist: {
+                files: {
+                    'dist/css/main.min.css': ['dist/css/main.css']
+                }
+            }
+        }
     });
 
     // default
@@ -111,7 +145,10 @@ module.exports = function (grunt) {
             'karma:single',
             'clean',
             'copy',
-            'less'
+            'less',
+            'concat:dist',
+            'uglify:dist',
+            'cssmin:dist',
         ];
 
         grunt.task.run(tasks);
