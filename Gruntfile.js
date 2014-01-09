@@ -37,11 +37,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'src',
-                src: [
-                    'js/loader.js',
-                    'js/hippo-plugins.js',
-                    '!**/*.spec.js'
-                ],
+                src: ['!**/*.spec.js'],
                 dest: 'dist/'
             }
         },
@@ -49,9 +45,7 @@ module.exports = function (grunt) {
         // jshint
         jshint: {
             all: [
-                'src/js/loader.js',
-                'src/js/hippo-plugins.js',
-                'src/shared/**/*.js',
+                'src/**/*.js',
                 '!**/*.spec.js'
             ],
             options: {
@@ -101,7 +95,7 @@ module.exports = function (grunt) {
         concat: {
             dist: {
                 src: [
-                    'src/js/hippo-theme.js',
+                    'src/js/main.js',
                     'src/shared/chart/chart.js',
                     'src/shared/divider/divider.js',
                     'src/shared/focus-me/focus-me.js',
@@ -118,9 +112,7 @@ module.exports = function (grunt) {
         uglify: {
             dist: {
                 files: {
-                    'dist/js/main.min.js': ['dist/js/main.js'],
-                    'dist/js/loader.min.js': ['dist/js/loader.js'],
-                    'dist/js/hippo-plugins.min.js': ['dist/js/hippo-plugins.js']
+                    'dist/js/main.min.js': ['dist/js/main.js']
                 }
             }
         },

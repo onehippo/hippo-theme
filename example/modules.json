@@ -41,6 +41,16 @@
             ]
         },
 
+        "hippo-plugins": {
+            "items": [
+                {
+                    "component": "hippo-plugins",
+                    "file": [
+                        "main.js"
+                    ]
+                }
+            ]
+        },
         
         "hippo-theme": {
             "prefix": "../dist",
