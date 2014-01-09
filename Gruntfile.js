@@ -7,9 +7,18 @@ module.exports = function (grunt) {
     // load all grunt tasks automatically
     require('load-grunt-tasks')(grunt);
 
+    var mountFolder = function (connect, dir) {
+        return connect.static(require('path').resolve(dir));
+    };
+
+    var cfg = {
+        exampleDir: 'example'
+    };
+
     // project configuration
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+        // configuration
+        cfg: cfg,
 
         // compile less files for the app and modules
         less: {
@@ -67,8 +76,29 @@ module.exports = function (grunt) {
             continuous: {
                 singleRun: false
             }
-        }
+        },
 
+        connect: {
+            options: {
+                port: 9000,
+                hostname: '0.0.0.0'
+            },
+            example: {
+                options: {
+                    middleware: function (connect) {
+                        return [
+                            mountFolder(connect, '')
+                        ];
+                    }
+                }
+            }
+        },
+
+        open: {
+            server: {
+                path: 'http://localhost:<%= connect.options.port %>/example/'
+            }
+        },
     });
 
     // default
@@ -86,6 +116,9 @@ module.exports = function (grunt) {
 
         grunt.task.run(tasks);
     });
+
+    // server with example
+    grunt.registerTask('server', ['build', 'open', 'connect:example:keepalive']);
 
     // test
     grunt.registerTask('test:unit', [
