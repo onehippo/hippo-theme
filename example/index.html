@@ -6,12 +6,19 @@
     <title>Hippo theme - example</title>
     
     <!-- Include the theme stylesheet -->
-    <link rel="stylesheet" href="../dist/hippo-theme.css">
+    <link rel="stylesheet" href="../dist/css/hippo-theme.css">
 </head>
 <body>
 
+    <!-- Required external libraries -->
+    <script src="../vendors/jquery/jquery.js"></script>
+    <script src="../vendors/angular/angular.js"></script>
+
+    <!-- JavaScript for the theme components -->
+    <script src="../dist/js/hippo-theme.js"></script>
+
     <!-- Include the loader.js script -->
-    <script src="../dist/loader.js"></script>
+    <script src="../dist/js/loader.js" data-modules="modules.json"></script>
 
 </body>
 </html>
