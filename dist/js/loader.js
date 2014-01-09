@@ -19,7 +19,7 @@
             var filename = filenameFromPath(scriptTags[i].src);
             var dataMain = scriptTags[i].getAttribute('data-modules');
 
-            if (filename == 'loader.js') {
+            if (filename == 'loader.js' || filename == 'loader.min.js') {
                 if (dataMain) {
                     config.modulesFileSrc = dataMain;
                 } else {
@@ -111,6 +111,7 @@
 
             $('head').append('<script>angular.bootstrap(document.getElementById(\'container\'), [\'' + app + '\']);</' + 'script>');
         }).fail(function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR);
             errorThrown.message = '[Loader error (' + textStatus + ')]: ' + errorThrown.message;
             throw errorThrown;
         });

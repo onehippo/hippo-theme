@@ -1,6 +1,12 @@
 (function() {
     "use strict";
 
+    angular.module('hippo.theme', []);
+})();
+
+(function() {
+    "use strict";
+
     angular.module('hippo.theme')
 
         /**
@@ -398,8 +404,3 @@
             };
         }]);
 }());
-(function() {
-    "use strict";
-
-    angular.module('hippo.theme', []);
-})();
