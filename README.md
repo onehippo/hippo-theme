@@ -9,7 +9,6 @@ You can use it to create clickable mockups or end-projects that need to be in li
 
 * [Node Package Manager](https://npmjs.org/) (NPM)
 * [Git](http://git-scm.com/)
-* [Subversion](http://subversion.apache.org/)
 
 #### Dependencies
 
