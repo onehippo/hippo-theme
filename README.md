@@ -1,8 +1,7 @@
 Hippo Theme
 ===========
 
-The Hippo theme is a centralised library containing re-usable components for Hippo-related projects.
-
+The Hippo theme is a centralised library containing re-usable components for Hippo-related projects.  
 You can use it to create clickable mockups or end-projects that need to be in line with the Hippo styling.
 
 ## Development environment setup
@@ -18,27 +17,29 @@ You can use it to create clickable mockups or end-projects that need to be in li
 * [Bower](http://bower.io/) (package management)
 
 #### Installation
-####1. Install Grunt and Bower
+Run the commands below in the project root directory.
+#####1. Install Grunt and Bower
 
     $ sudo npm install -g grunt-cli bower
     
-####2. Install project dependencies
-Run both commands below in the project root directory.
+#####2. Install project dependencies
 
     $ npm install
     $ bower install
 
-#### Useful commands
+## Useful commands
 
-*Generate build*
+####Generate build
 The build version is located in the `dist` directory.
 
     $ grunt build
 
-*Run tests*
+####Run tests
+The tests need to pass in order to generate a build.
 
     $ grunt test
 
-*Setup server*
+####Setup server
+The browser will open a page (`example/index.html`) with shows all compontents available for the theme.
 
     $ grunt server
