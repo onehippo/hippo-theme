@@ -21,7 +21,7 @@ module.exports = function (config) {
             hippo.bowerComponents + '/angular-bootstrap/**/*.js',
             hippo.bowerComponents + '/js-detect-ie/detect-ie.js',
 
-            'src/js/hippo-theme.js',
+            'src/js/main.js',
             'src/shared/**/*.js',
         ],
 
