@@ -4,7 +4,7 @@
 module.exports = function (config) {
 
     var hippo = {
-        bowerComponents : 'vendors'
+        bowerComponents : 'components'
     };
 
     config.set({
