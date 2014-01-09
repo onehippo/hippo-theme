@@ -1,6 +1,11 @@
-AngularJS Plugins
-=================
+Hippo Theme
+===========
 
+The Hippo theme is a centralised library containing re-usable components for Hippo-related projects.
+
+You can use it to create clickable mockups or end-projects that need to be in line with the Hippo styling.
+
+## Development environment setup
 #### Prerequisites
 
 * [Node Package Manager](https://npmjs.org/) (NPM)
@@ -9,10 +14,31 @@ AngularJS Plugins
 
 #### Dependencies
 
+* [Grunt](http://gruntjs.com/) (task automation)
 * [Bower](http://bower.io/) (package management)
 
-## Environment setup
-#### Install the project dependencies
-Run the command below in the project root directory.
+#### Installation
+####1. Install Grunt and Bower
 
-    $ npm install && bower install
+    $ sudo npm install -g grunt-cli bower
+    
+####2. Install project dependencies
+Run both commands below in the project root directory.
+
+    $ npm install
+    $ bower install
+
+#### Useful commands
+
+*Generate build*
+The build version is located in the `dist` directory.
+
+    $ grunt build
+
+*Run tests*
+
+    $ grunt test
+
+*Setup server*
+
+    $ grunt server
