@@ -99,22 +99,20 @@ module.exports = function (grunt) {
         concat: {
             dist: {
                 src: [
+                    'src/js/hippo-theme.js',
                     'src/shared/chart/chart.js',
                     'src/shared/divider/divider.js',
                     'src/shared/focus-me/focus-me.js',
                     'src/shared/map/map.js',
                     'src/shared/panel-default/panel-default.js',
                     'src/shared/responsive/responsive.js',
-                    'src/shared/select-box/select-box.js',
-                    'src/js/hippo-theme.js'
+                    'src/shared/select-box/select-box.js'
                 ],
                 dest: 'dist/js/main.js'
             }
         },
 
         uglify: {
-            mangle: false,
-
             dist: {
                 files: {
                     'dist/js/main.min.js': ['dist/js/main.js'],
