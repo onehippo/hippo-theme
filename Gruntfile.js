@@ -39,6 +39,7 @@ module.exports = function (grunt) {
                 cwd: 'src',
                 src: [
                     'js/loader.js',
+                    'js/hippo-plugins.js',
                     '!**/*.spec.js'
                 ],
                 dest: 'dist/'
@@ -49,6 +50,7 @@ module.exports = function (grunt) {
         jshint: {
             all: [
                 'src/js/loader.js',
+                'src/js/hippo-plugins.js',
                 'src/shared/**/*.js',
                 '!**/*.spec.js'
             ],
@@ -117,7 +119,8 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     'dist/js/main.min.js': ['dist/js/main.js'],
-                    'dist/js/loader.min.js': ['dist/js/loader.js']
+                    'dist/js/loader.min.js': ['dist/js/loader.js'],
+                    'dist/js/hippo-plugins.min.js': ['dist/js/hippo-plugins.js']
                 }
             }
         },
