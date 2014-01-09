@@ -109,11 +109,12 @@
                 }
             });
 
-            // TODO: test if we still need to manually trigger the angular application to run
             $('head').append('<script>angular.bootstrap(document.getElementById(\'container\'), [\'' + app + '\']);</' + 'script>');
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            errorThrown.message = '[Loader error (' + textStatus + ')]: ' + errorThrown.message;
+            throw errorThrown;
         });
     }
-
 
     // setup config settings
     getConfigurationFile();
