@@ -44,12 +44,17 @@
         #icons .row {
             overflow: hidden;
         }
-
     </style>
+
+    <!-- IE Detector -->
+    <script src="../components/js-detect-ie/detect-ie.js"></script>
+
+    <!-- touch devices -->
+    <script src="../components/fastclick/lib/fastclick.js"></script>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container" id="container">
         <div class="row">
             <div class="col-lg-12">
                 <h1 id="overview-title">Hippo Bootstrap Theme <small>A Work in Progress</small></h1>
@@ -598,7 +603,12 @@
             <div class="panel-heading">AngularJS compatible components</div>
             <div class="row">
                 <div class="col-lg-12">
-                    
+                    <h3>Select box</h3>
+                    <div ng-controller="SelectBoxCtrl">
+                        <select select-box="theList" multiple="multiple" ng-model="selectedValues" ng-options="option.name for option in options"></select>
+                    </div>
+                    <pre>&lt;select select-box="theList" multiple="multiple" ng-model="selectedValues" ng-options="option.name for option in options"&gt;&lt;/select&gt;
+                    </pre>
                 </div>
             </div>
         </div>
@@ -1557,9 +1567,6 @@
     <!-- Required external libraries -->
     <script src="../components/jquery/jquery.js"></script>
     <script src="../components/angular/angular.js"></script>
-
-    <!-- JavaScript for the theme components -->
-    <script src="../dist/js/hippo-theme.js"></script>
 
     <!-- Include the loader.js script -->
     <script src="../dist/js/loader.js" data-modules="modules.json"></script>
