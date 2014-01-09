@@ -115,7 +115,7 @@
          * Sets the focus on this element.
          * Credits to Mark Rajcok: http://stackoverflow.com/a/14837021/363448
          */
-        .directive('focusMe', function($timeout, $parse) {
+        .directive('focusMe', ['$timeout', '$parse', function($timeout, $parse) {
             return {
                 link: function(scope, element, attrs) {
                     var model = $parse(attrs.focusMe);
@@ -129,7 +129,7 @@
                     });
                 }
             };
-        });
+        }]);
 })();
 
 /* global MarkerClusterer: true, google: true */
