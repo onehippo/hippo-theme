@@ -1,10 +1,10 @@
 {
     "includes": {
         "external": [
-            "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
+            "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
         ],
         "libraries": {
-            "prefix": "vendors",
+            "prefix": "../components",
             "items": [
                 {
                     "component": "ExplorerCanvas",
@@ -40,18 +40,43 @@
                 }
             ]
         },
-        "shared": {
-            "prefix": "shared",
+
+        "hippo-theme-plugin": {
+            "prefix": "../dist",
             "items": [
-                "divider",
-                "responsive",
-                "urlparser",
-                "chart",
-                "map",
-                "panel-default",
-                "focus-me",
-                "select-box"
+                {
+                    "component": "js",
+                    "file": [
+                        "hippo-theme.js"
+                    ]
+                },
+                {
+                    "component": "shared",
+                    "file": [
+                        "divider/divider.js",
+                        "responsive/responsive.js",
+                        "urlparser/urlparser.js",
+                        "chart/chart.js",
+                        "map/map.js",
+                        "panel-default/panel-default.js",
+                        "focus-me/focus-me.js",
+                        "select-box/select-box.js"
+                    ]
+                }
+            ]
+        },
+
+        "hippo-theme-example": {
+            "items": [
+                {
+                    "component": "../example",
+                    "file": [
+                        "hippo-theme-example.js"
+                    ]
+                }
             ]
         }
-    }
+    },
+
+    "application": "hippo.theme.example"
 }
