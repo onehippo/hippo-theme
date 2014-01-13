@@ -1,6 +1,13 @@
 (function () {
     angular.module('hippo.theme.example', ['hippo.theme'])
         
+        /**
+         * @ngdoc object
+         * @name hippo.theme.example:SelectBoxCtrl
+         *
+         * @description
+         * Controller for the Select Box example.
+         */
         .controller('SelectBoxCtrl', ['$scope', function ($scope) {
             console.log('Select box ctrl init!');
             
