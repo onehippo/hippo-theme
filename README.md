@@ -36,7 +36,7 @@ The build version is located in the `dist` directory.
 ####Run tests
 The tests need to pass in order to generate a build.
 
-    $ grunt test
+    $ grunt test:unit
 
 ####Setup server
 The browser will open a page (`example/index.html`) with shows all compontents available for the theme.
