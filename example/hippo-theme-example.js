@@ -19,5 +19,6 @@
                 { "id": 4, "name": 'Option 4' },
                 { "id": 5, "name": 'Option 5' }
             ];
+            $scope.placeholder = "Choose an option";
         }]);
 })();
