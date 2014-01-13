@@ -1,7 +1,7 @@
 Hippo Theme
 ===========
 
-The Hippo theme is a centralised library containing re-usable components for Hippo-related projects.  
+The Hippo theme is a centralised library containing reusable components for Hippo-related projects.
 You can use it to create clickable mockups or end-projects that need to be in line with the Hippo styling.
 
 ## Development environment setup
