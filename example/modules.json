@@ -44,9 +44,9 @@
         "hippo-plugins": {
             "items": [
                 {
-                    "component": "hippo-plugins",
+                    "component": "../components/hippo-plugins",
                     "file": [
-                        "main.js"
+                        "dist/js/main.js"
                     ]
                 }
             ]
