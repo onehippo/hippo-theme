@@ -1,6 +1,8 @@
 Hippo Theme
 ===========
 
+[![Build Status](https://travis-ci.org/onehippo/hippo-theme.png?branch=master)](https://travis-ci.org/onehippo/hippo-theme)
+
 The Hippo theme is a centralised library containing reusable components for Hippo-related projects.
 You can use it to create clickable mockups or end-projects that need to be in line with the Hippo styling.
 
