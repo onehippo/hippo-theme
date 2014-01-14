@@ -4,8 +4,7 @@ node_js:
 
 before_script:
   - npm install -g grunt-cli bower
-  - bower install
-  - bower install
+  - bower install --verbose
 
 script:
   - grunt test:unit
