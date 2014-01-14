@@ -126,6 +126,19 @@ module.exports = function (grunt) {
                     'dist/css/main.min.css': ['dist/css/main.css']
                 }
             }
+        },
+
+        lintspaces: {
+            less: {
+                src: [
+                    'src/**/*.less'
+                ],
+                options: {
+                    indentation: 'spaces',
+                    spaces: 2,
+                    ignores: ['js-comments']
+                }
+            }
         }
     });
 
@@ -141,8 +154,9 @@ module.exports = function (grunt) {
             'copy',
             'less',
             'concat:dist',
+            'lintspaces:less',
             'uglify:dist',
-            'cssmin:dist',
+            'cssmin:dist'
         ];
 
         grunt.task.run(tasks);
