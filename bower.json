@@ -18,6 +18,6 @@
     "fastclick": "~0.6.10",
     "chosen": "https://github.com/onehippo/chosen.git#96249101dc2c0f15e8e6223ad18bbebbd30290fd",
     "bootstrap-chosen": "https://github.com/alxlit/bootstrap-chosen.git",
-    "hippo-plugins": "git@github.com:onehippo/hippo-plugins.git#d8fbacc6926b99c69e08a556b3cedf15e6173960"
+    "hippo-plugins": "https://github.com/onehippo/hippo-plugins.git#722806c6a63902ee483a69fb17f13d435962cdd4"
   }
 }
