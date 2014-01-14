@@ -17,7 +17,7 @@
     "undef": true,
     "curly": true,
     "browser": true,
-    "indent": 2,
+    "indent": 4,
     "globals": {
         "jQuery": true,
         "$": true,
