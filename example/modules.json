@@ -1,8 +1,6 @@
 {
     "includes": {
-        "external": [
-            "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
-        ],
+        "external": [],
         "libraries": {
             "prefix": "../components",
             "items": [
