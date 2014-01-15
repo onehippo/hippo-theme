@@ -309,20 +309,39 @@
             </div>
         </div>
 
-        <div class="panel panel-info" id="angularjs-compontents">
-            <div class="panel-heading">AngularJS compatible components</div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Select box</h3>
-                    <div ng-controller="SelectBoxCtrl">
-                        <select select-box ng-model="selectedValues" no-results-text="'Could not find any options'" ng-options="option.name for option in options" multiple="multiple" data-placeholder="{{ placeholder }}"></select>
-                    </div>
-                    <br>
-                    <pre>&lt;select select-box multiple="multiple" ng-model="selectedValues" ng-options="option.name for option in options" data-placeholder=""&gt;&lt;/select&gt;</pre>
+        <div id="angularjs-compontents">
+          <div class="row">
+            <h2>AngularJS components</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="panel panel-info">
+                <div class="panel-heading">Select Box</div>
+                <div ng-controller="SelectBoxCtrl">
+                    <select select-box ng-model="selectedValues" no-results-text="'Could not find any options'" ng-options="option.name for option in options" multiple="multiple" data-placeholder="{{ placeholder }}"></select>
                 </div>
+                <br>
+                <pre>&lt;select 
+  select-box 
+  multiple="multiple" 
+  ng-model="selectedValues" 
+  ng-options="o.name for o in options" 
+  data-placeholder=""&gt;
+&lt;/select&gt;</pre>
+              </div>
             </div>
-        </div>
 
+            <div class="col-lg-4">
+              <div class="panel panel-info">
+                <div class="panel-heading">Chart</div>
+                <div ng-controller="ChartCtrl">
+                  <div chart data="data"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div class="panel panel-success clearfix" id="icons">
             <div class="panel-heading clearfix">Icons <span class="badge pull-right">by Font Awesome (v4.0.3)</span></div>
 

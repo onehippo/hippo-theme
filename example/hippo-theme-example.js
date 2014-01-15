@@ -20,5 +20,21 @@
         { "id": 5, "name": 'Option 5' }
       ];
       $scope.placeholder = "Choose an option";
+    }])
+
+    /**
+     * @ngdoc object
+     * @name hippo.theme.example:ChartCtrl
+     *
+     * @description
+     * Controller for the Chart example.
+     */
+    .controller('ChartCtrl', ['$scope', function ($scope) {
+        $scope.data = {'termFreq': {
+             'Hippo A': 10,
+             'Hippo B': 5,
+             'Hippo C': 25
+         }
+        };
     }]);
 })();

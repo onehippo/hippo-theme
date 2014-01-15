@@ -37,6 +37,17 @@
                 {
                     "component": "chosen",
                     "file": ["dist/chosen.jquery.js"]
+                },
+                {
+                    "component": "underscore",
+                    "file": ["underscore.js"]
+                },
+                {
+                  "component": "flot",
+                  "file": [
+                    "jquery.flot.js",
+                    "jquery.flot.pie.js"
+                  ]
                 }
             ]
         },
