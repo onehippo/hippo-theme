@@ -12,8 +12,7 @@
      * Sets the focus on an element.
      * Credits to Mark Rajcok: http://stackoverflow.com/a/14837021/363448
      */
-    .directive('focusMe', ['$timeout', '$parse',
-        function($timeout, $parse) {
+    .directive('focusMe', ['$timeout', '$parse', function($timeout, $parse) {
             return {
                 scope: {
                     focusMe: '='
@@ -26,7 +25,7 @@
                             $timeout(function() {
                                 element[0].focus();
                             });
-                       }
+                        }
                     });
 
                     element.blur(function () {
