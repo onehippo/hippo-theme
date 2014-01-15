@@ -373,6 +373,20 @@
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="panel panel-info">
+                <div class="panel-heading">Focus Me</div>
+                <div ng-controller="FocusMeCtrl">
+                  <input type="text" placeholder="Click the button to focus me" focus-me="field.focus" class="default form-control" style="margin-bottom: 5px;">
+                  <button ng-click="setFocus()" class="btn btn-default" style="margin-bottom: 20px;">Focus!</button>
+
+                  <pre ng-non-bindable>&lt;input focus-me="focusInput"&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div id="new" class="clearfix">

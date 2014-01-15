@@ -51,5 +51,22 @@
             'Item B',
             'Item C'
         ];
+    }])
+
+    /**
+     * @ngdoc object
+     * @name hippo.theme.example:FocusMeCtrl
+     *
+     * @description
+     * Controller for the Focus me example.
+     */
+    .controller('FocusMeCtrl', ['$scope', function ($scope) {
+        $scope.field = {
+            focus: false
+        };
+
+        $scope.setFocus = function () {
+            $scope.field.focus = true;
+        };
     }]);
 })();
