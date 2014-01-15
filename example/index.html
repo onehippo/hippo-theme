@@ -321,8 +321,24 @@
               <h2>AngularJS components</h2>
             </div>
           </div>
+
           <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-12">
+              <div class="panel panel-info">
+                <div class="panel-heading">Map</div>
+                <div ng-controller="MapCtrl" style="width: 100%; height: 265px; padding-bottom: 85px;">
+                  <div map markers="points"></div>
+                  <br>
+                  <pre>&lt;div map 
+  markers="points"&gt;
+&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8">
               <div class="panel panel-info">
                 <div class="panel-heading">Select Box</div>
                 <div ng-controller="SelectBoxCtrl">
@@ -338,6 +354,21 @@
               </div>
             </div>
 
+            <div class="col-lg-4">
+              <div class="panel panel-info">
+                <div class="panel-heading">Chart</div>
+                <div ng-controller="ChartCtrl">
+                  <div chart data="data"></div>
+                  <br>
+                  <pre>&lt;div chart 
+  data="data"&gt;
+&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
             <div class="col-lg-4">
               <div class="panel panel-info">
                 <div class="panel-heading">Focus Me</div>
@@ -356,53 +387,22 @@
                 <div ng-controller="DividerCtrl">
 
                   <div class="dropdown">
-                      <ul class="dropdown-menu" style="display: block; position: static;margin-bottom: 20px;">
-                          <li ng-repeat="item in items" divider="$last">
-                              <a href="#angularjs-compontents">{{ item }}</a>
-                          </li>
-                      </ul>
-                  </div>
+                    <ul class="dropdown-menu" style="display: block; position: static;margin-bottom: 20px;">
+                        <li ng-repeat="item in items" divider="$last">
+                            <a href="#angularjs-compontents">{{ item }}</a>
+                        </li>
+                    </ul>
+                </div>
 
-                  <br>
-                  <pre ng-non-bindable style="clear: both;">&lt;li divider="$last"
-  ng-repeat="item in items"&gt;
-    &lt;a href="#"&gt;&#123;&#123; item &#125;&#125;&lt;/a&gt;
+                <br>
+                <pre ng-non-bindable style="clear: both;">&lt;li divider="$last"
+ng-repeat="item in items"&gt;
+  &lt;a href="#"&gt;&#123;&#123; item &#125;&#125;&lt;/a&gt;
 &lt;/li&gt;</pre>
-                </div>
               </div>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="panel panel-info">
-                <div class="panel-heading">Chart</div>
-                <div ng-controller="ChartCtrl">
-                  <div chart data="data"></div>
-                  <br>
-                  <pre>&lt;div chart 
-  data="data"&gt;
-&lt;/div&gt;</pre>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-8">
-              <div class="panel panel-info">
-                <div class="panel-heading">Map</div>
-                <div ng-controller="MapCtrl" style="width: 100%; height: 265px; padding-bottom: 85px;">
-                  <div map markers="points"></div>
-                  <br>
-                  <pre>&lt;div map 
-  markers="points"&gt;
-&lt;/div&gt;</pre>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
           <div class="col-lg-4">
             <div class="panel panel-info">
               <div class="panel-heading">Panel</div>
@@ -414,13 +414,6 @@
   Panel HTML content
 &lt;/div&gt;</pre>
               </div>
-            </div>
-          </div>
-
-          <div class="col-lg-8">
-            <div class="panel panel-info">
-              <div class="panel-heading"></div>
-
             </div>
           </div>
         </div>
