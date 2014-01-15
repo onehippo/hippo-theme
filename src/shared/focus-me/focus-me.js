@@ -9,21 +9,29 @@
      * @restrict A
      *
      * @description
-     * Sets the focus on this element.
+     * Sets the focus on an element.
      * Credits to Mark Rajcok: http://stackoverflow.com/a/14837021/363448
      */
     .directive('focusMe', ['$timeout', '$parse',
         function($timeout, $parse) {
             return {
+                scope: {
+                    focusMe: '='
+                },
                 link: function(scope, element, attrs) {
-                    var model = $parse(attrs.focusMe);
+                    scope.focusMe = false;
 
-                    scope.$watch(model, function(value) {
+                    scope.$watch('focusMe', function(value) {
                         if (value === true) {
                             $timeout(function() {
                                 element[0].focus();
                             });
-                        }
+                       }
+                    });
+
+                    element.blur(function () {
+                        scope.focusMe = false;
+                        scope.$apply();
                     });
                 }
             };
