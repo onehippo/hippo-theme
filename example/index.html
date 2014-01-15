@@ -350,6 +350,28 @@
                 </div>
               </div>
             </div>
+
+            <div class="col-lg-4">
+              <div class="panel panel-info">
+                <div class="panel-heading">Divider</div>
+                <div ng-controller="DividerCtrl">
+
+                  <div class="dropdown">
+                      <ul class="dropdown-menu" style="display: block; position: static;margin-bottom: 20px;">
+                          <li ng-repeat="item in items" divider="$last">
+                              <a href="#angularjs-compontents">{{ item }}</a>
+                          </li>
+                      </ul>
+                  </div>
+
+                  <br>
+                  <pre ng-non-bindable style="clear: both;">&lt;li divider="$last"
+  ng-repeat="item in items"&gt;
+    &lt;a href="#"&gt;&#123;&#123; item &#125;&#125;&lt;/a&gt;
+&lt;/li&gt;</pre>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

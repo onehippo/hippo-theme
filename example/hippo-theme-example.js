@@ -36,5 +36,20 @@
              'Hippo C': 25
          }
         };
+    }])
+
+    /**
+     * @ngdoc object
+     * @name hippo.theme.example:DividerCtrl
+     *
+     * @description
+     * Controller for the Divider example.
+     */
+    .controller('DividerCtrl', ['$scope', function ($scope) {
+        $scope.items = [
+            'Item A',
+            'Item B',
+            'Item C'
+        ];
     }]);
 })();
