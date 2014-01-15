@@ -17,7 +17,7 @@
      * Visualize a list of data with a pie-chart.
      *
      * @scope
-     * @param {Array} data A list of data to be visualised, each element having a 'label' and 'value' property.
+     * @param {Array} data A list of data to be visualised, each object of the list having a 'label' and 'value' property.
      */
     .directive('chart', [
 
@@ -28,7 +28,6 @@
                     data: '='
                 },
                 link: function(scope, elem, attrs) {
-                    // TODO: this is too tightly coupled with the API, eg. it uses 'termFreq'
                     var chart = null;
                     var opts = {
                         series: {
@@ -58,10 +57,10 @@
                     scope.$watch('data', function(v) {
                         // re-map data, ready to be parsed by the flot library
                         if (v) {
-                            var data = _.map(_.keys(v.termFreq), function(key) {
+                            var data = _.map(v, function(item) {
                                 return {
-                                    label: key,
-                                    data: v.termFreq[key]
+                                    label: item.label,
+                                    data: item.value
                                 };
                             });
 
