@@ -118,11 +118,10 @@
      * @restrict A
      *
      * @description
-     * Sets the focus on this element.
+     * Sets the focus on an element.
      * Credits to Mark Rajcok: http://stackoverflow.com/a/14837021/363448
      */
-    .directive('focusMe', ['$timeout', '$parse',
-        function($timeout, $parse) {
+    .directive('focusMe', ['$timeout', '$parse', function($timeout, $parse) {
             return {
                 scope: {
                     focusMe: '='
@@ -133,7 +132,6 @@
                     scope.$watch('focusMe', function(value) {
                         if (value === true) {
                             $timeout(function() {
-                                console.log('wants to focus');
                                 element[0].focus();
                             });
                         }
