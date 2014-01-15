@@ -9,7 +9,6 @@
    *
    * @description
    * Whenever the current state changes, the URLParser service will parse the new URL and provide an array containing each part,
-   * This is useful in combination with the breadcrumb directive.
    *
    * The URL is divided by forward slashes, so /page/subpage/detail will result in an array containing 'page', 'subpage' and 'detail'.
    
