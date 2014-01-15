@@ -88,6 +88,17 @@
             longitude: -71.081628,
             latitude: 42.362243
         }];
+    }])
+
+    /**
+     * @ngdoc object
+     * @name hippo.theme.example:PanelCtrl
+     *
+     * @description
+     * Controller for the Panel example.
+     */
+    .controller('PanelCtrl', ['$scope', function ($scope) {
+        $scope.title = 'Panel title';
     }]);
 
 })();
