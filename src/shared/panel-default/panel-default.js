@@ -19,7 +19,7 @@
                 replace: true,
                 transclude: true,
                 template: '<div class="panel panel-default">' +
-                    '<div class="panel-heading">{{ panel.title | translate }}</div>' +
+                    '<div class="panel-heading">{{ panel.title }}</div>' +
                     '<div class="panel-body">' +
                     '<div><div ng-transclude></div></div>' +
                     '</div>' +
