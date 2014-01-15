@@ -386,6 +386,15 @@
                 </div>
               </div>
             </div>
+
+            <div class="col-lg-8">
+              <div class="panel panel-info">
+                <div class="panel-heading">Map</div>
+                <div ng-controller="MapCtrl" style="width: 100%; height: 150px;">
+                  <div map markers="points"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -878,6 +887,9 @@
     <!-- Required external libraries -->
     <script src="../components/jquery/jquery.js"></script>
     <script src="../components/angular/angular.js"></script>
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer_compiled.js"></script>
     
     <!-- Include the loader.js script -->
     <script src="../components/hippo-plugins/dist/js/loader.min.js" data-modules="modules.json"></script>

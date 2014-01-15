@@ -68,5 +68,26 @@
         $scope.setFocus = function () {
             $scope.field.focus = true;
         };
+    }])
+
+    /**
+     * @ngdoc object
+     * @name hippo.theme.example:MapCtrl
+     *
+     * @description
+     * Controller for the Map example.
+     */
+    .controller('MapCtrl', ['$scope', function ($scope) {
+        $scope.points = [{
+            longitude: 4.901623,
+            latitude: 52.359383
+        }, {
+            longitude: 4.901624,
+            latitude: 52.359384
+        }, {
+            longitude: -71.081628,
+            latitude: 42.362243
+        }];
     }]);
+
 })();
