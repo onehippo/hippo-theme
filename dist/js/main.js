@@ -156,7 +156,7 @@
      * The markers are grouped when they are close to each other.
      *
      * @scope
-     * @param {Array} points A list of points to be visualised, each having a longitude and latitude property
+     * @param {Array} points A list of point objects, having a longitude- and latitude property, to be visualised. Each having a longitude and latitude property.
      */
     .directive('map', [
 
