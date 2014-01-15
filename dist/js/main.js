@@ -124,15 +124,24 @@
     .directive('focusMe', ['$timeout', '$parse',
         function($timeout, $parse) {
             return {
+                scope: {
+                    focusMe: '='
+                },
                 link: function(scope, element, attrs) {
-                    var model = $parse(attrs.focusMe);
+                    scope.focusMe = false;
 
-                    scope.$watch(model, function(value) {
+                    scope.$watch('focusMe', function(value) {
                         if (value === true) {
                             $timeout(function() {
+                                console.log('wants to focus');
                                 element[0].focus();
                             });
                         }
+                    });
+
+                    element.blur(function () {
+                        scope.focusMe = false;
+                        scope.$apply();
                     });
                 }
             };
