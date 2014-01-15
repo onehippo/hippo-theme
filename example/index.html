@@ -340,13 +340,12 @@
 
             <div class="col-lg-4">
               <div class="panel panel-info">
-                <div class="panel-heading">Chart</div>
-                <div ng-controller="ChartCtrl">
-                  <div chart data="data"></div>
-                  <br>
-                  <pre>&lt;div chart 
-  data="data"&gt;
-&lt;/div&gt;</pre>
+                <div class="panel-heading">Focus Me</div>
+                <div ng-controller="FocusMeCtrl">
+                  <input type="text" placeholder="Click the button to focus me" focus-me="field.focus" class="default form-control" style="margin-bottom: 5px;">
+                  <button ng-click="setFocus()" class="btn btn-default" style="margin-bottom: 20px;">Focus!</button>
+
+                  <pre ng-non-bindable>&lt;input focus-me="focusInput"&gt;</pre>
                 </div>
               </div>
             </div>
@@ -377,12 +376,13 @@
           <div class="row">
             <div class="col-lg-4">
               <div class="panel panel-info">
-                <div class="panel-heading">Focus Me</div>
-                <div ng-controller="FocusMeCtrl">
-                  <input type="text" placeholder="Click the button to focus me" focus-me="field.focus" class="default form-control" style="margin-bottom: 5px;">
-                  <button ng-click="setFocus()" class="btn btn-default" style="margin-bottom: 20px;">Focus!</button>
-
-                  <pre ng-non-bindable>&lt;input focus-me="focusInput"&gt;</pre>
+                <div class="panel-heading">Chart</div>
+                <div ng-controller="ChartCtrl">
+                  <div chart data="data"></div>
+                  <br>
+                  <pre>&lt;div chart 
+  data="data"&gt;
+&lt;/div&gt;</pre>
                 </div>
               </div>
             </div>
@@ -390,7 +390,7 @@
             <div class="col-lg-8">
               <div class="panel panel-info">
                 <div class="panel-heading">Map</div>
-                <div ng-controller="MapCtrl" style="width: 100%; height: 150px;">
+                <div ng-controller="MapCtrl" style="width: 100%; height: 265px; padding-bottom: 85px;">
                   <div map markers="points"></div>
                 </div>
               </div>
