@@ -30,12 +30,17 @@
      * Controller for the Chart example.
      */
     .controller('ChartCtrl', ['$scope', function ($scope) {
-        $scope.data = {'termFreq': {
-             'Hippo A': 10,
-             'Hippo B': 5,
-             'Hippo C': 25
-         }
-        };
+        $scope.data = [
+        {
+            label: 'Hippo A',
+            value: 5
+        }, {
+            label: 'Hippo B',
+            value: 10
+        }, {
+            label: 'Hippo C',
+            value: 25
+        }];
     }])
 
     /**
