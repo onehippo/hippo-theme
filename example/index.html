@@ -374,7 +374,9 @@
                 <div class="panel-heading">Focus Me</div>
                 <div ng-controller="FocusMeCtrl">
                   <input type="text" placeholder="Click the button to focus me" focus-me="field.focus" class="default form-control" style="margin-bottom: 5px;">
-                  <button ng-click="setFocus()" class="btn btn-default" style="margin-bottom: 20px;">Focus!</button>
+                  <button ng-click="setFocus()" ng-hide="field.focus" class="btn btn-default" style="margin-bottom: 20px;">Focus!</button>
+
+                  {{ field.focus }}
 
                   <pre ng-non-bindable>&lt;input focus-me="focusInput"&gt;</pre>
                 </div>
