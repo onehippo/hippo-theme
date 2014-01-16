@@ -2,7 +2,7 @@
     "includes": {
         "external": [],
         "libraries": {
-            "prefix": "../components",
+            "prefix": "components",
             "items": [
                 {
                     "component": "ExplorerCanvas",
@@ -53,7 +53,7 @@
         "hippo-plugins": {
             "items": [
                 {
-                    "component": "../components/hippo-plugins",
+                    "component": "components/hippo-plugins",
                     "file": [
                         "dist/js/main.js"
                     ]
@@ -62,12 +62,11 @@
         },
         
         "hippo-theme": {
-            "prefix": "../dist",
             "items": [
                 {
-                    "component": "js",
+                    "component": "components/hippo-theme",
                     "file": [
-                        "main.js"
+                        "dist/js/main.js"
                     ]
                 }
             ]

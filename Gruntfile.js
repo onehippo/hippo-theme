@@ -48,8 +48,15 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
+                        cwd: 'dist',
                         src: [
-                            'dist/**/*',
+                            '**/*',
+                        ],
+                        dest: '<%= cfg.exampleDir %>/components/hippo-theme/dist'
+                    },
+                    {
+                        expand: true,
+                        src: [
                             'components/**/*',
                             '!components/font-awesome/src/**/*'
                         ],
