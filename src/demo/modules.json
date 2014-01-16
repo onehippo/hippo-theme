@@ -76,9 +76,8 @@
         "hippo-theme-example": {
             "items": [
                 {
-                    "component": "../example",
                     "file": [
-                        "hippo-theme-example.js"
+                        "scripts.js"
                     ]
                 }
             ]

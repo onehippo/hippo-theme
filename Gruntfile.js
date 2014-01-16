@@ -49,6 +49,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         src: [
+                            'dist/**/*',
                             'components/**/*',
                             '!components/font-awesome/src/**/*'
                         ],
