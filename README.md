@@ -33,7 +33,12 @@ Run the commands below in the project root directory.
 ####Generate build
 The build version is located in the `dist` directory.
 
-    $ grunt build
+    $ grunt build:dist
+
+####Generate demo website
+The build version is located in the `demo` directory. After building you can publish it to the [Hippo Theme Demo](https://github.com/onehippo/hippo-theme-demo).
+
+    $ grunt build:demo
 
 ####Run tests
 The tests need to pass in order to generate a build.
@@ -41,6 +46,6 @@ The tests need to pass in order to generate a build.
     $ grunt test:unit
 
 ####Setup server
-The browser will open a page (`example/index.html`) with shows all compontents available for the theme.
+The browser will show the demo website which shows all available compontents for the theme.
 
-    $ grunt server
+    $ grunt server:demo
