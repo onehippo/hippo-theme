@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     };
 
     var cfg = {
-        exampleDir: 'example'
+        exampleDir: 'demo'
     };
 
     // project configuration
@@ -30,7 +30,10 @@ module.exports = function (grunt) {
         },
 
         // clean target (distribution) folder
-        clean: [ 'dist/**/*' ],
+        clean: {
+            dist: [ 'dist/**/*' ],
+            demo: ['<%= cfg.exampleDir %>' ]
+        },
 
         // copy files
         copy: {
@@ -39,6 +42,27 @@ module.exports = function (grunt) {
                 cwd: 'src',
                 src: ['!**/*.spec.js'],
                 dest: 'dist/'
+            },
+
+            demo: {
+                files: [
+                    {
+                        expand: true,
+                        src: [
+                            'components/**/*',
+                            '!components/font-awesome/src/**/*'
+                        ],
+                        dest: '<%= cfg.exampleDir %>/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/demo',
+                        src: [
+                            '**/*',
+                        ],
+                        dest: '<%= cfg.exampleDir %>/'
+                    }
+                ]
             }
         },
 
@@ -88,7 +112,7 @@ module.exports = function (grunt) {
 
         open: {
             server: {
-                path: 'http://localhost:<%= connect.options.port %>/example/'
+                path: 'http://localhost:<%= connect.options.port %>/<%= cfg.exampleDir %>/'
             }
         },
 
@@ -145,12 +169,12 @@ module.exports = function (grunt) {
     // default
     grunt.registerTask('default', ['build']);
 
-    // build
-    grunt.registerTask('build', function (target) {
+    // build dist
+    grunt.registerTask('build:dist', function (target) {
         var tasks = [
             'jshint',
             'karma:single',
-            'clean',
+            'clean:dist',
             'copy',
             'less',
             'concat:dist',
@@ -162,8 +186,19 @@ module.exports = function (grunt) {
         grunt.task.run(tasks);
     });
 
+    // build demo
+    grunt.registerTask('build:demo', function (target) {
+        var tasks = [
+            'clean:demo',
+            'build:dist',
+            'copy:demo'
+        ];
+
+        grunt.task.run(tasks);
+    });
+
     // server with example
-    grunt.registerTask('server', ['build', 'open', 'connect:example:keepalive']);
+    grunt.registerTask('server:demo', ['build:demo', 'open', 'connect:example:keepalive']);
 
     // test
     grunt.registerTask('test:unit', [
