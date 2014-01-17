@@ -14,6 +14,7 @@
         "respond": "~1.4.2",
         "ExplorerCanvas": "https://github.com/arv/ExplorerCanvas.git",
         "angular": "1.2.0-rc.2",
+        "flot": "0.8.1",
         "js-detect-ie": "https://github.com/ianpgall/js-detect-ie.git",
         "fastclick": "~0.6.10",
         "underscore": "1.5.2",
