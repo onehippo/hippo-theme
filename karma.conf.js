@@ -14,7 +14,7 @@ module.exports = function (config) {
         // files to load in the browser
         files: [
             // external sources
-            'http://maps.google.com/maps/api/js?sensor=true',
+            'http://maps.google.com/maps/api/js?sensor=false&language=en-US',
             'http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer_compiled.js',
 
             hippo.bowerComponents + '/underscore/underscore.js',

@@ -98,7 +98,7 @@
             return {
                 restrict: 'A',
                 link: function(scope, elem, attrs) {
-                    var active = scope.$eval(attrs.divider);
+                    var active = scope.$eval(attrs['hippo.theme.divider']);
                     if (active) {
                         elem.before('<li role="presentation" class="divider"></li>');
                     }
@@ -166,7 +166,7 @@
 
         function() {
             return {
-                restrict: 'E',
+                restrict: 'A',
                 scope: {
                     points: '=markers'
                 },

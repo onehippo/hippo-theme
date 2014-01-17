@@ -20,7 +20,7 @@
 
         function() {
             return {
-                restrict: 'E',
+                restrict: 'A',
                 scope: {
                     points: '=markers'
                 },
