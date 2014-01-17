@@ -175,7 +175,7 @@ module.exports = function (grunt) {
     });
 
     // default
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('default', ['build:demo']);
 
     // build dist
     grunt.registerTask('build:dist', function (target) {

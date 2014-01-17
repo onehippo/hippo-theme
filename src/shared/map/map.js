@@ -16,11 +16,11 @@
      * @scope
      * @param {Array} points A list of point objects, having a longitude- and latitude property, to be visualised. Each having a longitude and latitude property.
      */
-    .directive('map', [
+    .directive('hippo.theme.map', [
 
         function() {
             return {
-                restrict: 'A',
+                restrict: 'E',
                 scope: {
                     points: '=markers'
                 },

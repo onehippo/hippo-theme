@@ -8,9 +8,9 @@ describe('Hippo Theme map', function() {
     describe('the ViewportSizes service', function() {
         var viewportSizesService = null;
 
-        beforeEach(inject(function(ViewportSizes) {
+        beforeEach(inject(['hippo.theme.ViewportSizes', function(ViewportSizes) {
             viewportSizesService = ViewportSizes;
-        }));
+        }]));
 
         it('should be defined', function() {
             expect(viewportSizesService).not.toBe(null);
@@ -40,7 +40,7 @@ describe('Hippo Theme map', function() {
 
         beforeEach(inject(function($rootScope, $compile) {
             scope = $rootScope;
-            elm = angular.element('<viewport-test>');
+            elm = angular.element('<hippo.theme.viewport-test />');
             $compile(elm)(scope);
             scope.$digest();
         }));

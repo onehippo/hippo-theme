@@ -11,7 +11,7 @@
      * @description
      * Converts a plain HTML select input field to a jQuery Chosen select box
      */
-    .directive('selectBox', [
+    .directive('hippo.theme.selectBox', [
 
         function() {
             return {

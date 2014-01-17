@@ -12,11 +12,9 @@
      * Sets the focus on an element.
      * Credits to Mark Rajcok: http://stackoverflow.com/a/14837021/363448
      */
-    .directive('focusMe', ['$timeout', '$parse', function($timeout, $parse) {
+    .directive('hippo.theme.focusMe', ['$timeout', '$parse',
+        function($timeout, $parse) {
             return {
-                scope: {
-                    focusMe: '='
-                },
                 link: function(scope, element, attrs) {
                     scope.focusMe = false;
 

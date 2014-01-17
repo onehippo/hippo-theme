@@ -14,7 +14,7 @@
    
    * Modified version of the [Angular App breadcrumb service](https://github.com/angular-app/angular-app/blob/master/client/src/common/services/breadcrumbs.js)
    */
-    .service('URLParser', ['$rootScope', '$location',
+    .service('hippo.theme.URLParser', ['$rootScope', '$location',
         function($rootScope, $location) {
             var urlParts = [];
             var urlParserService = {};

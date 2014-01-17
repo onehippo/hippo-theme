@@ -11,7 +11,7 @@
      * @description
      * Component for the Bootstrap default panel.
      */
-    .directive('panelDefault', [
+    .directive('hippo.theme.panelDefault', [
 
         function() {
             return {

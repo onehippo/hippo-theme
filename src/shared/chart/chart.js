@@ -14,7 +14,7 @@
      * @scope
      * @param {Array} data A list of data to be visualised, each object of the list having a 'label' and 'value' property.
      */
-    .directive('chart', [
+    .directive('hippo.theme.chart', [
 
         function() {
             return {

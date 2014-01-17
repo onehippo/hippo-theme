@@ -8,9 +8,9 @@ describe('Hippo Theme map', function() {
     describe('the URLParser service', function() {
         var urlparserService = null;
 
-        beforeEach(inject(function(URLParser) {
+        beforeEach(inject(['hippo.theme.URLParser', function(URLParser) {
             urlparserService = URLParser;
-        }));
+        }]));
 
         it('should be defined', function() {
             expect(urlparserService).not.toBe(null);

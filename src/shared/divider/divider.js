@@ -11,7 +11,7 @@
      * @description
      * When passed true as value, it adds a DOM node as divider to the element.
      */
-    .directive('divider', [
+    .directive('hippo.theme.divider', [
 
         function() {
             return {

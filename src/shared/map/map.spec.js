@@ -12,13 +12,13 @@ describe('Hippo Theme map', function() {
             scope = $rootScope;
             scope.points = [];
 
-            elm = angular.element('<map markers="points"></map>');
+            elm = angular.element('<hippo.theme.map markers="points"></hippo.theme.map>');
             $compile(elm)(scope);
             scope.$digest();
         }));
 
         it('should exist', function() {
-            expect(elm).toBe('map');
+            expect(angular.element(elm).find('div').length).toBe(1);
         });
     });
 });

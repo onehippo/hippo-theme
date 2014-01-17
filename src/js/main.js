@@ -1,5 +1,5 @@
 (function() {
     "use strict";
 
-    angular.module('hippo.theme', []);
+    angular.module('hippo.theme', ['hippo.plugins']);
 })();
