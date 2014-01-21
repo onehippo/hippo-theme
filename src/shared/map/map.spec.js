@@ -32,7 +32,7 @@ describe('Hippo Theme map', function () {
                     clearInterval(timer);
                 }
                 counter++;
-            }, 20);
+            }, 1500);
 
             waitsFor(function () {
                 return done;
@@ -40,6 +40,7 @@ describe('Hippo Theme map', function () {
         }));
 
         it('should exist', function () {
+            console.log(elm);
             expect(elm.find('div').filter(function () {
                 var element = angular.element(this);
                 if (element.find('div').length > 0) {
