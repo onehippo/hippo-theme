@@ -7,6 +7,12 @@
 @import "@{chosenPath}/bootstrap-chosen";
 
 // Overrides
-div.chosen-container ul.chosen-choices {
-    border-radius: @chosen-border-radius;
+div.chosen-container {
+    ul.chosen-choices {
+        border-radius: @chosen-border-radius;
+    }
+
+    a.search-choice-close {
+        cursor: pointer;
+    }
 }
