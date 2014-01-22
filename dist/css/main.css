@@ -8041,6 +8041,9 @@ div[hippo\.theme\.chart] {
 div.chosen-container ul.chosen-choices {
   border-radius: 4px;
 }
+div.chosen-container a.search-choice-close {
+  cursor: pointer;
+}
 div[hippo\.theme\.map] {
   width: 100%;
   height: 90%;
