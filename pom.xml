@@ -29,14 +29,40 @@
   <version>2.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <properties>
+    <!-- properties for deploy:deploy-file goal -->
+    <file>${project.basedir}/target/${project.artifactId}-${project.version}-distribution.zip</file>
+    <repositoryId>hippo-maven2-enterprise-snapshots</repositoryId>
+    <url>https://maven.onehippo.com/content/repositories/enterprise-snapshots/</url>
+    <artifactId>${project.artifactId}</artifactId>
+    <groupId>${project.groupId}</groupId>
+    <version>${project.version}</version>
+    <packaging>zip</packaging>
+    <classifier>distribution</classifier>
+    <generatePom>false</generatePom>
+  </properties>
+
   <build>
+    <defaultGoal>validate</defaultGoal>
     <plugins>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>dist-deploy</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>deploy-file</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <inherited>false</inherited>
         <executions>
           <execution>
-            <id>distro-assembly</id>
+            <id>dist-assembly</id>
             <phase>validate</phase>
             <goals>
               <goal>single</goal>
