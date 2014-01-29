@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 (function () {
-    "use strict";
+    'use strict';
 
     angular.module('hippo.theme')
 
@@ -26,7 +26,7 @@
             return {
                 restrict: 'A',
                 scope: {
-                    data: "="
+                    data: '='
                 },
                 template: '<div id="filter">Filter did not load.</div>',
                 controller: function($scope) {
@@ -48,7 +48,7 @@
 
                         element.jstree('destroy');
                         element.jstree({
-                            plugins : [ "themes" ],
+                            plugins : [ 'themes' ],
                             core: {
                                 data: scope.data
                             },
