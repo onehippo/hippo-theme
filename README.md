@@ -49,3 +49,13 @@ The tests need to pass in order to generate a build.
 The browser will show the demo website which shows all available compontents for the theme.
 
     $ grunt server:demo
+
+## Deployment to Nexus
+#### Prerequisites
+
+* [Maven](http://maven.apache.org/)
+
+#### Deployment command
+
+    $ mvn deploy
+
