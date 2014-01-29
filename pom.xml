@@ -29,6 +29,12 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <scm>
+    <connection>scm:git:git://github.com/onehippo/hippo-theme.git</connection>
+    <developerConnection>scm:git:git://github.com/onehippo/hippo-theme.git</developerConnection>
+    <url>scm:git:git://github.com/onehippo/hippo-theme.git</url>
+  </scm>
+
   <build>
     <defaultGoal>validate</defaultGoal>
     <plugins>
