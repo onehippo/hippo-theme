@@ -579,9 +579,9 @@
                 },
                 link: function (scope, element, attrs, treeCtrl) {
                     function selectFirstElement(list) {
+                        console.log(list);
                         var item = list[0] || {};
                         item.state = item.state || {};
-                        console.log(item);
                         item.state.selected = item.state.selected || true;
                     }
 
