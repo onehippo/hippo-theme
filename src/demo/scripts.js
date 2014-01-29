@@ -107,6 +107,21 @@
          */
         .controller('PanelCtrl', ['$scope', function ($scope) {
             $scope.title = 'Panel title';
+        }])
+
+        /**
+         * @ngdoc object
+         * @name hippo.theme.example:TreeCtrl
+         *
+         * @description
+         * Controller for the Tree example.
+         */
+        .controller('TreeCtrl', ['$scope', function ($scope) {
+            $scope.treeItems = [
+                'Tree item 1',
+                'Tree item 2',
+                'Tree item 3'
+            ];
         }]);
 
 })();

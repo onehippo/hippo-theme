@@ -46,6 +46,12 @@
                     "jquery.flot.js",
                     "jquery.flot.pie.js"
                   ]
+                },
+                {
+                  "component": "jstree",
+                  "file": [
+                    "dist/jstree.js"
+                  ]
                 }
             ]
         },

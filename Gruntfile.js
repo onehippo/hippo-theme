@@ -135,7 +135,8 @@ module.exports = function (grunt) {
                     'src/shared/panel-default/panel-default.js',
                     'src/shared/responsive/responsive.js',
                     'src/shared/select-box/select-box.js',
-                    'src/shared/urlparser/urlparser.js'
+                    'src/shared/urlparser/urlparser.js',
+                    'src/shared/tree/tree.js'
                 ],
                 dest: 'dist/js/main.js'
             }
