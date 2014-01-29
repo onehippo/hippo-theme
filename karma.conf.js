@@ -26,6 +26,7 @@ module.exports = function (config) {
             hippo.bowerComponents + '/angular-mocks/angular-mocks.js',
             hippo.bowerComponents + '/angular-bootstrap/**/*.js',
             hippo.bowerComponents + '/js-detect-ie/detect-ie.js',
+            hippo.bowerComponents + '/underscore/underscore.js',
             hippo.bowerComponents + '/hippo-plugins/dist/js/main.js',
 
             'src/js/main.js',
