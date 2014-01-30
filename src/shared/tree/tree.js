@@ -42,7 +42,7 @@
                     }
 
                     function addLevelInfo(list, level) {
-                        level = level || 0;
+                        level = level || 1;
                         _.each(list, function (item) {
                             item.li_attr = {
                                 'data-level': level
@@ -58,7 +58,7 @@
                         // select first item by default
                         selectFirstElement(scope.data);
                         addLevelInfo(scope.data);
-                        
+
                         element.jstree('destroy');
                         element.jstree({
                             plugins : [ 'themes' ],
