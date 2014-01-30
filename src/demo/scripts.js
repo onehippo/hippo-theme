@@ -123,7 +123,14 @@
                     children: [{
                         text: 'Item A.1'
                     }, {
-                        text: 'Item A.2'
+                        text: 'Item A.2',
+                        children: [{
+                            text: 'Item A.2.1'
+                        }, {
+                            text: 'Item A.2.2'
+                        }, {
+                            text: 'Item A.2.3'
+                        }]
                     }, {
                         text: 'Item A.3'
                     }]

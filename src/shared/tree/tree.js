@@ -36,15 +36,30 @@
                 },
                 link: function (scope, element, attrs, treeCtrl) {
                     function selectFirstElement(list) {
-                        console.log(list);
                         var item = list[0] || {};
                         item.state = item.state || {};
                         item.state.selected = item.state.selected || true;
                     }
 
+                    function addLevelInfo(list, level) {
+                        level = level || 0;
+                        _.each(list, function (item) {
+                            item.li_attr = {
+                                'data-level': level
+                            };
+
+                            if (item.children) {
+                                addLevelInfo(item.children, (level + 1));
+                            }
+                        });
+                    }
+
                     scope.$watch('data', function() {
                         // select first item by default
                         selectFirstElement(scope.data);
+                        addLevelInfo(scope.data);
+
+                        console.log(scope.data);
 
                         element.jstree('destroy');
                         element.jstree({
@@ -57,6 +72,13 @@
                             }
                         }).bind('select_node.jstree', function(event, item) {
                             treeCtrl.setSelectedItem(item.node.id);
+                        }).bind('activate_node.jstree', function(event, node) {
+                            // remove active classes
+                            node.instance.element.find('.jstree-node').removeClass('active');
+
+                            // set active class
+                            $('#' + node.node.id, element).addClass('active');
+
                         }).jstree('set_theme', 'hippo');
                     }, true);
                 }
