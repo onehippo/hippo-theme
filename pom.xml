@@ -26,7 +26,7 @@
   <name>Hippo Theme</name>
   <description>Hippo Bootstrap Theme</description>
   <artifactId>hippo-theme</artifactId>
-  <version>1.01.01-SNAPSHOT</version>
+  <version>1.01.00-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <repositories>
