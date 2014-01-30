@@ -20,19 +20,34 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>24.1-SNAPSHOT</version>
+    <version>23</version>
   </parent>
 
   <name>Hippo Theme</name>
   <description>Hippo Bootstrap Theme</description>
   <artifactId>hippo-theme</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.01.00-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <repositories>
+    <repository>
+      <id>hippo-maven2</id>
+      <name>Hippo Maven 2</name>
+      <url>http://maven.onehippo.com/maven2/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+    </repository>
+  </repositories>
+
   <scm>
-    <connection>scm:git:git://github.com/onehippo/hippo-theme.git</connection>
-    <developerConnection>scm:git:git://github.com/onehippo/hippo-theme.git</developerConnection>
-    <url>scm:git:git://github.com/onehippo/hippo-theme.git</url>
+    <connection>scm:git:https://github.com/onehippo/hippo-theme.git</connection>
+    <developerConnection>scm:git:https://github.com/onehippo/hippo-theme.git</developerConnection>
+    <url>scm:git:https://github.com/onehippo/hippo-theme.git</url>
+    <tag>HEAD</tag>
   </scm>
 
   <build>
