@@ -58,9 +58,7 @@
                         // select first item by default
                         selectFirstElement(scope.data);
                         addLevelInfo(scope.data);
-
-                        console.log(scope.data);
-
+                        
                         element.jstree('destroy');
                         element.jstree({
                             plugins : [ 'themes' ],
