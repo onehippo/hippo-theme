@@ -8056,9 +8056,6 @@ div[hippo\.theme\.map] {
     display: block;
   }
 }
-.jstree-hippo .jstree-container-ul {
-  position: relative;
-}
 .jstree-hippo .jstree-container-ul li.active:first-child {
   border: none;
   border-top: 1px solid #f4764c;
@@ -8151,14 +8148,62 @@ a.jstree-hippo li:focus {
 .jstree-hippo li.jstree-node.active > a {
   color: #ffffff;
 }
-.jstree-hippo li.jstree-node[data-level="0"] > i {
-  margin-left: 20px;
+.jstree-hippo .jstree-children {
+  padding: 0;
+  margin: 15px 0 0 0;
+  position: relative;
 }
-.jstree-hippo li.jstree-node[data-level="1"] > i {
-  margin-left: 40px;
+.jstree-hippo .jstree-anchor:focus {
+  outline: none;
+  text-decoration: none;
+}
+.jstree-hippo li.jstree-node[data-level="15"] > i {
+  margin-left: 300px;
+}
+.jstree-hippo li.jstree-node[data-level="14"] > i {
+  margin-left: 280px;
+}
+.jstree-hippo li.jstree-node[data-level="13"] > i {
+  margin-left: 260px;
+}
+.jstree-hippo li.jstree-node[data-level="12"] > i {
+  margin-left: 240px;
+}
+.jstree-hippo li.jstree-node[data-level="11"] > i {
+  margin-left: 220px;
+}
+.jstree-hippo li.jstree-node[data-level="10"] > i {
+  margin-left: 200px;
+}
+.jstree-hippo li.jstree-node[data-level="9"] > i {
+  margin-left: 180px;
+}
+.jstree-hippo li.jstree-node[data-level="8"] > i {
+  margin-left: 160px;
+}
+.jstree-hippo li.jstree-node[data-level="7"] > i {
+  margin-left: 140px;
+}
+.jstree-hippo li.jstree-node[data-level="6"] > i {
+  margin-left: 120px;
+}
+.jstree-hippo li.jstree-node[data-level="5"] > i {
+  margin-left: 100px;
+}
+.jstree-hippo li.jstree-node[data-level="4"] > i {
+  margin-left: 80px;
+}
+.jstree-hippo li.jstree-node[data-level="3"] > i {
+  margin-left: 60px;
 }
 .jstree-hippo li.jstree-node[data-level="2"] > i {
-  margin-left: 60px;
+  margin-left: 40px;
+}
+.jstree-hippo li.jstree-node[data-level="1"] > i {
+  margin-left: 20px;
+}
+.jstree-hippo li.jstree-node[data-level="0"] > i {
+  margin-left: 0px;
 }
 .jstree-hippo .jstree-icon {
   display: inline-block;
@@ -8177,7 +8222,6 @@ a.jstree-hippo li:focus {
 }
 .jstree-hippo .jstree-node.jstree-closed > .jstree-ocl:before {
   content: "\f0da";
-  cursor: pointer;
 }
 .jstree-hippo .jstree-node.jstree-open {
   padding-bottom: 0;
@@ -8192,104 +8236,3 @@ a.jstree-hippo li:focus {
 .jstree-hippo .jstree-node.jstree-leaf > .jstree-ocl:before {
   content: "\f15c";
 }
-.jstree-hippo .jstree-children {
-  padding: 0;
-  margin: 15px 0 0 0;
-  position: relative;
-  left: 0;
-}
-.jstree-hippo li,
-.jstree-hippo li {
-  background-position: -90px 0;
-  background-repeat: repeat-y;
-}
-.jstree-hippo .jstree-open > ins {
-  background-position: -72px 0;
-}
-.jstree-hippo .jstree-closed > ins {
-  background-position: -54px 0;
-}
-.jstree-hippo .jstree-leaf > ins {
-  background-position: -36px 0;
-}
-.jstree-hippo .jstree-no-dots li,
-.jstree-hippo .jstree-no-dots .jstree-open > ins {
-  background-position: -18px 0;
-}
-.jstree-hippo .jstree-no-dots .jstree-closed > ins {
-  background-position: 0 0;
-}
-.jstree-hippo .jstree-no-icons a .jstree-icon {
-  display: none;
-}
-.jstree-hippo .jstree-search {
-  font-style: italic;
-}
-.jstree-hippo .jstree-no-icons .jstree-checkbox {
-  display: inline-block;
-}
-.jstree-hippo .jstree-no-checkboxes .jstree-checkbox {
-  display: none !important;
-}
-.jstree-hippo .jstree-checked > a > .jstree-checkbox {
-  background-position: -38px -19px;
-}
-.jstree-hippo .jstree-unchecked > a > .jstree-checkbox {
-  background-position: -2px -19px;
-}
-.jstree-hippo .jstree-undetermined > a > .jstree-checkbox {
-  background-position: -20px -19px;
-}
-.jstree-hippo .jstree-checked > a > .checkbox:hover {
-  background-position: -38px -37px;
-}
-.jstree-hippo .jstree-unchecked > a > .jstree-checkbox:hover {
-  background-position: -2px -37px;
-}
-.jstree-hippo .jstree-undetermined > a > .jstree-checkbox:hover {
-  background-position: -20px -37px;
-}
-#vakata-dragged.jstree-hippo ins {
-  background: transparent !important;
-}
-.jstree-hippo .jstree-locked a {
-  color: silver;
-  cursor: default;
-}
-#vakata-contextmenu.jstree-apple-context,
-#vakata-contextmenu.jstree-apple-context li ul {
-  background: #f0f0f0;
-  border: 1px solid #979797;
-  -moz-box-shadow: 1px 1px 2px #999;
-  -webkit-box-shadow: 1px 1px 2px #999;
-  box-shadow: 1px 1px 2px #999;
-}
-#vakata-contextmenu.jstree-apple-context a {
-  color: black;
-}
-#vakata-contextmenu.jstree-apple-context a:hover,
-#vakata-contextmenu.jstree-apple-context .vakata-hover > a {
-  padding: 0 5px;
-  background: #e8eff7;
-  border: 1px solid #aecff7;
-  color: black;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-}
-#vakata-contextmenu.jstree-apple-context li.jstree-contextmenu-disabled a,
-#vakata-contextmenu.jstree-apple-context li.jstree-contextmenu-disabled a:hover {
-  color: silver;
-  background: transparent;
-  border: 0;
-  padding: 1px 4px;
-}
-#vakata-contextmenu.jstree-apple-context li.vakata-separator {
-  background: white;
-  border-top: 1px solid #e0e0e0;
-  margin: 0;
-}
-#vakata-contextmenu.jstree-apple-context li ul {
-  margin-left: -4px;
-}
-/* TODO: IE6 support - the `>` selectors */
