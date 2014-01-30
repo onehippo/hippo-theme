@@ -54,6 +54,12 @@
                         });
                     }
 
+                    function rootNodeId(list) {
+                        var item = list[0] || {};
+                        item.state = item.state || {};
+                        item.state.selected = item.state.selected || true;
+                    }
+
                     scope.$watch('data', function() {
                         // select first item by default
                         selectFirstElement(scope.data);
@@ -61,9 +67,10 @@
 
                         element.jstree('destroy');
                         element.jstree({
-                            plugins : [ 'themes' ],
+                            plugins : [ 'themes', 'dnd' ],
                             core: {
-                                data: scope.data
+                                data: scope.data,
+                                check_callback: true
                             },
                             themes: {
                                 theme: 'hippo'
@@ -77,7 +84,24 @@
                             // set active class
                             $('#' + node.node.id, element).addClass('active');
 
-                        }).jstree('set_theme', 'hippo');
+                        }).bind("move_node.jstree", function (event, data) {
+                            // set indenting levels
+                            console.log(element.find('li').each(function (index, item) {
+                                console.log('Item:');
+                                console.log(item);
+
+
+                                // TODO: always expand dom, otherwise this won't work!
+                                console.log('Parents until:');
+                                console.log($(item).parentsUntil('.jstree-hippo', 'ul').length);
+                            }));
+
+                            // get JSON
+                            var result = $.jstree.reference(element).get_json(element, {});
+                            var jsonString = JSON.stringify(result);
+
+                        })
+                        .jstree('set_theme', 'hippo');
                     }, true);
                 }
             };
