@@ -32,7 +32,7 @@
       <directory>src/less</directory>
     </fileSet>
     <fileSet>
-      <directory>dist/js</directory>
+      <directory>dist</directory>
     </fileSet>
   </fileSets>
 </assembly>
