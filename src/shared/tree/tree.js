@@ -67,7 +67,7 @@
 
                         element.jstree('destroy');
                         element.jstree({
-                            plugins : [ 'themes', 'dnd' ],
+                            plugins : [ 'themes' ],
                             core: {
                                 data: scope.data,
                                 check_callback: true
