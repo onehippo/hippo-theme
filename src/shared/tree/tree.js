@@ -31,7 +31,7 @@
                 template: '<div id="filter">Filter did not load.</div>',
                 controller: function($scope) {
                     this.setSelectedItem = function(itemId) {
-                        //$scope.$parent.setSelectedItemId(itemId);
+                        $scope.$parent.setSelectedItemId(itemId);
                     };
                 },
                 link: function (scope, element, attrs, treeCtrl) {
@@ -85,21 +85,12 @@
                             $('#' + node.node.id, element).addClass('active');
 
                         }).bind("move_node.jstree", function (event, data) {
-                            // set indenting levels
-                            console.log(element.find('li').each(function (index, item) {
-                                console.log('Item:');
-                                console.log(item);
-
-
-                                // TODO: always expand dom, otherwise this won't work!
-                                console.log('Parents until:');
-                                console.log($(item).parentsUntil('.jstree-hippo', 'ul').length);
-                            }));
-
+                            // TODO: set indenting levels
+                            // TODO: always expand dom, otherwise this won't work! (or does it with the indenting levels?)
+                            
                             // get JSON
                             var result = $.jstree.reference(element).get_json(element, {});
                             var jsonString = JSON.stringify(result);
-
                         })
                         .jstree('set_theme', 'hippo');
                     }, true);
