@@ -72,7 +72,7 @@
                 {
                     "component": "components/hippo-theme",
                     "file": [
-                        "dist/js/main.js"
+                        "dist/js/main.min.js"
                     ]
                 }
             ]
