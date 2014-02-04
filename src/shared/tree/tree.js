@@ -69,6 +69,9 @@
                             themes: {
                                 theme: 'hippo'
                             }
+                        }).bind('select_node.jstree', function(event, item) {
+                            // trigger on select function
+                            scope.onSelect({itemId: item.node.id});
                         }).bind('activate_node.jstree', function(event, node) {
                             // remove active classes
                             node.instance.element.find('.jstree-node').removeClass('active');
