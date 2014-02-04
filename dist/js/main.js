@@ -603,6 +603,10 @@
 
                     function createJsTree(data, element) {
                         element.jstree('destroy');
+                        element.bind('loaded.jstree', function (event) {
+                            var tree = event.target;
+                            $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
+                        });
                         element.jstree({
                             plugins : [ 'themes' ],
                             core: {
