@@ -60,6 +60,10 @@
 
                     function createJsTree(data, element) {
                         element.jstree('destroy');
+                        element.bind('loaded.jstree', function (event) {
+                            var tree = event.target;
+                            $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
+                        });
                         element.jstree({
                             plugins : [ 'themes' ],
                             core: {
@@ -69,9 +73,6 @@
                             themes: {
                                 theme: 'hippo'
                             }
-                        }).bind('select_node.jstree', function(event, item) {
-                            // trigger on select function
-                            scope.onSelect({itemId: item.node.id});
                         }).bind('activate_node.jstree', function(event, node) {
                             // remove active classes
                             node.instance.element.find('.jstree-node').removeClass('active');
