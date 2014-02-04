@@ -26,15 +26,19 @@
             return {
                 restrict: 'A',
                 scope: {
-                    data: '='
+                    data: '=',
+                    onSelect: '&onSelect'
                 },
                 template: '<div id="filter">Filter did not load.</div>',
-                controller: function($scope) {
-                    this.setSelectedItem = function(itemId) {
-                        $scope.$parent.setSelectedItemId(itemId);
-                    };
-                },
                 link: function (scope, element, attrs, treeCtrl) {
+
+                    // render js tree every time the provided data structure changes
+                    scope.$watch('data', function() {
+                        selectFirstElement(scope.data);
+                        addLevelInfo(scope.data);
+                        createJsTree(scope.data, element);
+                    }, true);
+
                     function selectFirstElement(list) {
                         var item = list[0] || {};
                         item.state = item.state || {};
@@ -54,29 +58,17 @@
                         });
                     }
 
-                    function rootNodeId(list) {
-                        var item = list[0] || {};
-                        item.state = item.state || {};
-                        item.state.selected = item.state.selected || true;
-                    }
-
-                    scope.$watch('data', function() {
-                        // select first item by default
-                        selectFirstElement(scope.data);
-                        addLevelInfo(scope.data);
-
+                    function createJsTree(data, element) {
                         element.jstree('destroy');
                         element.jstree({
                             plugins : [ 'themes' ],
                             core: {
-                                data: scope.data,
+                                data: data,
                                 check_callback: true
                             },
                             themes: {
                                 theme: 'hippo'
                             }
-                        }).bind('select_node.jstree', function(event, item) {
-                            treeCtrl.setSelectedItem(item.node.id);
                         }).bind('activate_node.jstree', function(event, node) {
                             // remove active classes
                             node.instance.element.find('.jstree-node').removeClass('active');
@@ -84,6 +76,8 @@
                             // set active class
                             $('#' + node.node.id, element).addClass('active');
 
+                            // trigger on select function
+                            scope.onSelect({itemId: node.node.id});
                         }).bind("move_node.jstree", function (event, data) {
                             // TODO: set indenting levels
                             // TODO: always expand dom, otherwise this won't work! (or does it with the indenting levels?)
@@ -91,9 +85,8 @@
                             // get JSON
                             var result = $.jstree.reference(element).get_json(element, {});
                             var jsonString = JSON.stringify(result);
-                        })
-                        .jstree('set_theme', 'hippo');
-                    }, true);
+                        }).jstree('set_theme', 'hippo');
+                    }
                 }
             };
         }]);
