@@ -73,6 +73,9 @@
                             themes: {
                                 theme: 'hippo'
                             }
+                        }).bind('open_node.jstree', function (event, node) {
+                            var tree = event.target;
+                            $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
                         }).bind('activate_node.jstree', function(event, node) {
                             // remove active classes
                             node.instance.element.find('.jstree-node').removeClass('active');
