@@ -143,7 +143,6 @@
 
             $scope.setSelected = function (itemId) {
                 console.log('New selected item id: ', itemId);
-                console.log(arguments);
             };
         }]);
 
