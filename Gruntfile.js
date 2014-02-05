@@ -1,6 +1,8 @@
 'use strict';
 module.exports = function (grunt) {
 
+    var userhome = require('userhome');
+
     // display execution time of each task
     require('time-grunt')(grunt);
 
@@ -12,13 +14,17 @@ module.exports = function (grunt) {
     };
 
     var cfg = {
-        exampleDir: 'demo'
+        exampleDir: 'demo',
+        demoRepoDir: 'hippo-theme-demo',
+        tmpDir: '.tmp'
     };
+    cfg.tmpRepoDir = userhome(cfg.tmpDir, cfg.exampleDir, cfg.demoRepoDir);
 
     // project configuration
     grunt.initConfig({
         // configuration
         cfg: cfg,
+        userhome: userhome,
 
         // compile less files for the app and modules
         less: {
@@ -69,6 +75,19 @@ module.exports = function (grunt) {
                             '**/*',
                         ],
                         dest: '<%= cfg.exampleDir %>/'
+                    }
+                ]
+            },
+
+            toDemoRepo: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= cfg.exampleDir %>',
+                        src: [
+                            '**/*',
+                        ],
+                        dest: '<%= cfg.tmpRepoDir %>'
                     }
                 ]
             }
@@ -172,6 +191,38 @@ module.exports = function (grunt) {
                     ignores: ['js-comments']
                 }
             }
+        },
+
+        shell: {
+            options: {
+                stdout: true,
+                stderr: true
+            },
+            cloneDemo: {
+                command: 'rm -R <%= userhome(cfg.tmpDir) %> && mkdir -p <%= cfg.tmpRepoDir %> && cd <%= cfg.tmpRepoDir %> && git clone git@github.com:onehippo/hippo-theme-demo.git .'
+            },
+
+            commitDemo: {
+                command: [
+                    'echo <%= cfg.tmpRepoDir %>',
+                    'git add .',
+                    'git commit -m "New build"'
+                ].join('&&'),
+                options: {
+                    execOptions: {
+                        cwd: '<%= cfg.tmpRepoDir %>'
+                    }
+                }
+            },
+
+            pushDemo: {
+                command: 'git push origin gh-pages',
+                options: {
+                    execOptions: {
+                        cwd: '<%= cfg.tmpRepoDir %>'
+                    }
+                }
+            }
         }
     });
 
@@ -216,6 +267,14 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test:unit:continuous', [
         'karma:continuous'
+    ]);
+
+    grunt.registerTask('publish', [
+        'build:demo', 
+        'shell:cloneDemo', 
+        'copy:toDemoRepo', 
+        'shell:commitDemo', 
+        'shell:pushDemo'
     ]);
 
 };

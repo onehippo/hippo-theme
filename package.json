@@ -29,7 +29,9 @@
     "grunt-lintspaces": "~0.3.1"
   },
   "devDependencies": {
-    "bower": "~1.2.6"
+    "bower": "~1.2.6",
+    "grunt-shell": "~0.6.4",
+    "userhome": "~0.1.0"
   },
   "engines": {
     "node": ">=0.8.0"
