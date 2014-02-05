@@ -50,6 +50,11 @@ The browser will show the demo website which shows all available compontents for
 
     $ grunt server:demo
 
+####Publish to the [Hippo Theme demo repository](https://github.com/onehippo/hippo-theme-demo)
+Create an [online demo](http://onehippo.github.io/hippo-theme-demo/) of the Hippo Theme.
+
+    $ grunt publish
+
 ## Deployment to Nexus
 #### Prerequisites
 
