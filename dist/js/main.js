@@ -561,10 +561,17 @@
 
     angular.module('hippo.theme')
 
-        /*
-        * jstree directive
-        * via http://plnkr.co/edit/xHIc4J?p=preview
-        */
+        /**
+         * @ngdoc directive
+         * @name hippo.theme:hippo.theme.tree
+         * @restrict A
+         *
+         * @description
+         * Tree component for the Hippo Theme. It uses [jsTree](http://www.jstree.com/) to render the tree.
+         * 
+         * @param {object=} data The data to use for the Tree.
+         * @param {string&} onSelect The function to evaluate when a new node in the Tree is selected.
+         */
         .directive('hippo.theme.tree', [function() {
             return {
                 restrict: 'A',
@@ -572,20 +579,26 @@
                     data: '=',
                     onSelect: '&onSelect'
                 },
-                template: '<div id="filter">Filter did not load.</div>',
+                template: '<div id="filter"></div>',
                 link: function (scope, element, attrs, treeCtrl) {
+                    // watch for incoming changes of the tree data structure.
+                    // rerender the tree everytime the data changes.
                     scope.$watch('data', function() {
                         selectFirstElement(scope.data);
                         addLevelInfo(scope.data);
                         createJsTree(scope.data, element);
                     }, true);
 
+                    // mark the first node in the tree as selected
                     function selectFirstElement(list) {
                         var item = list[0] || {};
                         item.state = item.state || {};
                         item.state.selected = item.state.selected || true;
                     }
 
+                    // as we do not control the DOM, we use the `data-level`
+                    // attribute to handle the indentation styling of each node.
+                    // jsTree adds this attribute when we set the `li_attr` property.
                     function addLevelInfo(list, level) {
                         level = level || 1;
                         _.each(list, function (item) {
@@ -599,6 +612,8 @@
                         });
                     }
 
+                    // loop through the DOM of the tree and manually add the `data-level`
+                    // attribute to each node
                     function addLevelInfoToDom(tree, level) {
                         level = level || 1;
                         $(tree).children('li').each(function (index, item) {
@@ -610,18 +625,23 @@
                         });
                     }
 
+                    // add an `active` class to the selected node, so we can style it using Bootstrap
                     function markClickedNodeAsActive(tree) {
                         $(tree).find('.jstree-node').removeClass('active');
                         $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
                     }
 
+                    // render the jsTree using the jsTree jQuery plugin
                     function createJsTree(data, element) {
+                        // remove the previously rendered tree
                         element.jstree('destroy');
+
+                        // detect the selected node and mark as active after the tree is loaded
                         element.on('loaded.jstree', function (event) {
-                            var tree = event.target;
-                            $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
+                            markClickedNodeAsActive(event.target);
                         });
 
+                        // execute the jsTree plugin
                         element.jstree({
                             plugins : [ 'themes', 'dnd', 'crrm' ],
                             core: {
@@ -637,16 +657,20 @@
                                 }
                             }
                         }).on('open_node.jstree', function (event, node) {
+                            // set the indentation classes when a node gets expanded
                             addLevelInfoToDom(node.instance.element.children('ul'));
                         }).on('activate_node.jstree', function(event, node) {
+                            // a different node is selected / active
                             markClickedNodeAsActive(event.target);
                             scope.onSelect({itemId: node.node.id});
                         }).on("move_node.jstree", function (event, data) {
-                            // get JSON
-                            var result = $.jstree.reference(element).get_json(element, {});
-                            var jsonString = JSON.stringify(result);
+                            // a node is moved to another place inside the tree
                             addLevelInfoToDom(data.instance.element.children('ul'));
                             markClickedNodeAsActive(event.target);
+
+                            // TODO: return the new tree structure
+                            // var result = $.jstree.reference(element).get_json(element, {});
+                            // var jsonString = JSON.stringify(result);
                         }).on("after_open.jstree", function (event, data) {
                             // the node loses it's active class when moving inside a closed node
                             markClickedNodeAsActive(event.target);
