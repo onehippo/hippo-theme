@@ -8093,6 +8093,8 @@ div[hippo\.theme\.map] {
   background: white;
   padding-left: 0;
   padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .jstree-hippo li:first-child {
   border-top-right-radius: 4px;
@@ -8138,6 +8140,10 @@ a.jstree-hippo li:focus {
 .jstree-hippo li.active:focus .list-group-item-text {
   color: #ffffff;
 }
+.jstree-hippo li .jstree-anchor {
+  display: inline-block;
+  margin: 20px 0;
+}
 .jstree-hippo li i.jstree-icon {
   color: #555555;
 }
@@ -8150,7 +8156,7 @@ a.jstree-hippo li:focus {
 }
 .jstree-hippo .jstree-children {
   padding: 0;
-  margin: 15px 0 0 0;
+  margin: 0;
   position: relative;
 }
 .jstree-hippo .jstree-anchor:focus {
@@ -8235,4 +8241,112 @@ a.jstree-hippo li:focus {
 }
 .jstree-hippo .jstree-node.jstree-leaf > .jstree-ocl:before {
   content: "\f15c";
+}
+#jstree-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  margin-top: 0;
+  padding: 0;
+  border-right: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+#jstree-dnd {
+  line-height: 16px;
+  margin: 0;
+  padding: 4px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+#jstree-dnd:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+#jstree-dnd:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+#jstree-dnd > .badge {
+  float: right;
+}
+#jstree-dnd > .badge + .badge {
+  margin-right: 5px;
+}
+a#jstree-dnd {
+  color: #555555;
+}
+a#jstree-dnd .list-group-item-heading {
+  color: #333333;
+}
+a#jstree-dnd:hover,
+a#jstree-dnd:focus {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+#jstree-dnd.active,
+#jstree-dnd.active:hover,
+#jstree-dnd.active:focus {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #f4764c;
+  border-color: #f4764c;
+}
+#jstree-dnd.active .list-group-item-heading,
+#jstree-dnd.active:hover .list-group-item-heading,
+#jstree-dnd.active:focus .list-group-item-heading {
+  color: inherit;
+}
+#jstree-dnd.active .list-group-item-text,
+#jstree-dnd.active:hover .list-group-item-text,
+#jstree-dnd.active:focus .list-group-item-text {
+  color: #ffffff;
+}
+#jstree-dnd .jstree-icon,
+#jstree-dnd .jstree-copy {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 2px 0 0;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+}
+#jstree-dnd .jstree-ok {
+  background: #5cb85c;
+}
+#jstree-dnd .jstree-er {
+  background: #d9534f;
+}
+#jstree-dnd .jstree-copy {
+  margin: 0 2px 0 2px;
+}
+#jstree-dnd.jstree-default .jstree-ok,
+#jstree-dnd.jstree-default .jstree-er {
+  background-image: url("32px.png");
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+#jstree-dnd.jstree-default i {
+  background: transparent;
+  width: 16px;
+  height: 16px;
+}
+#jstree-dnd.jstree-default .jstree-ok {
+  background-position: -9px -71px;
+}
+#jstree-dnd.jstree-default .jstree-er {
+  background-position: -39px -71px;
 }

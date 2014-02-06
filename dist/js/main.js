@@ -574,8 +574,6 @@
                 },
                 template: '<div id="filter">Filter did not load.</div>',
                 link: function (scope, element, attrs, treeCtrl) {
-
-                    // render js tree every time the provided data structure changes
                     scope.$watch('data', function() {
                         selectFirstElement(scope.data);
                         addLevelInfo(scope.data);
@@ -601,40 +599,57 @@
                         });
                     }
 
+                    function addLevelInfoToDom(tree, level) {
+                        level = level || 1;
+                        $(tree).children('li').each(function (index, item) {
+                            $(item).attr('data-level', level);
+                            
+                            $(item).children('.jstree-children').each(function (index, subTree) {
+                                addLevelInfoToDom($(subTree), level + 1);
+                            });
+                        });
+                    }
+
+                    function markClickedNodeAsActive(tree) {
+                        $(tree).find('.jstree-node').removeClass('active');
+                        $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
+                    }
+
                     function createJsTree(data, element) {
                         element.jstree('destroy');
-                        element.bind('loaded.jstree', function (event) {
+                        element.on('loaded.jstree', function (event) {
                             var tree = event.target;
                             $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
                         });
+
                         element.jstree({
-                            plugins : [ 'themes' ],
+                            plugins : [ 'themes', 'dnd', 'crrm' ],
                             core: {
                                 data: data,
                                 check_callback: true
                             },
                             themes: {
                                 theme: 'hippo'
+                            },
+                            crrm: {
+                                move: {
+                                    always_copy: 'multitree'
+                                }
                             }
-                        }).bind('open_node.jstree', function (event, node) {
-                            var tree = event.target;
-                            $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
-                        }).bind('activate_node.jstree', function(event, node) {
-                            // remove active classes
-                            node.instance.element.find('.jstree-node').removeClass('active');
-
-                            // set active class
-                            $('#' + node.node.id, element).addClass('active');
-
-                            // trigger on select function
+                        }).on('open_node.jstree', function (event, node) {
+                            addLevelInfoToDom(node.instance.element.children('ul'));
+                        }).on('activate_node.jstree', function(event, node) {
+                            markClickedNodeAsActive(event.target);
                             scope.onSelect({itemId: node.node.id});
-                        }).bind("move_node.jstree", function (event, data) {
-                            // TODO: set indenting levels
-                            // TODO: always expand dom, otherwise this won't work! (or does it with the indenting levels?)
-                            
+                        }).on("move_node.jstree", function (event, data) {
                             // get JSON
                             var result = $.jstree.reference(element).get_json(element, {});
                             var jsonString = JSON.stringify(result);
+                            addLevelInfoToDom(data.instance.element.children('ul'));
+                            markClickedNodeAsActive(event.target);
+                        }).on("after_open.jstree", function (event, data) {
+                            // the node loses it's active class when moving inside a closed node
+                            markClickedNodeAsActive(event.target);
                         }).jstree('set_theme', 'hippo');
                     }
                 }
