@@ -297,7 +297,7 @@ module.exports = function (grunt) {
     });
 
     // server with example
-    grunt.registerTask('server:demo', ['build:demo', 'open', 'connect:example', 'watch']);
+    grunt.registerTask('server:demo', ['build:demo', 'ngdocs', 'open', 'connect:example', 'watch']);
 
     // test
     grunt.registerTask('test:unit', [
