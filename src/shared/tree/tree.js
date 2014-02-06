@@ -36,9 +36,10 @@
                     data: '=',
                     onSelect: '&onSelect'
                 },
-                template: '<div id="filter">Filter did not load.</div>',
+                template: '<div id="filter"></div>',
                 link: function (scope, element, attrs, treeCtrl) {
-                    // watch for incoming changes of the tree data structure
+                    // watch for incoming changes of the tree data structure.
+                    // rerender the tree everytime the data changes.
                     scope.$watch('data', function() {
                         selectFirstElement(scope.data);
                         addLevelInfo(scope.data);
@@ -81,18 +82,23 @@
                         });
                     }
 
+                    // add an `active` class to the selected node, so we can style it using Bootstrap
                     function markClickedNodeAsActive(tree) {
                         $(tree).find('.jstree-node').removeClass('active');
                         $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
                     }
 
+                    // render the jsTree using the jsTree jQuery plugin
                     function createJsTree(data, element) {
+                        // remove the previously rendered tree
                         element.jstree('destroy');
+
+                        // detect the selected node and mark as active after the tree is loaded
                         element.on('loaded.jstree', function (event) {
-                            var tree = event.target;
-                            $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
+                            markClickedNodeAsActive();
                         });
 
+                        // execute the jsTree plugin
                         element.jstree({
                             plugins : [ 'themes', 'dnd', 'crrm' ],
                             core: {
@@ -108,16 +114,20 @@
                                 }
                             }
                         }).on('open_node.jstree', function (event, node) {
+                            // set the indentation classes when a node gets expanded
                             addLevelInfoToDom(node.instance.element.children('ul'));
                         }).on('activate_node.jstree', function(event, node) {
+                            // a different node is selected / active
                             markClickedNodeAsActive(event.target);
                             scope.onSelect({itemId: node.node.id});
                         }).on("move_node.jstree", function (event, data) {
-                            // get JSON
-                            var result = $.jstree.reference(element).get_json(element, {});
-                            var jsonString = JSON.stringify(result);
+                            // a node is moved to another place inside the tree
                             addLevelInfoToDom(data.instance.element.children('ul'));
                             markClickedNodeAsActive(event.target);
+
+                            // TODO: return the new tree structure
+                            // var result = $.jstree.reference(element).get_json(element, {});
+                            // var jsonString = JSON.stringify(result);
                         }).on("after_open.jstree", function (event, data) {
                             // the node loses it's active class when moving inside a closed node
                             markClickedNodeAsActive(event.target);
