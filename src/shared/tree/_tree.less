@@ -37,6 +37,14 @@
         padding-left: 0;
         padding-right: 0;
 
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .jstree-anchor {
+            display: inline-block;
+            margin: 20px 0;
+        }
+
         i.jstree-icon {
             color: @list-group-link-color;
         }
@@ -55,7 +63,7 @@
 
     .jstree-children {
         padding: 0;
-        margin: 15px 0 0 0;
+        margin: 0;
         position: relative;
     }
 
@@ -126,4 +134,73 @@
             }
         }
     }
+}
+
+// dnd
+#jstree-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+    border-right: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+#jstree-dnd {
+    line-height: 16px;
+    margin: 0;
+    padding: 4px;
+
+    .list-group-item();
+}
+
+#jstree-dnd .jstree-icon,
+#jstree-dnd .jstree-copy {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 2px 0 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+}
+
+#jstree-dnd .jstree-ok {
+    background: @brand-success;
+}
+
+#jstree-dnd .jstree-er {
+    background: @brand-danger;
+}
+
+#jstree-dnd .jstree-copy {
+    margin: 0 2px 0 2px;
+}
+
+#jstree-dnd.jstree-default .jstree-ok,
+#jstree-dnd.jstree-default .jstree-er {
+    background-image: url("32px.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#jstree-dnd.jstree-default i {
+    background: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+#jstree-dnd.jstree-default .jstree-ok {
+    background-position: -9px -71px;
+}
+
+#jstree-dnd.jstree-default .jstree-er {
+    background-position: -39px -71px;
 }

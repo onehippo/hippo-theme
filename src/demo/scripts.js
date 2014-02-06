@@ -12,7 +12,7 @@
          */
         .controller('SelectBoxCtrl', ['$scope', function ($scope) {
             console.log('Select box ctrl init!');
-
+            
             $scope.selectedValues = [];
             $scope.options = [
                 { "id": 1, "name": 'Option 1' },
