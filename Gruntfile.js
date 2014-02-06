@@ -245,7 +245,24 @@ module.exports = function (grunt) {
                     }
                 }
             }
-        }
+        },
+
+        // ngdocs
+        ngdocs: {
+            options: {
+                dest: '<%= cfg.exampleDir %>/docs',
+                scripts: ['angular.js'],
+                html5Mode: false,
+                startPage: '/api',
+                title: 'Hippo Theme'
+            },
+            
+            api: {
+                title: 'API reference',
+                src: ['src/shared/**/*.js'],
+                api: true
+            }
+        },
     });
 
     // default
@@ -273,7 +290,7 @@ module.exports = function (grunt) {
         var tasks = [
             'clean:demo',
             'build:dist',
-            'copy:demo'
+            'copy:demo',
         ];
 
         grunt.task.run(tasks);
@@ -293,7 +310,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('publish', [
         'build:demo',
-        'shell:cloneDemo', 
+        'ngdocs',
+        'shell:cloneDemo',
         'copy:toDemoRepo', 
         'shell:commitDemo', 
         'shell:pushDemo'
