@@ -581,12 +581,24 @@
                 },
                 template: '<div id="filter"></div>',
                 link: function (scope, element, attrs, treeCtrl) {
+                    var isFirstRender = true;
+
                     // watch for incoming changes of the tree data structure.
                     // rerender the tree everytime the data changes.
                     scope.$watch('data', function() {
-                        selectFirstElement(scope.data);
+                        if (isFirstRender) {
+                            console.log('set first element');
+                            selectFirstElement(scope.data);
+                        } else {
+                            console.log('don\'t set first element');
+                        }
+
                         addLevelInfo(scope.data);
                         createJsTree(scope.data, element);
+
+                        // we use this variable to mark the first item as selected
+                        // only for the first time rendering the tree
+                        isFirstRender = false;
                     }, true);
 
                     // mark the first node in the tree as selected
