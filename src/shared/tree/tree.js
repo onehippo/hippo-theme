@@ -95,7 +95,7 @@
 
                         // detect the selected node and mark as active after the tree is loaded
                         element.on('loaded.jstree', function (event) {
-                            markClickedNodeAsActive();
+                            markClickedNodeAsActive(event.target);
                         });
 
                         // execute the jsTree plugin
