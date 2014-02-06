@@ -40,7 +40,7 @@ module.exports = function (grunt) {
             dist: [ 'dist/**/*' ],
             demo: ['<%= cfg.exampleDir %>' ]
         },
-
+        
         // copy files
         copy: {
             main: {
@@ -93,6 +93,32 @@ module.exports = function (grunt) {
             }
         },
 
+        // watch
+        watch: {
+            js: {
+                options: {
+                    livereload: true
+                },
+                files: [
+                    'src/**/*.js',
+                    '!**/*.spec.js'
+                ],
+                tasks: [
+                    //'clean:demo',
+                    //'jshint',
+                    //'karma:single',
+                    'clean:dist',
+                    'copy:demo',
+                    //'less',
+                    'concat:dist',
+                    //'lintspaces:less',
+                    'uglify:dist',
+                    //'cssmin:dist',
+                    'copy:demo'
+                ]
+            }
+        },
+
         // jshint
         jshint: {
             all: [
@@ -100,7 +126,8 @@ module.exports = function (grunt) {
                 '!**/*.spec.js'
             ],
             options: {
-                'jshintrc': true
+                'jshintrc': true,
+                reporter: require('jshint-stylish')
             }
         },
 
@@ -124,6 +151,7 @@ module.exports = function (grunt) {
         connect: {
             options: {
                 port: 9000,
+                livereload: 35729,
                 hostname: '0.0.0.0'
             },
             example: {
@@ -258,7 +286,7 @@ module.exports = function (grunt) {
     });
 
     // server with example
-    grunt.registerTask('server:demo', ['build:demo', 'open', 'connect:example:keepalive']);
+    grunt.registerTask('server:demo', ['build:demo', 'open', 'connect:example', 'watch']);
 
     // test
     grunt.registerTask('test:unit', [
@@ -270,11 +298,10 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('publish', [
-        'build:demo', 
+        'build:demo',
         'shell:cloneDemo', 
         'copy:toDemoRepo', 
         'shell:commitDemo', 
         'shell:pushDemo'
     ]);
-
 };
