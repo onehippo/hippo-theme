@@ -31,10 +31,9 @@
                 },
                 template: '<div id="filter">Filter did not load.</div>',
                 link: function (scope, element, attrs, treeCtrl) {
-                    // render js tree every time the provided data structure changes
                     scope.$watch('data', function() {
                         selectFirstElement(scope.data);
-                        //addLevelInfo(scope.data);
+                        addLevelInfo(scope.data);
                         createJsTree(scope.data, element);
                     }, true);
 
@@ -58,48 +57,20 @@
                     }
 
                     function addLevelInfoToDom(tree, level) {
-                        console.log('### Add level info to DOM ###');
-
                         level = level || 1;
                         $(tree).children('li').each(function (index, item) {
-                            //console.log('Set level of: ', item);
                             $(item).attr('data-level', level);
-                            //console.log('This item has been given a data-level attribute with value ' + level + ': ', item);
                             
-                            console.log($(item).children('.jstree-children'));
-
                             $(item).children('.jstree-children').each(function (index, subTree) {
-                                console.log('~~~~~~~ Children ~~~~~~~');
                                 addLevelInfoToDom($(subTree), level + 1);
                             });
                         });
                     }
 
-                    /*
-                    <li role="treeitem" id="j2_10" class="jstree-node  jstree-open active">
-                        <i class="jstree-icon jstree-ocl"></i>
-                        <a class="jstree-anchor  jstree-clicked" href="#"><i class="jstree-icon jstree-themeicon"></i>Item A</a>
-
-                        <ul role="group" class="jstree-children" style="">
-                            <li role="treeitem" id="j2_11" class="jstree-node  jstree-leaf">
-                                <i class="jstree-icon jstree-ocl"></i>
-                                <a class="jstree-anchor" href="#"><i class="jstree-icon jstree-themeicon"></i>Item A.1</a>
-                            </li>
-                            <li role="treeitem" id="j2_12" class="jstree-node  jstree-closed">
-                                <i class="jstree-icon jstree-ocl"></i>
-                                <a class="jstree-anchor" href="#"><i class="jstree-icon jstree-themeicon"></i>Item A.2</a>
-                            </li>
-                            <li role="treeitem" id="j2_16" class="jstree-node  jstree-leaf jstree-last">
-                                <i class="jstree-icon jstree-ocl"></i>
-                                <a class="jstree-anchor" href="#"><i class="jstree-icon jstree-themeicon"></i>Item A.3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li role="treeitem" id="j2_17" class="jstree-node  jstree-closed jstree-last" data-level="1">
-                        <i class="jstree-icon jstree-ocl"></i>
-                        <a class="jstree-anchor" href="#"><i class="jstree-icon jstree-themeicon"></i>Item B</a>
-                    </li> 
-                    */
+                    function markClickedNodeAsActive(tree) {
+                        $(tree).find('.jstree-node').removeClass('active');
+                        $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
+                    }
 
                     function createJsTree(data, element) {
                         element.jstree('destroy');
@@ -107,6 +78,7 @@
                             var tree = event.target;
                             $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
                         });
+
                         element.jstree({
                             plugins : [ 'themes', 'dnd', 'crrm' ],
                             core: {
@@ -118,28 +90,23 @@
                             },
                             crrm: {
                                 move: {
-                                    always_copy: "multitree"
+                                    always_copy: 'multitree'
                                 }
                             }
                         }).on('open_node.jstree', function (event, node) {
                             addLevelInfoToDom(node.instance.element.children('ul'));
                         }).on('activate_node.jstree', function(event, node) {
-                            // remove active classes
-                            node.instance.element.find('.jstree-node').removeClass('active');
-
-                            // set active class
-                            $('#' + node.node.id, element).addClass('active');
-
-                            // trigger on select function
+                            markClickedNodeAsActive(event.target);
                             scope.onSelect({itemId: node.node.id});
                         }).on("move_node.jstree", function (event, data) {
                             // get JSON
                             var result = $.jstree.reference(element).get_json(element, {});
                             var jsonString = JSON.stringify(result);
                             addLevelInfoToDom(data.instance.element.children('ul'));
+                            markClickedNodeAsActive(event.target);
                         }).on("after_open.jstree", function (event, data) {
-                            var tree = event.target;
-                            $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
+                            // the node loses it's active class when moving inside a closed node
+                            markClickedNodeAsActive(event.target);
                         }).jstree('set_theme', 'hippo');
                     }
                 }
