@@ -563,14 +563,14 @@
 
         /**
          * @ngdoc directive
-         * @name hippo.theme:hippo.theme.tree
+         * @name hippo.theme.directive:tree
          * @restrict A
          *
          * @description
          * Tree component for the Hippo Theme. It uses [jsTree](http://www.jstree.com/) to render the tree.
          * 
-         * @param {object=} data The data to use for the Tree.
-         * @param {string&} onSelect The function to evaluate when a new node in the Tree is selected.
+         * @param {object} data The data to use for the Tree.
+         * @param {string=} onSelect The function to evaluate when a new node in the Tree is selected.
          */
         .directive('hippo.theme.tree', [function() {
             return {
