@@ -18,10 +18,17 @@
 
     angular.module('hippo.theme')
 
-        /*
-        * jstree directive
-        * via http://plnkr.co/edit/xHIc4J?p=preview
-        */
+        /**
+         * @ngdoc directive
+         * @name hippo.theme:hippo.theme.tree
+         * @restrict A
+         *
+         * @description
+         * Tree component for the Hippo Theme. It uses [jsTree](http://www.jstree.com/) to render the tree.
+         * 
+         * @param {object=} data The data to use for the Tree.
+         * @param {string&} onSelect The function to evaluate when a new node in the Tree is selected.
+         */
         .directive('hippo.theme.tree', [function() {
             return {
                 restrict: 'A',
@@ -31,18 +38,23 @@
                 },
                 template: '<div id="filter">Filter did not load.</div>',
                 link: function (scope, element, attrs, treeCtrl) {
+                    // watch for incoming changes of the tree data structure
                     scope.$watch('data', function() {
                         selectFirstElement(scope.data);
                         addLevelInfo(scope.data);
                         createJsTree(scope.data, element);
                     }, true);
 
+                    // mark the first node in the tree as selected
                     function selectFirstElement(list) {
                         var item = list[0] || {};
                         item.state = item.state || {};
                         item.state.selected = item.state.selected || true;
                     }
 
+                    // as we do not control the DOM, we use the `data-level`
+                    // attribute to handle the indentation styling of each node.
+                    // jsTree adds this attribute when we set the `li_attr` property.
                     function addLevelInfo(list, level) {
                         level = level || 1;
                         _.each(list, function (item) {
@@ -56,6 +68,8 @@
                         });
                     }
 
+                    // loop through the DOM of the tree and manually add the `data-level`
+                    // attribute to each node
                     function addLevelInfoToDom(tree, level) {
                         level = level || 1;
                         $(tree).children('li').each(function (index, item) {
