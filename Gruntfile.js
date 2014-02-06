@@ -104,16 +104,10 @@ module.exports = function (grunt) {
                     '!**/*.spec.js'
                 ],
                 tasks: [
-                    //'clean:demo',
-                    //'jshint',
-                    //'karma:single',
                     'clean:dist',
                     'copy:demo',
-                    //'less',
                     'concat:dist',
-                    //'lintspaces:less',
                     'uglify:dist',
-                    //'cssmin:dist',
                     'copy:demo'
                 ]
             }

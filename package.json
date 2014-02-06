@@ -31,7 +31,9 @@
   "devDependencies": {
     "bower": "~1.2.6",
     "grunt-shell": "~0.6.4",
-    "userhome": "~0.1.0"
+    "userhome": "~0.1.0",
+    "jshint-stylish": "~0.1.5",
+    "grunt-contrib-watch": "~0.5.3"
   },
   "engines": {
     "node": ">=0.8.0"
