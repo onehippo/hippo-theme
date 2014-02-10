@@ -142,6 +142,10 @@
             $scope.setSelected = function (itemId) {
                 console.log('New selected item id: ', itemId);
             };
+
+            $scope.nodeMoved = function (node) {
+                console.log('Tree node moved: ' + node);
+            };
         }]);
 
 })();

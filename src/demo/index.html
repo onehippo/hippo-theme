@@ -356,11 +356,12 @@
               <div class="panel panel-info">
                 <div class="panel-heading">Tree</div>
                 <div ng-controller="TreeCtrl">
-                  <div hippo.theme.tree data="treeItems" on-select="setSelected(itemId)"></div>
+                  <div hippo.theme.tree data="treeItems" on-select="setSelected(itemId)" on-move="nodeMoved(node)"></div>
                   <br>
                   <pre>&lt;div hippo.theme.tree
   data="treeItems"
-  on-select="setSelected(itemId)"&gt;
+  on-select="setSelected(itemId)"
+  on-move="nodeMoved(node)"&gt;
 &lt;/div&gt;</pre>
 <p>
 <strong>Note:</strong> example tree data
