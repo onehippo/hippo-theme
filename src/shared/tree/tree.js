@@ -141,6 +141,7 @@
 
                             // info object to return
                             var nodeMoveInfo = {
+                                id: data.node.id,
                                 prevParent: prevParent[0] || prevParent,
                                 newParent: newParent[0] || newParent,
                                 position: data.position
