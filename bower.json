@@ -21,6 +21,6 @@
     "chosen": "https://github.com/onehippo/chosen.git#96249101dc2c0f15e8e6223ad18bbebbd30290fd",
     "bootstrap-chosen": "https://github.com/alxlit/bootstrap-chosen.git",
     "hippo-plugins": "https://github.com/onehippo/hippo-plugins.git#424d4759b04c0b5c6b1945a3fd1f0b59e93ba068",
-    "jstree": "~3.0.0-beta5"
+    "jstree": "3.0.0-beta5"
   }
 }
