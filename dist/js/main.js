@@ -644,7 +644,7 @@
                     // render the jsTree using the jsTree jQuery plugin
                     function createJsTree(data, element) {
                         // remove the previously rendered tree
-                        element.jstree('destroy');
+                        element.unbind().jstree('destroy');
 
                         // detect the selected node and mark as active after the tree is loaded
                         element.on('loaded.jstree', function (event) {
