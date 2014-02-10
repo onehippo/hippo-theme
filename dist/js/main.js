@@ -571,13 +571,15 @@
          * 
          * @param {object} data The data to use for the Tree.
          * @param {string=} onSelect The function to evaluate when a new node in the Tree is selected.
+         * @param {string=} onMove The function to evaluate when a node in the Tree is moved.
          */
         .directive('hippo.theme.tree', [function() {
             return {
                 restrict: 'A',
                 scope: {
                     data: '=',
-                    onSelect: '&onSelect'
+                    onSelect: '&onSelect',
+                    onMove: '&onMove'
                 },
                 template: '<div id="filter"></div>',
                 link: function (scope, element, attrs, treeCtrl) {
@@ -587,12 +589,8 @@
                     // rerender the tree everytime the data changes.
                     scope.$watch('data', function() {
                         if (isFirstRender) {
-                            console.log('set first element');
                             selectFirstElement(scope.data);
-                        } else {
-                            console.log('don\'t set first element');
                         }
-
                         addLevelInfo(scope.data);
                         createJsTree(scope.data, element);
 
@@ -676,13 +674,23 @@
                             markClickedNodeAsActive(event.target);
                             scope.onSelect({itemId: node.node.id});
                         }).on("move_node.jstree", function (event, data) {
-                            // a node is moved to another place inside the tree
+                            // update styling manually
                             addLevelInfoToDom(data.instance.element.children('ul'));
                             markClickedNodeAsActive(event.target);
 
-                            // TODO: return the new tree structure
-                            // var result = $.jstree.reference(element).get_json(element, {});
-                            // var jsonString = JSON.stringify(result);
+                            // get info for moved node parents
+                            var prevParent = $.jstree.reference(element).get_json(data.old_parent, {});
+                            var newParent = $.jstree.reference(element).get_json(data.parent, {});
+
+                            // info object to return
+                            var nodeMoveInfo = {
+                                prevParent: prevParent[0] || prevParent,
+                                newParent: newParent[0] || newParent,
+                                position: data.position
+                            };
+
+                            // apply the scope attribute function for onmove
+                            scope.onMove({node: nodeMoveInfo});
                         }).on("after_open.jstree", function (event, data) {
                             // the node loses it's active class when moving inside a closed node
                             markClickedNodeAsActive(event.target);
