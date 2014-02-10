@@ -144,7 +144,7 @@
             };
 
             $scope.nodeMoved = function (node) {
-                console.log('Tree node moved: ' + node);
+                console.log('Tree node moved: ', node);
             };
         }]);
 
