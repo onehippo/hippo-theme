@@ -678,15 +678,11 @@
                             addLevelInfoToDom(data.instance.element.children('ul'));
                             markClickedNodeAsActive(event.target);
 
-                            // get info for moved node parents
-                            var prevParent = $.jstree.reference(element).get_json(data.old_parent, {});
-                            var newParent = $.jstree.reference(element).get_json(data.parent, {});
-
                             // info object to return
                             var nodeMoveInfo = {
                                 id: data.node.id,
-                                prevParent: prevParent[0] || prevParent,
-                                newParent: newParent[0] || newParent,
+                                prevParentId: data.old_parent,
+                                newParentId: data.parent,
                                 position: data.position
                             };
 
