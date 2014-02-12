@@ -2,5 +2,4 @@ components
 node_modules
 *.iml
 .idea
-demo
 target
