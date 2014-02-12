@@ -117,24 +117,33 @@
         .controller('TreeCtrl', ['$scope', function ($scope) {
             $scope.treeItems = [
                 {
+                    id: 'item-a',
                     text: 'Item A',
                     children: [{
+                        id: 'item-a1',
                         text: 'Item A.1'
                     }, {
+                        id: 'item-a2',
                         text: 'Item A.2',
                         children: [{
+                            id: 'item-2-1',
                             text: 'Item A.2.1'
                         }, {
+                            id: 'item-2-2',
                             text: 'Item A.2.2'
                         }, {
+                            id: 'item-2-3',
                             text: 'Item A.2.3'
                         }]
                     }, {
+                        id: 'item-a3',
                         text: 'Item A.3'
                     }]
                 }, {
+                    id: 'item-b',
                     text: 'Item B'
                 }, {
+                    id: 'item-c',
                     text: 'Item C'
                 }
             ];
