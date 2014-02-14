@@ -8143,3 +8143,83 @@ div[hippo\.theme\.map] {
 #jstree-dnd.jstree-default .jstree-er {
   background-position: -39px -71px;
 }
+.jstree-hippo li.jstree-node .jstree-icon {
+  position: absolute;
+  top: 23px;
+  z-index: 2;
+}
+.jstree-hippo li.jstree-node:hover {
+  background-color: #f7f7f7;
+}
+.jstree-hippo li.jstree-node:hover.active {
+  background-color: #f4764c;
+}
+.jstree-hippo li.jstree-node .jstree-anchor {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 0 20px 35px;
+  z-index: 1;
+  margin: 0;
+  color: #555555;
+}
+.jstree-hippo li.jstree-node .jstree-anchor:hover {
+  text-decoration: none;
+}
+.jstree-hippo li.jstree-node[data-level="1"] .jstree-anchor {
+  padding-left: 40px;
+}
+.jstree-hippo li.jstree-node[data-level="2"] .jstree-anchor {
+  padding-left: 60px;
+}
+.jstree-hippo li.jstree-node.jstree-leaf .jstree-icon {
+  z-index: 0;
+}
+.jstree-hippo li.jstree-node[data-level="15"] > .jstree-anchor {
+  padding-left: 320px;
+}
+.jstree-hippo li.jstree-node[data-level="14"] > .jstree-anchor {
+  padding-left: 300px;
+}
+.jstree-hippo li.jstree-node[data-level="13"] > .jstree-anchor {
+  padding-left: 280px;
+}
+.jstree-hippo li.jstree-node[data-level="12"] > .jstree-anchor {
+  padding-left: 260px;
+}
+.jstree-hippo li.jstree-node[data-level="11"] > .jstree-anchor {
+  padding-left: 240px;
+}
+.jstree-hippo li.jstree-node[data-level="10"] > .jstree-anchor {
+  padding-left: 220px;
+}
+.jstree-hippo li.jstree-node[data-level="9"] > .jstree-anchor {
+  padding-left: 200px;
+}
+.jstree-hippo li.jstree-node[data-level="8"] > .jstree-anchor {
+  padding-left: 180px;
+}
+.jstree-hippo li.jstree-node[data-level="7"] > .jstree-anchor {
+  padding-left: 160px;
+}
+.jstree-hippo li.jstree-node[data-level="6"] > .jstree-anchor {
+  padding-left: 140px;
+}
+.jstree-hippo li.jstree-node[data-level="5"] > .jstree-anchor {
+  padding-left: 120px;
+}
+.jstree-hippo li.jstree-node[data-level="4"] > .jstree-anchor {
+  padding-left: 100px;
+}
+.jstree-hippo li.jstree-node[data-level="3"] > .jstree-anchor {
+  padding-left: 80px;
+}
+.jstree-hippo li.jstree-node[data-level="2"] > .jstree-anchor {
+  padding-left: 60px;
+}
+.jstree-hippo li.jstree-node[data-level="1"] > .jstree-anchor {
+  padding-left: 40px;
+}
+.jstree-hippo li.jstree-node[data-level="0"] > .jstree-anchor {
+  padding-left: 20px;
+}

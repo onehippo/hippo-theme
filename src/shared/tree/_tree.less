@@ -208,3 +208,56 @@
 #jstree-dnd.jstree-default .jstree-er {
     background-position: -39px -71px;
 }
+
+.jstree-hippo li.jstree-node {
+    .jstree-icon {
+        position: absolute;
+        top: 23px;
+        z-index: 2;
+    }
+
+    &:hover {
+        background-color: @gray-lighter;
+
+        &.active {
+            background-color: @brand-primary;
+        }
+    }
+
+    .jstree-anchor {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px 0 20px 35px;
+        z-index: 1;
+        margin: 0;
+        color: @gray;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &[data-level="1"] {
+        .jstree-anchor {padding-left: 40px;}
+    }
+
+    &[data-level="2"] {
+        .jstree-anchor {padding-left: 60px;}
+    }
+
+    // leaf icons below draggable node (same z-index, as anchor is defined after icon), no need to be able to click it
+    &.jstree-leaf .jstree-icon {
+        z-index: 0;
+    }
+}
+
+// indentation loop
+@iterations-tree: 15;
+.mixin-loop-tree (@j) when (@j >= 0) {
+    .jstree-hippo li.jstree-node[data-level="@{j}"] > .jstree-anchor {
+        padding-left: @j*20px+20px;
+    }
+    .mixin-loop-tree(@j - 1);
+}
+.mixin-loop-tree(@iterations-tree);
