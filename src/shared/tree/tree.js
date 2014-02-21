@@ -24,133 +24,49 @@
          * @restrict A
          *
          * @description
-         * Tree component for the Hippo Theme. It uses [jsTree](http://www.jstree.com/) to render the tree.
-         * 
-         * @param {object} data The data to use for the Tree.
-         * @param {string=} onSelect The function to evaluate when a new node in the Tree is selected.
-         * @param {string=} onMove The function to evaluate when a node in the Tree is moved.
+         * Tree component for the Hippo Theme based on [NestedSortable](https://github.com/JimLiu/Angular-NestedSortable).
+         *
+         * @param {array} items The items to use for the Tree.
+         * @param {callbacks} The callbacks to call when a new node in the Tree is selected (TODO: describe callback names
+         * or list them explicitly as arguments and create the callbacks object internally)
          */
-        .directive('hippo.theme.tree', [function() {
+        .directive('hippo.theme.tree', ['$compile', '$templateCache', function($compile, $templateCache) {
+            $templateCache.put('hippo.theme.tree.include', ''
+                + '<div ui-nested-sortable-handle><div hippo.theme.tree.template></div></div>'
+                + '<ol ui-nested-sortable="options" ng-model="item.items">'
+                + '  <li ng-repeat="item in item.items" ui-nested-sortable-item="" ng-include="\'hippo.theme.tree.include\'"></li>'
+                + '</ol>'
+            );
+
             return {
                 restrict: 'A',
+                transclude: true,
                 scope: {
-                    data: '=',
-                    onSelect: '&onSelect',
-                    onMove: '&onMove'
+                    treeItems: '=items',
+                    options: '=callbacks'
                 },
-                template: '<div id="filter"></div>',
-                link: function (scope, element, attrs, treeCtrl) {
-                    var isFirstRender = true;
+                template: ''
+                    + '<ol ui-nested-sortable="options" ng-model="treeItems">'
+                    + '  <li ng-repeat="item in treeItems" ui-nested-sortable-item="" ng-include="\'hippo.theme.tree.include\'"></li>'
+                    + '</ol>',
+                controller: 'hippo.theme.tree.TreeCtrl'
+            };
+        }])
 
-                    // watch for incoming changes of the tree data structure.
-                    // rerender the tree everytime the data changes.
-                    scope.$watch('data', function() {
-                        if (isFirstRender) {
-                            selectFirstElement(scope.data);
-                        }
-                        addLevelInfo(scope.data);
-                        createJsTree(scope.data, element);
+        .controller('hippo.theme.tree.TreeCtrl', ['$transclude', function($transclude) {
+            this.renderTreeTemplate = $transclude;
+        }])
 
-                        // we use this variable to mark the first item as selected
-                        // only for the first time rendering the tree
-                        isFirstRender = false;
-                    }, true);
-
-                    // mark the first node in the tree as selected
-                    function selectFirstElement(list) {
-                        var item = list[0] || {};
-                        item.state = item.state || {};
-                        item.state.selected = item.state.selected || true;
-                    }
-
-                    // as we do not control the DOM, we use the `data-level`
-                    // attribute to handle the indentation styling of each node.
-                    // jsTree adds this attribute when we set the `li_attr` property.
-                    function addLevelInfo(list, level) {
-                        level = level || 1;
-                        _.each(list, function (item) {
-                            item.li_attr = {
-                                'data-level': level
-                            };
-
-                            if (item.children) {
-                                addLevelInfo(item.children, (level + 1));
-                            }
-                        });
-                    }
-
-                    // loop through the DOM of the tree and manually add the `data-level`
-                    // attribute to each node
-                    function addLevelInfoToDom(tree, level) {
-                        level = level || 1;
-                        $(tree).children('li').each(function (index, item) {
-                            $(item).attr('data-level', level);
-                            
-                            $(item).children('.jstree-children').each(function (index, subTree) {
-                                addLevelInfoToDom($(subTree), level + 1);
-                            });
-                        });
-                    }
-
-                    // add an `active` class to the selected node, so we can style it using Bootstrap
-                    function markClickedNodeAsActive(tree) {
-                        $(tree).find('.jstree-node').removeClass('active');
-                        $('.jstree-clicked', tree).closest('.jstree-node').addClass('active');
-                    }
-
-                    // render the jsTree using the jsTree jQuery plugin
-                    function createJsTree(data, element) {
-                        // remove the previously rendered tree
-                        element.unbind().jstree('destroy');
-
-                        // detect the selected node and mark as active after the tree is loaded
-                        element.on('loaded.jstree', function (event) {
-                            markClickedNodeAsActive(event.target);
-                        });
-
-                        // execute the jsTree plugin
-                        element.jstree({
-                            plugins : [ 'themes', 'dnd', 'crrm' ],
-                            core: {
-                                data: data,
-                                check_callback: true
-                            },
-                            themes: {
-                                theme: 'hippo'
-                            },
-                            crrm: {
-                                move: {
-                                    always_copy: 'multitree'
-                                }
-                            }
-                        }).on('open_node.jstree', function (event, node) {
-                            // set the indentation classes when a node gets expanded
-                            addLevelInfoToDom(node.instance.element.children('ul'));
-                        }).on('activate_node.jstree', function(event, node) {
-                            // a different node is selected / active
-                            markClickedNodeAsActive(event.target);
-                            scope.onSelect({itemId: node.node.id});
-                        }).on("move_node.jstree", function (event, data) {
-                            // update styling manually
-                            addLevelInfoToDom(data.instance.element.children('ul'));
-                            markClickedNodeAsActive(event.target);
-
-                            // info object to return
-                            var nodeMoveInfo = {
-                                id: data.node.id,
-                                prevParentId: data.old_parent,
-                                newParentId: data.parent,
-                                position: data.position
-                            };
-
-                            // apply the scope attribute function for onmove
-                            scope.onMove({node: nodeMoveInfo});
-                        }).on("after_open.jstree", function (event, data) {
-                            // the node loses it's active class when moving inside a closed node
-                            markClickedNodeAsActive(event.target);
-                        }).jstree('set_theme', 'hippo');
-                    }
+        .directive('hippo.theme.tree.template', function() {
+            return {
+                require: '^hippo.theme.tree',
+                link: function(scope, element, attrs, controller) {
+                    controller.renderTreeTemplate(scope, function(dom) {
+                        element.append(dom);
+                    });
                 }
             };
-        }]);
+        });
+
 })();
+

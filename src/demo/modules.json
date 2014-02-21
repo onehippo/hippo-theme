@@ -48,9 +48,9 @@
                   ]
                 },
                 {
-                  "component": "jstree",
+                  "component": "Angular-NestedSortable",
                   "file": [
-                    "dist/jstree.js"
+                    "dist/angular-nested-sortable.min.js"
                   ]
                 }
             ]

@@ -114,39 +114,62 @@
          * @description
          * Controller for the Tree example.
          */
-        .controller('TreeCtrl', ['$scope', function ($scope) {
+        .controller('TreeCtrl', ['$scope', '$log', function ($scope, $log) {
             $scope.treeItems = [
                 {
                     id: 'item-a',
                     text: 'Item A',
-                    children: [{
-                        id: 'item-a1',
-                        text: 'Item A.1'
-                    }, {
-                        id: 'item-a2',
-                        text: 'Item A.2',
-                        children: [{
-                            id: 'item-2-1',
-                            text: 'Item A.2.1'
-                        }, {
-                            id: 'item-2-2',
-                            text: 'Item A.2.2'
-                        }, {
-                            id: 'item-2-3',
-                            text: 'Item A.2.3'
-                        }]
-                    }, {
-                        id: 'item-a3',
-                        text: 'Item A.3'
-                    }]
-                }, {
+                    items: [
+                        {
+                            id: 'item-a1',
+                            text: 'Item A.1'
+                        },
+                        {
+                            id: 'item-a2',
+                            text: 'Item A.2',
+                            items: [
+                                {
+                                    id: 'item-2-1',
+                                    text: 'Item A.2.1'
+                                },
+                                {
+                                    id: 'item-2-2',
+                                    text: 'Item A.2.2'
+                                },
+                                {
+                                    id: 'item-2-3',
+                                    text: 'Item A.2.3'
+                                }
+                            ]
+                        },
+                        {
+                            id: 'item-a3',
+                            text: 'Item A.3'
+                        }
+                    ]
+                },
+                {
                     id: 'item-b',
                     text: 'Item B'
-                }, {
+                },
+                {
                     id: 'item-c',
                     text: 'Item C'
                 }
             ];
+
+            $scope.callbacks = {
+                accept: function(data, sourceItemScope, targetScope) {
+                    $log.info("source sub levels: " + sourceItemScope.maxSubLevels());
+                    $log.info("target level: " + targetScope.level());
+                    $log.info("parent data: ", targetScope.parentItemScope() ? targetScope.parentItemScope().itemData() : "null");
+                    return true;
+                },
+                orderChanged: function(scope, sourceItem, sourceIndex, destIndex) {
+                    var info = "Item [" + sourceItem.title + "] changed order from " + sourceIndex + " to " + destIndex;
+                    $log.info(info);
+                },
+            };
 
             $scope.setSelected = function (itemId) {
                 console.log('New selected item id: ', itemId);

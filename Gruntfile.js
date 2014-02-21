@@ -95,13 +95,37 @@ module.exports = function (grunt) {
 
         // watch
         watch: {
+            less: {
+                options: {
+                    livereload: true
+                },
+                files: [
+                    'src/**/*.less'
+                ],
+                tasks: [
+                    'less',
+                    'lintspaces:less',
+                    'copy:demo'
+                ]
+            },
+            html: {
+                options: {
+                    livereload: true
+                },
+                files: [
+                    'src/**/*.html',
+                ],
+                tasks: [
+                    'copy:demo'
+                ]
+            },
             js: {
                 options: {
                     livereload: true
                 },
                 files: [
                     'src/**/*.js',
-                    '!**/*.spec.js'
+                    '!**/*.spec.js',
                 ],
                 tasks: [
                     'clean:dist',

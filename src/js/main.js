@@ -1,5 +1,5 @@
 (function() {
     "use strict";
 
-    angular.module('hippo.theme', ['hippo.plugins']);
+    angular.module('hippo.theme', ['hippo.plugins', 'ui.nestedSortable']);
 })();

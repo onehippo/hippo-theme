@@ -1,263 +1,60 @@
-.jstree-hippo {
-    .jstree-container-ul {
-        li.active {
-            background-color: @list-group-active-bg;
-        }
-
-        li.active:first-child {
-            border: none;
-            border-top: 1px solid #f4764c;
-
-            & > ul > li.jstree-node {
-                border-right-width: 1px;
-                border-left-width: 1px;
-            }
-        }
-
-        .jstree-children li:first-child {
-            border-top-right-radius: 0;
-            border-top-left-radius: 0;
-        }
-
-        & > li li.jstree-node {
-            border-right-width: 0;
-            border-left-width: 0;
-
-            &:last-child {
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
-            }
-        }
-    }
-
-    & > ul {
-        .list-group();
-        background: white;
-    }
-
-    li {
-        .list-group-item();
-        background: white;
-        padding-left: 0;
-        padding-right: 0;
-
-        padding-top: 0;
-        padding-bottom: 0;
-
-        .jstree-anchor {
-            display: inline-block;
-            margin: 20px 0;
-        }
-
-        i.jstree-icon {
-            color: @list-group-link-color;
-        }
-
-        &.jstree-node {
-            color: @list-group-link-color;
-
-            &.active {
-                & > i, 
-                & > a {
-                    color: @list-group-active-color;
-                }
-            }
-        }
-    }
-
-    .jstree-children {
-        padding: 0;
-        margin: 0;
-        position: relative;
-    }
-
-    .jstree-anchor:focus {
-        outline: none;
-        text-decoration: none;
-    }
-}
-
-// indentation loop
-@iterations: 15;
-.mixin-loop (@i) when (@i >= 0) {
-    .jstree-hippo li.jstree-node[data-level="@{i}"] {
-        & > i {
-            margin-left: @i*20px;
-        }
-    }
-    .mixin-loop(@i - 1);
-}
-.mixin-loop(@iterations);
-
-// icons
-.jstree-hippo {
-    .jstree-icon {
-        // duplicate of font awesome implementation
-        display: inline-block;
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    .jstree-node {
-        .jstree-ocl {
-            width: 15px;
-        }
-
-        &.jstree-closed {
-            & > .jstree-ocl {
-                cursor: pointer;
-
-                &:before {
-                    content: @fa-var-caret-right;
-                }
-            }
-        }
-
-        &.jstree-open {
-            padding-bottom: 0;
-            border-bottom: none;
-
-            & > .jstree-ocl {
-                cursor: pointer;
-
-                &:before {
-                    content: @fa-var-caret-down;
-                }
-            }
-        }
-
-        &.jstree-leaf {
-            &  > .jstree-ocl {
-                &:before {
-                    content: @fa-var-file-text;
-                }
-            }
-        }
-    }
-}
-
-// dnd
-#jstree-marker {
-    position: absolute;
-    top: 0;
-    left: 0;
+.nestedSortable-list {
+    display: block;
+    position: relative;
     margin: 0;
-    margin-top: 0;
     padding: 0;
-    border-right: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid;
-    width: 0;
-    height: 0;
-    font-size: 0;
-    line-height: 0;
+    list-style: none;
+
+    .nestedSortable-list {
+        padding-left: 30px;
+    }
 }
 
-#jstree-dnd {
-    line-height: 16px;
+.nestedSortable-item, .nestedSortable-placeholder {
+    display: block;
+    position: relative;
     margin: 0;
-    padding: 4px;
-
-    .list-group-item();
+    padding: 0;
+    min-height: 20px;
+    line-height: 20px;
 }
 
-#jstree-dnd .jstree-icon,
-#jstree-dnd .jstree-copy {
-    display: inline-block;
+.nestedSortable-handle {
+    cursor: move;
+    display: block;
+    min-height: 38px;
+    margin: 5px 0;
+    padding: 8px 12px;
+    background: #f8faff;
+    border: 1px solid #dae2ea;
+    color: #7c9eb2;
     text-decoration: none;
-    margin: 0 2px 0 0;
+    font-weight: bold;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    :hover {
+        color: #438eb9;
+        background: #f4f6f7;
+        border-color: #dce2e8;
+    }
+}
+
+.nestedSortable-placeholder {
+    margin: 5px 0;
     padding: 0;
-    width: 16px;
-    height: 16px;
+    min-height: 30px;
+    background: #f0f9ff;
+    border: 2px dashed #bed2db;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-#jstree-dnd .jstree-ok {
-    background: @brand-success;
+.nestedSortable-drag {
+    position: absolute;
+    pointer-events: none;
+    z-index: 999;
+    opacity: .8;
 }
-
-#jstree-dnd .jstree-er {
-    background: @brand-danger;
-}
-
-#jstree-dnd .jstree-copy {
-    margin: 0 2px 0 2px;
-}
-
-#jstree-dnd.jstree-default .jstree-ok,
-#jstree-dnd.jstree-default .jstree-er {
-    background-image: url("32px.png");
-    background-repeat: no-repeat;
-    background-color: transparent;
-}
-
-#jstree-dnd.jstree-default i {
-    background: transparent;
-    width: 16px;
-    height: 16px;
-}
-
-#jstree-dnd.jstree-default .jstree-ok {
-    background-position: -9px -71px;
-}
-
-#jstree-dnd.jstree-default .jstree-er {
-    background-position: -39px -71px;
-}
-
-.jstree-hippo li.jstree-node {
-    .jstree-icon {
-        position: absolute;
-        top: 23px;
-        z-index: 2;
-    }
-
-    &:hover {
-        background-color: @gray-lighter;
-
-        &.active {
-            background-color: @brand-primary;
-        }
-    }
-
-    .jstree-anchor {
-        position: relative;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 20px 0 20px 35px;
-        z-index: 1;
-        margin: 0;
-        color: @gray;
-
-        &:hover {
-            text-decoration: none;
-        }
-    }
-
-    &[data-level="1"] {
-        .jstree-anchor {padding-left: 40px;}
-    }
-
-    &[data-level="2"] {
-        .jstree-anchor {padding-left: 60px;}
-    }
-
-    // leaf icons below draggable node (same z-index, as anchor is defined after icon), no need to be able to click it
-    &.jstree-leaf .jstree-icon {
-        z-index: 0;
-    }
-}
-
-// indentation loop
-@iterations-tree: 15;
-.mixin-loop-tree (@j) when (@j >= 0) {
-    .jstree-hippo li.jstree-node[data-level="@{j}"] > .jstree-anchor {
-        padding-left: @j*20px+20px;
-    }
-    .mixin-loop-tree(@j - 1);
-}
-.mixin-loop-tree(@iterations-tree);
