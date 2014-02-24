@@ -27,7 +27,7 @@
          * Tree component for the Hippo Theme based on [NestedSortable](https://github.com/JimLiu/Angular-NestedSortable).
          *
          * @param {array} items The items to use for the Tree. Each item is an object with `title` (String) and `items` (Array) property.
-         * @param {callbacks} The callbacks to call when a new node in the Tree is selected (TODO: describe callback names
+         * @param {callbacks} callbacks The callbacks to call when a new node in the Tree is selected (TODO: describe callback names
          * or list them explicitly as arguments and create the callbacks object internally)
          */
         .directive('hippo.theme.tree', ['$compile', '$templateCache', function($compile, $templateCache) {
