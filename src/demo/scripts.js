@@ -172,30 +172,31 @@
 
             $scope.callbacks = {
                 accept: function(data, sourceItemScope, targetScope) {
-//                    $log.info("source sub levels: " + sourceItemScope.maxSubLevels());
-//                    $log.info("target level: " + targetScope.level());
-//                    $log.info("parent data: ", targetScope.parentItemScope() ? targetScope.parentItemScope().itemData() : "null");
+                    $log.info("source sub levels: " + sourceItemScope.maxSubLevels());
+                    $log.info("target level: " + targetScope.level());
+                    $log.info("parent data: ", targetScope.parentItemScope() ? targetScope.parentItemScope().itemData() : "null");
                     return true;
                 },
+
                 orderChanged: function(scope, sourceItem, sourceIndex, destIndex) {
                     var info = "Item [" + sourceItem.title + "] changed order from " + sourceIndex + " to " + destIndex;
-//                    $log.info(info);
+                    $log.info(info);
                 },
 
                 itemRemoved: function(scope, sourceItem, sourceIndex) {
-//                    var info = "Item [" + sourceItem.title + "] removed";
-//                    $log.info(info);
+                    var info = "Item [" + sourceItem.title + "] removed";
+                    $log.info(info);
                 },
 
                 itemAdded: function(scope, sourceItem, destIndex) {
-//                    var info = "Item [" + sourceItem.title + "] added to " + destIndex;
-//                    $log.info(info);
+                    var info = "Item [" + sourceItem.title + "] added to " + destIndex;
+                    $log.info(info);
                 },
 
                 itemMoved: function(sourceScope, sourceItem, sourceIndex, destScope, destIndex) {
-//                    var parent = destScope.parentItemScope() ? destScope.parentItemScope().itemData() : {};
-//                    var info = "Item [" + sourceItem.title + "] moved inside " + parent.title + " with index " + destIndex;
-//                    $log.info(info);
+                    var parent = destScope.parentItemScope() ? destScope.parentItemScope().itemData() : {};
+                    var info = "Item [" + sourceItem.title + "] moved inside " + parent.title + " with index " + destIndex;
+                    $log.info(info);
                 }
             };
         }]);
