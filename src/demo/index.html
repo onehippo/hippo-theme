@@ -358,27 +358,27 @@
                 <div ng-controller="TreeCtrl">
                   <div hippo.theme.tree items="treeItems" callbacks="callbacks">{{ item.text }}</div>
                   <br>
-                  <pre ng-non-bindable>&lt;div hippo.theme.tree items="treeItems"&gt;
-  {{ item.text }}
-&lt;/div&gt;</pre>
+                  <pre ng-non-bindable>&lt;div hippo.theme.tree items="treeItems" callbacks="callbacks"&gt;
+    {{ item.text }}
+&lt;/div&gt;
+</pre>
 <p>
 <strong>Note:</strong> example tree data
 <pre>$scope.treeItems = [
-  {
-    text: 'First item'
-  },
-  {
-    text: 'Second item',
+{
+    id: 1,
+    text: 'Item 1',
     items: [
-      {
-        text: 'Nested item'
-      },
-      {
-        text: 'Another Nested item'
-      }
+        {
+            id: 11,
+            text: 'Item 1.1'
+        }
     ]
-  }
-];</pre>
+}, {
+    id: 2,
+    text: 'Item 2',
+    items: []
+}];</pre>
 </p>
                 </div>
               </div>
