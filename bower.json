@@ -25,6 +25,9 @@
   },
   "resolutions": {
     "angular": "1.2.14-build.2302+sha.f827d64",
-    "angular-mocks": "1.2.14-build.2302+sha.f827d64"
+    "angular-mocks": "1.2.14-build.2302+sha.f827d64",
+    "es5-shim": "2.3.0",
+    "ExplorerCanvas": "1735174401034391aa632957b17ce4a167613a83",
+    "js-detect-ie": "241cd48c867c6c296fa772874b04bdaa15b81cb1"
   }
 }
