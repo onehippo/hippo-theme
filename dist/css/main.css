@@ -7923,32 +7923,40 @@ div[hippo\.theme\.map] {
   min-height: 20px;
   line-height: 20px;
 }
+.nestedSortable-item.active > .nestedSortable-handle,
+.nestedSortable-placeholder.active > .nestedSortable-handle {
+  background: #f4764c;
+  border-color: #f4764c;
+  color: #ffffff;
+  margin-bottom: 1px;
+}
+.nestedSortable-item.active > .nestedSortable-handle:hover,
+.nestedSortable-placeholder.active > .nestedSortable-handle:hover {
+  background: #f4764c;
+}
 .nestedSortable-handle {
   cursor: move;
   display: block;
   min-height: 38px;
-  margin: 5px 0;
+  margin: -1px 0 0 0;
   padding: 8px 12px;
-  background: #f8faff;
-  border: 1px solid #dae2ea;
-  color: #7c9eb2;
+  color: #2c2c2d;
   text-decoration: none;
-  font-weight: bold;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #dddddd;
 }
-.nestedSortable-handle :hover {
-  color: #438eb9;
-  background: #f4f6f7;
-  border-color: #dce2e8;
+.nestedSortable-handle:hover {
+  background: #f5f5f5;
 }
 .nestedSortable-placeholder {
-  margin: 5px 0;
+  margin: 0 0 1px 0;
   padding: 0;
   min-height: 30px;
-  background: #f0f9ff;
-  border: 2px dashed #bed2db;
+  background: #fcf8e3;
+  border: 3px dashed #faebcc;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
