@@ -152,17 +152,18 @@ module.exports = function (grunt) {
         // testing with karma
         karma: {
             options: {
-                //logLevel: 'debug',
                 configFile: 'karma.conf.js',
                 autoWatch: true
             },
 
             single: {
-                singleRun: true
+                singleRun: true,
+                browsers: ['PhantomJS', 'Firefox']
             },
 
             continuous: {
-                singleRun: false
+                singleRun: false,
+                browsers: ['PhantomJS']
             }
         },
 

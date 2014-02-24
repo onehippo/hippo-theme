@@ -54,7 +54,6 @@ module.exports = function (config) {
         logLevel: config.LOG_INFO,
 
         port: 9876,
-        browsers: ['PhantomJS'],
         reporters: 'dots'
     });
 };
