@@ -356,10 +356,10 @@
               <div class="panel panel-info">
                 <div class="panel-heading">Tree</div>
                 <div ng-controller="TreeCtrl">
-                  <div hippo.theme.tree items="treeItems" callbacks="callbacks">{{ item.text }}</div>
+                  <div hippo.theme.tree items="treeItems" callbacks="callbacks">{{ item.title }}</div>
                   <br>
                   <pre ng-non-bindable>&lt;div hippo.theme.tree items="treeItems" callbacks="callbacks"&gt;
-    {{ item.text }}
+    {{ item.title }}
 &lt;/div&gt;
 </pre>
 <p>
@@ -367,16 +367,16 @@
 <pre>$scope.treeItems = [
 {
     id: 1,
-    text: 'Item 1',
+    title: 'Item 1',
     items: [
         {
             id: 11,
-            text: 'Item 1.1'
+            title: 'Item 1.1'
         }
     ]
 }, {
     id: 2,
-    text: 'Item 2',
+    title: 'Item 2',
     items: []
 }];</pre>
 </p>

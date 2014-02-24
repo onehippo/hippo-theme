@@ -118,43 +118,43 @@
             $scope.treeItems = [
                 {
                     id: 'item-a',
-                    text: 'Item A',
+                    title: 'Item A',
                     items: [
                         {
                             id: 'item-a1',
-                            text: 'Item A.1'
+                            title: 'Item A.1'
                         },
                         {
                             id: 'item-a2',
-                            text: 'Item A.2',
+                            title: 'Item A.2',
                             items: [
                                 {
                                     id: 'item-2-1',
-                                    text: 'Item A.2.1'
+                                    title: 'Item A.2.1'
                                 },
                                 {
                                     id: 'item-2-2',
-                                    text: 'Item A.2.2'
+                                    title: 'Item A.2.2'
                                 },
                                 {
                                     id: 'item-2-3',
-                                    text: 'Item A.2.3'
+                                    title: 'Item A.2.3'
                                 }
                             ]
                         },
                         {
                             id: 'item-a3',
-                            text: 'Item A.3'
+                            title: 'Item A.3'
                         }
                     ]
                 },
                 {
                     id: 'item-b',
-                    text: 'Item B'
+                    title: 'Item B'
                 },
                 {
                     id: 'item-c',
-                    text: 'Item C'
+                    title: 'Item C'
                 }
             ];
 
@@ -169,14 +169,22 @@
                     var info = "Item [" + sourceItem.title + "] changed order from " + sourceIndex + " to " + destIndex;
                     $log.info(info);
                 },
-            };
 
-            $scope.setSelected = function (itemId) {
-                console.log('New selected item id: ', itemId);
-            };
+                itemRemoved: function(scope, sourceItem, sourceIndex) {
+                    var info = "Item [" + sourceItem.title + "] removed";
+                    $log.info(info);
+                },
 
-            $scope.nodeMoved = function (node) {
-                console.log('Tree node moved: ', node);
+                itemAdded: function(scope, sourceItem, destIndex) {
+                    var info = "Item [" + sourceItem.title + "] added to " + destIndex;
+                    $log.info(info);
+                },
+
+                itemMoved: function(sourceScope, sourceItem, sourceIndex, destScope, destIndex) {
+                    var parent = destScope.parentItemScope() ? destScope.parentItemScope().itemData() : {};
+                    var info = "Item [" + sourceItem.title + "] moved inside " + parent.title + " with index " + destIndex;
+                    $log.info(info);
+                }
             };
         }]);
 
