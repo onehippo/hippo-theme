@@ -44,6 +44,11 @@
         #icons .row {
             overflow: hidden;
         }
+
+        /* Components */
+        #tree-component h4 {
+            margin-top: 20px;
+        }
     </style>
 
     <!-- IE Detector -->
@@ -324,7 +329,7 @@
             </div>
         </div>
 
-        <div id="angularjs-compontents">
+        <div id="angularjs-components">
           <div class="row">
             <div class="col-lg-12">
               <h2>AngularJS components</h2>
@@ -355,7 +360,7 @@
             <div class="col-lg-12">
               <div class="panel panel-info">
                 <div class="panel-heading">Tree</div>
-                <div ng-controller="TreeCtrl">
+                <div ng-controller="TreeCtrl" id="tree-component">
                   <div hippo.theme.tree items="treeItems" callbacks="callbacks">{{ item.title }}</div>
                   <br>
                   <pre ng-non-bindable>&lt;div hippo.theme.tree items="treeItems" callbacks="callbacks"&gt;
@@ -363,7 +368,7 @@
 &lt;/div&gt;
 </pre>
 <p>
-<strong>Note:</strong> example tree data
+<h4>Example tree data</h4>
 <pre>$scope.treeItems = [
 {
     id: 1,
@@ -379,6 +384,14 @@
     title: 'Item 2',
     items: []
 }];</pre>
+<h4>Available callbacks</h4>
+<pre>$scope.callbacks = {
+    accept: function(data, sourceItemScope, targetScope) {},
+    orderChanged: function(scope, sourceItem, sourceIndex, destIndex) {},
+    itemRemoved: function(scope, sourceItem, sourceIndex) {},
+    itemAdded: function(scope, sourceItem, destIndex) {},
+    itemMoved: function(sourceScope, sourceItem, sourceIndex, destScope, destIndex) {}
+};</pre>
 </p>
                 </div>
               </div>
