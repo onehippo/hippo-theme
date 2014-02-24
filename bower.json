@@ -6,7 +6,7 @@
     "angular": "1.2.14-build.2302+sha.f827d64",
     "angular-bootstrap": "0.6.0",
     "angular-mocks": "1.2.14-build.2302+sha.f827d64",
-    "Angular-NestedSortable": "https://github.com/JimLiu/Angular-NestedSortable.git#11579ac496c2a34047e661d86c2ad5ae66652d49",
+    "Angular-NestedSortable": "1.2.4",
     "bootstrap": "3.1.0",
     "bootstrap-chosen": "https://github.com/alxlit/bootstrap-chosen.git#972b807f0c39d06c07c5b8a44bd67a70091b1ea3",
     "chosen": "https://github.com/onehippo/chosen.git#96249101dc2c0f15e8e6223ad18bbebbd30290fd",
@@ -25,9 +25,6 @@
   },
   "resolutions": {
     "angular": "1.2.14-build.2302+sha.f827d64",
-    "angular-mocks": "1.2.14-build.2302+sha.f827d64",
-    "es5-shim": "2.3.0",
-    "ExplorerCanvas": "1735174401034391aa632957b17ce4a167613a83",
-    "js-detect-ie": "241cd48c867c6c296fa772874b04bdaa15b81cb1"
+    "angular-mocks": "1.2.14-build.2302+sha.f827d64"
   }
 }
