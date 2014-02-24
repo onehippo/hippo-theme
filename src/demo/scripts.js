@@ -154,7 +154,13 @@
                 },
                 {
                     id: 'item-c',
-                    title: 'Item C'
+                    title: 'Item C',
+                    items: [
+                        {
+                            id: 'item-c1',
+                            title: 'Item C.1'
+                        }
+                    ]
                 }
             ];
 
