@@ -33,7 +33,7 @@
         .directive('hippo.theme.tree', ['$compile', '$templateCache', function($compile, $templateCache) {
             $templateCache.put('hippo.theme.tree.include', ''
                 + '<div ui-nested-sortable-handle><div hippo.theme.tree.template></div></div>'
-                + '<ol ui-nested-sortable="options" ng-model="item.items" data-ng-show="item.items.length > 0">'
+                + '<ol ui-nested-sortable="options" ng-model="item.items">'
                 + '  <li ng-repeat="item in item.items" ui-nested-sortable-item="" ng-include="\'hippo.theme.tree.include\'"></li>'
                 + '</ol>'
             );
@@ -46,7 +46,7 @@
                     options: '=callbacks'
                 },
                 template: ''
-                    + '<ol ui-nested-sortable="options" ng-model="treeItems" data-ng-show="treeItems.length > 0">'
+                    + '<ol ui-nested-sortable="options" ng-model="treeItems">'
                     + '  <li ng-repeat="item in treeItems" ui-nested-sortable-item="" ng-include="\'hippo.theme.tree.include\'"></li>'
                     + '</ol>',
                 controller: 'hippo.theme.tree.TreeCtrl'
