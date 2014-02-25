@@ -170,6 +170,8 @@
                 }
             ];
 
+            $scope.selectedItem = {};
+
             $scope.callbacks = {
                 accept: function(data, sourceItemScope, targetScope) {
                     $log.info("source sub levels: " + sourceItemScope.maxSubLevels());
@@ -197,6 +199,12 @@
                     var parent = destScope.parentItemScope() ? destScope.parentItemScope().itemData() : {};
                     var info = "Item [" + sourceItem.title + "] moved inside " + parent.title + " with index " + destIndex;
                     $log.info(info);
+                },
+
+                itemClicked: function (sourceItem) {
+                    $scope.$apply(function () {
+                        $scope.selectedItem = sourceItem;
+                    });
                 }
             };
         }]);
