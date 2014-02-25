@@ -27,6 +27,7 @@
          * Tree component for the Hippo Theme based on [NestedSortable](https://github.com/JimLiu/Angular-NestedSortable).
          *
          * @param {array} items The items to use for the Tree. Each item is an object with `title` (String) and `items` (Array) property.
+         * @param {Object} selectedItemId The id of the item that should be marked as selected.
          * @param {callbacks} callbacks The callbacks to call when a new node in the Tree is selected (TODO: describe callback names
          * or list them explicitly as arguments and create the callbacks object internally)
          */
@@ -34,7 +35,7 @@
             $templateCache.put('hippo.theme.tree.include', ''
                 + '<div ui-nested-sortable-handle><div hippo.theme.tree.template></div></div>'
                 + '<ol ui-nested-sortable="options" ng-model="item.items">'
-                + '  <li ng-repeat="item in item.items" ui-nested-sortable-item="" ng-include="\'hippo.theme.tree.include\'"></li>'
+                + '  <li ng-repeat="item in item.items" ui-nested-sortable-item="" ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"></li>'
                 + '</ol>'
             );
 
@@ -43,11 +44,12 @@
                 transclude: true,
                 scope: {
                     treeItems: '=items',
-                    options: '=callbacks'
+                    options: '=callbacks',
+                    selectedItemId: '='
                 },
                 template: ''
                     + '<ol ui-nested-sortable="options" ng-model="treeItems">'
-                    + '  <li ng-repeat="item in treeItems" ui-nested-sortable-item="" ng-include="\'hippo.theme.tree.include\'"></li>'
+                    + '  <li ng-repeat="item in treeItems" ui-nested-sortable-item="" ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"></li>'
                     + '</ol>',
                 controller: 'hippo.theme.tree.TreeCtrl'
             };
