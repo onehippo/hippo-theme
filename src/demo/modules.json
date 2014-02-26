@@ -16,7 +16,7 @@
                 },
                 {
                     "component": "respond",
-                    "file": "respond.src.js",
+                    "file": "/dest/respond.src.js",
                     "browser": "IE <= 8"
                 },
                 {
