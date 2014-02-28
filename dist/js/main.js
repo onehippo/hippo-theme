@@ -571,8 +571,8 @@
          *
          * @param {array} items The items to use for the Tree. Each item is an object with `title` (String) and `items` (Array) property.
          * @param {Object} selectedItemId The id of the item that should be marked as selected.
-         * @param {callbacks} callbacks The callbacks to call when a new node in the Tree is selected (TODO: describe callback names
-         * or list them explicitly as arguments and create the callbacks object internally)
+         * @param {callbacks} callbacks The available callbacks. A list of all available callbacks is available at
+         * the [Hippo Theme demo](http://onehippo.github.io/hippo-theme-demo/) page.
          */
         .directive('hippo.theme.tree', ['$compile', '$templateCache', function($compile, $templateCache) {
             $templateCache.put('hippo.theme.tree.include', ''
