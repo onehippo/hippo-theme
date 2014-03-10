@@ -10,13 +10,15 @@
          *
          * @description
          * Renders a confirmation dialog that displays a message and provides a confirm- and cancel button.
+         * It has two states, s-visible and s-invisible, which are represented by CSS-classes.
+         * The CSS property `top` will animate when the value is changed in CSS.
          */
         .directive('hippo.theme.confirmationDialog', [function () {
             return {
                 restrict: 'A',
                 transclude: true,
                 template: '' +
-                    '<div class="feedback alert alert-warning clearfix" data-ng-class="{\'feedback-show\': show}">' +
+                    '<div class="alert alert-warning confirmation-dialog" data-ng-class="{\'s-visible\': show, \'s-invisible\': !show}">' +
                         '<div ng-transclude></div>' +
                         '<p class="text-right buttons">' +
                             '<button class="btn btn-default" data-ng-click="performConfirmation()">' +
