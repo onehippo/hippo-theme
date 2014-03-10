@@ -26,6 +26,7 @@
         .directive('hippo.theme.confirmationDialog', [function () {
             return {
                 restrict: 'A',
+                replace: true,
                 transclude: true,
                 template: '' +
                     '<div class="alert alert-warning confirmation-dialog" data-ng-class="{\'s-visible\': show, \'s-invisible\': !show}">' +
