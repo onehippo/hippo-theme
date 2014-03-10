@@ -9,6 +9,7 @@
          * @restrict A
          * @scope
          *
+         * @param {string} confirmIcon The name of a FontAwesome icon to show, without the fa-* prefix
          * @param {string} confirmLabel The label to show for the confirmation button
          * @param {string} cancelLabel The label to show for the cancel link
          * @param {expression} performConfirmation Function to call when the confirm button is clicked.
@@ -33,7 +34,7 @@
                         '<div ng-transclude></div>' +
                         '<p class="text-right buttons">' +
                             '<button class="btn btn-default" data-ng-click="performConfirmation()">' +
-                                '<i class="fa fa-trash-o"></i> {{ confirmLabel }}' +
+                                '<i class="fa fa-{{ confirmIcon }}" data-ng-show="confirmIcon"></i> {{ confirmLabel }}' +
                             '</button>' +
                             '&nbsp;&nbsp;' +
                             '<button class="btn btn-link" data-ng-click="performCancel()">' +
@@ -42,6 +43,7 @@
                         '</p>' +
                     '</div>',
                 scope: {
+                    confirmIcon: '@',
                     confirmLabel: '@',
                     cancelLabel: '@',
                     performConfirmation: '&',
