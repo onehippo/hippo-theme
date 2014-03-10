@@ -16,7 +16,6 @@ describe('Hippo Theme confirmation dialog', function() {
         }));
 
         it('should exist', function() {
-            console.log(elm);
             expect(elm).toHaveClass('confirmation-dialog');
         });
     });
