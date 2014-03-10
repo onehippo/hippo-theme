@@ -207,6 +207,29 @@
                     });
                 }
             };
+        }])
+
+        /**
+         * @ngdoc object
+         * @name hippo.theme.example:ConfirmationDialogCtrl
+         *
+         * @description
+         * Controller for the Comfirmation Dialog example.
+         */
+        .controller('ConfirmationDialogCtrl', ['$scope', '$log', function ($scope, $log) {
+            $scope.confirmation = {
+                show: true
+            };
+
+            $scope.confirmationClicked = function () {
+                $log.info('Confirmation button clicked');
+                $scope.confirmation.show = true;
+            };
+
+            $scope.cancelClicked = function () {
+                $log.info('Cancel button clicked');
+                $scope.confirmation.show = false;
+            };
         }]);
 
 })();

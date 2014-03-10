@@ -31,7 +31,7 @@ module.exports = function (config) {
             hippo.bowerComponents + '/hippo-plugins/dist/js/main.js',
 
             'src/js/main.js',
-            'src/shared/**/*.js',
+            'src/shared/**/*.js'
         ],
 
         // generate js files from html templates to expose them during testing
