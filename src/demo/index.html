@@ -486,7 +486,7 @@ ng-repeat="item in items"&gt;
         </div>
 
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-6">
                 <div class="panel panel-info">
                     <div class="panel-heading">Confirmation Dialog</div>
                     <div ng-controller="ConfirmationDialogCtrl">
@@ -496,15 +496,28 @@ ng-repeat="item in items"&gt;
                              confirm-label="Confirm"
                              cancel-label="Cancel"
                              show="confirmation.show">
+                            <p><strong>Confirmation dialog title</strong></p>
                             <p>
                                 Confirmation dialog message.
                             </p>
                         </div>
+                        <br>
+<pre>&lt;div hippo.theme.confirmation-dialog
+  perform-comfirmation="confirmationClicked()"
+  perform-cancel="cancelClicked()"
+  confirm-label="Confirm"
+  cancel-label="Cancel"
+  show="confirmation.show"&gt;
+    &lt;p&gt;&lt;strong&gt;Confirmation dialog title&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;
+        Confirmation dialog message.
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="panel panel-info">
                     <div class="panel-heading">Placeholder</div>
                 </div>
