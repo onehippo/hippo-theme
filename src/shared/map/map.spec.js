@@ -30,33 +30,31 @@ describe('Hippo Theme map', function () {
                 if (elm.find('.gm-style').length > 0 || counter > 100) {
                     done = true;
                     clearInterval(timer);
+
+                    // TODO: in order to move the 'it' block under beforeEach, we
+                    // should support asynchronous events with Jasmine 2.0
+                    it('should exist', function () {
+                        expect(elm.find('div').filter(function () {
+                            var element = angular.element(this);
+                            if (element.find('div').length > 0) {
+                                return false;
+                            }
+
+                            var text = element.text();
+                            try {
+                                var value = parseInt(text);
+                                if (value == 2) {
+                                    return true;
+                                }
+                            } catch (e) {
+                                // not an integer
+                            }
+                            return false;
+                        }).length).toBe(1);
+                    });
                 }
                 counter++;
             }, 1500);
-
-            waitsFor(function () {
-                return done;
-            });
         }));
-
-        it('should exist', function () {
-            expect(elm.find('div').filter(function () {
-                var element = angular.element(this);
-                if (element.find('div').length > 0) {
-                    return false;
-                }
-
-                var text = element.text();
-                try {
-                    var value = parseInt(text);
-                    if (value == 2) {
-                        return true;
-                    }
-                } catch (e) {
-                    // not an integer
-                }
-                return false;
-            }).length).toBe(1);
-        });
     });
 });
