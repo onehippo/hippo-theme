@@ -7,12 +7,28 @@
 @import "@{chosenPath}/bootstrap-chosen";
 
 // Overrides
-div.chosen-container {
-    ul.chosen-choices {
+.chosen-container {
+    .chosen-choices, .chosen-single {
         border-radius: @chosen-border-radius;
     }
 
-    a.search-choice-close {
+    .search-choice-close {
         cursor: pointer;
     }
+}
+
+.chosen-container-single {
+    .chosen-single {
+        background-image: none;
+    }
+}
+
+.chosen-container-single, .chosen-container-active.chosen-with-drop {
+    .chosen-single {
+        background-color: #ffffff;
+    }
+}
+
+.chosen-container-single .chosen-default {
+    color: #ccd1d8;
 }
