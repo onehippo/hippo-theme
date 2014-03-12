@@ -16,9 +16,6 @@
 @bootstrapPath: "@{vendorsPath}/bootstrap";
 @bootstrapLessPath: "@{bootstrapPath}/less";
 
-// Font Awesome
-@import "_font-awesome";
-
 // Core variables and mixins
 @import "@{bootstrapLessPath}/variables.less";
 @import "@{bootstrapLessPath}/mixins.less";
@@ -26,6 +23,10 @@
 // Variable overrides
 @import "_variables";
 @import "_mixins";
+
+// Exteral components that use LESS
+@import "_font-awesome";
+@import "_bootstrap-chosen";
 
 // Reset
 @import "@{bootstrapLessPath}/normalize.less";
