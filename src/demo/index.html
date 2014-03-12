@@ -418,9 +418,17 @@
               <div class="panel panel-info">
                 <div class="panel-heading">Select Box</div>
                 <div ng-controller="SelectBoxCtrl">
-                    <select hippo.theme.select-box ng-model="selectedValues" no-results-text="'Could not find any options'" ng-options="option.name for option in options" multiple="multiple" data-placeholder="{{ placeholder }}"></select>
+                    <div class="form-group has-feedback has-success">
+                        <label class="control-label">Valid Select Box with multiple values</label>
+                        <select hippo.theme.select-box ng-model="selectedValues" no-results-text="'Could not find any options'" ng-options="option.name for option in options" data-placeholder="{{ placeholder }}"></select>
+                        <span class="form-control-feedback fa fa-check"></span>
+                    </div>
 
-                    <select hippo.theme.select-box ng-model="selectedValues" no-results-text="'Could not find any options'" ng-options="option.name for option in options" data-placeholder="{{ placeholder }}"></select>
+                    <div class="form-group has-feedback has-error">
+                        <label class="control-label">Invalid Select Box with a single value</label>
+                        <select hippo.theme.select-box ng-model="selectedValues" no-results-text="'Could not find any options'" ng-options="option.name for option in options" multiple="multiple" data-placeholder="{{ placeholder }}"></select>
+                        <span class="form-control-feedback fa fa-times"></span>
+                    </div>
                 </div>
                 <br>
                 <pre>&lt;select hippo.theme.select-box

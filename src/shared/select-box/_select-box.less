@@ -1,11 +1,3 @@
-// Paths
-@chosenPath: "@{vendorsPath}/bootstrap-chosen";
-
-// Default theme
-@import "@{chosenPath}/bootstrap-chosen-variables";
-@chosen-sprite-path: '/hippo-theme-demo/components/bootstrap-chosen/chosen-sprite.png';
-@import "@{chosenPath}/bootstrap-chosen";
-
 // Overrides
 .chosen-container {
     .chosen-choices, .chosen-single {
@@ -18,17 +10,31 @@
 }
 
 .chosen-container-single {
-    .chosen-single {
-        background-image: none;
-    }
+    .chosen-single {background-image: none}
+    .chosen-default {color: #ccd1d8}
 }
 
 .chosen-container-single, .chosen-container-active.chosen-with-drop {
-    .chosen-single {
-        background-color: #ffffff;
+    .chosen-single {background-color: #ffffff}
+}
+
+.has-success {
+    .chosen-single, .chosen-choices {
+        border-color: @state-success-text;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     }
 }
 
-.chosen-container-single .chosen-default {
-    color: #ccd1d8;
+.has-error {
+    .chosen-single, .chosen-choices {
+        border-color: @state-danger-text;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    }
+}
+
+.has-warning {
+    .chosen-single, .chosen-choices {
+        border-color: @state-warning-text;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    }
 }
