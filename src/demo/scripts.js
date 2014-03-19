@@ -170,7 +170,7 @@
                 }
             ];
 
-            $scope.selectedItem = {};
+            $scope.selectedItem = $scope.treeItems[0].items[0];
 
             $scope.callbacks = {
                 accept: function(data, sourceItemScope, targetScope) {
