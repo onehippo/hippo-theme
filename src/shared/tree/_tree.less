@@ -21,19 +21,10 @@
 
     &.active {
         & > .nestedSortable-handle {
-            background: @list-group-active-bg;
-            border-color: @list-group-active-border;
-            color: @list-group-active-text-color;
+            background: #fedc89;
+            border-color: @gray-darker;
             z-index: 2;
             position: relative;
-
-            &:hover {
-                background: @list-group-active-bg;
-            }
-
-            a {
-                color: @list-group-active-text-color;
-            }
         }
     }
 }
@@ -43,13 +34,13 @@
     display: block;
     margin: -1px 0 0 0;
     padding: 8px 12px;
-    color: @text-color;
+    color: #000000;
     text-decoration: none;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     background: @list-group-bg;
-    border: 1px solid @list-group-border;
+    border: 1px solid @gray-darker;
     line-height: 1.5em;
 
     &:hover {
