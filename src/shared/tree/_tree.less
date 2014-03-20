@@ -18,6 +18,8 @@
     padding: 0;
     min-height: 20px;
     line-height: 20px;
+    margin: 4px;
+    margin-right: 0;
 
     &.active {
         & > .nestedSortable-handle {
@@ -42,6 +44,7 @@
     background: @list-group-bg;
     border: 1px solid @gray-light;
     line-height: 1.5em;
+    border-radius: @border-radius-base;
 
     &:hover {
         background: @list-group-hover-bg;
@@ -49,7 +52,7 @@
 }
 
 .nestedSortable-placeholder {
-    margin: 0 0 -2px 0;
+    margin: 4px 0 -2px 4px;
     padding: 0;
     min-height: 30px;
     background: @state-warning-bg;
