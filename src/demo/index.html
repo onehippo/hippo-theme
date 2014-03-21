@@ -317,7 +317,8 @@
             <div ng-controller="SelectBoxCtrl">
                 <div class="form-group has-feedback has-success">
                     <label class="control-label">Valid Select Box with a single value</label>
-                    <select hippo.theme.select-box ng-model="selectedValues"
+                    <select hippo.theme.select-box
+                            ng-model="singleSelectedValue"
                             no-results-text="'Could not find any options'"
                             ng-options="option.name for option in options"
                             data-placeholder="{{ placeholder }}"></select>
