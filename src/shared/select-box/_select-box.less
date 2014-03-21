@@ -1,17 +1,17 @@
 // Overrides
 .chosen-container {
-    .chosen-choices, .chosen-single {
-        border-radius: @chosen-border-radius;
-    }
-
-    .search-choice-close {
-        cursor: pointer;
-    }
+    .chosen-choices, .chosen-single { border-radius: @chosen-border-radius }
+    .search-choice-close { cursor: pointer }
+    .chosen-results { color: @gray-dark }
 }
 
 .chosen-container-single {
-    .chosen-single {background-image: none}
-    .chosen-default {color: #ccd1d8}
+    .chosen-single {
+        background-image: none;
+        color: @gray-dark;
+    }
+
+    .chosen-default {color: @gray-light}
 }
 
 .chosen-container-single, .chosen-container-active.chosen-with-drop {
