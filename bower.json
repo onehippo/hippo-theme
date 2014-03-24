@@ -15,7 +15,7 @@
     "fastclick": "0.6.11",
     "flot": "0.8.1",
     "font-awesome": "4.0.3",
-    "hippo-plugins": "https://github.com/onehippo/hippo-plugins.git#f8b2d5af58d3344da011a2aeaebd8d91a1011c61",
+    "hippo-plugins": "https://github.com/onehippo/hippo-plugins.git#aac715544f0de04c9983130777bf1afc5f837311",
     "html5shiv": "3.7.0",
     "jasmine-jquery": "2.0.3",
     "jquery": "1.10.2",
