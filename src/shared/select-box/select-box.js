@@ -12,14 +12,19 @@
      * Converts a plain HTML select input field to a jQuery Chosen select box
      */
     .directive('hippo.theme.selectBox', [
-        function() {
+        '$log',
+        function($log) {
             return {
                 restrict: 'A',
                 link: function(scope, element, attrs) {
-                    scope.$watch('options', function() {
+                    if (!angular.isDefined(attrs.options)) {
+                        $log.warn("No 'data-options' attribute specified for hippo.theme.selectBox. Changes to the ng-options attribute value will not be reflected in the UI.");
+                    }
+
+                    scope.$watch(attrs.options, function() {
                         element.trigger('chosen:updated');
                         element.trigger('chosen:updated.chosen');
-                    });
+                    }, true);
 
                     element.chosen({
                         width: "100%",

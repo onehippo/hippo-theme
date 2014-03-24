@@ -320,7 +320,8 @@
                     <select hippo.theme.select-box
                             ng-model="singleSelectedValue"
                             no-results-text="{{ noResultsText }}"
-                            ng-options="option.name for option in options"
+                            ng-options="option.name for option in values"
+                            data-options="values"
                             data-placeholder="{{ placeholder }}"></select>
                     <span class="form-control-feedback fa fa-check"></span>
                 </div>
@@ -329,7 +330,8 @@
                     <label class="control-label">Invalid Select Box with multiple values</label>
                     <select hippo.theme.select-box ng-model="selectedValues"
                             no-results-text="{{ noResultsText }}"
-                            ng-options="option.name for option in options" multiple="multiple"
+                            ng-options="option.name for option in values" multiple="multiple"
+                            data-options="values"
                             data-placeholder="{{ placeholder }}"></select>
                     <span class="form-control-feedback fa fa-times"></span>
                 </div>
@@ -338,12 +340,13 @@
             <pre>&lt;select hippo.theme.select-box
   multiple="multiple" 
   ng-model="selectedValues" 
-  ng-options="o.name for o in options" 
+  ng-options="v.name for v in values"
+  data-options="values"
   data-placeholder=""&gt;
 &lt;/select&gt;</pre>
 
             <p>
-                <strong>Note:</strong> the options to show must be inside a variable named `options`. If you use a different scope variable name, the list will always be empty.
+                <strong>Note:</strong> without the 'options' variable, changes to the ng-options attribute value will not be reflected in the UI.
             </p>
         </div>
     </div>

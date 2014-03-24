@@ -11,7 +11,7 @@
          * Controller for the Select Box example.
          */
         .controller('SelectBoxCtrl', ['$scope', function ($scope) {
-            $scope.options = [
+            $scope.values = [
                 { "id": 1, "name": 'Option 1' },
                 { "id": 2, "name": 'Option 2' },
                 { "id": 3, "name": 'Option 3' },
@@ -19,7 +19,8 @@
                 { "id": 5, "name": 'Option 5' }
             ];
 
-            $scope.singleSelectedValue = $scope.options[0];
+            $scope.singleSelectedValue = $scope.values[0];
+
             $scope.selectedValues = [];
 
             $scope.placeholder = 'Choose an option';
