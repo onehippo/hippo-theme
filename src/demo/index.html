@@ -335,12 +335,16 @@
                 </div>
             </div>
             <br>
-                <pre>&lt;select hippo.theme.select-box
+            <pre>&lt;select hippo.theme.select-box
   multiple="multiple" 
   ng-model="selectedValues" 
   ng-options="o.name for o in options" 
   data-placeholder=""&gt;
 &lt;/select&gt;</pre>
+
+            <p>
+                <strong>Note:</strong> the options to show must be inside a variable named `options`. If you use an other scope variable name, the list will always be empty.
+            </p>
         </div>
     </div>
 
