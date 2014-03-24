@@ -22,7 +22,8 @@
             $scope.singleSelectedValue = $scope.options[0];
             $scope.selectedValues = [];
 
-            $scope.placeholder = "Choose an option";
+            $scope.placeholder = 'Choose an option';
+            $scope.noResultsText = 'No results for';
         }])
 
         /**

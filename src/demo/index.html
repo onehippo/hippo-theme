@@ -319,7 +319,7 @@
                     <label class="control-label">Valid Select Box with a single value</label>
                     <select hippo.theme.select-box
                             ng-model="singleSelectedValue"
-                            no-results-text="'Could not find any options'"
+                            no-results-text="{{ noResultsText }}"
                             ng-options="option.name for option in options"
                             data-placeholder="{{ placeholder }}"></select>
                     <span class="form-control-feedback fa fa-check"></span>
@@ -328,7 +328,7 @@
                 <div class="form-group has-feedback has-error">
                     <label class="control-label">Invalid Select Box with multiple values</label>
                     <select hippo.theme.select-box ng-model="selectedValues"
-                            no-results-text="'Could not find any options'"
+                            no-results-text="{{ noResultsText }}"
                             ng-options="option.name for option in options" multiple="multiple"
                             data-placeholder="{{ placeholder }}"></select>
                     <span class="form-control-feedback fa fa-times"></span>
@@ -343,7 +343,7 @@
 &lt;/select&gt;</pre>
 
             <p>
-                <strong>Note:</strong> the options to show must be inside a variable named `options`. If you use an other scope variable name, the list will always be empty.
+                <strong>Note:</strong> the options to show must be inside a variable named `options`. If you use a different scope variable name, the list will always be empty.
             </p>
         </div>
     </div>
