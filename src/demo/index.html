@@ -339,10 +339,11 @@
             <br>
             <pre>&lt;select hippo.theme.select-box
   multiple="multiple" 
-  ng-model="selectedValues" 
+  ng-model="selectedValues"
   ng-options="v.name for v in values"
-  data-options="values"
-  data-placeholder=""&gt;
+  options="values"
+  no-results-text="No results found for"
+  placeholder="Please select an item"&gt;
 &lt;/select&gt;</pre>
 
             <p>
