@@ -34,7 +34,7 @@
                 },
                 {
                     "component": "chosen",
-                    "file": ["public/chosen.jquery.js"]
+                    "file": ["chosen.jquery.js"]
                 },
                 {
                     "component": "underscore",
