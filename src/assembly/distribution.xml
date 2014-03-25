@@ -26,6 +26,9 @@
     <file>
       <source>bower.json</source>
     </file>
+    <file>
+      <source>LICENSE</source>
+    </file>
   </files>
   <fileSets>
     <fileSet>

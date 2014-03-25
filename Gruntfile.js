@@ -206,6 +206,9 @@ module.exports = function (grunt) {
         },
 
         concat: {
+            options: {
+              stripBanners: true
+            },
             dist: {
                 src: [
                     'src/js/main.js',
@@ -225,6 +228,9 @@ module.exports = function (grunt) {
         },
 
         uglify: {
+            options: {
+                preserveComments: 'some'
+            },
             dist: {
                 files: {
                     'dist/js/main.min.js': ['dist/js/main.js']
