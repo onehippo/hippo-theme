@@ -36,10 +36,19 @@
                         $log.warn("No 'data-options' attribute specified for hippo.theme.selectBox. Changes to the ng-options attribute value will not be reflected in the UI.");
                     }
 
+                    // watch options
                     scope.$watch(attrs.options, function() {
                         element.trigger('chosen:updated');
                         element.trigger('chosen:updated.chosen');
                     }, true);
+
+                    // watch selected option
+                    if (attrs.ngModel) {
+                        scope.$watch(attrs.ngModel, function() {
+                            element.trigger('chosen:updated');
+                            element.trigger('chosen:updated.chosen');
+                        }, true);
+                    }
 
                     element.chosen({
                         width: "100%",
