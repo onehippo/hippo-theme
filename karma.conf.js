@@ -69,6 +69,10 @@ module.exports = function (config) {
         logLevel: config.LOG_INFO,
 
         port: 9876,
-        reporters: 'dots'
+        reporters: ['dots', 'junit'],
+
+        junitReporter: {
+            outputFile: 'target/test-results.xml'
+        }
     });
 };
