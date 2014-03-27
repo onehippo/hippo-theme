@@ -52,6 +52,7 @@ module.exports = function (grunt) {
 
         // clean target (distribution) folder
         clean: {
+            bower: [ 'components/**' ],
             dist: [ 'dist/**/*' ],
             demo: ['<%= cfg.exampleDir %>' ]
         },
@@ -313,49 +314,50 @@ module.exports = function (grunt) {
     });
 
     // default
-    grunt.registerTask('default', ['build:demo']);
+    grunt.registerTask('default', [
+        'build:demo',
+    ]);
 
     // build dist
-    grunt.registerTask('build:dist', function (target) {
-        var tasks = [
-            'jshint',
-            'karma:single',
-            'clean:dist',
-            'copy',
-            'less',
-            'concat:dist',
-            'lintspaces:less',
-            'uglify:dist',
-            'cssmin:dist'
-        ];
-
-        grunt.task.run(tasks);
-    });
+    grunt.registerTask('build:dist', 'Build the distribution', [
+        'jshint',
+        'clean:dist',
+        'copy',
+        'less',
+        'concat:dist',
+        'lintspaces:less',
+        'uglify:dist',
+        'cssmin:dist'
+    ]);
 
     // build demo
-    grunt.registerTask('build:demo', function (target) {
-        var tasks = [
-            'clean:demo',
-            'build:dist',
-            'copy:demo'
-        ];
-
-        grunt.task.run(tasks);
-    });
+    grunt.registerTask('build:demo', 'Build and test the demo', [
+        'clean:demo',
+        'build:dist',
+        'test',
+        'copy:demo'
+    ]);
 
     // server with example
-    grunt.registerTask('server:demo', ['build:demo', 'ngdocs', 'open', 'connect:example', 'watch']);
+    grunt.registerTask('server:demo', 'Build, test, and show the demo continuously', [
+        'build:demo',
+        'ngdocs',
+        'open',
+        'connect:example',
+        'watch'
+    ]);
 
     // test
-    grunt.registerTask('test:unit', [
+    grunt.registerTask('test', 'Test the source code', [
         'karma:single'
     ]);
 
-    grunt.registerTask('test:unit:continuous', [
+    grunt.registerTask('test:continuous', 'Test the source code continuously', [
         'karma:continuous'
     ]);
 
-    grunt.registerTask('publish', [
+    // publish
+    grunt.registerTask('publish', 'Publish the demo online', [
         'build:demo',
         'ngdocs',
         'shell:cloneDemo',

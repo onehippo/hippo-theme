@@ -41,9 +41,9 @@ The build version is located in the `demo` directory. After building you can pub
     $ grunt build:demo
 
 ####Run tests
-The tests need to pass in order to generate a build.
+The tests need to pass in order to build the demo.
 
-    $ grunt test:unit
+    $ grunt test
 
 ####Setup server
 The browser will show the demo website which shows all available compontents for the theme.
