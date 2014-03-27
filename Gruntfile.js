@@ -174,7 +174,7 @@ module.exports = function (grunt) {
 
             single: {
                 singleRun: true,
-                browsers: ['PhantomJS', 'Firefox']
+                browsers: ['PhantomJS']
             },
 
             continuous: {
