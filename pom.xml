@@ -107,7 +107,7 @@
         <executions>
           <execution>
             <id>dist-assembly</id>
-            <phase>validate</phase>
+            <phase>package</phase>
             <goals>
               <goal>single</goal>
             </goals>
@@ -144,7 +144,7 @@
       </build>
     </profile>
     <profile>
-      <id>clean-bower</id>
+      <id>grunt-clean</id>
       <activation>
         <file>
           <exists>node_modules/grunt</exists>
@@ -158,12 +158,12 @@
             <version>${maven.plugin.exec.version}</version>
             <executions>
               <execution>
-                <id>clean-bower</id>
+                <id>grunt-clean</id>
                 <phase>clean</phase>
                 <goals><goal>exec</goal></goals>
                 <configuration>
                   <executable>grunt</executable>
-                  <commandlineArgs>clean:bower</commandlineArgs>
+                  <commandlineArgs>clean</commandlineArgs>
                 </configuration>
               </execution>
             </executions>
