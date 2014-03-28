@@ -25,6 +25,7 @@
 
   <name>Hippo Theme</name>
   <description>Hippo Bootstrap Theme</description>
+  <groupId>org.onehippo.cms7.frontend</groupId>
   <artifactId>hippo-theme</artifactId>
   <version>1.01.00-SNAPSHOT</version>
   <packaging>pom</packaging>
