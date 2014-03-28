@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "angular": "1.2.14-build.2302+sha.f827d64",
+    "angular": "1.2.15",
     "angular-bootstrap": "0.6.0",
-    "angular-mocks": "1.2.14-build.2302+sha.f827d64",
+    "angular-mocks": "1.2.15",
     "Angular-NestedSortable": "1.2.7",
     "bootstrap": "3.1.0",
     "bootstrap-chosen": "https://github.com/alxlit/bootstrap-chosen.git#972b807f0c39d06c07c5b8a44bd67a70091b1ea3",
@@ -24,8 +24,6 @@
     "underscore": "1.5.2"
   },
   "resolutions": {
-    "angular": "1.2.14-build.2302+sha.f827d64",
-    "angular-mocks": "1.2.14-build.2302+sha.f827d64",
     "jasmine-jquery": "2.0.3",
     "es5-shim": "d24a08dfe81e0eda3d5e9f3b859d63c1da05aba7"
   }
