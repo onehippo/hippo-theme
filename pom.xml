@@ -110,7 +110,7 @@
             </goals>
             <configuration>
               <descriptors>
-                <descriptor>${basedir}/src/assembly/distribution.xml</descriptor>
+                <descriptor>${basedir}/maven-distribution.xml</descriptor>
               </descriptors>
             </configuration>
           </execution>
