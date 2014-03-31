@@ -29,6 +29,9 @@
     <file>
       <source>LICENSE</source>
     </file>
+    <file>
+      <source>NOTICE</source>
+    </file>
   </files>
   <fileSets>
     <fileSet>
