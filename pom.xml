@@ -30,10 +30,6 @@
   <version>1.01.00-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <properties>
-    <maven.plugin.exec.version>1.2.1</maven.plugin.exec.version>
-  </properties>
-
   <repositories>
     <repository>
       <id>hippo-maven2</id>
