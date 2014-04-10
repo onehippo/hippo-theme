@@ -46,7 +46,7 @@
 
   <scm>
     <connection>scm:git:git://github.com/onehippo/hippo-theme.git</connection>
-    <developerConnection>scm:git:git://github.com/onehippo/hippo-theme.git</developerConnection>
+    <developerConnection>scm:git:git@github.com/onehippo/hippo-theme.git</developerConnection>
     <url>scm:git:git://github.com/onehippo/hippo-theme.git</url>
     <tag>HEAD</tag>
   </scm>
