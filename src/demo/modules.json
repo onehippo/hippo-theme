@@ -48,9 +48,9 @@
                   ]
                 },
                 {
-                  "component": "Angular-NestedSortable",
+                  "component": "angular-ui-tree",
                   "file": [
-                    "dist/angular-nested-sortable.min.js"
+                    "dist/angular-ui-tree.min.js"
                   ]
                 }
             ]

@@ -33,9 +33,11 @@
          */
         .directive('hippo.theme.tree', ['$compile', '$templateCache', function($compile, $templateCache) {
             $templateCache.put('hippo.theme.tree.include', ''
-                + '<div ui-nested-sortable-handle><div hippo.theme.tree.template></div></div>'
-                + '<ol ui-nested-sortable="options" ng-model="item.items">'
-                + '  <li ng-repeat="item in item.items" ui-nested-sortable-item="" ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"></li>'
+                + '<div ui-tree-handle>'
+                + '  <div hippo.theme.tree.template></div>'
+                + '</div>'
+                + '<ol ui-tree-nodes ng-model="item.items">'
+                + '  <li ng-repeat="item in item.items" ui-tree-node ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"></li>'
                 + '</ol>'
             );
 
@@ -48,9 +50,11 @@
                     selectedItemId: '='
                 },
                 template: ''
-                    + '<ol ui-nested-sortable="options" ng-model="treeItems">'
-                    + '  <li ng-repeat="item in treeItems" ui-nested-sortable-item="" ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"></li>'
-                    + '</ol>',
+                    + '<div ui-tree="options">'
+                    + '  <ol ui-tree-nodes ng-model="treeItems">'
+                    + '    <li ng-repeat="item in treeItems" ui-tree-node ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"></li>'
+                    + '  </ol>'
+                    + '</div>',
                 controller: 'hippo.theme.tree.TreeCtrl'
             };
         }])

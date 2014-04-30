@@ -193,38 +193,30 @@
             $scope.selectedItem = $scope.treeItems[0].items[0];
 
             $scope.callbacks = {
-                accept: function(data, sourceItemScope, targetScope) {
-                    $log.info("source sub levels: " + sourceItemScope.maxSubLevels());
-                    $log.info("target level: " + targetScope.level());
-                    $log.info("parent data: ", targetScope.parentItemScope() ? targetScope.parentItemScope().itemData() : "null");
-                    return true;
+                accept: function(sourceNodeScope, destNodesScope, destIndex) {
+                    return destNodesScope && !destNodesScope.nodrop;
                 },
 
-                orderChanged: function(scope, sourceItem, sourceIndex, destIndex) {
-                    var info = "Item [" + sourceItem.title + "] changed order from " + sourceIndex + " to " + destIndex;
-                    $log.info(info);
+                dragStart: function(event) {
+                    var sourceItem = event.source.nodeScope.$modelValue;
+                    $log.info('start dragging ' + sourceItem.title);
+                    $scope.selectedItem = sourceItem;
                 },
 
-                itemRemoved: function(scope, sourceItem, sourceIndex) {
-                    var info = "Item [" + sourceItem.title + "] removed";
-                    $log.info(info);
+                dragStop: function(event) {
+                    var sourceItem = event.source.nodeScope.$modelValue;
+                    $log.info('stop dragging ' + sourceItem.title);
                 },
 
-                itemAdded: function(scope, sourceItem, destIndex) {
-                    var info = "Item [" + sourceItem.title + "] added to " + destIndex;
-                    $log.info(info);
-                },
-
-                itemMoved: function(sourceScope, sourceItem, sourceIndex, destScope, destIndex) {
-                    var parent = destScope.parentItemScope() ? destScope.parentItemScope().itemData() : {};
-                    var info = "Item [" + sourceItem.title + "] moved inside " + parent.title + " with index " + destIndex;
-                    $log.info(info);
-                },
-
-                itemClicked: function (sourceItem) {
-                    $scope.$apply(function () {
-                        $scope.selectedItem = sourceItem;
-                    });
+                dropped: function(event) {
+                    var source = event.source,
+                            dest = event.dest;
+                    if (source.nodeScope && dest.nodesScope) {
+                        var sourceItem = source.nodeScope.$modelValue;
+                        var destItem = dest.nodesScope.$nodeScope ? dest.nodesScope.$nodeScope.$modelValue : {title: 'root'};
+                        var destIndex = dest.index;
+                        $log.info('dropped ' + sourceItem.title + ' into ' + destItem.title + ' at index ' + destIndex);
+                    }
                 }
             };
         }])

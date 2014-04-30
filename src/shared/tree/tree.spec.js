@@ -57,7 +57,8 @@ describe('tree', function () {
     function createTree() {
         $compile(element)(scope);
         scope.$digest();
-        return element.find('> ol.nestedSortable-list');
+        //return element.find('> ol.nestedSortable-list');
+        return element.find('div.angular-ui-tree > ol.angular-ui-tree-nodes');
     }
 
     it('should be created', function () {

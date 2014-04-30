@@ -42,7 +42,7 @@ module.exports = function (config) {
             hippo.bowerComponents + '/angular-bootstrap/**/*.js',
             hippo.bowerComponents + '/js-detect-ie/detect-ie.js',
             hippo.bowerComponents + '/underscore/underscore.js',
-            hippo.bowerComponents + '/Angular-NestedSortable/dist/angular-nested-sortable.js',
+            hippo.bowerComponents + '/angular-ui-tree/dist/angular-ui-tree.js',
             hippo.bowerComponents + '/hippo-plugins/dist/js/main.js',
 
             'src/js/main.js',
