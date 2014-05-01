@@ -36,7 +36,7 @@
                 + '<div ui-tree-handle>'
                 + '  <div hippo.theme.tree.template></div>'
                 + '</div>'
-                + '<ol ui-tree-nodes ng-model="item.items">'
+                + '<ol ui-tree-nodes ng-model="item.items" ng-show="!collapsed">'
                 + '  <li ng-repeat="item in item.items" ui-tree-node ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"></li>'
                 + '</ol>'
             );
