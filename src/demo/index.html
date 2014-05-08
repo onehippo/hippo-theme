@@ -295,9 +295,10 @@
             <div ng-controller="TreeCtrl" id="tree-component">
                 <div hippo.theme.tree items="treeItems" callbacks="callbacks" class="hippo-tree"
                      selected-item-id="selectedItem.id">
-                    <a class="btn btn-default btn-xs" data-nodrag data-ng-click="toggle(this)" data-ng-hide="childNodes().length === 0">
-                        <span class="fa" data-ng-class="{'fa-minus-square': !collapsed, 'fa-plus-square': collapsed}"></span>
+                    <a class="btn btn-link btn-xs" data-nodrag data-ng-click="toggle(this)" data-ng-hide="childNodes().length === 0">
+                        <span class="fa" data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"></span>
                     </a>
+                    <div class="spacer" data-ng-hide="childNodes().length !== 0">&nbsp;</div>
                     {{ item.title }}
                 </div>
                 <br>

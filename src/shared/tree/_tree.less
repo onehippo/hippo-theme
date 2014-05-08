@@ -1,4 +1,5 @@
 /*
+/*
  * Copyright 2014 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,12 +30,10 @@
 .angular-ui-tree-node, .angular-ui-tree-placeholder {
     display: block;
     position: relative;
-    margin: 0;
     padding: 0;
     min-height: 20px;
     line-height: 20px;
-    margin: 4px;
-    margin-right: 0;
+    margin: 3px 0 3px 3px;
 
     &.active {
         & > .angular-ui-tree-handle {
@@ -49,8 +48,7 @@
 .angular-ui-tree-handle {
     cursor: move;
     display: block;
-    margin: -1px 0 0 0;
-    padding: 8px 12px;
+    padding: 4px;
     color: #000000;
     text-decoration: none;
     -webkit-box-sizing: border-box;
@@ -60,9 +58,28 @@
     border: 1px solid @gray-light;
     line-height: 1.5em;
     border-radius: @border-radius-base;
+    font-size: 14px;
+    height: 30px;
 
     &:hover {
         background: @list-group-hover-bg;
+    }
+
+    .btn-xs {
+        color: @gray-darker;
+        width: 19px;
+        height: 20px;
+        padding-top: 0;
+        padding-bottom: 0;
+        .fa {
+            margin-top: -1px;
+            font-size: 18px;
+        }
+    }
+
+    .spacer {
+        display: inline-block;
+        width: 2px;
     }
 }
 
@@ -89,3 +106,4 @@
     box-sizing: border-box;
     margin: -3px 0 0 -4px;
 }
+
