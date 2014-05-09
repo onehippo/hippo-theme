@@ -295,26 +295,35 @@
             <div ng-controller="TreeCtrl" id="tree-component">
                 <div hippo.theme.tree items="treeItems" callbacks="callbacks" class="hippo-tree"
                      selected-item-id="selectedItem.id">
-                    <a class="btn btn-link btn-xs" data-nodrag data-ng-click="toggle(this)" data-ng-hide="childNodes().length === 0">
+                    <a class="btn btn-link btn-xs" data-nodrag data-ng-click="toggleItem()" data-ng-hide="childNodes().length === 0">
                         <span class="fa" data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"></span>
                     </a>
                     <div class="spacer" data-ng-hide="childNodes().length !== 0">&nbsp;</div>
                     {{ item.title }}
                 </div>
                 <br>
-                  <pre ng-non-bindable>&lt;div hippo.theme.tree
-    items="treeItems"
-    callbacks="callbacks"
-    selected-item-id="selectedItem.id"&gt;
-    {{ item.title }}
+<pre ng-non-bindable>&lt;div hippo.theme.tree
+     items="treeItems"
+     callbacks="callbacks"
+     selected-item-id="selectedItem.id"&gt;
+     &lt;a class="btn btn-link btn-xs" data-nodrag
+        data-ng-click="toggleItem()"
+        data-ng-hide="childNodes().length === 0"&gt;
+        &lt;span class="fa" data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"&gt;&lt;/span&gt;
+     &lt;/a&gt;
+     {{ item.title }}
 &lt;/div&gt;
 </pre>
+                <p>
+                    <strong>Note:</strong> toggleItem() will keep the collapsed states of your model and ui-tree in sync.
+                </p>
                 <p>
                 <h4>Example tree data</h4>
 <pre>$scope.treeItems = [
 {
     id: 1,
     title: 'Item 1',
+    collapsed: true
     items: [
         {
             id: 11,
@@ -328,12 +337,11 @@
 }];</pre>
                 <h4>Available callbacks</h4>
 <pre>$scope.callbacks = {
-    accept: function(data, sourceItemScope, targetScope) {},
-    orderChanged: function(scope, sourceItem, sourceIndex, destIndex) {},
-    itemRemoved: function(scope, sourceItem, sourceIndex) {},
-    itemAdded: function(scope, sourceItem, destIndex) {},
-    itemMoved: function(sourceScope, sourceItem, sourceIndex, destScope, destIndex) {},
-    itemClicked: function (sourceItem) {}
+    accept: function(sourceNodeScope, destNodesScope, destIndex) {},
+    dropped: function(event) {},
+    dragStart: function(event) {},
+    dragMove: function(event) {},
+    dragStop: function(event) {}
 };</pre>
                 </p>
             </div>

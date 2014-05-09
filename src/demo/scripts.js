@@ -181,6 +181,7 @@
                 {
                     id: 'item-c',
                     title: 'Item C',
+                    collapsed: true,
                     items: [
                         {
                             id: 'item-c1',

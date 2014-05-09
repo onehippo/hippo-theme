@@ -32,6 +32,7 @@ describe('tree', function () {
                     title: 'Item 1.1'
                 }, {
                     title: 'Item 1.2',
+                    collapsed: true,
                     items: [{
                             title: 'Item 1.2.1'
                         }, {

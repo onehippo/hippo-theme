@@ -37,7 +37,8 @@
                 + '  <div hippo.theme.tree.template></div>'
                 + '</div>'
                 + '<ol ui-tree-nodes ng-model="item.items" ng-show="!collapsed">'
-                + '  <li ng-repeat="item in item.items" ui-tree-node ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"></li>'
+                + '  <li ng-repeat="item in item.items" ui-tree-node ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"'
+                + '      data-collapsed="item.collapsed"></li>'
                 + '</ol>'
             );
 
@@ -50,17 +51,46 @@
                     selectedItemId: '='
                 },
                 template: ''
-                    + '<div ui-tree="options">'
+                    + '<div id="uiTreeId" ui-tree="options">'
                     + '  <ol ui-tree-nodes ng-model="treeItems">'
-                    + '    <li ng-repeat="item in treeItems" ui-tree-node ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"></li>'
+                    + '    <li ng-repeat="item in treeItems" ui-tree-node ng-include="\'hippo.theme.tree.include\'" data-ng-class="{active: selectedItemId === item.id}"'
+                    + '        data-collapsed="item.collapsed"></li>'
                     + '  </ol>'
                     + '</div>',
                 controller: 'hippo.theme.tree.TreeCtrl'
             };
         }])
 
-        .controller('hippo.theme.tree.TreeCtrl', ['$transclude', function($transclude) {
+        .controller('hippo.theme.tree.TreeCtrl', ['$transclude', '$scope', function($transclude, $scope) {
             this.renderTreeTemplate = $transclude;
+
+            function collectNodes(items, map) {
+                _.each(items, function(item) {
+                    map[item.id] = item;
+                    collectNodes(item.items, map);
+                });
+                return map;
+            }
+
+            function copyCollapsedState(srcNodes, targetNodes) {
+                _.each(srcNodes, function(srcNode) {
+                    var targetNode = targetNodes[srcNode.id];
+                    if (targetNode) {
+                        targetNode.collapsed = srcNode.collapsed;
+                    }
+                });
+            }
+
+            $scope.toggleItem = function() {
+                this.toggle();
+                this.$modelValue.collapsed = !this.$modelValue.collapsed;
+            };
+
+            $scope.$watch('treeItems', function(newItems, oldItems) {
+                var oldNodes = collectNodes(oldItems, {}),
+                    newNodes = collectNodes(newItems, {});
+                copyCollapsedState(oldNodes, newNodes);
+            });
         }])
 
         .directive('hippo.theme.tree.template', function() {
