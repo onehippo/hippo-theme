@@ -20,14 +20,14 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>26-iteration-79</version>
+    <version>26-iteration-80</version>
   </parent>
 
   <name>Hippo Theme</name>
   <description>Hippo Bootstrap Theme</description>
   <groupId>org.onehippo.cms7.frontend</groupId>
   <artifactId>hippo-theme</artifactId>
-  <version>1.01.01-SNAPSHOT</version>
+  <version>1.01.01-iteration-80</version>
   <packaging>pom</packaging>
 
   <repositories>
@@ -48,7 +48,7 @@
     <connection>scm:git:git@github.com:onehippo/hippo-theme.git</connection>
     <developerConnection>scm:git:git@github.com:onehippo/hippo-theme.git</developerConnection>
     <url>https://github.com/onehippo/hippo-theme.git</url>
-    <tag>HEAD</tag>
+    <tag>hippo-theme-1.01.01-iteration-80</tag>
   </scm>
 
   <build>
