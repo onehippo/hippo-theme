@@ -48,7 +48,7 @@
     <connection>scm:git:git@github.com:onehippo/hippo-theme.git</connection>
     <developerConnection>scm:git:git@github.com:onehippo/hippo-theme.git</developerConnection>
     <url>https://github.com/onehippo/hippo-theme.git</url>
-    <tag>HEAD</tag>
+    <tag>1.01.xx</tag>
   </scm>
 
   <build>
