@@ -58,7 +58,6 @@ describe('tree', function () {
     function createTree() {
         $compile(element)(scope);
         scope.$digest();
-        //return element.find('> ol.nestedSortable-list');
         return element.find('div.angular-ui-tree > ol.angular-ui-tree-nodes');
     }
 
@@ -96,6 +95,22 @@ describe('tree', function () {
     it('should have a second node with the visible label \'Item 2\'', function () {
         var tree = createTree();
         expect(tree.children('li').eq(1).find('span').text()).toBe('Item 2');
+    });
+
+
+    it('should not render children of collapsed node \'Item 1.2\'', function () {
+        var tree = createTree(),
+            item1 = tree.children('li').eq(0),
+            item12 = item1.find('ol.angular-ui-tree-nodes > li').eq(1);
+        expect(item12.find('ol.angular-ui-tree-nodes > li').length).toBe(0);
+    });
+
+    it('should render children of expanded node \'Item 1.2\'', function () {
+        scope.treeItems[0].items[1].collapsed = false;
+        var tree = createTree(),
+            item1 = tree.children('li').eq(0),
+            item12 = item1.find('ol.angular-ui-tree-nodes > li').eq(1);
+        expect(item12.find('ol.angular-ui-tree-nodes > li').length).toBe(3);
     });
 
 });
