@@ -6,7 +6,7 @@
     "angular": "1.2.15",
     "angular-bootstrap": "0.6.0",
     "angular-mocks": "1.2.15",
-    "angular-ui-tree": "2.0.11",
+    "angular-ui-tree": "#7546311fe9c82ad10f94bb0184d7abbf32664c56",
     "bootstrap": "3.1.0",
     "bootstrap-chosen": "https://github.com/alxlit/bootstrap-chosen.git#972b807f0c39d06c07c5b8a44bd67a70091b1ea3",
     "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip",
