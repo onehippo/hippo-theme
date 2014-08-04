@@ -47,7 +47,8 @@
 
 .angular-ui-tree-handle {
     cursor: move;
-    display: block;
+    display: table;
+    width: 100%;
     padding: 4px;
     color: #000000;
     text-decoration: none;
@@ -59,7 +60,6 @@
     line-height: 1.5em;
     border-radius: @border-radius-base;
     font-size: 14px;
-    height: 30px;
 
     &:hover {
         background: @list-group-hover-bg;
@@ -67,22 +67,30 @@
 
     .btn-xs {
         color: @gray-darker;
-        width: 19px;
-        height: 20px;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: 1px;
+        display: table-cell;
+        vertical-align: top;
+        width: 20px;
+        border: 0;
+        padding: 1px 5px 0 1px;
         .fa {
-            margin-top: -1px;
             font-size: 18px;
+        }
+        &:hover {
+            text-decoration: none;
         }
     }
 
     .spacer {
-        display: inline-block;
-        width: 18px;
+        display: table-cell;
+        vertical-align: top;
+        width: 20px;
         color: @gray-darker;
         padding-left: 4px;
+    }
+
+    > span {
+        display: table-cell;
+        vertical-align: top;
     }
 }
 
