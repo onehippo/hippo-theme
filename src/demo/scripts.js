@@ -147,7 +147,7 @@
                         },
                         {
                             id: 'item-a2',
-                            title: 'Item A.2',
+                            title: 'Item A.2 has a very long name that probably will not fit on a single row when tree becomes very small',
                             items: [
                                 {
                                     id: 'item-2-1',
@@ -185,7 +185,8 @@
                     items: [
                         {
                             id: 'item-c1',
-                            title: 'Item C.1'
+                            title: 'Item C.1',
+                            items: []
                         }
                     ]
                 }

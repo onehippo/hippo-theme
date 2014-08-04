@@ -293,7 +293,7 @@
         <div class="panel panel-info">
             <div class="panel-heading">Tree</div>
             <div ng-controller="TreeCtrl" id="tree-component">
-                <div hippo.theme.tree items="treeItems" callbacks="callbacks" class="hippo-tree"
+                <div hippo.theme.tree items="treeItems" callbacks="callbacks" class="hippo-tree ng-cloak"
                      selected-item-id="selectedItem.id">
                     <a class="btn btn-link btn-xs" data-nodrag data-ng-click="toggleItem()" data-ng-hide="childNodes().length === 0">
                         <span class="fa" data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"></span>
@@ -305,7 +305,8 @@
 <pre ng-non-bindable>&lt;div hippo.theme.tree
      items="treeItems"
      callbacks="callbacks"
-     selected-item-id="selectedItem.id"&gt;
+     selected-item-id="selectedItem.id"
+     data-ng-cloak&gt;
      &lt;a class="btn btn-link btn-xs" data-nodrag
         data-ng-click="toggleItem()"
         data-ng-hide="childNodes().length === 0"&gt;
@@ -343,7 +344,6 @@
     dragMove: function(event) {},
     dragStop: function(event) {}
 };</pre>
-                </p>
             </div>
         </div>
     </div>
@@ -431,7 +431,7 @@
                 <div class="dropdown">
                     <ul class="dropdown-menu" style="display: block; position: static;margin-bottom: 20px;">
                         <li ng-repeat="item in items" hippo.theme.divider="$last">
-                            <a href="#angularjs-compontents">{{ item }}</a>
+                            <a href="#angularjs-components">{{ item }}</a>
                         </li>
                     </ul>
                 </div>
