@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 'use strict';
+
 module.exports = function (grunt) {
 
     var userhome = require('userhome');
@@ -29,9 +30,9 @@ module.exports = function (grunt) {
     };
 
     var cfg = {
+        tmpDir: '.tmp',
         exampleDir: 'demo',
-        demoRepoDir: 'hippo-theme-demo',
-        tmpDir: '.tmp'
+        demoRepoDir: 'hippo-theme-demo'
     };
     cfg.tmpRepoDir = userhome(cfg.tmpDir, cfg.exampleDir, cfg.demoRepoDir);
 
@@ -56,7 +57,7 @@ module.exports = function (grunt) {
             dist: [ 'dist/**/*' ],
             demo: ['<%= cfg.exampleDir %>' ]
         },
-        
+
         // copy files
         copy: {
             main: {
@@ -153,7 +154,7 @@ module.exports = function (grunt) {
             }
         },
 
-        // jshint
+        // jslinting
         jshint: {
             all: [
                 'src/**/*.js',
@@ -208,7 +209,7 @@ module.exports = function (grunt) {
 
         concat: {
             options: {
-              stripBanners: true
+                stripBanners: true
             },
             dist: {
                 src: [
@@ -304,7 +305,7 @@ module.exports = function (grunt) {
                 startPage: '/api',
                 title: 'Hippo Theme'
             },
-            
+
             api: {
                 title: 'API reference',
                 src: ['src/shared/**/*.js'],
@@ -315,7 +316,7 @@ module.exports = function (grunt) {
 
     // default
     grunt.registerTask('default', [
-        'build:demo',
+        'build:demo'
     ]);
 
     // build dist
@@ -361,8 +362,8 @@ module.exports = function (grunt) {
         'build:demo',
         'ngdocs',
         'shell:cloneDemo',
-        'copy:toDemoRepo', 
-        'shell:commitDemo', 
+        'copy:toDemoRepo',
+        'shell:commitDemo',
         'shell:pushDemo'
     ]);
 };
