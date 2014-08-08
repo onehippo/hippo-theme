@@ -21,7 +21,7 @@ body {
 }
 
 #container {
-    background: white;
+    background: #FFFFFF;
 }
 
 .anchor {
@@ -33,6 +33,12 @@ body {
 
 .hippo-navbar {
     margin-bottom: 0;
+
+    .navbar-brand {
+        @media (max-width: @screen-xs-max) {
+            display: none;
+        }
+    }
 
     .navbar-toggle {
         float: left;
