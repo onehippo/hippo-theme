@@ -30,8 +30,8 @@
     <script src="components/fastclick/lib/fastclick.js"></script>
 </head>
 
-<body>
-    <div class="hippo-navbar navbar navbar-default navbar-fixed-top">
+<body data-spy="scroll" data-target=".sidebar-navbar-collapse">
+    <div class="hippo-navbar navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
@@ -40,9 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <p class="navbar-text pull-left notification-counter">
-                    <span class="label label-default">18</span>
-                </p>
+                <span class="badge notification-badge">18</span>
                 <a class="navbar-brand" href="#">HippoCMS Essentials</a>
             </div>
         </div>
@@ -50,21 +48,16 @@
 
     <div class="navbar-collapse sidebar-navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#"><span class="fa fa-dashboard fa-2x fa-fw fa-middle"></span> Menu Item 1</a></li>
-            <li><a href="#"><span class="fa fa-wrench fa-2x fa-fw fa-middle"></span> Menu Item 2</a></li>
-            <li><a href="#"><span class="fa fa-pencil fa-2x fa-fw fa-middle"></span> Reviews <span class="label label-primary">18</span></a></li>
+            <li><a href="#introduction"><span class="fa fa-dashboard fa-2x fa-fw fa-middle"></span> Introduction</a></li>
+            <li><a href="#css-components"><span class="fa fa-wrench fa-2x fa-fw fa-middle"></span> CSS Components</a></li>
+            <li><a href="#angular-components"><span class="fa fa-pencil fa-2x fa-fw fa-middle"></span> AngularJS Components <span class="label label-primary">18</span></a></li>
         </ul>
     </div>
 
     <div class="container-fluid" id="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Hippo Theme <small>A Work in Progress</small></h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
+                <a class="anchor" id="introduction"></a>
                 <h2>Introduction</h2>
 
                 <p>
@@ -83,6 +76,7 @@
 
         <div class="row">
             <div class="col-lg-12">
+                <a class="anchor" id="css-components"></a>
                 <h2>CSS components</h2>
             </div>
         </div>
@@ -252,8 +246,8 @@
         <div id="angularjs-components">
             <div class="row">
                 <div class="col-lg-12">
+                    <a class="anchor" id="angular-components"></a>
                     <h2>AngularJS components</h2>
-
                     <p>
                         There is an <a href="docs/">API reference</a> available for the AngularJS components and services that are
                         part of the Hippo theme.

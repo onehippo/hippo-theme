@@ -16,21 +16,34 @@
 
 
 body {
-    padding-top: @hippo-navbar-height;
     background: @side-navbar-bg;
+    position: relative;
 }
 
 #container {
     background: white;
 }
 
+.anchor {
+    display: block;
+    position: relative;
+    top: -(@hippo-navbar-height);
+    visibility: hidden;
+}
+
 .hippo-navbar {
+    margin-bottom: 0;
+
     .navbar-toggle {
         float: left;
         margin-left: 8px;
     }
 
-    .notification-counter {
+    .notification-badge {
+        position: absolute;
+        left: 45px;
+        top: 5px;
+
         @media (min-width: @screen-sm-min) {
             display: none;
         }
@@ -38,8 +51,17 @@ body {
 }
 
 @media (min-width: @screen-sm-min) {
+    body {
+        padding-top: @hippo-navbar-height;
+    }
+
+    #container {
+        margin-left: @side-navbar-width;
+    }
+
     .hippo-navbar {
         margin-bottom: 0;
+        .navbar-fixed-top();
     }
 
     .sidebar-navbar-collapse {
@@ -52,9 +74,5 @@ body {
         ul, li {
             float: none;
         }
-    }
-
-    #container {
-        margin-left: @side-navbar-width;
     }
 }
