@@ -14,13 +14,30 @@
  * limitations under the License.
  */
 
-/* make sidebar nav vertical */
-.hippo-navbar .navbar-toggle {
-    float: left;
-    margin-left: 8px;
+
+body {
+    padding-top: @hippo-navbar-height;
+    background: @side-navbar-bg;
 }
 
-@media (min-width: 768px) {
+#container {
+    background: white;
+}
+
+.hippo-navbar {
+    .navbar-toggle {
+        float: left;
+        margin-left: 8px;
+    }
+
+    .notification-counter {
+        @media (min-width: @screen-sm-min) {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: @screen-sm-min) {
     .hippo-navbar {
         margin-bottom: 0;
     }
