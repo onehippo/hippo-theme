@@ -25,29 +25,35 @@ module.exports = function (grunt) {
     // load all grunt tasks automatically
     require('load-grunt-tasks')(grunt);
 
-    var mountFolder = function (connect, dir) {
-        return connect.static(require('path').resolve(dir));
-    };
-
     var cfg = {
         tmpDir: '.tmp',
         exampleDir: 'demo',
         demoRepoDir: 'hippo-theme-demo'
     };
+
     cfg.tmpRepoDir = userhome(cfg.tmpDir, cfg.exampleDir, cfg.demoRepoDir);
 
-    // project configuration
     grunt.initConfig({
-        // configuration
+        // Configuration
         cfg: cfg,
         userhome: userhome,
 
-        // compile less files for the app and modules
-        less: {
-            src: {
-                files: {
-                    'dist/css/main.css': 'src/less/main.less'
-                }
+        // Watch for file changes and run corresponding tasks
+        watch: {
+            options: {
+                livereload: true
+            },
+            less: {
+                files: ['src/**/*.less'],
+                tasks: ['lintspaces:less', 'less', 'copy:demo']
+            },
+            html: {
+                files: ['src/**/*.html'],
+                tasks: ['copy:demo']
+            },
+            js: {
+                files: ['src/**/*.js', '!**/*.spec.js'],
+                tasks: ['clean:dist', 'concat:dist', 'uglify:dist', 'copy:demo']
             }
         },
 
@@ -58,7 +64,89 @@ module.exports = function (grunt) {
             demo: ['<%= cfg.exampleDir %>' ]
         },
 
-        // copy files
+        // Check if JS files are according to conventions specified in .jshintrc
+        jshint: {
+            all: [
+                'src/**/*.js',
+                '!**/*.spec.js'
+            ],
+            options: {
+                'jshintrc': true,
+                reporter: require('jshint-stylish')
+            }
+        },
+
+        // Concat files
+        concat: {
+            options: {
+                stripBanners: true
+            },
+            dist: {
+                src: [
+                    'src/js/main.js',
+                    'src/shared/chart/chart.js',
+                    'src/shared/divider/divider.js',
+                    'src/shared/focus-me/focus-me.js',
+                    'src/shared/map/map.js',
+                    'src/shared/panel-default/panel-default.js',
+                    'src/shared/responsive/responsive.js',
+                    'src/shared/select-box/select-box.js',
+                    'src/shared/urlparser/urlparser.js',
+                    'src/shared/tree/tree.js',
+                    'src/shared/confirmation-dialog/confirmation-dialog.js'
+                ],
+                dest: 'dist/js/main.js'
+            }
+        },
+
+        // Minify JS files
+        uglify: {
+            options: {
+                preserveComments: 'some'
+            },
+            dist: {
+                files: {
+                    'dist/js/main.min.js': ['dist/js/main.js']
+                }
+            }
+        },
+
+        // Check if Less fils have correct spaces
+        lintspaces: {
+            less: {
+                src: [
+                    'src/**/*.less'
+                ],
+                options: {
+                    indentation: 'spaces',
+                    spaces: 4,
+                    ignores: ['js-comments']
+                }
+            }
+        },
+
+        // Compile LessCSS to CSS.
+        less: {
+            src: {
+                files: {
+                    'dist/css/main.css': 'src/less/main.less'
+                }
+            }
+        },
+
+        // Minify CSS files
+        cssmin: {
+            options: {
+                report: 'min'
+            },
+            dist: {
+                files: {
+                    'dist/css/main.min.css': ['dist/css/main.css']
+                }
+            }
+        },
+
+        // Copy files
         copy: {
             main: {
                 expand: true,
@@ -110,63 +198,7 @@ module.exports = function (grunt) {
             }
         },
 
-        // watch
-        watch: {
-            less: {
-                options: {
-                    livereload: true
-                },
-                files: [
-                    'src/**/*.less'
-                ],
-                tasks: [
-                    'less',
-                    'lintspaces:less',
-                    'copy:demo'
-                ]
-            },
-            html: {
-                options: {
-                    livereload: true
-                },
-                files: [
-                    'src/**/*.html'
-                ],
-                tasks: [
-                    'copy:demo'
-                ]
-            },
-            js: {
-                options: {
-                    livereload: true
-                },
-                files: [
-                    'src/**/*.js',
-                    '!**/*.spec.js'
-                ],
-                tasks: [
-                    'clean:dist',
-                    'copy:demo',
-                    'concat:dist',
-                    'uglify:dist',
-                    'copy:demo'
-                ]
-            }
-        },
-
-        // jslinting
-        jshint: {
-            all: [
-                'src/**/*.js',
-                '!**/*.spec.js'
-            ],
-            options: {
-                'jshintrc': true,
-                reporter: require('jshint-stylish')
-            }
-        },
-
-        // testing with karma
+        // Testing with karma
         karma: {
             options: {
                 configFile: 'karma.conf.js',
@@ -185,90 +217,26 @@ module.exports = function (grunt) {
         },
 
         connect: {
-            options: {
-                port: 9000,
-                livereload: 35729,
-                hostname: '0.0.0.0'
-            },
-            example: {
+            demo: {
                 options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, '')
-                        ];
-                    }
+                    port: 9000,
+                    livereload: 35729,
+                    hostname: '0.0.0.0',
+                    open: true,
+                    base: [
+                        '<%= cfg.exampleDir %>'
+                    ]
                 }
             }
         },
 
-        open: {
-            server: {
-                path: 'http://localhost:<%= connect.options.port %>/<%= cfg.exampleDir %>/'
-            }
-        },
-
-        concat: {
-            options: {
-                stripBanners: true
-            },
-            dist: {
-                src: [
-                    'src/js/main.js',
-                    'src/shared/chart/chart.js',
-                    'src/shared/divider/divider.js',
-                    'src/shared/focus-me/focus-me.js',
-                    'src/shared/map/map.js',
-                    'src/shared/panel-default/panel-default.js',
-                    'src/shared/responsive/responsive.js',
-                    'src/shared/select-box/select-box.js',
-                    'src/shared/urlparser/urlparser.js',
-                    'src/shared/tree/tree.js',
-                    'src/shared/confirmation-dialog/confirmation-dialog.js'
-                ],
-                dest: 'dist/js/main.js'
-            }
-        },
-
-        uglify: {
-            options: {
-                preserveComments: 'some'
-            },
-            dist: {
-                files: {
-                    'dist/js/main.min.js': ['dist/js/main.js']
-                }
-            }
-        },
-
-        cssmin: {
-            options: {
-                report: 'min'
-            },
-            dist: {
-                files: {
-                    'dist/css/main.min.css': ['dist/css/main.css']
-                }
-            }
-        },
-
-        lintspaces: {
-            less: {
-                src: [
-                    'src/**/*.less'
-                ],
-                options: {
-                    indentation: 'spaces',
-                    spaces: 4,
-                    ignores: ['js-comments']
-                }
-            }
-        },
-
+        // Execute commands, in this case to commit the demo to our github page: onehippo.github.io
         shell: {
             options: {
                 stdout: true,
                 stderr: true
             },
+
             cloneDemo: {
                 command: 'rm -R <%= userhome(cfg.tmpDir) %> && mkdir -p <%= cfg.tmpRepoDir %> && cd <%= cfg.tmpRepoDir %> && git clone git@github.com:onehippo/hippo-theme-demo.git .'
             },
@@ -296,7 +264,7 @@ module.exports = function (grunt) {
             }
         },
 
-        // ngdocs
+        // Angular Documentation
         ngdocs: {
             options: {
                 dest: '<%= cfg.exampleDir %>/docs',
@@ -322,11 +290,11 @@ module.exports = function (grunt) {
     // build dist
     grunt.registerTask('build:dist', 'Build the distribution', [
         'jshint',
+        'lintspaces:less',
         'clean:dist',
         'copy',
         'less',
         'concat:dist',
-        'lintspaces:less',
         'uglify:dist',
         'cssmin:dist'
     ]);
@@ -339,12 +307,11 @@ module.exports = function (grunt) {
         'copy:demo'
     ]);
 
-    // server with example
+    // server with demo page
     grunt.registerTask('server:demo', 'Build, test, and show the demo continuously', [
         'build:demo',
         'ngdocs',
-        'open',
-        'connect:example',
+        'connect:demo',
         'watch'
     ]);
 
