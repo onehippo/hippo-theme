@@ -14,7 +14,7 @@
     "ExplorerCanvas": "https://github.com/arv/ExplorerCanvas.git#1735174401034391aa632957b17ce4a167613a83",
     "fastclick": "0.6.11",
     "flot": "0.8.1",
-    "font-awesome": "4.0.3",
+    "font-awesome": "4.1.0",
     "hippo-plugins": "https://maven.onehippo.com/service/local/artifact/maven/redirect?r=maven2&g=org.onehippo.cms7.frontend&a=hippo-plugins&c=distribution&e=zip&v=1.01.01",
     "html5shiv": "3.7.0",
     "jasmine-jquery": "2.0.3",
