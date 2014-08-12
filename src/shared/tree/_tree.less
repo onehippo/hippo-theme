@@ -27,13 +27,12 @@
     }
 }
 
-.angular-ui-tree-node, .angular-ui-tree-placeholder {
+.angular-ui-tree-node {
     display: block;
     position: relative;
     padding: 0;
     min-height: 20px;
     line-height: 20px;
-    margin: 3px 0 3px 3px;
 
     &.active {
         & > .angular-ui-tree-handle {
@@ -55,6 +54,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    margin-bottom: 2px;
     background: @list-group-bg;
     border: 1px solid @gray-light;
     line-height: 1.5em;
@@ -95,11 +95,11 @@
 }
 
 .angular-ui-tree-placeholder {
-    margin: 4px 0 -1px 4px;
+    margin: -1px 0 1px 0;
     padding: 0;
-    min-height: 30px;
-    background: @state-warning-bg;
-    border: 3px dashed @state-warning-border;
+    min-height: 33px;
+    background: @gray-light;
+    border-radius: @border-radius-base;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -112,9 +112,9 @@
     zoom: 1;
     filter: alpha(opacity=90);
     opacity: 0.9;
+    border-radius: @border-radius-base;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: -3px 0 0 -3px;
 }
 
