@@ -53,7 +53,11 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ['src/**/*.js', '!**/*.spec.js'],
-                tasks: ['clean:dist', 'concat:dist', 'uglify:dist', 'copy:demo']
+                tasks: ['concat:dist', 'uglify:dist', 'copy:demo']
+            },
+            images: {
+                files: ['src/images/**/*.{png,jpg,gif}'],
+                tasks: ['imagemin', 'copy:demo']
             }
         },
 
@@ -146,6 +150,17 @@ module.exports = function (grunt) {
             }
         },
 
+        imagemin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/images',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'dist/images/'
+                }]
+            }
+        },
+
         // Copy files
         copy: {
             main: {
@@ -180,6 +195,17 @@ module.exports = function (grunt) {
                             '**/*'
                         ],
                         dest: '<%= cfg.exampleDir %>/'
+                    }
+                ]
+            },
+
+            fonts: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'src/fonts',
+                        src: ['**/*'],
+                        dest: 'dist/fonts/'
                     }
                 ]
             },
@@ -292,7 +318,8 @@ module.exports = function (grunt) {
         'jshint',
         'lintspaces:less',
         'clean:dist',
-        'copy',
+        'imagemin',
+        'copy:fonts',
         'less',
         'concat:dist',
         'uglify:dist',
