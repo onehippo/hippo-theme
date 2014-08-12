@@ -88,11 +88,11 @@
         </div>
     </div>
 
-    <div class="navbar-collapse sidebar-navbar-collapse collapse">
+    <div class="navbar-collapse sidebar-navbar-collapse collapse" ng-controller="NavCtrl">
         <ul class="nav navbar-nav">
-            <li><a href="#introduction"><span class="fa fa-dashboard fa-2x fa-fw fa-middle"></span> Introduction</a></li>
-            <li><a href="#css-components"><span class="fa fa-wrench fa-2x fa-fw fa-middle"></span> CSS Components</a></li>
-            <li><a href="#angular-components"><span class="fa fa-cubes fa-2x fa-fw fa-middle"></span> AngularJS Components</a></li>
+            <li><a ng-click="scrollTo('introduction')"><span class="fa fa-dashboard fa-2x fa-fw fa-middle"></span> Introduction</a></li>
+            <li><a ng-click="scrollTo('css-components')"><span class="fa fa-wrench fa-2x fa-fw fa-middle"></span> CSS Components</a></li>
+            <li><a ng-click="scrollTo('angular-components')"><span class="fa fa-cubes fa-2x fa-fw fa-middle"></span> AngularJS Components</a></li>
             <li><a href="#"><span class="fa fa-exclamation fa-fw fa-middle"></span> Notification label <span class="label label-primary">18</span></a></li>
         </ul>
     </div>
