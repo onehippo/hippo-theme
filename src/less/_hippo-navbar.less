@@ -14,14 +14,19 @@
  * limitations under the License.
  */
 
-
-body {
-    background: @side-navbar-bg;
-    position: relative;
+html {
+    height: 100%;
 }
 
-.components-container {
-    background: #FFFFFF;
+body {
+    height: 100%;
+    position: relative;
+    padding-top: 59px;
+}
+
+.container-has-hippo-navbar {
+    height: 100%;
+    overflow: auto;
 }
 
 .anchor {
@@ -68,7 +73,7 @@ body {
 }
 
 @media (min-width: @screen-sm-min) {
-    .components-container {
+    .sidebar-navbar + .container-has-hippo-navbar {
         margin-left: @side-navbar-width;
     }
 
@@ -80,8 +85,14 @@ body {
         width: 100%;
     }
 
-    .sidebar-navbar-collapse {
+    .sidebar-navbar-collapse.collapse {
+        position: static;
+        top: 0;
+        left: 0;
         float: left;
+        background: @side-navbar-bg;
+        height: 100% !important;
+        max-height: none;
         width: @side-navbar-width;
         padding: 0;
 
