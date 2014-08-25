@@ -18,6 +18,19 @@
     display: none;
 }
 
+.carousel-inner > .item > img {
+    width: 100%;
+}
+
+.carousel-control {
+    &.left {
+        #gradient > .horizontal(@start-color: rgba(0,0,0,.3); @end-color: rgba(0,0,0,.0001));
+    }
+    &.right {
+        #gradient > .horizontal(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.3));
+    }
+}
+
 @media(min-width: @screen-xs-min) {
     .carousel {
         padding-bottom: 100px;
