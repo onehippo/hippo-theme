@@ -32,29 +32,27 @@
 </head>
 
 <body id="container" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
-    <div class="log-top">
-        <div class="alert alert-danger" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors()">
-            <button type="button" class="close" data-dismiss="alert" ng-click="hideLog()">
-                <span aria-hidden="true">&times;</span>
-                <span class="sr-only">Close</span>
-            </button>
+    <div class="log-top alert alert-danger" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors()">
+        <button type="button" class="close" data-dismiss="alert" ng-click="hideLog()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
 
-            <p>20: <span class="fa fa-exclamation"></span> Interesting error message</p>
+        <p><span class="fa fa-exclamation"></span> Show error messages</p>
 
-            <div class="log-messages ng-hide" ng-show="showErrors">
-                <p class="bg-primary">Log message: Lorem Ipsum</p>
-                <p class="bg-primary">Log message: Lorem Ipsum</p>
-                <p class="bg-primary">Log message: Lorem Ipsum</p>
-                <p class="bg-success">Log message: Lorem Ipsum</p>
-                <p class="bg-success">Log message: Lorem Ipsum</p>
-                <p class="bg-success">Log message: Lorem Ipsum</p>
-                <p class="bg-info">Log message: Lorem Ipsum</p>
-                <p class="bg-info">Log message: Lorem Ipsum</p>
-                <p class="bg-info">Log message: Lorem Ipsum</p>
-                <p class="bg-warning">Log message: Lorem Ipsum</p>
-                <p class="bg-warning">Log message: Lorem Ipsum</p>
-                <p class="bg-warning">Log message: Lorem Ipsum</p>
-            </div>
+        <div class="log-messages ng-hide" ng-show="showErrors">
+            <p class="bg-primary">Log message: Lorem Ipsum</p>
+            <p class="bg-primary">Log message: Lorem Ipsum</p>
+            <p class="bg-primary">Log message: Lorem Ipsum</p>
+            <p class="bg-success">Log message: Lorem Ipsum</p>
+            <p class="bg-success">Log message: Lorem Ipsum</p>
+            <p class="bg-success">Log message: Lorem Ipsum</p>
+            <p class="bg-info">Log message: Lorem Ipsum</p>
+            <p class="bg-info">Log message: Lorem Ipsum</p>
+            <p class="bg-info">Log message: Lorem Ipsum</p>
+            <p class="bg-warning">Log message: Lorem Ipsum</p>
+            <p class="bg-warning">Log message: Lorem Ipsum</p>
+            <p class="bg-warning">Log message: Lorem Ipsum</p>
         </div>
     </div>
     <div class="hippo-navbar navbar navbar-default navbar-fixed-top">
@@ -86,10 +84,10 @@
 
             <div class="navbar-collapse collapse" ng-controller="NavCtrl">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a ng-click="scrollTo('introduction')"><span class="fa fa-dashboard fa-2x fa-fw fa-middle"></span> Introduction</a></li>
-                    <li><a ng-click="scrollTo('css-components')"><span class="fa fa-wrench fa-2x fa-fw fa-middle"></span> CSS Components</a></li>
-                    <li><a ng-click="scrollTo('angular-components')"><span class="fa fa-cubes fa-2x fa-fw fa-middle"></span> AngularJS Components</a></li>
-                    <li><a href="#"><span class="fa fa-exclamation fa-fw fa-middle"></span> Notification label <span class="badge badge-primary">18</span></a></li>
+                    <li class="active"><a href="" ng-click="scrollTo('introduction')"><span class="fa fa-dashboard fa-2x fa-fw fa-middle"></span> Introduction</a></li>
+                    <li><a href="" ng-click="scrollTo('css-components')"><span class="fa fa-wrench fa-2x fa-fw fa-middle"></span> CSS Components</a></li>
+                    <li><a href="" ng-click="scrollTo('angular-components')"><span class="fa fa-cubes fa-2x fa-fw fa-middle"></span> AngularJS Components</a></li>
+                    <li><a href=""><span class="fa fa-exclamation fa-fw fa-middle"></span> Notification label <span class="badge badge-primary">18</span></a></li>
                 </ul>
             </div>
         </div>

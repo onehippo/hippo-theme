@@ -20,21 +20,24 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999;
+    max-height: 300px;
+    overflow: hidden;
+    z-index: 1040;
 }
 
-.log-top .alert {
-    margin-bottom: 0;
+.log-top.alert {
     height: @log-alert-height;
-    overflow: hidden;
+    margin-bottom: 0;
 
     &.alert-open {
-        height: auto;
+        height: 100%;
     }
 }
 
 .log-messages {
-    padding: 5px 0;
+    margin-top: 10px;
+    max-height: 300px - @log-alert-height - 10;
+    overflow: auto;
 
     p {
         padding: 5px;
