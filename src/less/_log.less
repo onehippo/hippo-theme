@@ -20,29 +20,27 @@
     top: 0;
     left: 0;
     width: 100%;
-    max-height: 300px;
-    overflow: hidden;
+    max-height: 33%;
+    overflow: auto;
     z-index: 1040;
 }
 
 .log-top.alert {
-    height: @log-alert-height;
     margin-bottom: 0;
 
-    &.alert-open {
-        height: 100%;
+    .close {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+    }
+
+    &.alert-open p {
+        margin: 0 0 10px;
     }
 }
 
-.log-messages {
-    margin-top: 10px;
-    max-height: 300px - @log-alert-height - 10;
-    overflow: auto;
-
-    p {
-        padding: 5px;
-        margin: 0;
-    }
+.log-messages p:last-child {
+    margin-bottom: 0;
 }
 
 .log-visible {
@@ -60,5 +58,11 @@
         .hippo-navbar .navbar-collapse.collapse {
             top: @hippo-navbar-height + @log-alert-height;
         }
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+    .log-top.alert-open .close {
+        right: 25px;
     }
 }
