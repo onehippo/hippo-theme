@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-html {
-    height: 100%;
+body {
+    position: relative;
+    padding-top: @hippo-navbar-height;
 }
 
-body {
+html, body {
     height: 100%;
-    position: relative;
-    padding-top: 59px;
+    overflow: hidden;
 }
 
 .container-has-hippo-navbar {
@@ -32,6 +32,8 @@ body {
 .anchor {
     display: block;
     visibility: hidden;
+    position: relative;
+    top: -(@hippo-navbar-height);
 }
 
 .navbar-icons {
@@ -73,31 +75,31 @@ body {
 }
 
 @media (min-width: @screen-sm-min) {
-    .sidebar-navbar + .container-has-hippo-navbar {
+    .hippo-navbar ~ .container-has-hippo-navbar {
         margin-left: @side-navbar-width;
-    }
-
-    .hippo-navbar {
-        margin-bottom: 0;
     }
 
     .navbar-header {
         width: 100%;
     }
 
-    .sidebar-navbar-collapse.collapse {
-        position: static;
-        top: 0;
+    .hippo-navbar .navbar-collapse.collapse {
+        position: fixed;
+        top: @hippo-navbar-height;
         left: 0;
-        float: left;
-        background: @side-navbar-bg;
         height: 100% !important;
         max-height: none;
         width: @side-navbar-width;
         padding: 0;
+        background: @navbar-default-bg;
 
         ul, li {
             float: none;
         }
     }
+
+    .anchor {
+        top: 0;
+    }
 }
+
