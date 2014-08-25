@@ -32,7 +32,7 @@
 </head>
 
 <body id="container" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
-    <div class="log-top alert alert-danger" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors()">
+    <div class="log-top alert alert-danger" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors($event)">
         <button type="button" class="close" data-dismiss="alert" ng-click="hideLog()">
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span>

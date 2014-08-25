@@ -17,12 +17,17 @@
     "use strict";
 
     angular.module('hippo.theme.example', ['hippo.theme'])
-        .controller('ErrorCtrl', ['$scope', function ($scope) {
-            $scope.testMessage = 'hi there';
+        .controller('ErrorCtrl', ['$scope', '$document', function ($scope, $document) {
             $scope.showErrors = false;
-            $scope.toggleErrors = function () {
+            $scope.toggleErrors = function ($event) {
+                $event.stopPropagation();
                 $scope.showErrors = !$scope.showErrors;
             };
+
+            $document.bind('click', function () {
+                $scope.showErrors = false;
+                $scope.$apply();
+            });
         }])
 
         .controller('LogCtrl', ['$scope', function ($scope) {
