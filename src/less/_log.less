@@ -14,8 +14,23 @@
  * limitations under the License.
  */
 
-.log .alert {
+.log-top {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.log-top .alert {
     margin-bottom: 0;
+    height: @log-alert-height;
+    overflow: hidden;
+
+    &.alert-open {
+        height: auto;
+    }
 }
 
 .log-messages {
@@ -27,3 +42,20 @@
     }
 }
 
+.log-visible {
+    padding-top: @hippo-navbar-height + @log-alert-height;
+
+    .log-top {
+        display: block;
+    }
+
+    .hippo-navbar {
+        top: @log-alert-height;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        .hippo-navbar .navbar-collapse.collapse {
+            top: @hippo-navbar-height + @log-alert-height;
+        }
+    }
+}

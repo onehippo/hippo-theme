@@ -17,6 +17,27 @@
     "use strict";
 
     angular.module('hippo.theme.example', ['hippo.theme'])
+        .controller('ErrorCtrl', ['$scope', function ($scope) {
+            $scope.testMessage = 'hi there';
+            $scope.showErrors = false;
+            $scope.toggleErrors = function () {
+                $scope.showErrors = !$scope.showErrors;
+            };
+        }])
+
+        .controller('LogCtrl', ['$scope', function ($scope) {
+            $scope.showLog = true;
+            $scope.hideLog = function () {
+                $scope.showLog = false;
+            };
+        }])
+
+        .controller('NavCtrl', ['$scope', '$location', '$anchorScroll', function ($scope, $location, $anchorScroll) {
+            $scope.scrollTo = function (id) {
+                $location.hash(id);
+                $anchorScroll();
+            };
+        }])
 
         /**
          * @ngdoc object
@@ -256,21 +277,6 @@
 
             $scope.toggleChanges = function () {
                 $scope.showChanges = !$scope.showChanges;
-            };
-        }])
-
-        .controller('ErrorCtrl', ['$scope', function ($scope) {
-            $scope.testMessage = 'hi there';
-            $scope.showErrors = false;
-            $scope.toggleErrors = function () {
-                $scope.showErrors = !$scope.showErrors;
-            };
-        }])
-
-        .controller('NavCtrl', ['$scope', '$location', '$anchorScroll', function ($scope, $location, $anchorScroll) {
-            $scope.scrollTo = function (id) {
-                $location.hash(id);
-                $anchorScroll();
             };
         }]);
 })();
