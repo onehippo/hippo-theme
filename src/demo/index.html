@@ -32,27 +32,27 @@
 </head>
 
 <body id="container" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
-    <div class="log-top alert alert-danger" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors($event)">
+    <div class="log-top alert alert-info" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors($event)">
         <button type="button" class="close" data-dismiss="alert" ng-click="hideLog()">
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span>
         </button>
 
-        <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
+        <p>15:55:46 - <span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message <span class="fa" ng-class="{'fa-chevron-right': !showErrors, 'fa-chevron-down': showErrors}"></span></p>
 
         <div class="log-messages ng-hide" ng-show="showErrors">
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-exclamation"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-check-square-o fa-success"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-flag fa-warning"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
         </div>
     </div>
     <div class="hippo-navbar navbar navbar-default navbar-fixed-top">
@@ -320,51 +320,58 @@
 
                                     <div class="feature-description-long" ng-show="showDescription">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid aspernatur assumenda at, atque autem commodi consequatur, ex fugit id iure modi non provident quae rem repudiandae sed tempora veniam! Ab earum, illum iure labore officia possimus quas quis tempora? A amet animi aut beatae commodi ducimus eius error esse est et facere harum hic laboriosam laudantium possimus, rerum ut. Architecto blanditiis consequatur culpa dignissimos dolor enim ex excepturi itaque maxime nam natus officiis omnis, quis quod similique temporibus voluptatem! Ad consequuntur corporis culpa maxime nam odio saepe similique velit! Accusantium, asperiores assumenda commodi cum dicta dolorem et incidunt inventore iure magni minus natus non recusandae reprehenderit voluptatibus? A aliquid beatae culpa cum eveniet incidunt, ipsam magni pariatur placeat quasi? Adipisci commodi debitis exercitationem, fuga fugit laborum minima non praesentium quae ut. A aliquid beatae dolorum.</p>
-                                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                            <!-- Indicators -->
-                                            <ol class="carousel-indicators">
-                                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
-                                                </li>
-                                                <li data-target="#carousel-example-generic" data-slide-to="1">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==" alt="">
-                                                </li>
-                                                <li data-target="#carousel-example-generic" data-slide-to="2">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
-                                                </li>
-                                                <li data-target="#carousel-example-generic" data-slide-to="2">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
-                                                </li>
-                                            </ol>
 
-                                            <!-- Wrapper for slides -->
-                                            <div class="carousel-inner">
-                                                <div class="item active">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
-                                                    <div class="carousel-caption">
-                                                        This item has a caption
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                                    <!-- Indicators -->
+                                                    <ol class="carousel-indicators">
+                                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                                                        </li>
+                                                        <li data-target="#carousel-example-generic" data-slide-to="1">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==" alt="">
+                                                        </li>
+                                                        <li data-target="#carousel-example-generic" data-slide-to="2">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                                                        </li>
+                                                        <li data-target="#carousel-example-generic" data-slide-to="2">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                                                        </li>
+                                                    </ol>
+
+                                                    <!-- Wrapper for slides -->
+                                                    <div class="carousel-inner">
+                                                        <div class="item active">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                                                            <div class="carousel-caption">
+                                                                This item has a caption
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==" alt="">
+                                                        </div>
+                                                        <div class="item">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                                                        </div>
+                                                        <div class="item">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="item">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==" alt="">
-                                                </div>
-                                                <div class="item">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
-                                                </div>
-                                                <div class="item">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+
+
+                                                    <!-- Controls -->
+                                                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                                    </a>
+                                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                                    </a>
                                                 </div>
                                             </div>
-
-
-                                            <!-- Controls -->
-                                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                                                <span class="glyphicon glyphicon-chevron-left"></span>
-                                            </a>
-                                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                            </a>
                                         </div>
+
+                                        <a href="#" data-ng-click="toggleDescription()">Read less...</a>
                                     </div>
                                 </div>
                                 <div class="feature-changes">
@@ -376,18 +383,19 @@
                                     </div>
 
                                     <div class="log-messages" ng-show="showChanges">
-                                        <p class="text-info"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p class="text-success"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p class="text-warning"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p class="text-warning"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p  class="text-info"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p class="text-info"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p class="text-info"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p class="text-info"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p class="text-info"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p class="text-success"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p class="text-success"><span class="fa fa-exclamation"></span> Interesting error message</p>
-                                        <p class="text-success"><span class="fa fa-exclamation"></span> Interesting error message</p>                                    </div>
+                                        <p><span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-check-square-o fa-success"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-flag fa-warning"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
