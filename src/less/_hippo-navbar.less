@@ -52,10 +52,14 @@ html, body {
 .hippo-navbar {
     margin-bottom: 0;
 
-    .navbar-brand {
-        @media (max-width: @screen-xs-max) {
-            display: none;
-        }
+    .navbar-title {
+        .navbar-brand;
+        position: absolute;
+        width: @hippo-navbar-title-width;
+        left: 50%;
+        margin-left: -(@hippo-navbar-title-width / 2);
+        text-align: center;
+        padding: 0;
     }
 
     .navbar-toggle {
@@ -67,10 +71,12 @@ html, body {
         position: absolute;
         left: 45px;
         top: 5px;
+    }
+}
 
-        @media (min-width: @screen-sm-min) {
-            display: none;
-        }
+@media (max-width: @screen-xs-max) {
+    .navbar-brand {
+        display: none;
     }
 }
 
@@ -96,6 +102,10 @@ html, body {
         ul, li {
             float: none;
         }
+    }
+
+    .hippo-navbar .notification-badge {
+        display: none;
     }
 
     .anchor {
