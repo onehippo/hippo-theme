@@ -248,7 +248,7 @@ module.exports = function (grunt) {
                     port: 9000,
                     livereload: 35729,
                     hostname: '0.0.0.0',
-                    open: true,
+                    open: 'http://localhost:9000/#/',
                     base: [
                         '<%= cfg.exampleDir %>'
                     ]
