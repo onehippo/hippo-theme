@@ -46,60 +46,62 @@
 
 // Reset
 @import "@{bootstrapLessPath}/normalize.less";
+@import "_ie-reset";
 @import "@{bootstrapLessPath}/print.less";
 
 // Core CSS
 @import "@{bootstrapLessPath}/scaffolding.less";
 @import "@{bootstrapLessPath}/type.less";
-    @import "_type";
+@import "_type";
 @import "@{bootstrapLessPath}/code.less";
 @import "@{bootstrapLessPath}/grid.less";
 @import "@{bootstrapLessPath}/tables.less";
-    @import "_tables";
+@import "_tables";
 @import "@{bootstrapLessPath}/forms.less";
 @import "@{bootstrapLessPath}/buttons.less";
 
 // Components
 @import "@{bootstrapLessPath}/component-animations.less";
 @import "@{bootstrapLessPath}/glyphicons.less";
+@import "_icons";
 @import "@{bootstrapLessPath}/dropdowns.less";
 @import "@{bootstrapLessPath}/button-groups.less";
 @import "@{bootstrapLessPath}/input-groups.less";
 @import "@{bootstrapLessPath}/navs.less";
 @import "@{bootstrapLessPath}/navbar.less";
+@import "_hippo-navbar";
 @import "@{bootstrapLessPath}/breadcrumbs.less";
+@import "_breadcrumbs";
 @import "@{bootstrapLessPath}/pagination.less";
 @import "@{bootstrapLessPath}/pager.less";
 @import "@{bootstrapLessPath}/labels.less";
 @import "@{bootstrapLessPath}/badges.less";
+@import "_badges.less";
 @import "@{bootstrapLessPath}/jumbotron.less";
 @import "@{bootstrapLessPath}/thumbnails.less";
 @import "@{bootstrapLessPath}/alerts.less";
 @import "@{bootstrapLessPath}/progress-bars.less";
 @import "@{bootstrapLessPath}/media.less";
 @import "@{bootstrapLessPath}/list-group.less";
+@import "_list-group";
 @import "@{bootstrapLessPath}/panels.less";
+@import "_panels";
 @import "@{bootstrapLessPath}/wells.less";
 @import "@{bootstrapLessPath}/close.less";
+@import "_feature";
+@import "_log";
 
-// Components w/ JavaScript
+// Components which require JavaScript
 @import "@{bootstrapLessPath}/modals.less";
 @import "@{bootstrapLessPath}/tooltip.less";
 @import "@{bootstrapLessPath}/popovers.less";
 @import "@{bootstrapLessPath}/carousel.less";
+@import "_carousel";
 
 // Utility classes
 @import "@{bootstrapLessPath}/utilities.less";
 @import "@{bootstrapLessPath}/responsive-utilities.less";
-    @import "_responsive-utilities";
-
-// Component overrides
-@import "_breadcrumbs";
-@import "_list-group";
-@import "_panels";
-
-// Internet Explorer tweaks
-@import "_ie";
+@import "_responsive-utilities";
 
 // Shared components
 @import "../shared/chart/_chart";

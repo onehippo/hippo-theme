@@ -1,4 +1,4 @@
-/*
+/*!
  * Copyright 2014 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Default theme
-@import "@{vendorsPath}/bootstrap-chosen/bootstrap-chosen-variables";
-@chosen-sprite-path: '../images/chosen-sprite.png';
-@import "@{vendorsPath}/bootstrap-chosen/bootstrap-chosen";
+
+.feature-block {
+    margin-bottom: 20px;
+}
+
+.feature-block:last-child {
+    margin-bottom: 0;
+}
+
+.feature-changes {
+    margin-top: 10px;
+    border-top: 1px solid @feature-default-border;
+    padding-top: 20px;
+}
+
+.feature-changes-controls {
+    .clearfix();
+}
+
+.feature-changes .log-messages {
+    padding: 5px 0;
+}
+
+.feature-block .well {
+    margin-bottom: 0;
+}

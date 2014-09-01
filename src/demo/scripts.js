@@ -17,7 +17,33 @@
     "use strict";
 
     angular.module('hippo.theme.example', ['hippo.theme'])
-    
+        .controller('ErrorCtrl', ['$scope', '$document', function ($scope, $document) {
+            $scope.showErrors = false;
+            $scope.toggleErrors = function ($event) {
+                $event.stopPropagation();
+                $scope.showErrors = !$scope.showErrors;
+            };
+
+            $document.bind('click', function () {
+                $scope.showErrors = false;
+                $scope.$apply();
+            });
+        }])
+
+        .controller('LogCtrl', ['$scope', function ($scope) {
+            $scope.showLog = true;
+            $scope.hideLog = function () {
+                $scope.showLog = false;
+            };
+        }])
+
+        .controller('NavCtrl', ['$scope', '$location', '$anchorScroll', function ($scope, $location, $anchorScroll) {
+            $scope.scrollTo = function (id) {
+                $location.hash(id);
+                $anchorScroll();
+            };
+        }])
+
         /**
          * @ngdoc object
          * @name hippo.theme.example:SelectBoxCtrl
@@ -244,6 +270,18 @@
                 $log.info('Cancel button clicked');
                 $scope.confirmation.show = false;
             };
-        }]);
+        }])
 
+        .controller('FeatureCtrl', ['$scope', function ($scope) {
+            $scope.showDescription = false;
+            $scope.showChanges = false;
+
+            $scope.toggleDescription = function () {
+                $scope.showDescription = !$scope.showDescription;
+            };
+
+            $scope.toggleChanges = function () {
+                $scope.showChanges = !$scope.showChanges;
+            };
+        }]);
 })();

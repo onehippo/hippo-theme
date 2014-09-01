@@ -1,0 +1,116 @@
+/*
+ * Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+body {
+    position: relative;
+    padding-top: @hippo-navbar-height;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.container-has-hippo-navbar {
+    height: 100%;
+    overflow: auto;
+    padding-top: 15px;
+}
+
+.anchor {
+    display: block;
+    visibility: hidden;
+    position: relative;
+    top: -(@hippo-navbar-height);
+}
+
+.navbar-icons {
+    float: right;
+
+    @media (max-width: @screen-xs-max) {
+        margin-right: 15px;
+    }
+
+    .navbar-link {
+        display: inline-block;
+        margin: 0 5px;
+    }
+}
+
+.hippo-navbar {
+    margin-bottom: 0;
+
+    .navbar-title {
+        .navbar-brand;
+        position: absolute;
+        width: @hippo-navbar-title-width;
+        left: 50%;
+        margin-left: -(@hippo-navbar-title-width / 2);
+        text-align: center;
+        padding: 0;
+    }
+
+    .navbar-toggle {
+        float: left;
+        margin-left: 8px;
+    }
+
+    .notification-badge {
+        position: absolute;
+        left: 45px;
+        top: 5px;
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+    .hippo-navbar ~ .container-has-hippo-navbar {
+        margin-left: @side-navbar-width;
+    }
+
+    .navbar-header {
+        width: 100%;
+    }
+
+    .hippo-navbar .navbar-collapse.collapse {
+        position: fixed;
+        top: @hippo-navbar-height;
+        left: 0;
+        height: 100% !important;
+        max-height: none;
+        width: @side-navbar-width;
+        padding: 0;
+        background: @navbar-default-bg;
+
+        ul, li {
+            float: none;
+        }
+    }
+
+    .hippo-navbar .notification-badge {
+        display: none;
+    }
+
+    .anchor {
+        top: 0;
+    }
+}
+
