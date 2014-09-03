@@ -35,6 +35,11 @@
             $scope.hideLog = function () {
                 $scope.showLog = false;
             };
+
+            $scope.displayLog = function (event) {
+                event.preventDefault();
+                $scope.showLog = true;
+            };
         }])
 
         .controller('NavCtrl', ['$scope', '$location', '$anchorScroll', function ($scope, $location, $anchorScroll) {

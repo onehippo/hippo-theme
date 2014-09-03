@@ -31,7 +31,7 @@
     <script src="components/fastclick/lib/fastclick.js"></script>
 </head>
 
-<body id="container" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
+<body id="container" class="log-visible" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
     <div class="log-top alert alert-info" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors($event)">
         <button type="button" class="close" data-dismiss="alert" ng-click="hideLog()">
             <span aria-hidden="true">&times;</span>
@@ -65,7 +65,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <span class="badge badge-primary notification-badge">18</span>
-                <a class="navbar-brand" href="#">Hippo Theme</a>
+                <a class="navbar-brand" href="#/">Hippo Theme</a>
                 <p class="navbar-text navbar-title">
                     a work in progress
                 </p>
@@ -73,7 +73,7 @@
                     <a href="#" class="navbar-link" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
                         <span class="fa fa-refresh"></span> <span class="hidden-xs">Rebuild now!</span>
                     </a>
-                    <a href="#" class="navbar-link">
+                    <a href="#" class="navbar-link" ng-click="displayLog($event)">
                         <span class="fa fa-bell-o fa-danger"></span>
                     </a>
                 </div>
