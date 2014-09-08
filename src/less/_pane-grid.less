@@ -13,38 +13,45 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-
-.pane-root {
+.pane-root-horizontal,
+.pane-root-vertical {
     position: relative;
 }
 
-.pane {
-    position: absolute;
-    overflow: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
+.generate-pane-col(@breakpoint; @maxCols; @i; @j: @i) when (@j =< @maxCols) {
+    @columnWidth: (100% / @maxCols);
+    @start: (@i * @columnWidth);
+    @end: (@j * @columnWidth);
 
-.generate-panes(@selector; @maxPanes; @maxPanesIndex: 1; @selectorIndex: 1;)
- when (@maxPanesIndex =< @maxPanes) and (@selectorIndex =< @maxPanes) {
-    @paneClass: ~".@{selector}-@{maxPanesIndex}";
-    @margin: (@maxPanesIndex * 100% / @maxPanes);
-    @width: 100% - @margin;
+    .pane-@{breakpoint}-@{i}-@{j} {
+        position: absolute;
+        overflow: auto;
 
-    .@{paneClass} {
-        right: @width;
+        .pane-root-horizontal & {
+            top: 0;
+            bottom: 0;
+            left: @start;
+            right: (100% - @end);
+            width: (@end - @start);
+        }
 
-        .generate-additions(@paneClass, @maxPanes, (@selectorIndex + 1));
-
+        .pane-root-vertical & {
+            left: 0;
+            right: 0;
+            top: @start;
+            bottom: (100% - @end);
+            height: (@end - @start);
+        }
     }
 
-    .generate-panes(@selector, @maxPanes; (@maxPanesIndex + 1));
+
+    .generate-pane-col(@breakpoint; @maxCols; @i; (@j + 1));
 }
 
-.generate-additions(@selector, @maxPanes; @maxPanesIndex: 1; @selectorIndex;)
-
+.generate-pane-cols(@breakpoint; @maxCols; @i: 0) when(@i =< @maxCols) {
+    .generate-pane-col(@breakpoint; @maxCols; @i);
+    .generate-pane-cols(@breakpoint; @maxCols; (@i + 1));
 }
 
-.generate-panes(pane, 4);
+.generate-pane-cols(lg, 12);
+
