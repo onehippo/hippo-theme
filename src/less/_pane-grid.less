@@ -18,40 +18,57 @@
     position: relative;
 }
 
+.pane-full {
+    .pane();
+}
+
+.pane(@top: 0; @right: 0; @bottom: 0; @left: 0;) {
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+    overflow: auto;
+}
+
 .generate-pane-col(@breakpoint; @maxCols; @i; @j: @i) when (@j =< @maxCols) {
     @columnWidth: (100% / @maxCols);
     @start: (@i * @columnWidth);
-    @end: (@j * @columnWidth);
+    @end: (100% - (@j * @columnWidth));
+    @dimension: (@j - @i) * @columnWidth;
 
-    .pane-@{breakpoint}-@{i}-@{j} {
-        position: absolute;
-        overflow: auto;
-
-        .pane-root-horizontal & {
-            top: 0;
-            bottom: 0;
-            left: @start;
-            right: (100% - @end);
-            width: (@end - @start);
-        }
-
-        .pane-root-vertical & {
-            left: 0;
-            right: 0;
-            top: @start;
-            bottom: (100% - @end);
-            height: (@end - @start);
-        }
+    .pane-root-horizontal .pane-@{breakpoint}-@{i}-@{j} {
+        .pane(0; @end; 0; @start);
+        width: @dimension;
     }
 
+    .pane-root-vertical .pane-@{breakpoint}-@{i}-@{j} {
+        .pane(@start; 0; @end; 0);
+        height: @dimension;
+    }
 
     .generate-pane-col(@breakpoint; @maxCols; @i; (@j + 1));
 }
 
-.generate-pane-cols(@breakpoint; @maxCols; @i: 0) when(@i =< @maxCols) {
+.generate-pane-grid(@breakpoint: xs; @maxCols: 12; @i: 0)
+    when(@i =< @maxCols) and (@breakpoint = xs) {
     .generate-pane-col(@breakpoint; @maxCols; @i);
-    .generate-pane-cols(@breakpoint; @maxCols; (@i + 1));
+    .generate-pane-grid(@breakpoint; @maxCols; (@i + 1));
 }
 
-.generate-pane-cols(lg, 12);
+.generate-pane-grid(@breakpoint: xs; @maxCols: 12; @i: 0)
+    when(@i =< @maxCols) and not (@breakpoint = xs) {
+    @minWidth: ~"screen-@{breakpoint}-min";
+
+    @media (min-width: @@minWidth) {
+        .generate-pane-col(@breakpoint; @maxCols; @i);
+    }
+
+    .generate-pane-grid(@breakpoint; @maxCols; (@i + 1));
+}
+
+.generate-pane-grid(xs);
+.generate-pane-grid(sm);
+.generate-pane-grid(md);
+.generate-pane-grid(lg);
 
