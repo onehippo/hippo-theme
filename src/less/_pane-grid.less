@@ -13,8 +13,8 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-.pane-root-horizontal,
-.pane-root-vertical {
+.pane-row,
+.pane-column {
     position: relative;
 }
 
@@ -37,12 +37,12 @@
     @end: (100% - (@j * @columnWidth));
     @dimension: (@j - @i) * @columnWidth;
 
-    .pane-root-horizontal .pane-@{breakpoint}-@{i}-@{j} {
+    .pane-row .pane-@{breakpoint}-@{i}-@{j} {
         .pane(0; @end; 0; @start);
         width: @dimension;
     }
 
-    .pane-root-vertical .pane-@{breakpoint}-@{i}-@{j} {
+    .pane-column .pane-@{breakpoint}-@{i}-@{j} {
         .pane(@start; 0; @end; 0);
         height: @dimension;
     }
