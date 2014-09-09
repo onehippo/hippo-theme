@@ -27,7 +27,7 @@
   <description>Hippo Bootstrap Theme</description>
   <groupId>org.onehippo.cms7.frontend</groupId>
   <artifactId>hippo-theme</artifactId>
-  <version>1.01.04</version>
+  <version>1.01.05-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <repositories>
@@ -48,7 +48,7 @@
     <connection>scm:git:git@github.com:onehippo/hippo-theme.git</connection>
     <developerConnection>scm:git:git@github.com:onehippo/hippo-theme.git</developerConnection>
     <url>https://github.com/onehippo/hippo-theme.git</url>
-    <tag>hippo-theme-1.01.04</tag>
+    <tag>1.01.xx</tag>
   </scm>
 
   <build>
