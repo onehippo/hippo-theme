@@ -38,7 +38,7 @@
     <!-- endbuild -->
 </head>
 
-<body ng-app="hippo.theme.example" id="container" class="log-visible" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
+<body ng-app="hippo.theme.example" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
     <div class="log-top alert alert-info" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors($event)">
         <button type="button" class="close" data-dismiss="alert" ng-click="hideLog()">
             <span aria-hidden="true">&times;</span>
@@ -97,7 +97,7 @@
         </div>
     </div>
 
-    <div class="container-fluid container-has-hippo-navbar">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <a class="anchor" id="introduction"></a>
