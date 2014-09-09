@@ -27,11 +27,12 @@ module.exports = function (grunt) {
 
     var cfg = {
         tmpDir: '.tmp',
-        exampleDir: 'demo',
-        demoRepoDir: 'hippo-theme-demo'
+        demoRepoDir: 'hippo-theme-demo',
+        demoSrc: 'demo/src',
+        demoDist: 'demo/dist'
     };
 
-    cfg.tmpRepoDir = userhome(cfg.tmpDir, cfg.exampleDir, cfg.demoRepoDir);
+    cfg.tmpRepoDir = userhome(cfg.tmpDir, cfg.demoDist, cfg.demoRepoDir);
 
     grunt.initConfig({
         // Configuration
@@ -45,19 +46,21 @@ module.exports = function (grunt) {
             },
             less: {
                 files: ['src/**/*.less'],
-                tasks: ['lintspaces:less', 'less', 'copy:demo']
+                tasks: ['lintspaces:less', 'less']
             },
             html: {
-                files: ['src/**/*.html'],
-                tasks: ['copy:demo']
+                files: ['<%= cfg.demoSrc %>/**/*.html']
             },
             js: {
                 files: ['src/**/*.js', '!**/*.spec.js'],
-                tasks: ['concat:dist', 'uglify:dist', 'copy:demo']
+                tasks: ['concat:dist', 'uglify:dist']
+            },
+            demoJs: {
+                files: ['<%= cfg.demoSrc %>/js/**.*.js']
             },
             images: {
                 files: ['src/images/**/*.{png,jpg,gif}'],
-                tasks: ['imagemin', 'copy:demo']
+                tasks: ['imagemin']
             }
         },
 
@@ -65,7 +68,7 @@ module.exports = function (grunt) {
         clean: {
             bower: [ 'components/**' ],
             dist: [ 'dist/**/*' ],
-            demo: ['<%= cfg.exampleDir %>' ]
+            demo: ['<%= cfg.demoDist %>' ]
         },
 
         // Check if JS files are according to conventions specified in .jshintrc
@@ -150,6 +153,7 @@ module.exports = function (grunt) {
             }
         },
 
+        // Minify images
         imagemin: {
             dist: {
                 files: [{
@@ -163,38 +167,25 @@ module.exports = function (grunt) {
 
         // Copy files
         copy: {
-            main: {
-                expand: true,
-                cwd: 'src',
-                src: ['!**/*.spec.js'],
-                dest: 'dist/'
-            },
-
             demo: {
                 files: [
                     {
                         expand: true,
-                        cwd: 'dist',
-                        src: [
-                            '**/*'
-                        ],
-                        dest: '<%= cfg.exampleDir %>/components/hippo-theme/dist'
+                        cwd: '<%= cfg.demoSrc %>',
+                        src: ['**/*.html'],
+                        dest: '<%= cfg.demoDist %>/'
                     },
                     {
                         expand: true,
-                        src: [
-                            'components/**/*',
-                            '!components/font-awesome/src/**/*'
-                        ],
-                        dest: '<%= cfg.exampleDir %>/'
+                        cwd: 'dist/images',
+                        src: ['**/*'],
+                        dest: '<%= cfg.demoDist %>/images/'
                     },
                     {
                         expand: true,
-                        cwd: 'src/demo',
-                        src: [
-                            '**/*'
-                        ],
-                        dest: '<%= cfg.exampleDir %>/'
+                        cwd: 'dist/fonts',
+                        src: ['**/*'],
+                        dest: '<%= cfg.demoDist %>/fonts/'
                     }
                 ]
             },
@@ -203,7 +194,13 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'src/fonts',
+                        cwd: 'components/bootstrap/fonts',
+                        src: ['**/*'],
+                        dest: 'dist/fonts/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'components/font-awesome/fonts',
                         src: ['**/*'],
                         dest: 'dist/fonts/'
                     }
@@ -214,7 +211,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: '<%= cfg.exampleDir %>',
+                        cwd: '<%= cfg.demoDist %>',
                         src: [
                             '**/*'
                         ],
@@ -222,6 +219,22 @@ module.exports = function (grunt) {
                     }
                 ]
             }
+        },
+
+        useminPrepare: {
+            options: {
+                dest: '<%= cfg.demoDist %>'
+            },
+
+            html: '<%= cfg.demoSrc %>/index.html'
+        },
+
+        usemin: {
+            options: {
+                assetsDirs: ['<%= cfg.demoDist %>']
+            },
+
+            html: ['<%= cfg.demoDist %>/index.html']
         },
 
         // Testing with karma
@@ -243,15 +256,26 @@ module.exports = function (grunt) {
         },
 
         connect: {
+            options: {
+                port: 9000,
+                livereload: 35729,
+                hostname: '0.0.0.0',
+                open: 'http://localhost:9000/#/',
+            },
             demo: {
                 options: {
-                    port: 9000,
-                    livereload: 35729,
-                    hostname: '0.0.0.0',
-                    open: 'http://localhost:9000/#/',
                     base: [
-                        '<%= cfg.exampleDir %>'
-                    ]
+                        '<%= cfg.demoSrc %>',
+                        '.'
+                    ],
+                }
+            },
+            dist: {
+                options: {
+                    base: [
+                        '<%= cfg.demoDist %>'
+                    ],
+                    keepalive: true
                 }
             }
         },
@@ -293,7 +317,7 @@ module.exports = function (grunt) {
         // Angular Documentation
         ngdocs: {
             options: {
-                dest: '<%= cfg.exampleDir %>/docs',
+                dest: '<%= cfg.demoDist %>/docs',
                 scripts: ['angular.js'],
                 html5Mode: false,
                 startPage: '/api',
@@ -327,19 +351,33 @@ module.exports = function (grunt) {
     ]);
 
     // build demo
-    grunt.registerTask('build:demo', 'Build and test the demo', [
+    grunt.registerTask('build:demo', 'Build and test the demo for github page', [
         'clean:demo',
         'build:dist',
         'test',
-        'copy:demo'
+        'useminPrepare',
+        'concat:generated',
+        'uglify:generated',
+        'cssmin:generated',
+        'copy:demo',
+        'usemin',
+        'ngdocs'
     ]);
 
     // server with demo page
     grunt.registerTask('server:demo', 'Build, test, and show the demo continuously', [
-        'build:demo',
+        'build:dist',
+        'test',
         'ngdocs',
         'connect:demo',
         'watch'
+    ]);
+
+    grunt.registerTask('server:dist', 'Build, test, and show the demo continuously', [
+        'build:demo',
+        'test',
+        'ngdocs',
+        'connect:dist'
     ]);
 
     // test
