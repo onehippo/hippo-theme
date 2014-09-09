@@ -352,8 +352,8 @@ module.exports = function (grunt) {
 
     // build demo
     grunt.registerTask('build:demo', 'Build and test the demo for github page', [
-        'clean:demo',
         'build:dist',
+        'clean:demo',
         'test',
         'useminPrepare',
         'concat:generated',
@@ -366,17 +366,13 @@ module.exports = function (grunt) {
 
     // server with demo page
     grunt.registerTask('server:demo', 'Build, test, and show the demo continuously', [
-        'build:dist',
-        'test',
-        'ngdocs',
+        'build:demo',
         'connect:demo',
         'watch'
     ]);
 
     grunt.registerTask('server:dist', 'Build, test, and show the demo continuously', [
         'build:demo',
-        'test',
-        'ngdocs',
         'connect:dist'
     ]);
 
@@ -392,7 +388,6 @@ module.exports = function (grunt) {
     // publish
     grunt.registerTask('publish', 'Publish the demo online', [
         'build:demo',
-        'ngdocs',
         'shell:cloneDemo',
         'copy:toDemoRepo',
         'shell:commitDemo',
