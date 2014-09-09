@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                 tasks: ['concat:dist', 'uglify:dist']
             },
             demoJs: {
-                files: ['<%= cfg.demoSrc %>/js/**.*.js']
+                files: ['<%= cfg.demoSrc %>/js/**/*.js']
             },
             images: {
                 files: ['src/images/**/*.{png,jpg,gif}'],
@@ -260,14 +260,14 @@ module.exports = function (grunt) {
                 port: 9000,
                 livereload: 35729,
                 hostname: '0.0.0.0',
-                open: 'http://localhost:9000/#/',
+                open: 'http://localhost:9000/#/'
             },
             demo: {
                 options: {
                     base: [
                         '<%= cfg.demoSrc %>',
                         '.'
-                    ],
+                    ]
                 }
             },
             dist: {
