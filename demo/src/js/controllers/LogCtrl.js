@@ -20,7 +20,8 @@
   angular.module('hippo.theme.example').controller('LogCtrl',
     ['$scope',
       function ($scope) {
-        $scope.showLog = true;
+        $scope.showLog = false;
+
         $scope.hideLog = function () {
           $scope.showLog = false;
         };

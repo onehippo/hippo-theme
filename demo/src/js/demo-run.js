@@ -19,7 +19,7 @@
   angular.module('hippo.theme.example').run(
     ['$location',
       function ($location) {
-        $location.url('/introduction');
+        $location.url('/css-core');
       }
     ]
   );

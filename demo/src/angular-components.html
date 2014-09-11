@@ -42,7 +42,7 @@
             {{ item.title }}
           </div>
           <br>
-<pre ng-non-bindable>&lt;div hippo.theme.tree
+ ng-non-bindable>&lt;div hippo.theme.tree
      items="treeItems"
      callbacks="callbacks"
      selected-item-id="selectedItem.id"
@@ -60,7 +60,7 @@
           </p>
           <p>
           <h4>Example tree data</h4>
-<pre>$scope.treeItems = [
+<pre class="prettyprint linenums" >$scope.treeItems = [
 {
     id: 1,
     title: 'Item 1',
@@ -77,7 +77,7 @@
     items: []
 }];</pre>
           <h4>Available callbacks</h4>
-<pre>$scope.callbacks = {
+<pre class="prettyprint linenums" >$scope.callbacks = {
     accept: function(sourceNodeScope, destNodesScope, destIndex) {},
     dropped: function(event) {},
     dragStart: function(event) {},
@@ -118,7 +118,7 @@
           </div>
         </div>
         <br>
-            <pre>&lt;select hippo.theme.select-box
+            <pre class="prettyprint linenums" >&lt;select hippo.theme.select-box
   multiple="multiple"
   ng-model="selectedValues"
   ng-options="v.name for v in values"
@@ -140,7 +140,7 @@
       <div ng-controller="ChartCtrl" style="width: 325px;">
         <div hippo.theme.chart data="data"></div>
         <br>
-                  <pre>&lt;div hippo.theme.chart
+                  <pre class="prettyprint linenums" >&lt;div hippo.theme.chart
   data="data"&gt;
 &lt;/div&gt;</pre>
       </div>
@@ -162,7 +162,7 @@
 
           {{ field.focus }}
 
-          <pre ng-non-bindable>&lt;input hippo.theme.focus-me="focusInput"&gt;</pre>
+          <pre class="prettyprint linenums"  ng-non-bindable>&lt;input hippo.theme.focus-me="focusInput"&gt;</pre>
         </div>
       </div>
     </div>
@@ -183,7 +183,7 @@
           </div>
 
           <br>
-                <pre ng-non-bindable style="clear: both;">&lt;li hippo.theme.divider="$last"
+                <pre class="prettyprint linenums"  ng-non-bindable style="clear: both;">&lt;li hippo.theme.divider="$last"
 ng-repeat="item in items"&gt;
   &lt;a href="#"&gt;&#123;&#123; item &#125;&#125;&lt;/a&gt;
 &lt;/li&gt;</pre>
@@ -199,7 +199,7 @@ ng-repeat="item in items"&gt;
         <div ng-controller="PanelCtrl">
           <div hippo.theme.panel-default title="title"><p>Panel HTML content</p></div>
           <br>
-                <pre>&lt;div hippo.theme.panel-default
+                <pre class="prettyprint linenums" >&lt;div hippo.theme.panel-default
   title="panel.title"&gt;
   Panel HTML content
 &lt;/div&gt;</pre>
@@ -229,7 +229,7 @@ ng-repeat="item in items"&gt;
             </p>
           </div>
           <br>
-<pre>&lt;div hippo.theme.confirmation-dialog
+<pre class="prettyprint linenums" >&lt;div hippo.theme.confirmation-dialog
   confirm-icon="trash-o"
   perform-confirmation="confirmationClicked()"
   perform-cancel="cancelClicked()"
@@ -899,3 +899,4 @@ ng-repeat="item in items"&gt;
       </div>
     </div>
   </div>
+

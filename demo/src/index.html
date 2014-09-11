@@ -13,7 +13,7 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
-  -->
+-->
 <html>
 <head>
     <!-- Meta -->
@@ -38,28 +38,30 @@
     <!-- endbuild -->
 </head>
 
-<body ng-app="hippo.theme.example" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
-    <div class="log-top alert alert-info" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors($event)">
-        <button type="button" class="close" data-dismiss="alert" ng-click="hideLog()">
-            <span aria-hidden="true">&times;</span>
-            <span class="sr-only">Close</span>
-        </button>
+<body ng-app="hippo.theme.example">
+    <div class="log-top" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
+        <div class="alert alert-info" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors($event)">
+            <button type="button" class="close" data-dismiss="alert" ng-click="hideLog()">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+            </button>
 
-        <p>15:55:46 - <span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message <span class="fa" ng-class="{'fa-chevron-right': !showErrors, 'fa-chevron-down': showErrors}"></span></p>
+            <p><span class="fa" ng-class="{'fa-chevron-right': !showErrors, 'fa-chevron-down': showErrors}"></span> 15:55:46 - <span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
 
-        <div class="log-messages ng-hide" ng-show="showErrors">
-            <p>15:55:46 - <span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-check-square-o fa-success"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-flag fa-warning"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-            <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            <div class="log-messages ng-hide" ng-show="showErrors">
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-check-square-o fa-success"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-flag fa-warning"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            </div>
         </div>
     </div>
     <div class="hippo-navbar navbar navbar-default navbar-fixed-top">
@@ -77,8 +79,9 @@
                     a work in progress
                 </p>
                 <div class="navbar-text navbar-icons">
+                    <span class="hidden-xs">Example navbar icons:</span>
                     <a href="#" class="navbar-link" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
-                        <span class="fa fa-refresh"></span> <span class="hidden-xs">Rebuild now!</span>
+                        <span class="fa fa-refresh fa-spin"></span>
                     </a>
                     <a href="#" class="navbar-link" ng-click="displayLog($event)">
                         <span class="fa fa-bell-o fa-danger"></span>
@@ -88,10 +91,41 @@
 
             <div class="navbar-collapse collapse" ng-controller="NavCtrl">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/introduction"><span class="fa fa-dashboard fa-2x fa-fw fa-middle"></span> Introduction</a></li>
-                    <li><a href="#/css-components"><span class="fa fa-wrench fa-2x fa-fw fa-middle"></span> CSS Components</a></li>
-                    <li><a href="#/angular-components"><span class="fa fa-cubes fa-2x fa-fw fa-middle"></span> AngularJS Components</a></li>
-                    <li><a href=""><span class="fa fa-exclamation fa-fw fa-middle"></span> Notification label <span class="badge badge-primary">18</span></a></li>
+                    <li ng-class="{active: isActive('/introduction')}">
+                        <a href="#/introduction">
+                            <span class="fa fa-sitemap fa-fw"></span> Introduction
+                        </a>
+                    </li>
+                    <li ng-class="{active: isActive('/grid-systems')}">
+                        <a href="#/grid-systems">
+                            <span class="fa fa-th fa-fw"></span> Grid Systems
+                        </a>
+                    </li>
+                    <li ng-class="{active: isActive('/css-core')}">
+                        <a href="#/css-core">
+                            <span class="fa fa-font fa-fw"></span> CSS Core
+                        </a>
+                    </li>
+                    <li ng-class="{active: isActive('/css-components')}">
+                        <a href="#/css-components">
+                            <span class="fa fa-cubes fa-fw"></span> CSS Components
+                        </a>
+                    </li>
+                    <li ng-class="{active: isActive('/javascript-components')}">
+                        <a href="#/javascript-components">
+                            <span class="fa fa-wrench fa-fw"></span> Javascript Components
+                        </a>
+                    </li>
+                    <li ng-class="{active: isActive('/angular-components')}">
+                        <a href="#/angular-components">
+                            <span class="fa fa-code fa-fw"></span> Angular Components
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/introduction">
+                            <span class="fa fa-exclamation fa-fw"></span> Example sidebar notification badge <span class="badge badge-primary">18</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -112,6 +146,7 @@
     <script src="../../components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="../../components/angular-ui-tree/dist/angular-ui-tree.js"></script>
     <script src="../../components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../../components/google-code-prettify/src/prettify.js"></script>
     <!-- endbuild -->
 
     <!-- Hippo theme scripts -->

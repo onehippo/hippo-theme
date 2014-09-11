@@ -100,7 +100,8 @@ module.exports = function (grunt) {
                     'src/shared/select-box/select-box.js',
                     'src/shared/urlparser/urlparser.js',
                     'src/shared/tree/tree.js',
-                    'src/shared/confirmation-dialog/confirmation-dialog.js'
+                    'src/shared/confirmation-dialog/confirmation-dialog.js',
+                    'src/shared/prettify/prettify.js'
                 ],
                 dest: 'dist/js/main.js'
             }
