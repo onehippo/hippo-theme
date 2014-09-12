@@ -49,9 +49,9 @@
             <p><span class="fa" ng-class="{'fa-chevron-right': !showErrors, 'fa-chevron-down': showErrors}"></span> 15:55:46 - <span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
 
             <div class="log-messages ng-hide" ng-show="showErrors">
-                <p>15:55:46 - <span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
-                <p>15:55:46 - <span class="fa fa-fw fa-check-square-o fa-success"></span> Interesting error message</p>
-                <p>15:55:46 - <span class="fa fa-fw fa-flag fa-warning"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation fa-color-danger"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-check-square-o fa-color-success"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-flag fa-color-warning"></span> Interesting error message</p>
                 <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
                 <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
                 <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
@@ -64,7 +64,7 @@
             </div>
         </div>
     </div>
-    <div class="hippo-navbar navbar navbar-default navbar-fixed-top">
+    <div class="hippo-navbar navbar navbar-default navbar-fixed-top" ng-controller="NavbarCtrl">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -80,9 +80,10 @@
                 </p>
                 <div class="navbar-text navbar-icons">
                     <span class="hidden-xs">Example navbar icons:</span>
-                    <a href="#" class="navbar-link" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                    <a href="#/introduction" class="navbar-link" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
                         <span class="fa fa-refresh fa-spin"></span>
                     </a>
+                    <span class="hidden-xs">View top log: </span>
                     <a href="#" class="navbar-link" ng-click="displayLog($event)">
                         <span class="fa fa-bell-o fa-color-danger"></span>
                     </a>
@@ -185,6 +186,7 @@
     <script src="js/controllers/PanelCtrl.js"></script>
     <script src="js/controllers/SelectBoxCtrl.js"></script>
     <script src="js/controllers/TreeCtrl.js"></script>
+    <script src="js/controllers/NavbarCtrl.js"></script>
     <!-- endbuild -->
 
     <!-- External scripts -->

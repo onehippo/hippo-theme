@@ -19,7 +19,8 @@
 
   angular.module('hippo.theme.example').controller('LogCtrl',
     ['$scope',
-      function ($scope) {
+     '$rootScope',
+      function ($scope, $rootScope) {
         $scope.showLog = false;
 
         $scope.hideLog = function () {
@@ -30,6 +31,8 @@
           event.preventDefault();
           $scope.showLog = true;
         };
+
+        $rootScope.$on('displayLog', $scope.displayLog);
       }
     ]
   );

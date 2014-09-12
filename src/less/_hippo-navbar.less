@@ -55,6 +55,16 @@
         left: 45px;
         top: 5px;
     }
+
+    .navbar-nav > .active > a,
+    .navbar-nav > .active > a:hover {
+        color: white;
+        background: @brand-primary;
+
+        .fa {
+            color: white;
+        }
+    }
 }
 
 @media (max-width: @screen-xs-max) {
@@ -81,6 +91,7 @@
         width: @side-navbar-width;
         padding: 0;
         background: @navbar-default-bg;
+        border-right: 1px solid @navbar-default-border;
 
         ul, li {
             float: none;
