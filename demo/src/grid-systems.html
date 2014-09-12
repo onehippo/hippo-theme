@@ -93,35 +93,82 @@
       </tbody>
     </table>
   </div>
+  <div class="col-xs-12">
+    <h4>Flexible pane grid, full height columns / full width rows</h4>
+    <p>Based on the idea of the new flexbox css module, see a full explanation <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">here</a>.</p>
 
-
-  <div class="col-lg-6">
+    <p>This grid will let you stretched panes in either vertical (column) or horizontal (row) fashion in a 12 pane grid.
+      It is a flexible grid, meaning that it uses a percentage of the viewport to scale the panes.
+      The area of a pane is defined by giving it a class with area boundaries,
+      for example <code>.pane-xs-0-6</code> will make the pane stretch from beginning to half of 12 pane grid.</p>
+    <p>This also allows you to reorder the columns as you could put a <code>.pane-xs-4-6</code> before a <code>.pane-xs-2-4</code> in your html but it will visually still show up after the 2-4 pane.</p>
+    <p>Just like the bootstrap theme the grid has breakpoint variations allowing for different layouts per breakpoint.</p>
+    <p>The parent of the pane, or the <code>.pane-row</code> or <code>.pane-column</code> does need its height set explicitly as absolute positioned elements are not part of the normal page flow.</p>
+    <p>Try it out! Resize your viewport and see the below grids change and switch.</p>
+    <p>There is also a less mixin available <code>.pane(@top, @right, @bottom, @left)</code> which allows to make any element positioned absolute and stretched to the dimentions specified.</p>
+  </div>
+  <div class="col-xs-12">
     <div class="panel panel-default">
       <div class="panel-heading">Pane grid horizontal</div>
       <div class="panel-body">
-        <div class="pane-row" style="height: 300px;">
-          <div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8" style="background-color: blue;">
-            <div class="pane-xs-4-8" style="background: black"></div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="pane-row" style="height: 300px;">
+              <div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8 bg-info">
+                <div class="pane-xs-4-8 bg-warning"></div>
+              </div>
+              <div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12 bg-success">
+              </div>
+              <div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4 bg-danger">
+              </div>
+            </div>
           </div>
-          <div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12" style="background-color: red;">
-          </div>
-          <div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4" style="background-color: green;">
+          <div class="col-sm-6">
+<pre>
+&lt;div class="pane-row" style="height: 300px;"&gt;
+  &lt;div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8"&gt;
+    &lt;div class="pane-xs-4-8"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12"&gt;
+  &lt;/div&gt;
+  &lt;div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-6">
+
+  <div class="col-xs-12">
     <div class="panel panel-default">
       <div class="panel-heading">Pane grid vertical</div>
       <div class="panel-body">
-        <div class="pane-column" style="height: 300px;">
-          <div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8" style="background-color: blue;">
-            <div class="pane-xs-4-8" style="background: black"></div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="pane-column" style="height: 300px;">
+              <div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8 bg-info">
+                <div class="pane-xs-4-8 bg-warning"></div>
+              </div>
+              <div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12 bg-success">
+              </div>
+              <div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4 bg-danger">
+              </div>
+            </div>
           </div>
-          <div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12" style="background-color: red;">
-          </div>
-          <div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4" style="background-color: green;">
+          <div class="col-sm-6">
+<pre>
+&lt;div class="pane-column" style="height: 300px;"&gt;
+  &lt;div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8"&gt;
+    &lt;div class="pane-xs-4-8"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12"&gt;
+  &lt;/div&gt;
+  &lt;div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
           </div>
         </div>
       </div>
