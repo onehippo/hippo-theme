@@ -259,12 +259,12 @@ module.exports = function (grunt) {
         connect: {
             options: {
                 port: 9000,
-                livereload: 35729,
                 hostname: '0.0.0.0',
                 open: 'http://localhost:9000/#/'
             },
             demo: {
                 options: {
+                    livereload: 35729,
                     base: [
                         '<%= cfg.demoSrc %>',
                         '.'
