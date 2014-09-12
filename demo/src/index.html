@@ -101,19 +101,14 @@
                             <span class="fa fa-th fa-fw"></span> Grid Systems
                         </a>
                     </li>
-                    <li ng-class="{active: isActive('/css-core')}">
-                        <a href="#/css-core">
-                            <span class="fa fa-font fa-fw"></span> CSS Core
+                    <li ng-class="{active: isActive('/typography')}">
+                        <a href="#/typography">
+                            <span class="fa fa-font fa-fw"></span> Typography
                         </a>
                     </li>
-                    <li ng-class="{active: isActive('/css-components')}">
-                        <a href="#/css-components">
-                            <span class="fa fa-cubes fa-fw"></span> CSS Components
-                        </a>
-                    </li>
-                    <li ng-class="{active: isActive('/javascript-components')}">
-                        <a href="#/javascript-components">
-                            <span class="fa fa-wrench fa-fw"></span> Javascript Components
+                    <li ng-class="{active: isActive('/bootstrap-components')}">
+                        <a href="#/bootstrap-components">
+                            <span class="fa fa-cubes fa-fw"></span> Bootstrap Components
                         </a>
                     </li>
                     <li ng-class="{active: isActive('/angular-components')}">
@@ -133,6 +128,25 @@
 
     <div class="container-fluid" ng-view>
     </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <span class="fa-stack fa-4x">
+                        <span class="fa fa-circle fa-stack-2x fa-primary"></span>
+                        <span class="fa fa-spinner fa-spin fa-stack-1x fa-white"></span>
+                    </span>
+                    <h2>Rebuilding...</h2>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Required external libraries -->
     <!-- build:js js/vendor.min.js -->

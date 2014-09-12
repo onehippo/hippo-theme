@@ -12,5 +12,119 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
-  -->
+-->
 
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Grid systems</h2>
+
+    <p>Hippo Theme is based on Bootstrap and thus supports the default Bootstrap grid and its breakpoints.</p>
+
+    <h4>Short summary of Bootstrap grid options:</h4>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            Extra small devices
+            <small>Phones (&lt;768px)</small>
+          </th>
+          <th>
+            Small devices
+            <small>Tablets (≥768px)</small>
+          </th>
+          <th>
+            Medium devices
+            <small>Desktops (≥992px)</small>
+          </th>
+          <th>
+            Large devices
+            <small>Desktops (≥1200px)</small>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-nowrap">Grid behavior</th>
+          <td>Horizontal at all times</td>
+          <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Container width</th>
+          <td>None (auto)</td>
+          <td>750px</td>
+          <td>970px</td>
+          <td>1170px</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Class prefix</th>
+          <td><code>.col-xs-</code></td>
+          <td><code>.col-sm-</code></td>
+          <td><code>.col-md-</code></td>
+          <td><code>.col-lg-</code></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap"># of columns</th>
+          <td colspan="4">12</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Column width</th>
+          <td class="text-muted">Auto</td>
+          <td>~62px</td>
+          <td>~81px</td>
+          <td>~97px</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Gutter width</th>
+          <td colspan="4">30px (15px on each side of a column)</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Nestable</th>
+          <td colspan="4">Yes</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Offsets</th>
+          <td colspan="4">Yes</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Column ordering</th>
+          <td colspan="4">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Pane grid horizontal</div>
+      <div class="panel-body">
+        <div class="pane-row" style="height: 300px;">
+          <div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8" style="background-color: blue;">
+            <div class="pane-xs-4-8" style="background: black"></div>
+          </div>
+          <div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12" style="background-color: red;">
+          </div>
+          <div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4" style="background-color: green;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Pane grid vertical</div>
+      <div class="panel-body">
+        <div class="pane-column" style="height: 300px;">
+          <div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8" style="background-color: blue;">
+            <div class="pane-xs-4-8" style="background: black"></div>
+          </div>
+          <div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12" style="background-color: red;">
+          </div>
+          <div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4" style="background-color: green;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

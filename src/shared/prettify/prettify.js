@@ -17,12 +17,13 @@
 (function () {
     'use strict';
 
-    angular.module('hippo.theme').directive('prettyprint', [
+    angular.module('hippo.theme').directive('pre', [
         '$window',
         function ($window) {
             return {
-                restrict: 'C',
+                restrict: 'E',
                 link: function (scope, element, attr) {
+                    element.addClass('prettyprint linenums pre-scrollable');
                     $window.prettyPrint();
                 }
             };

@@ -19,7 +19,7 @@
   angular.module('hippo.theme.example').run(
     ['$location',
       function ($location) {
-        $location.url('/css-core');
+        $location.url('/grid-systems');
       }
     ]
   );
