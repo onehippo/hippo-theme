@@ -1,4 +1,4 @@
-/*!
+/*
  * Copyright 2014 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,38 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+(function () {
+  'use strict';
 
-.fa-middle {
-    vertical-align: middle;
-}
-
-.fa-color-primary {
-    color: @brand-primary;
-}
-
-.fa-color-info {
-    color: @brand-info;
-}
-
-.fa-color-warning {
-    color: @brand-warning
-}
-
-.fa-color-success {
-    color: @brand-success;
-}
-
-.fa-color-danger {
-    color: @brand-danger;
-}
-
-.fa-color-white {
-    color: #ffffff;
-}
-
-.loading-icon {
-    display: inline-block;
-    height: 16px;
-    width: 16px;
-    background: url(../images/loader.gif) no-repeat center center transparent;
-}
+  /**
+   * @ngdoc object
+   * @name hippo.theme.example:DividerCtrl
+   *
+   * @description
+   * Controller for the Divider example.
+   */
+  angular.module('hippo.theme.example').controller('DividerCtrl',
+    ['$scope',
+      function ($scope) {
+        $scope.items = [
+          'Item A',
+          'Item B',
+          'Item C'
+        ];
+      }
+    ]
+  );
+}());

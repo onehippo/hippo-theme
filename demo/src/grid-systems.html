@@ -1,0 +1,177 @@
+<!--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Grid systems</h2>
+
+    <p>Hippo Theme is based on Bootstrap and thus supports the default Bootstrap grid and its breakpoints.</p>
+
+    <h4>Short summary of Bootstrap grid options:</h4>
+    <table class="table table-bordered table-striped table-responsive">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            Extra small devices
+            <small>Phones (&lt;768px)</small>
+          </th>
+          <th>
+            Small devices
+            <small>Tablets (≥768px)</small>
+          </th>
+          <th>
+            Medium devices
+            <small>Desktops (≥992px)</small>
+          </th>
+          <th>
+            Large devices
+            <small>Desktops (≥1200px)</small>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-nowrap">Grid behavior</th>
+          <td>Horizontal at all times</td>
+          <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Container width</th>
+          <td>None (auto)</td>
+          <td>750px</td>
+          <td>970px</td>
+          <td>1170px</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Class prefix</th>
+          <td><code>.col-xs-</code></td>
+          <td><code>.col-sm-</code></td>
+          <td><code>.col-md-</code></td>
+          <td><code>.col-lg-</code></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap"># of columns</th>
+          <td colspan="4">12</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Column width</th>
+          <td class="text-muted">Auto</td>
+          <td>~62px</td>
+          <td>~81px</td>
+          <td>~97px</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Gutter width</th>
+          <td colspan="4">30px (15px on each side of a column)</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Nestable</th>
+          <td colspan="4">Yes</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Offsets</th>
+          <td colspan="4">Yes</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap">Column ordering</th>
+          <td colspan="4">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-xs-12">
+    <h4>Flexible pane grid, full height columns / full width rows</h4>
+    <p>Based on the idea of the new flexbox css module, see a full explanation <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">here</a>.</p>
+
+    <p>This grid will let you stretched panes in either vertical (column) or horizontal (row) fashion in a 12 pane grid.
+      It is a flexible grid, meaning that it uses a percentage of the viewport to scale the panes.
+      The area of a pane is defined by giving it a class with area boundaries,
+      for example <code>.pane-xs-0-6</code> will make the pane stretch from beginning to half of 12 pane grid.</p>
+    <p>This also allows you to reorder the columns as you could put a <code>.pane-xs-4-6</code> before a <code>.pane-xs-2-4</code> in your html but it will visually still show up after the 2-4 pane.</p>
+    <p>Just like the bootstrap theme the grid has breakpoint variations allowing for different layouts per breakpoint.</p>
+    <p>The parent of the pane, or the <code>.pane-row</code> or <code>.pane-column</code> does need its height set explicitly as absolute positioned elements are not part of the normal page flow.</p>
+    <p>Try it out! Resize your viewport and see the below grids change and switch.</p>
+    <p>There is also a less mixin available <code>.pane(@top, @right, @bottom, @left)</code> which allows to make any element positioned absolute and stretched to the dimentions specified.</p>
+  </div>
+  <div class="col-xs-12">
+    <div class="panel panel-warning">
+      <div class="panel-heading">Pane grid horizontal</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="pane-row" style="height: 300px;">
+              <div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8 bg-info">
+                <div class="pane-xs-4-8 bg-warning"></div>
+              </div>
+              <div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12 bg-success">
+              </div>
+              <div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4 bg-danger">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+<pre>
+&lt;div class="pane-row" style="height: 300px;"&gt;
+  &lt;div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8"&gt;
+    &lt;div class="pane-xs-4-8"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12"&gt;
+  &lt;/div&gt;
+  &lt;div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <div class="panel panel-warning">
+      <div class="panel-heading">Pane grid vertical</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="pane-column" style="height: 300px;">
+              <div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8 bg-info">
+                <div class="pane-xs-4-8 bg-warning"></div>
+              </div>
+              <div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12 bg-success">
+              </div>
+              <div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4 bg-danger">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+<pre>
+&lt;div class="pane-column" style="height: 300px;"&gt;
+  &lt;div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8"&gt;
+    &lt;div class="pane-xs-4-8"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12"&gt;
+  &lt;/div&gt;
+  &lt;div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

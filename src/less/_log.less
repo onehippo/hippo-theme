@@ -1,4 +1,4 @@
-/*!
+/*
  * Copyright 2014 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,31 +16,34 @@
 
 .log-top {
     display: none;
+    z-index: 1031;
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     max-height: 33%;
     overflow: auto;
-    z-index: 1040;
-}
-
-.log-top.alert {
-    margin-bottom: 0;
-
-    .close {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-    }
-
-    &.alert-open p {
-        margin: 0 0 10px;
-    }
 
     &:hover {
         cursor: pointer;
     }
+
+    .alert-open p {
+        margin: 0 0 10px;
+    }
+
+    .alert {
+        margin-bottom: 0;
+        border-width: 0 0 1px 0;
+
+        .close {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+        }
+    }
+}
+
+.log-messages {
+    padding-left: 18px;
 }
 
 .log-messages p:last-child {
@@ -48,25 +51,28 @@
 }
 
 .log-visible {
-    padding-top: @log-alert-height;
+    display: block;
+    position: relative;
+}
 
-    .log-top {
-        display: block;
-    }
+.log-visible + .hippo-navbar {
+    top: @log-alert-height;
 
-    .hippo-navbar {
-        top: @log-alert-height;
+    & + .container-fluid {
+        top: @hippo-navbar-height + @log-alert-height;
     }
 
     @media (min-width: @screen-sm-min) {
-        .hippo-navbar .navbar-collapse.collapse {
-            top: @log-alert-height;
+        .navbar-collapse {
+            top: @log-alert-height + @hippo-navbar-height + 1;
+            border-right: 1px solid @navbar-default-border;
         }
     }
 }
 
+
 @media (min-width: @screen-sm-min) {
-    .log-top.alert-open .close {
+    .log-top .alert-open .close {
         right: 25px;
     }
 }

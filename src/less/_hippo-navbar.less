@@ -14,27 +14,9 @@
  * limitations under the License.
  */
 
-body {
-    position: relative;
-}
-
-html, body {
-    height: 100%;
-    overflow: hidden;
-}
-
-.container-has-hippo-navbar {
-    height: 100%;
-    overflow: auto;
+.hippo-navbar + .container-fluid {
+    .pane(@hippo-navbar-height, 0, 0, 0);
     padding-top: 15px;
-    margin-top: @hippo-navbar-height;
-}
-
-.anchor {
-    display: block;
-    visibility: hidden;
-    position: relative;
-    top: -(@hippo-navbar-height);
 }
 
 .navbar-icons {
@@ -73,6 +55,16 @@ html, body {
         left: 45px;
         top: 5px;
     }
+
+    .navbar-nav > .active > a,
+    .navbar-nav > .active > a:hover {
+        color: white;
+        background: @brand-primary;
+
+        .fa {
+            color: white;
+        }
+    }
 }
 
 @media (max-width: @screen-xs-max) {
@@ -82,23 +74,24 @@ html, body {
 }
 
 @media (min-width: @screen-sm-min) {
-    .hippo-navbar ~ .container-has-hippo-navbar {
-        margin-left: @side-navbar-width;
+    .hippo-navbar + .container-fluid {
+        left: @side-navbar-width;
     }
 
     .navbar-header {
         width: 100%;
     }
 
-    .hippo-navbar .navbar-collapse.collapse {
+    .hippo-navbar .collapse {
         position: fixed;
-        top: @hippo-navbar-height;
+        top: @hippo-navbar-height + 1;
         left: 0;
-        height: 100% !important;
+        height: 100% !important; // Override !important bootstrap style
         max-height: none;
         width: @side-navbar-width;
         padding: 0;
         background: @navbar-default-bg;
+        border-right: 1px solid @navbar-default-border;
 
         ul, li {
             float: none;
@@ -107,10 +100,6 @@ html, body {
 
     .hippo-navbar .notification-badge {
         display: none;
-    }
-
-    .anchor {
-        top: 0;
     }
 }
 

@@ -1,0 +1,267 @@
+<!--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<div id="angularjs-components">
+<div class="row">
+  <div class="col-lg-12">
+    <a class="anchor" id="angular-components"></a>
+    <h2>AngularJS components</h2>
+    <p>
+      There is an <a href="docs/">API reference</a> available for the AngularJS components and services that are
+      part of the Hippo theme.
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Tree</div>
+      <div class="panel-body">
+        <div id="tree-component"
+             ng-controller="TreeCtrl">
+          <div hippo.theme.tree
+               items="treeItems"
+               callbacks="callbacks"
+               class="hippo-tree ng-cloak"
+               selected-item-id="selectedItem.id">
+            <a class="btn btn-link btn-xs"
+               data-nodrag data-ng-click="toggleItem()"
+               data-ng-hide="childNodes().length === 0">
+              <span class="fa" data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"></span>
+            </a>
+            <div class="spacer" data-ng-hide="childNodes().length !== 0">&#9679;</div>
+            {{ item.title }}
+          </div>
+<pre>
+&lt;div hippo.theme.tree
+     items="treeItems"
+     callbacks="callbacks"
+     class="hippo-tree ng-cloak"
+     selected-item-id="selectedItem.id"&gt;
+  &lt;a class="btn btn-link btn-xs"
+     data-nodrag data-ng-click="toggleItem()"
+     data-ng-hide="childNodes().length === 0"&gt;
+    &lt;span class="fa" data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"&gt;&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;div class="spacer" data-ng-hide="childNodes().length !== 0"&gt;&#9679;&lt;/div&gt;
+  <span ng-non-bindable>{{ item.title }}</span>
+&lt;/div&gt;
+</pre>
+          <p>
+            <strong>Note:</strong> toggleItem() will keep the collapsed states of your model and ui-tree in sync.
+          </p>
+          <p>
+          <h4>Example tree data</h4>
+<pre>
+$scope.treeItems = [
+  {
+    id: 1,
+    title: 'Item 1',
+    collapsed: true,
+    items: [
+      {
+      id: 11,
+      title: 'Item 1.1'
+      }
+    ]
+  }, {
+    id: 2,
+    title: 'Item 2',
+    items: []
+  }
+];
+</pre>
+          <h4>Available callbacks</h4>
+<pre>
+$scope.callbacks = {
+    accept: function(sourceNodeScope, destNodesScope, destIndex) {},
+    dropped: function(event) {},
+    dragStart: function(event) {},
+    dragMove: function(event) {},
+    dragStop: function(event) {}
+};
+</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-8">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Select Box</div>
+      <div class="panel-body">
+        <div ng-controller="SelectBoxCtrl">
+          <div class="form-group has-feedback has-success">
+            <label class="control-label">Valid Select Box with a single value</label>
+            <select hippo.theme.select-box
+                    ng-model="singleSelectedValue"
+                    no-results-text="{{ noResultsText }}"
+                    ng-options="option.name for option in values"
+                    data-options="values"
+                    data-placeholder="{{ placeholder }}"></select>
+            <span class="form-control-feedback fa fa-check"></span>
+          </div>
+
+          <div class="form-group has-feedback has-error">
+            <label class="control-label">Invalid Select Box with multiple values</label>
+            <select hippo.theme.select-box ng-model="selectedValues"
+                    no-results-text="{{ noResultsText }}"
+                    ng-options="option.name for option in values" multiple="multiple"
+                    data-options="values"
+                    data-placeholder="{{ placeholder }}"></select>
+            <span class="form-control-feedback fa fa-times"></span>
+          </div>
+        </div>
+        <br>
+<pre>
+&lt;select hippo.theme.select-box
+  multiple="multiple"
+  ng-model="selectedValues"
+  ng-options="v.name for v in values"
+  options="values"
+  no-results-text="No results found for"
+  placeholder="Please select an item"&gt;
+&lt;/select&gt;
+</pre>
+
+        <p>
+          <strong>Note:</strong> without the 'options' variable, changes to the ng-options attribute value will not be reflected in the UI.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Chart</div>
+      <div ng-controller="ChartCtrl" style="width: 325px;">
+        <div hippo.theme.chart data="data"></div>
+<pre>
+&lt;div hippo.theme.chart
+  data="data"&gt;
+&lt;/div&gt;
+</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Focus Me</div>
+      <div class="panel-body">
+        <div ng-controller="FocusMeCtrl">
+          <input type="text" placeholder="Click the button to focus me" hippo.theme.focus-me="field.focus"
+                 class="default form-control" style="margin-bottom: 5px;">
+          <button ng-click="setFocus()" ng-hide="field.focus" class="btn btn-default"
+                  style="margin-bottom: 20px;">Focus!
+          </button>
+
+          {{ field.focus }}
+
+<pre>
+&lt;input hippo.theme.focus-me="focusInput"&gt;
+</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Divider</div>
+      <div class="panel-body">
+        <div ng-controller="DividerCtrl">
+
+          <div class="dropdown">
+            <ul class="dropdown-menu" style="display: block; position: static;margin-bottom: 20px;">
+              <li ng-repeat="item in items" hippo.theme.divider="$last">
+                <a href="#angularjs-components">{{ item }}</a>
+              </li>
+            </ul>
+          </div>
+
+<pre>
+&lt;li hippo.theme.divider="$last"
+  ng-repeat="item in items"&gt;
+  &lt;a href="#"&gt;&#123;&#123; item &#125;&#125;&lt;/a&gt;
+&lt;/li&gt;
+</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Panel</div>
+      <div class="panel-body">
+        <div ng-controller="PanelCtrl">
+          <div hippo.theme.panel-default title="title"><p>Panel HTML content</p></div>
+<pre>
+&lt;div hippo.theme.panel-default
+     title="panel.title"&gt;
+   Panel HTML content
+&lt;/div&gt;
+</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Confirmation Dialog</div>
+      <div class="panel-body">
+        <div ng-controller="ConfirmationDialogCtrl">
+          <div hippo.theme.confirmation-dialog
+               confirm-icon="trash-o"
+               perform-confirmation="confirmationClicked()"
+               perform-cancel="cancelClicked()"
+               confirm-label="Confirm"
+               cancel-label="Cancel"
+               show="confirmation.show">
+            <p><strong>Confirmation dialog title</strong></p>
+
+            <p>
+              Confirmation dialog message.
+            </p>
+          </div>
+          <br>
+<pre>&lt;div hippo.theme.confirmation-dialog
+     confirm-icon="trash-o"
+     perform-confirmation="confirmationClicked()"
+     perform-cancel="cancelClicked()"
+     confirm-label="Confirm"
+     cancel-label="Cancel"
+     show="confirmation.show"&gt;
+    &lt;p&gt;&lt;strong&gt;Confirmation dialog title&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;
+        Confirmation dialog message.
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+

@@ -1,4 +1,4 @@
-/*!
+/*
  * Copyright 2014 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,37 +14,26 @@
  * limitations under the License.
  */
 
-.fa-middle {
-    vertical-align: middle;
-}
+(function () {
+  'use strict';
 
-.fa-color-primary {
-    color: @brand-primary;
-}
+  angular.module('hippo.theme.example').controller('LogCtrl',
+    ['$scope',
+     '$rootScope',
+      function ($scope, $rootScope) {
+        $scope.showLog = false;
 
-.fa-color-info {
-    color: @brand-info;
-}
+        $scope.hideLog = function () {
+          $scope.showLog = false;
+        };
 
-.fa-color-warning {
-    color: @brand-warning
-}
+        $scope.displayLog = function (event) {
+          event.preventDefault();
+          $scope.showLog = true;
+        };
 
-.fa-color-success {
-    color: @brand-success;
-}
-
-.fa-color-danger {
-    color: @brand-danger;
-}
-
-.fa-color-white {
-    color: #ffffff;
-}
-
-.loading-icon {
-    display: inline-block;
-    height: 16px;
-    width: 16px;
-    background: url(../images/loader.gif) no-repeat center center transparent;
-}
+        $rootScope.$on('displayLog', $scope.displayLog);
+      }
+    ]
+  );
+}());

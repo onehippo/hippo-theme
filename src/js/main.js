@@ -16,5 +16,5 @@
 (function() {
     "use strict";
 
-    angular.module('hippo.theme', ['hippo.plugins', 'ui.tree']);
+    angular.module('hippo.theme', ['ui.tree']);
 })();

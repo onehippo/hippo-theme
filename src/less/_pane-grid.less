@@ -1,0 +1,74 @@
+/*
+* Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*  http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+.pane-row,
+.pane-column {
+    position: relative;
+}
+
+.pane-full {
+    .pane();
+}
+
+.pane(@top: 0; @right: 0; @bottom: 0; @left: 0;) {
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+    overflow: auto;
+}
+
+.generate-pane-col(@breakpoint; @maxCols; @i; @j: @i) when (@j =< @maxCols) {
+    @columnWidth: (100% / @maxCols);
+    @start: (@i * @columnWidth);
+    @end: (100% - (@j * @columnWidth));
+    @dimension: (@j - @i) * @columnWidth;
+
+    .pane-row .pane-@{breakpoint}-@{i}-@{j} {
+        .pane(0; @end; 0; @start);
+        width: @dimension;
+    }
+
+    .pane-column .pane-@{breakpoint}-@{i}-@{j} {
+        .pane(@start; 0; @end; 0);
+        height: @dimension;
+    }
+
+    .generate-pane-col(@breakpoint; @maxCols; @i; (@j + 1));
+}
+
+.generate-pane-grid(@breakpoint: xs; @maxCols: 12; @i: 0)
+    when(@i =< @maxCols) and (@breakpoint = xs) {
+    .generate-pane-col(@breakpoint; @maxCols; @i);
+    .generate-pane-grid(@breakpoint; @maxCols; (@i + 1));
+}
+
+.generate-pane-grid(@breakpoint: xs; @maxCols: 12; @i: 0)
+    when(@i =< @maxCols) and not (@breakpoint = xs) {
+    @minWidth: ~"screen-@{breakpoint}-min";
+
+    @media (min-width: @@minWidth) {
+        .generate-pane-col(@breakpoint; @maxCols; @i);
+    }
+
+    .generate-pane-grid(@breakpoint; @maxCols; (@i + 1));
+}
+
+.generate-pane-grid(xs);
+.generate-pane-grid(sm);
+.generate-pane-grid(md);
+.generate-pane-grid(lg);
+

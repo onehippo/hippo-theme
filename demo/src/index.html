@@ -1,0 +1,196 @@
+<!doctype html>
+<!--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hippo theme - example</title>
+
+    <!-- build:css css/main.min.css -->
+    <link rel="stylesheet" href="../../dist/css/main.css">
+    <!-- endbuild -->
+
+    <!--[if lt IE9]>
+    <!-- build:js js/ie.min.js -->
+    <script src="../../components/html5shiv/dist/html5shiv-printshiv.js"></script>
+    <script src="../../components/respond/dest/respond.src.js"></script>
+    <script src="../../components/es5-shim/es5-shim.js"></script>
+    <!-- endbuild -->
+    <![endif]-->
+
+    <!-- build:js js/headscripts.js -->
+    <script src="../../components/fastclick/lib/fastclick.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body ng-app="hippo.theme.example">
+    <div class="log-top" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
+        <div class="alert alert-info" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors($event)">
+            <button type="button" class="close" data-dismiss="alert" ng-click="hideLog()">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+            </button>
+
+            <p><span class="fa" ng-class="{'fa-chevron-right': !showErrors, 'fa-chevron-down': showErrors}"></span> 15:55:46 - <span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
+
+            <div class="log-messages ng-hide" ng-show="showErrors">
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation fa-color-danger"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-check-square-o fa-color-success"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-flag fa-color-warning"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p>15:55:46 - <span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+            </div>
+        </div>
+    </div>
+    <div class="hippo-navbar navbar navbar-default navbar-fixed-top" ng-controller="NavbarCtrl">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="badge badge-primary notification-badge">18</span>
+                <a class="navbar-brand" href="#/">Hippo Theme</a>
+                <p class="navbar-text navbar-title">
+                    a work in progress
+                </p>
+                <div class="navbar-text navbar-icons">
+                    <span class="hidden-xs">Example navbar icons:</span>
+                    <a href="#/introduction" class="navbar-link" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                        <span class="fa fa-refresh fa-spin"></span>
+                    </a>
+                    <span class="hidden-xs">View top log: </span>
+                    <a href="#" class="navbar-link" ng-click="displayLog($event)">
+                        <span class="fa fa-bell-o fa-color-danger"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="navbar-collapse collapse" ng-controller="NavCtrl">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active: isActive('/introduction')}">
+                        <a href="#/introduction">
+                            <span class="fa fa-sitemap fa-fw"></span> Introduction
+                        </a>
+                    </li>
+                    <li ng-class="{active: isActive('/grid-systems')}">
+                        <a href="#/grid-systems">
+                            <span class="fa fa-color-warning fa-th fa-fw"></span> Grid Systems
+                        </a>
+                    </li>
+                    <li ng-class="{active: isActive('/typography')}">
+                        <a href="#/typography">
+                            <span class="fa fa-color-info fa-font fa-fw"></span> Typography
+                        </a>
+                    </li>
+                    <li ng-class="{active: isActive('/bootstrap-components')}">
+                        <a href="#/bootstrap-components">
+                            <span class="fa fa-color-success fa-cubes fa-fw"></span> Bootstrap Components
+                        </a>
+                    </li>
+                    <li ng-class="{active: isActive('/angular-components')}">
+                        <a href="#/angular-components">
+                            <span class="fa fa-color-primary fa-code fa-fw"></span> Angular Components
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/introduction">
+                            <span class="fa fa-color-danger fa-exclamation fa-fw"></span> Example sidebar notification badge <span class="badge badge-primary">18</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" ng-view>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <span class="fa-stack fa-4x">
+                        <span class="fa fa-circle fa-stack-2x fa-color-primary"></span>
+                        <span class="fa fa-spinner fa-spin fa-stack-1x fa-color-white"></span>
+                    </span>
+                    <h2>Rebuilding...</h2>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Required external libraries -->
+    <!-- build:js js/vendor.min.js -->
+    <script src="../../components/underscore/underscore.js"></script>
+    <script src="../../components/jquery/dist/jquery.js"></script>
+    <script src="../../components/flot/jquery.flot.js"></script>
+    <script src="../../components/flot/jquery.flot.pie.js"></script>
+    <script src="../../components/chosen/chosen.jquery.js"></script>
+    <script src="../../components/angular/angular.js"></script>
+    <script src="../../components/angular-route/angular-route.js"></script>
+    <script src="../../components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../../components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+    <script src="../../components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../../components/google-code-prettify/src/prettify.js"></script>
+    <!-- endbuild -->
+
+    <!-- Hippo theme scripts -->
+    <!-- build:js js/main.min.js -->
+    <script src="../../dist/js/main.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- Demo scripts -->
+    <!-- build:js js/demo.min.js -->
+    <script src="js/demo-dependencies.js"></script>
+    <script src="js/demo-config.js"></script>
+    <script src="js/demo-run.js"></script>
+    <script src="js/controllers/ChartCtrl.js"></script>
+    <script src="js/controllers/ConfirmationDialogCtrl.js"></script>
+    <script src="js/controllers/DividerCtrl.js"></script>
+    <script src="js/controllers/ErrorCtrl.js"></script>
+    <script src="js/controllers/FeatureCtrl.js"></script>
+    <script src="js/controllers/FocusMeCtrl.js"></script>
+    <script src="js/controllers/LogCtrl.js"></script>
+    <script src="js/controllers/MapCtrl.js"></script>
+    <script src="js/controllers/NavCtrl.js"></script>
+    <script src="js/controllers/PanelCtrl.js"></script>
+    <script src="js/controllers/SelectBoxCtrl.js"></script>
+    <script src="js/controllers/TreeCtrl.js"></script>
+    <script src="js/controllers/NavbarCtrl.js"></script>
+    <!-- endbuild -->
+
+    <!-- External scripts -->
+    <script src="https://maps.google.com/maps/api/js?sensor=false&language=en_US"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer_compiled.js"></script>
+</body>
+</html>
