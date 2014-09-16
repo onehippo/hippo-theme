@@ -14,7 +14,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<html>
+<html ng-app="hippo.theme.example" xmlns:ng="http://angularjs.org" id="hippo.theme.example">
 <head>
     <!-- Meta -->
     <meta charset="utf-8">
@@ -25,20 +25,20 @@
     <link rel="stylesheet" href="../../dist/css/main.css">
     <!-- endbuild -->
 
-    <!--[if lt IE9]>
     <!-- build:js js/ie.min.js -->
+    <!--[if lte IE 9]>
     <script src="../../components/html5shiv/dist/html5shiv-printshiv.js"></script>
     <script src="../../components/respond/dest/respond.src.js"></script>
     <script src="../../components/es5-shim/es5-shim.js"></script>
+    <!-- <![endif]-->
     <!-- endbuild -->
-    <![endif]-->
 
     <!-- build:js js/headscripts.js -->
     <script src="../../components/fastclick/lib/fastclick.js"></script>
     <!-- endbuild -->
 </head>
 
-<body ng-app="hippo.theme.example">
+<body>
     <div class="log-top" ng-class="{'log-visible': showLog}" ng-controller="LogCtrl">
         <div class="alert alert-info" ng-class="{'alert-open': showErrors}" ng-controller="ErrorCtrl" ng-click="toggleErrors($event)">
             <button type="button" class="close" data-dismiss="alert" ng-click="hideLog()">
