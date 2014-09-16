@@ -18,13 +18,82 @@
 <div class="row">
   <div class="col-lg-12">
     <a class="anchor" id="angular-components"></a>
-    <h2>AngularJS components</h2>
+    <h1>AngularJS components <small>Angular Bootstrap and HippoCMS Angular directives</small></h1>
     <p>
       There is an <a href="docs/">API reference</a> available for the AngularJS components and services that are
       part of the Hippo theme.
     </p>
   </div>
 </div>
+
+  <div class="col-xs-12">
+    <div class="panel panel-success">
+      <div class="panel-heading">Alerts</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="alert alert-danger">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              Example of an <strong>error message</strong> that is dismissible, and contains a
+              <a href="#" class="alert-link">link</a>.
+            </div>
+
+            <div class="alert alert-danger">
+              This error message is not dismissible.
+            </div>
+
+            <div class="alert alert-warning">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong>Warning message.</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+            </div>
+
+            <div class="alert alert-warning">
+              This warning message is not dismissible.
+            </div>
+
+            <div class="alert alert-warning">
+              This warning message is not dismissible.
+            </div>
+
+            <div class="alert alert-warning">
+              This warning message is not dismissible.
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <pre>
+              &lt;div class="alert alert-danger"&gt;
+              &lt;button type="button" class="close" data-dismiss="alert"&gt;×&lt;/button&gt;
+              Example of an &lt;strong&gt;error message&lt;/strong&gt; that is dismissible, and contains a
+              &lt;a href="#" class="alert-link"&gt;link&lt;/a&gt;.
+              &lt;/div&gt;
+
+              &lt;div class="alert alert-danger"&gt;
+              This error message is not dismissible.
+              &lt;/div&gt;
+
+              &lt;div class="alert alert-warning"&gt;
+              &lt;button type="button" class="close" data-dismiss="alert"&gt;×&lt;/button&gt;
+              &lt;strong&gt;Warning message. &lt;/strong&gt; &lt;a href="#" class="alert-link"&gt;Change a few things up&lt;/a&gt; and try
+              submitting again.
+              &lt;/div&gt;
+              &lt;div class="alert alert-warning"&gt;
+              This warning message is not dismissible.
+              &lt;/div&gt;
+
+              &lt;div class="alert alert-warning"&gt;
+              This warning message is not dismissible.
+              &lt;/div&gt;
+
+              &lt;div class="alert alert-warning"&gt;
+              This warning message is not dismissible.
+              &lt;/div&gt;
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 <div class="row">
@@ -265,3 +334,159 @@ $scope.callbacks = {
     </div>
   </div>
 
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        Feature Items
+      </div>
+      <div class="panel-body">
+        <!--Start html code of feature block-->
+        <div class="feature-block" ng-controller="FeatureCtrl">
+          <div class="well">
+            <div class="feature-heading">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="media">
+                    <a href="#" class="pull-left">
+                      <img class="media-object" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZWVlIi8+PHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzIiIHk9IjMyIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEycHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9zdmc+" alt="">
+                    </a>
+                    <div class="media-body">
+                      <h4>Text here</h4>
+                      <p>Lorem Ipsum description</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 text-right">
+                  <p class="label label-danger">Needs a rebuild</p>
+                  <button class="btn btn-default">Install Feature</button>
+                </div>
+              </div>
+            </div>
+            <div class="feature-description">
+              <h4>body text here!</h4>
+
+              <div class="feature-description-short" ng-hide="showDescription">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid aspernatur assumenda at, atque autem commodi consequatur, ex fugit id iure modi non provident quae rem repudiandae sed tempora veniam! Ab earum, illum iure labore officia possimus quas quis tempora? A amet animi aut beatae commodi ducimus eius error esse est et facere harum hic laboriosam laudantium possimus, rerum ut. Architecto blanditiis consequatur culpa dignissimos dolor enim ex excepturi itaque maxime nam natus officiis omnis, quis quod similique temporibus voluptatem! Ad consequuntur corporis culpa maxime nam odio saepe similique velit!
+                  <a href="#" data-ng-click="toggleDescription()">Read more...</a>
+                </p>
+              </div>
+
+              <div class="feature-description-long" ng-show="showDescription">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid aspernatur assumenda at, atque autem commodi consequatur, ex fugit id iure modi non provident quae rem repudiandae sed tempora veniam! Ab earum, illum iure labore officia possimus quas quis tempora? A amet animi aut beatae commodi ducimus eius error esse est et facere harum hic laboriosam laudantium possimus, rerum ut. Architecto blanditiis consequatur culpa dignissimos dolor enim ex excepturi itaque maxime nam natus officiis omnis, quis quod similique temporibus voluptatem! Ad consequuntur corporis culpa maxime nam odio saepe similique velit! Accusantium, asperiores assumenda commodi cum dicta dolorem et incidunt inventore iure magni minus natus non recusandae reprehenderit voluptatibus? A aliquid beatae culpa cum eveniet incidunt, ipsam magni pariatur placeat quasi? Adipisci commodi debitis exercitationem, fuga fugit laborum minima non praesentium quae ut. A aliquid beatae dolorum.</p>
+
+                <div class="panel panel-success">
+                  <div class="panel-body">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                      <!-- Indicators -->
+                      <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                        </li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1">
+                          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==" alt="">
+                        </li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2">
+                          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                        </li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2">
+                          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                        </li>
+                      </ol>
+
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner">
+                        <div class="item active">
+                          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                          <div class="carousel-caption">
+                            This item has a caption
+                          </div>
+                        </div>
+                        <div class="item">
+                          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==" alt="">
+                        </div>
+                        <div class="item">
+                          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                        </div>
+                        <div class="item">
+                          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+" alt="">
+                        </div>
+                      </div>
+
+
+                      <!-- Controls -->
+                      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                      </a>
+                      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <a href="#" data-ng-click="toggleDescription()">Read less...</a>
+              </div>
+            </div>
+            <div class="feature-changes">
+              <div class="feature-changes-controls">
+                <a class="feature-control pull-right" href="#">Documentation</a>
+                <span class="feature-control pull-left">
+                  <span class="fa" ng-class="{'fa-chevron-right': !showChanges, 'fa-chevron-down': showChanges}"></span> <a href="#" ng-click="toggleChanges()">This feature will make the following changes</a>
+                </span>
+              </div>
+
+              <div class="log-messages" ng-show="showChanges">
+                <p><span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-check-square-o fa-success"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-flag fa-warning"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12">
+     <div class="panel panel-success">
+      <div class="panel-heading">
+        Modal (lightbox)
+      </div>
+      <div class="panel-body">
+        <button class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+          Open the example modal
+        </button>
+
+        <div class="modal fade" id="exampleModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                  <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

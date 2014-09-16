@@ -23,11 +23,28 @@
             return {
                 restrict: 'E',
                 link: function (scope, element, attr) {
-                    element.addClass('prettyprint linenums pre-scrollable');
-                    $window.prettyPrint();
+                    var ignoreExpression = /\s/,
+                        text = element.html().replace(/\u003C/g, "&lt;").replace(/\u003E/g, "&gt;"),
+                        superfluousSpaceCount = 0,
+                        currentChar = text.substring( 0, 1 ),
+                        parts = text.split("\n"),
+                        reformattedText = "",
+                        length = parts.length;
+
+                    while ( ignoreExpression.test( currentChar ) ) {
+                        currentChar = text.substring( ++superfluousSpaceCount, superfluousSpaceCount + 1 );
+                    }
+
+                    for ( var i = 0; i < length; i++ ) {
+                        reformattedText += parts[i].substring( superfluousSpaceCount ) + ( i == length - 1 ? "" : "\n" );
+                    }
+
+                    reformattedText = reformattedText.replace(/ /g, "&nbsp;");
+                    element.html($window.prettyPrintOne(reformattedText, undefined, true));
+                    element.addClass('pre-scrollable');
                 }
             };
         }
-    ]);
+        ]);
 })();
 

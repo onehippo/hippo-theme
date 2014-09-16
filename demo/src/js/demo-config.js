@@ -23,8 +23,8 @@
           .when('/introduction', {
             templateUrl: 'introduction.html'
           })
-          .when('/typography', {
-            templateUrl: 'typography.html'
+          .when('/css-core', {
+            templateUrl: 'css-core.html'
           })
           .when('/grid-systems', {
             templateUrl: 'grid-systems.html'
