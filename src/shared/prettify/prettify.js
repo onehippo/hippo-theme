@@ -22,14 +22,17 @@
         function ($window) {
             return {
                 restrict: 'E',
+                template: function (element, attr) {
+                    return element.html().replace(/\u003C/g, "&lt;").replace(/\u003E/g, "&gt;");
+                },
                 link: function (scope, element, attr) {
                     var ignoreExpression = /\s/,
-                        text = element.html().replace(/\u003C/g, "&lt;").replace(/\u003E/g, "&gt;"),
-                        superfluousSpaceCount = 0,
-                        currentChar = text.substring( 0, 1 ),
-                        parts = text.split("\n"),
-                        reformattedText = "",
-                        length = parts.length;
+                    text = element.html(),
+                    superfluousSpaceCount = 0,
+                    currentChar = text.substring( 0, 1 ),
+                    parts = text.split("\n"),
+                    reformattedText = "",
+                    length = parts.length;
 
                     while ( ignoreExpression.test( currentChar ) ) {
                         currentChar = text.substring( ++superfluousSpaceCount, superfluousSpaceCount + 1 );
@@ -40,11 +43,12 @@
                     }
 
                     reformattedText = reformattedText.replace(/ /g, "&nbsp;");
+
                     element.html($window.prettyPrintOne(reformattedText, undefined, true));
                     element.addClass('pre-scrollable');
                 }
             };
         }
-        ]);
+    ]);
 })();
 
