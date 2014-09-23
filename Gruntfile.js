@@ -101,7 +101,8 @@ module.exports = function (grunt) {
                     'src/shared/urlparser/urlparser.js',
                     'src/shared/tree/tree.js',
                     'src/shared/confirmation-dialog/confirmation-dialog.js',
-                    'src/shared/prettify/prettify.js'
+                    'src/shared/prettify/prettify.js',
+                    'src/shared/carousel/carousel.js'
                 ],
                 dest: 'dist/js/main.js'
             }

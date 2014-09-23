@@ -35,13 +35,14 @@
     }
 }
 
-@media(min-width: @screen-xs-min) {
+@media (min-width: @screen-xs-min) {
     .carousel {
         padding-bottom: 100px;
     }
 
     .carousel-control {
         margin-bottom: 100px;
+        cursor: pointer;
     }
 
     .carousel-indicators {
@@ -53,14 +54,14 @@
         bottom: 0;
     }
 
-    .carousel-indicators li, .carousel-indicators .active {
+    .carousel-indicators li,
+    .carousel-indicators .active {
         height: auto;
-        width: 20%;
+        width: 18%;
         max-height: 100%;
         text-indent: 0;
         border: none;
-        margin: 0;
-        transition: width 0.2s ease;
+        margin: 0 1%;
 
         img {
             display: block;
