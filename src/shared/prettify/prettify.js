@@ -18,13 +18,9 @@
     'use strict';
 
     angular.module('hippo.theme').directive('pre', [
-        '$window',
-        function ($window) {
+        function () {
             return {
                 restrict: 'E',
-                template: function (element, attr) {
-                    return element.html().replace(/\u003C/g, "&lt;").replace(/\u003E/g, "&gt;");
-                },
                 link: function (scope, element, attr) {
                     var ignoreExpression = /\s/,
                     text = element.html(),
@@ -44,7 +40,7 @@
 
                     reformattedText = reformattedText.replace(/ /g, "&nbsp;");
 
-                    element.html($window.prettyPrintOne(reformattedText, undefined, true));
+                    element.html(prettyPrintOne(reformattedText, undefined, true));
                     element.addClass('pre-scrollable');
                 }
             };
