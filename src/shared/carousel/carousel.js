@@ -41,7 +41,8 @@
                         var slideObj = scope.slide.$element.scope().slides[scope.$index];
                         scope.imgSrc = slideObj.image;
                     }
-                }
+                };
             }
-    ]);
+        ]
+    );
 }());

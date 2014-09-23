@@ -18,7 +18,8 @@
     'use strict';
 
     angular.module('hippo.theme').directive('pre', [
-        function () {
+        '$window',
+        function ($window) {
             return {
                 restrict: 'E',
                 link: function (scope, element, attr) {
@@ -40,7 +41,7 @@
 
                     reformattedText = reformattedText.replace(/ /g, "&nbsp;");
 
-                    element.html(prettyPrintOne(reformattedText, undefined, true));
+                    element.html($window.prettyPrintOne(reformattedText, undefined, true));
                     element.addClass('pre-scrollable');
                 }
             };
