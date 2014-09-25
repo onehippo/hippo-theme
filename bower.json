@@ -1,27 +1,27 @@
 {
   "name": "hippo-theme",
-  "version": "0.0.1",
+  "version": "1.02.00-SNAPSHOT",
   "private": true,
   "dependencies": {
     "angular": "1.2.23",
-    "angular-route": "1.2.23",
     "angular-bootstrap": "0.11.0",
     "angular-ui-tree": "2.1.5",
-    "jquery": "1.11.1",
-    "underscore": "1.5.2",
-    "bootstrap": "3.1.0",
     "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip",
-    "bootstrap-chosen": "https://github.com/alxlit/bootstrap-chosen.git#3537817bdc98fa29c9053097ed2903aabad071cf",
     "es5-shim": "4.0.3",
     "fastclick": "1.0.3",
     "flot": "0.8.3",
-    "font-awesome": "4.2.0",
+    "google-code-prettify": "1.0.3",
     "html5shiv": "3.7.2",
+    "jquery": "1.11.1",
     "respond": "1.4.2",
-    "google-code-prettify": "1.0.3"
+    "underscore": "1.5.2"
   },
   "devDependencies": {
+    "angular-route": "1.2.23",
     "angular-mocks": "1.2.23",
+    "bootstrap": "3.1.0",
+    "bootstrap-chosen": "https://github.com/alxlit/bootstrap-chosen.git#3537817bdc98fa29c9053097ed2903aabad071cf",
+    "font-awesome": "4.2.0",
     "jasmine-jquery": "2.0.3"
   },
   "resolutions": {
