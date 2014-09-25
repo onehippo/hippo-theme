@@ -35,7 +35,9 @@
           .when('/angular-components', {
             templateUrl: 'angular-components.html'
           })
-          .otherwise('/introduction');
+          .otherwise({
+            redirectTo: '/introduction'
+          });
       }
     ]
   );
