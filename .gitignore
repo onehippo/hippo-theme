@@ -2,7 +2,6 @@ components
 node_modules
 *.iml
 .idea
-dist
 target
 /demo/dist
 .tmp/
