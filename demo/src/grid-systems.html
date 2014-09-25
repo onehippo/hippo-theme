@@ -94,18 +94,22 @@
     </table>
   </div>
   <div class="col-xs-12">
-    <h4>Flexible pane grid, full height columns / full width rows</h4>
+    <h4>Flexible <em>pane grid</em> with full height columns and full width rows</h4>
     <p>Based on the idea of the new flexbox css module, see a full explanation <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">here</a>.</p>
 
-    <p>This grid will let you stretched panes in either vertical (column) or horizontal (row) fashion in a 12 pane grid.
-      It is a flexible grid, meaning that it uses a percentage of the viewport to scale the panes.
-      The area of a pane is defined by giving it a class with area boundaries,
-      for example <code>.pane-xs-0-6</code> will make the pane stretch from beginning to half of 12 pane grid.</p>
-    <p>This also allows you to reorder the columns as you could put a <code>.pane-xs-4-6</code> before a <code>.pane-xs-2-4</code> in your html but it will visually still show up after the 2-4 pane.</p>
-    <p>Just like the bootstrap theme the grid has breakpoint variations allowing for different layouts per breakpoint.</p>
+    <p>A pane grid can be used as a 12 column grid with full height, or a 12 row grid with full width.
+      It is also <em>flexible</em>, as it uses a percentage of the viewport to scale the panes.</p>
+    <p>
+      The area of a pane is defined by giving it a class with the start and end row or column.
+      For example, in a <code>.pane-row</code> a <code>.pane-xs-1-6</code> will make the pane stretch from column 1 to 6
+      (i.e. half of the 12 column grid).</p>
+
+    <p>This also allows you to reorder the panes. A <code>.pane-xs-5-6</code> can be put before a <code>.pane-xs-2-4</code>
+      but it will visually still show up after the 2-4 pane.</p>
+    <p>Just like the bootstrap theme the grid has breakpoint variations allowing for different layouts per breakpoint.
+    To collapse a pane (i.e. hide it) from a specific breakpoint, use the class <code>.pane-{breakpoint}-collapse.</code></p>
     <p>The parent of the pane, or the <code>.pane-row</code> or <code>.pane-column</code> does need its height set explicitly as absolute positioned elements are not part of the normal page flow.</p>
     <p>Try it out! Resize your viewport and see the below grids change and switch.</p>
-    <p>There is also a less mixin available <code>.pane(@top, @right, @bottom, @left)</code> which allows to make any element positioned absolute and stretched to the dimentions specified.</p>
   </div>
   <div class="col-xs-12">
     <div class="panel panel-warning">
@@ -114,24 +118,24 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="pane-row" style="height: 300px;">
-              <div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8 bg-info">
-                <div class="pane-xs-4-8 bg-warning"></div>
+              <div class="pane-xs-1-4 pane-sm-1-6 pane-md-1-2 pane-lg-5-8 bg-info">
+                <div class="pane-xs-5-8 bg-warning"></div>
               </div>
-              <div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12 bg-success">
+              <div class="pane-xs-5-8 pane-sm-collapsed pane-md-3-10 pane-lg-9-12 bg-success">
               </div>
-              <div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4 bg-danger">
+              <div class="pane-xs-9-12 pane-sm-7-12 pane-md-11-12 pane-lg-1-4 bg-danger">
               </div>
             </div>
           </div>
           <div class="col-sm-6">
 <pre>
 &lt;div class="pane-row" style="height: 300px;"&gt;
-  &lt;div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8"&gt;
-    &lt;div class="pane-xs-4-8"&gt;&lt;/div&gt;
+  &lt;div class="pane-xs-1-4 pane-sm-1-6 pane-md-1-2 pane-lg-5-8"&gt;
+    &lt;div class="pane-xs-5-8"&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12"&gt;
+  &lt;div class="pane-xs-5-8 pane-sm-collapsed pane-md-3-10 pane-lg-9-12"&gt;
   &lt;/div&gt;
-  &lt;div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4"&gt;
+  &lt;div class="pane-xs-9-12 pane-sm-7-12 pane-md-11-12 pane-lg-1-4"&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
@@ -148,24 +152,24 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="pane-column" style="height: 300px;">
-              <div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8 bg-info">
-                <div class="pane-xs-4-8 bg-warning"></div>
+              <div class="pane-xs-1-4 pane-sm-1-6 pane-md-1-2 pane-lg-5-8 bg-info">
+                <div class="pane-xs-5-8 bg-warning"></div>
               </div>
-              <div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12 bg-success">
+              <div class="pane-xs-5-8 pane-sm-collapsed pane-md-3-10 pane-lg-9-12 bg-success">
               </div>
-              <div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4 bg-danger">
+              <div class="pane-xs-9-12 pane-sm-7-12 pane-md-11-12 pane-lg-1-4 bg-danger">
               </div>
             </div>
           </div>
           <div class="col-sm-6">
 <pre>
 &lt;div class="pane-column" style="height: 300px;"&gt;
-  &lt;div class="pane-xs-0-4 pane-sm-0-6 pane-md-0-2 pane-lg-4-8"&gt;
-    &lt;div class="pane-xs-4-8"&gt;&lt;/div&gt;
+  &lt;div class="pane-xs-1-4 pane-sm-1-6 pane-md-1-2 pane-lg-5-8"&gt;
+    &lt;div class="pane-xs-5-8"&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="pane-xs-4-8 pane-sm-0-0 pane-md-2-10 pane-lg-8-12"&gt;
+  &lt;div class="pane-xs-5-8 pane-sm-collapsed pane-md-3-10 pane-lg-9-12"&gt;
   &lt;/div&gt;
-  &lt;div class="pane-xs-8-12 pane-sm-6-12 pane-md-10-12 pane-lg-0-4"&gt;
+  &lt;div class="pane-xs-9-12 pane-sm-7-12 pane-md-11-12 pane-lg-1-4"&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>

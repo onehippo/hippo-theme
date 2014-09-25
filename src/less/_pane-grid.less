@@ -29,21 +29,24 @@
     bottom: @bottom;
     left: @left;
     overflow: auto;
+    display: block;
 }
 
 .generate-pane-col(@breakpoint; @maxCols; @i; @j: @i) when (@j =< @maxCols) {
-    @columnWidth: (100% / @maxCols);
-    @start: (@i * @columnWidth);
-    @end: (100% - (@j * @columnWidth));
-    @dimension: (@j - @i) * @columnWidth;
+    @columnWidthPercentage: 100% / @maxCols;
+    @offsetStartPercentage: @i * @columnWidthPercentage;
+    @offsetEndPercentage: 100% - (@j * @columnWidthPercentage);
+    @startCol: @i + 1;
+    @endCol: @j;
+    @dimension: (@j - @i) * @columnWidthPercentage;
 
-    .pane-row .pane-@{breakpoint}-@{i}-@{j} {
-        .pane(0; @end; 0; @start);
+    .pane-row .pane-@{breakpoint}-@{startCol}-@{endCol} {
+        .pane(0; @offsetEndPercentage; 0; @offsetStartPercentage);
         width: @dimension;
     }
 
-    .pane-column .pane-@{breakpoint}-@{i}-@{j} {
-        .pane(@start; 0; @end; 0);
+    .pane-column .pane-@{breakpoint}-@{startCol}-@{endCol} {
+        .pane(@offsetStartPercentage; 0; @offsetEndPercentage; 0);
         height: @dimension;
     }
 
@@ -58,17 +61,41 @@
 
 .generate-pane-grid(@breakpoint: xs; @maxCols: 12; @i: 0)
     when(@i =< @maxCols) and not (@breakpoint = xs) {
-    @minWidth: ~"screen-@{breakpoint}-min";
+    @bootstrapBreakpoint: ~"screen-@{breakpoint}-min";
 
-    @media (min-width: @@minWidth) {
+    @media (min-width: @@bootstrapBreakpoint) {
         .generate-pane-col(@breakpoint; @maxCols; @i);
     }
 
     .generate-pane-grid(@breakpoint; @maxCols; (@i + 1));
 }
 
-.generate-pane-grid(xs);
-.generate-pane-grid(sm);
-.generate-pane-grid(md);
-.generate-pane-grid(lg);
+.generate-collapsed(@breakpoint: xs) when (@breakpoint = xs) {
+    .pane-row, .pane-column {
+        .pane-@{breakpoint}-collapsed {
+            display: none;
+        }
+    }
+}
 
+.generate-collapsed(@breakpoint: xs) when not (@breakpoint = xs) {
+    @bootstrapBreakpoint: ~"screen-@{breakpoint}-min";
+
+    @media (min-width: @@bootstrapBreakpoint) {
+        .pane-row, .pane-column {
+            .pane-@{breakpoint}-collapsed {
+                display: none;
+            }
+        }
+    }
+}
+
+.generate-grid(@breakpoint) {
+    .generate-pane-grid(@breakpoint);
+    .generate-collapsed(@breakpoint);
+}
+
+.generate-grid(xs);
+.generate-grid(sm);
+.generate-grid(md);
+.generate-grid(lg);
