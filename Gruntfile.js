@@ -45,11 +45,11 @@ module.exports = function (grunt) {
                 livereload: true
             },
             less: {
+                options: {
+                    livereload: false
+                },
                 files: ['src/**/*.less'],
                 tasks: ['lintspaces:less', 'less']
-            },
-            html: {
-                files: ['<%= cfg.demoSrc %>/**/*.html']
             },
             js: {
                 files: ['src/**/*.js', '!**/*.spec.js'],
@@ -61,6 +61,12 @@ module.exports = function (grunt) {
             images: {
                 files: ['src/images/**/*.{png,jpg,gif}'],
                 tasks: ['imagemin']
+            },
+            livereload: {
+                files: [
+                    '<%= cfg.demoSrc %>/**/*.html',
+                    'dist/css/**/*.css'
+                ]
             }
         },
 
