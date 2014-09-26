@@ -64,7 +64,7 @@
             </div>
         </div>
     </div>
-    <div class="hippo-navbar navbar navbar-default navbar-fixed-top" ng-controller="NavbarCtrl">
+    <div class="hippo-navbar hippo-navbar-with-sidenav navbar navbar-default navbar-fixed-top" ng-controller="NavbarCtrl">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" ng-click="toggleCollapsed()">
@@ -90,7 +90,7 @@
                 </div>
             </div>
 
-            <div class="navbar-collapse collapse" ng-controller="NavCtrl" collapse="isCollapsed">
+            <div class="navbar-collapse collapse hippo-sidenav" ng-controller="NavCtrl" collapse="isCollapsed">
                 <ul class="nav navbar-nav">
                     <li ng-class="{active: isActive('/introduction')}">
                         <a href="#/introduction" ng-click="collapse()">
