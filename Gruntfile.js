@@ -49,7 +49,7 @@ module.exports = function (grunt) {
                     livereload: false
                 },
                 files: ['src/**/*.less'],
-                tasks: ['lintspaces:less', 'less']
+                tasks: ['lintspaces:less', 'less', 'autoprefixer']
             },
             js: {
                 files: ['src/**/*.js', '!**/*.spec.js'],
@@ -144,8 +144,19 @@ module.exports = function (grunt) {
         less: {
             src: {
                 files: {
-                    'dist/css/main.css': 'src/less/main.less'
+                    '.tmp/css/main.css': 'src/less/main.less'
                 }
+            }
+        },
+
+        // Autoprefix vendor prefixes
+        autoprefixer: {
+            dist: {
+                options: {
+                    browsers: ['> 0%']
+                },
+                src: '.tmp/css/main.css',
+                dest: 'dist/css/main.css'
             }
         },
 
@@ -163,12 +174,12 @@ module.exports = function (grunt) {
 
         // Minify images
         imagemin: {
-            dist: {
+            src: {
                 files: [{
                     expand: true,
                     cwd: 'src/images',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'dist/images/'
+                    dest: 'src/images/'
                 }]
             }
         },
@@ -198,7 +209,7 @@ module.exports = function (grunt) {
                 ]
             },
 
-            fonts: {
+            dist: {
                 files: [
                     {
                         expand: true,
@@ -211,6 +222,12 @@ module.exports = function (grunt) {
                         cwd: 'components/font-awesome/fonts',
                         src: ['**/*'],
                         dest: 'dist/fonts/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/images',
+                        src: ['**/*.{png,jpg,gif}'],
+                        dest: 'dist/images/'
                     }
                 ]
             },
@@ -349,10 +366,11 @@ module.exports = function (grunt) {
     grunt.registerTask('build:dist', 'Build the distribution', [
         'jshint',
         'lintspaces:less',
-        'clean:dist',
-        'imagemin',
-        'copy:fonts',
         'less',
+        'imagemin',
+        'clean:dist',
+        'autoprefixer',
+        'copy:dist',
         'concat:dist',
         'uglify:dist',
         'cssmin:dist'
@@ -374,7 +392,7 @@ module.exports = function (grunt) {
 
     // server with demo page
     grunt.registerTask('server:demo', 'Build, test, and show the demo continuously', [
-        'build:demo',
+        'build:dist',
         'connect:demo',
         'watch'
     ]);
