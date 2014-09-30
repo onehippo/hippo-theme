@@ -44,12 +44,15 @@ module.exports = function (grunt) {
             options: {
                 livereload: true
             },
+            gruntfile: {
+                files: ['Gruntfile.js']
+            },
             less: {
                 options: {
                     livereload: false
                 },
                 files: ['src/**/*.less'],
-                tasks: ['less', 'autoprefixer']
+                tasks: ['less', 'csslint', 'autoprefixer']
             },
             js: {
                 files: ['src/**/*.js', '!**/*.spec.js'],
