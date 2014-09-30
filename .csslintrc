@@ -16,8 +16,5 @@
     "unique-headings": false,
     "universal-selector": false,
     "unqualified-attributes": false,
-    "overqualified-elements": false,
-    "duplicate-background-images": false,
-    "zero-units": false,
-    "duplicate-properties": false
+    "zero-units": false
 }

@@ -52,7 +52,7 @@ module.exports = function (grunt) {
                     livereload: false
                 },
                 files: ['src/**/*.less'],
-                tasks: ['less', 'csslint', 'autoprefixer']
+                tasks: ['newer:less', 'csslint', 'autoprefixer', 'concat:css']
             },
             js: {
                 files: ['src/**/*.js', '!**/*.spec.js'],
@@ -114,6 +114,10 @@ module.exports = function (grunt) {
                     'src/shared/carousel/carousel.js'
                 ],
                 dest: 'dist/js/main.js'
+            },
+            css: {
+                src: ['.tmp/css/**/*.css'],
+                dest: 'dist/css/main.css'
             }
         },
 
@@ -133,7 +137,10 @@ module.exports = function (grunt) {
         less: {
             src: {
                 files: {
-                    '.tmp/css/main.css': 'src/less/main.less'
+                    '.tmp/css/main.css': 'src/less/main.less',
+                    '.tmp/css/bootstrap.css': 'src/less/bootstrap.less',
+                    '.tmp/css/font-awesome.css': 'src/less/font-awesome.less',
+                    '.tmp/css/bootstrap-chosen.css': 'src/less/bootstrap-chosen.less'
                 }
             }
         },
@@ -156,8 +163,7 @@ module.exports = function (grunt) {
         csslint: {
             lessOutput: {
                 options: {
-                    csslintrc: '.csslintrc',
-                    format: 'dit is een string'
+                    csslintrc: '.csslintrc'
                 },
 
                 src: ['.tmp/css/main.css']
@@ -171,7 +177,7 @@ module.exports = function (grunt) {
                     browsers: ['> 0%']
                 },
                 src: '.tmp/css/main.css',
-                dest: 'dist/css/main.css'
+                dest: '.tmp/css/main.css'
             }
         },
 
@@ -386,7 +392,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'autoprefixer',
         'copy:dist',
-        'concat:dist',
+        'concat',
         'uglify:dist',
         'cssmin:dist'
     ]);

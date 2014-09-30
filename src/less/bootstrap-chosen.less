@@ -13,7 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Default theme
-@import "@{vendorsPath}/bootstrap-chosen/bootstrap-chosen-variables";
-@chosen-sprite-path: '../images/chosen-sprite.png';
-@import "@{vendorsPath}/bootstrap-chosen/bootstrap-chosen";
+// Bootstrap variables and mixins
+@import "../../components/bootstrap/less/variables.less";
+@import "../../components/bootstrap/less/mixins.less";
+
+// Bootstrap Chosen variables
+@import "../../components/bootstrap-chosen/bootstrap-chosen-variables";
+
+// Variable overrides
+@import "_variables";
+@import "_mixins";
+
+@import "../../components/bootstrap-chosen/bootstrap-chosen";

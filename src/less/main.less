@@ -27,60 +27,20 @@
  * see http://getbootstrap.com/customize/
  */
 
-// Source directories
-@vendorsPath: "../../components";
-@bootstrapPath: "@{vendorsPath}/bootstrap";
-@bootstrapLessPath: "@{bootstrapPath}/less";
-
 // Bootstrap variables and mixins
-@import "@{bootstrapLessPath}/variables.less";
-@import "@{bootstrapLessPath}/mixins.less";
+@import "../../components/bootstrap/less/variables.less";
+@import "../../components/bootstrap/less/mixins.less";
+
+// Bootstrap Chosen variables and mixins
+@import "../../components/bootstrap-chosen/bootstrap-chosen-variables";
+
+// Font Awesome variables and mixins
+@import "../../components/font-awesome/less/variables";
+@import "../../components/font-awesome/less/mixins";
 
 // Variable overrides
 @import "_variables";
 @import "_mixins";
-
-// Bootstrap less files
-@import "@{bootstrapLessPath}/normalize.less";
-@import "@{bootstrapLessPath}/print.less";
-@import "@{bootstrapLessPath}/scaffolding.less";
-@import "@{bootstrapLessPath}/type.less";
-@import "@{bootstrapLessPath}/code.less";
-@import "@{bootstrapLessPath}/grid.less";
-@import "@{bootstrapLessPath}/tables.less";
-@import "@{bootstrapLessPath}/forms.less";
-@import "@{bootstrapLessPath}/buttons.less";
-@import "@{bootstrapLessPath}/component-animations.less";
-@import "@{bootstrapLessPath}/glyphicons.less";
-@import "@{bootstrapLessPath}/dropdowns.less";
-@import "@{bootstrapLessPath}/button-groups.less";
-@import "@{bootstrapLessPath}/input-groups.less";
-@import "@{bootstrapLessPath}/navs.less";
-@import "@{bootstrapLessPath}/navbar.less";
-@import "@{bootstrapLessPath}/breadcrumbs.less";
-@import "@{bootstrapLessPath}/pagination.less";
-@import "@{bootstrapLessPath}/pager.less";
-@import "@{bootstrapLessPath}/labels.less";
-@import "@{bootstrapLessPath}/badges.less";
-@import "@{bootstrapLessPath}/jumbotron.less";
-@import "@{bootstrapLessPath}/thumbnails.less";
-@import "@{bootstrapLessPath}/alerts.less";
-@import "@{bootstrapLessPath}/progress-bars.less";
-@import "@{bootstrapLessPath}/media.less";
-@import "@{bootstrapLessPath}/list-group.less";
-@import "@{bootstrapLessPath}/panels.less";
-@import "@{bootstrapLessPath}/wells.less";
-@import "@{bootstrapLessPath}/close.less";
-@import "@{bootstrapLessPath}/modals.less";
-@import "@{bootstrapLessPath}/tooltip.less";
-@import "@{bootstrapLessPath}/popovers.less";
-@import "@{bootstrapLessPath}/carousel.less";
-@import "@{bootstrapLessPath}/utilities.less";
-@import "@{bootstrapLessPath}/responsive-utilities.less";
-
-// External components that use LESS
-@import "_font-awesome";
-@import "_bootstrap-chosen";
 
 // Hippo Theme less files
 @import "_ie-reset";
@@ -109,3 +69,4 @@
 @import "../shared/map/_map";
 @import "../shared/tree/_tree";
 @import "../shared/confirmation-dialog/_confirmation-dialog";
+
