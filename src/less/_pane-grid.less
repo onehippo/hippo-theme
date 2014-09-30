@@ -22,17 +22,6 @@
     .pane();
 }
 
-.pane(@top: 0; @right: 0; @bottom: 0; @left: 0;) {
-    display: block;
-    margin: 0;
-    position: absolute;
-    top: @top;
-    right: @right;
-    bottom: @bottom;
-    left: @left;
-    overflow: auto;
-}
-
 .generate-pane-col(@breakpoint; @maxCols; @i; @j: @i) when (@j =< @maxCols) {
     @columnWidthPercentage: 100% / @maxCols;
     @offsetStartPercentage: @i * @columnWidthPercentage;
