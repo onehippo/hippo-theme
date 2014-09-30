@@ -49,7 +49,7 @@ module.exports = function (grunt) {
                     livereload: false
                 },
                 files: ['src/**/*.less'],
-                tasks: ['lintspaces:less', 'less', 'autoprefixer']
+                tasks: ['less', 'autoprefixer']
             },
             js: {
                 files: ['src/**/*.js', '!**/*.spec.js'],
@@ -126,26 +126,38 @@ module.exports = function (grunt) {
             }
         },
 
-        // Check if Less fils have correct spaces
-        lintspaces: {
-            less: {
-                src: [
-                    'src/**/*.less'
-                ],
-                options: {
-                    indentation: 'spaces',
-                    spaces: 4,
-                    ignores: ['js-comments']
-                }
-            }
-        },
-
         // Compile LessCSS to CSS.
         less: {
             src: {
                 files: {
                     '.tmp/css/main.css': 'src/less/main.less'
                 }
+            }
+        },
+
+//         Comb less files
+//         Should be combing less files but csscomb currently breaks on less mixins.
+//        csscomb: {
+//            options: {
+//                config: '.csscomb.json'
+//            },
+//            src: {
+//                expand: true,
+//                cwd: 'src/',
+//                src: ['**/*.less'],
+//                dest: 'src/',
+//            }
+//        },
+
+        // Lint the css output
+        csslint: {
+            lessOutput: {
+                options: {
+                    csslintrc: '.csslintrc',
+                    format: 'dit is een string'
+                },
+
+                src: ['.tmp/css/main.css']
             }
         },
 
@@ -365,8 +377,8 @@ module.exports = function (grunt) {
     // build dist
     grunt.registerTask('build:dist', 'Build the distribution', [
         'jshint',
-        'lintspaces:less',
         'less',
+        'csslint',
         'imagemin',
         'clean:dist',
         'autoprefixer',
