@@ -19,17 +19,23 @@
 }
 
 .generate-pane-col(@maxCols; @i; @j: @i) when (@j =< @maxCols) {
-    @columnWidthPercentage: 100% / @maxCols;
-    @offsetStartPercentage: (@i - 1) * @columnWidthPercentage;
-    @offsetEndPercentage: 100% - (@j * @columnWidthPercentage);
+    @columnWidth: 100 / @maxCols;
+    @offsetStart: (@i - 1) * @columnWidth;
+    @offsetEnd: 100 - (@j * @columnWidth);
     @startCol: @i;
     @endCol: @j;
-    @dimension: ((@j + 1) - @i) * @columnWidthPercentage;
+    @dimension: ((@j + 1) - @i) * @columnWidth;
 
     .pane-@{breakpoint}-@{startCol}-@{endCol} {
-        left: @offsetStartPercentage;
-        right: @offsetEndPercentage;
-        width: @dimension;
+        width: unit(@dimension, %);
+
+        & when (@offsetStart > 0) {
+            left: unit(@offsetStart, %);
+        }
+
+        & when (@offsetEnd > 0) {
+            right: unit(@offsetEnd, %);
+        }
     }
 
     .generate-pane-col(@maxCols; @i; (@j + 1));

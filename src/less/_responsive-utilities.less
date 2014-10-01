@@ -15,7 +15,7 @@
  */
 // Hidden table
 .hidden-xs-table {
-    .responsive-visibility-custom('table');
+    .responsive-visibility-custom(table);
 
     @media (max-width: @screen-xs-max) {
         .responsive-invisibility();
@@ -32,7 +32,7 @@
             .responsive-invisibility();
         }
     }
-    
+
     &.hidden-lg {
         @media (min-width: @screen-lg) {
             .responsive-invisibility();
@@ -41,25 +41,25 @@
 }
 
 .hidden-sm-table {
-    .responsive-visibility-custom('table');
+    .responsive-visibility-custom(table);
 
     &.hidden-xs {
         @media (max-width: @screen-xs-max) {
             .responsive-invisibility();
         }
     }
-    
+
     @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
         .responsive-invisibility();
     }
-    
+
     &.hidden-md {
         @media (min-width: @screen-md) and (max-width: @screen-md-max) {
             .responsive-invisibility();
         }
     }
 
-    &.hidden-lg {    
+    &.hidden-lg {
         @media (min-width: @screen-lg) {
             .responsive-invisibility();
         }
@@ -67,14 +67,14 @@
 }
 
 .hidden-md-table {
-    .responsive-visibility-custom('table');
-    
+    .responsive-visibility-custom(table);
+
     &.hidden-xs {
         @media (max-width: @screen-xs-max) {
             .responsive-invisibility();
         }
     }
-    
+
     &.hidden-sm {
         @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
             .responsive-invisibility();
@@ -93,7 +93,7 @@
 }
 
 .hidden-lg-table {
-    .responsive-visibility-custom('table');
+    .responsive-visibility-custom(table);
     &.hidden-xs {
         @media (max-width: @screen-xs-max) {
             .responsive-invisibility();
@@ -119,7 +119,7 @@
 
 // Hidden table-cell
 .hidden-xs-table-cell {
-    .responsive-visibility-custom('table-cell');
+    .responsive-visibility-custom(table-cell);
     @media (max-width: @screen-xs-max) {
         .responsive-invisibility();
     }
@@ -144,8 +144,8 @@
 }
 
 .hidden-sm-table {
-    .responsive-visibility-custom('table-cell');
-    
+    .responsive-visibility-custom(table-cell);
+
     &.hidden-xs {
         @media (max-width: @screen-xs-max) {
             .responsive-invisibility();
@@ -170,7 +170,7 @@
 }
 
 .hidden-md-table {
-    .responsive-visibility-custom('table-cell');
+    .responsive-visibility-custom(table-cell);
 
     &.hidden-xs {
         @media (max-width: @screen-xs-max) {
@@ -196,14 +196,14 @@
 }
 
 .hidden-lg-table {
-    .responsive-visibility-custom('table-cell');
-    
+    .responsive-visibility-custom(table-cell);
+
     &.hidden-xs {
         @media (max-width: @screen-xs-max) {
             .responsive-invisibility();
         }
     }
-    
+
     &.hidden-sm {
         @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
             .responsive-invisibility();

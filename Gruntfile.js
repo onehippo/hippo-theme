@@ -54,7 +54,7 @@ module.exports = function (grunt) {
                     livereload: false
                 },
                 files: ['src/**/*.less'],
-                tasks: ['less:main', 'autoprefixer', 'csslint', 'concat:css']
+                tasks: ['less', 'autoprefixer', 'csslint', 'concat:css']
             },
             js: {
                 files: ['src/**/*.js', '!**/*.spec.js'],
