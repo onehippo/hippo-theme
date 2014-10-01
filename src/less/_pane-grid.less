@@ -18,6 +18,10 @@
     position: relative;
 }
 
+.pane-full {
+    .pane();
+}
+
 .generate-pane-col(@maxCols; @i; @j: @i) when (@j =< @maxCols) {
     @columnWidth: 100 / @maxCols;
     @offsetStart: (@i - 1) * @columnWidth;
@@ -29,11 +33,18 @@
     .pane-@{breakpoint}-@{startCol}-@{endCol} {
         width: unit(@dimension, %);
 
-        & when (@offsetStart > 0) {
+        & when (@offsetStart > 0) and (@offsetEnd = 0) {
             left: unit(@offsetStart, %);
+            right: 0;
         }
 
-        & when (@offsetEnd > 0) {
+        & when (@offsetEnd > 0) and (@offsetStart = 0) {
+            left: 0;
+            right: unit(@offsetEnd, %);
+        }
+
+        & when (@offsetEnd > 0) and (@offsetStart > 0) {
+            left: unit(@offsetStart, %);
             right: unit(@offsetEnd, %);
         }
     }
@@ -47,7 +58,7 @@
 }
 
 .generate-grid() {
-    [class ^= "pane-"] {
+    [class *= "pane-"] {
         .pane();
     }
 
@@ -70,4 +81,31 @@
     }
 }
 
+.generate-hidden() {
+    @media (max-width: @screen-xs-max) {
+        .pane-xs-hidden {
+            display: none;
+        }
+    }
+
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        .pane-sm-hidden {
+            display: none;
+        }
+    }
+
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+        .pane-md-hidden {
+            display: none;
+        }
+    }
+
+    @media (min-width: @screen-lg-min) {
+        .pane-lg-hidden {
+            display: none;
+        }
+    }
+}
+
 .generate-grid();
+.generate-hidden();

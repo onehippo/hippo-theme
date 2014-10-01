@@ -107,7 +107,7 @@
     <p>This also allows you to reorder the panes. A <code>.pane-xs-5-6</code> can be put before a <code>.pane-xs-2-4</code>
       but it will visually still show up after the 2-4 pane.</p>
     <p>Just like the bootstrap theme the grid has breakpoint variations allowing for different layouts per breakpoint.
-    To collapse a pane (i.e. hide it) from a specific breakpoint, use the bootstrap class class <code>.hidden-{breakpoint}.</code></p>
+    To collapse a pane (i.e. hide it) from a specific breakpoint, use the class <code>.pane-{breakpoint}-hidden.</code></p>
     <p>The parent of the pane, or the <code>.root-pane</code> does need its height set explicitly as absolute positioned elements are not part of the normal page flow.</p>
     <p>Try it out! Resize your viewport and see the below grids change and switch.</p>
     <p>One can add the following mixin to their LESS mixins to be able to set a pane with fixed dimensions:</p>
@@ -134,7 +134,7 @@
               <div class="pane-xs-1-4 pane-sm-1-6 pane-md-1-2 pane-lg-5-8 bg-info">
                 <div class="pane-xs-5-8 bg-warning"></div>
               </div>
-              <div class="pane-xs-5-8 hidden-sm pane-md-3-10 pane-lg-9-12 bg-success">
+              <div class="pane-xs-5-8 pane-sm-hidden pane-md-3-10 pane-lg-9-12 bg-success">
               </div>
               <div class="pane-xs-9-12 pane-sm-7-12 pane-md-11-12 pane-lg-1-4 bg-danger">
               </div>
