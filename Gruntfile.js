@@ -42,7 +42,9 @@ module.exports = function (grunt) {
         // Watch for file changes and run corresponding tasks
         watch: {
             options: {
-                livereload: true
+                livereload: true,
+                interrupt: true,
+                livereloadOnError: false
             },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -52,7 +54,7 @@ module.exports = function (grunt) {
                     livereload: false
                 },
                 files: ['src/**/*.less'],
-                tasks: ['newer:less', 'csslint', 'autoprefixer', 'concat:css']
+                tasks: ['less:main', 'autoprefixer', 'csslint', 'concat:css']
             },
             js: {
                 files: ['src/**/*.js', '!**/*.spec.js'],
@@ -135,9 +137,13 @@ module.exports = function (grunt) {
 
         // Compile LessCSS to CSS.
         less: {
-            src: {
+            main: {
                 files: {
-                    '.tmp/css/main.css': 'src/less/main.less',
+                    '.tmp/css/main.css': 'src/less/main.less'
+                }
+            },
+            vendors: {
+                files: {
                     '.tmp/css/bootstrap.css': 'src/less/bootstrap.less',
                     '.tmp/css/font-awesome.css': 'src/less/font-awesome.less',
                     '.tmp/css/bootstrap-chosen.css': 'src/less/bootstrap-chosen.less'
@@ -387,10 +393,10 @@ module.exports = function (grunt) {
     grunt.registerTask('build:dist', 'Build the distribution', [
         'jshint',
         'less',
+        'autoprefixer',
         'csslint',
         'imagemin',
         'clean:dist',
-        'autoprefixer',
         'copy:dist',
         'concat',
         'uglify:dist',
