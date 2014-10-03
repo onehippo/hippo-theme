@@ -23,17 +23,48 @@
 }
 
 .hippo-pane-heading {
-    height: @pane-heading-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: @pane-bar-height;
     border-bottom: 1px solid @panel-default-border;
     padding: @pane-padding;
-    background: @panel-default-heading-bg;
+    background: @pane-default-bg;
 
-    .btn {
-        margin-left: 5px;
-        margin-right: 5px;
+    .btn + .btn {
+        margin-left: @pane-padding;
     }
 }
 
 .hippo-pane-body {
-    .pane(@pane-heading-height; 0; 0; 0;);
+    .pane(@pane-bar-height; 0; @pane-bar-height; 0;);
+}
+
+.hippo-pane-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: @pane-bar-height;
+    border-top: 1px solid @panel-default-border;
+    padding: @pane-padding;
+    background: @pane-default-bg;
+
+    .btn + .btn {
+        margin-left: @pane-padding;
+    }
+
+    .breadcrumb {
+        margin-bottom: 0;
+    }
+}
+
+.hippo-pane-divider {
+    position: relative;
+    top: -(@pane-padding);
+    display: block;
+    height: @pane-bar-height - 1;
+    border-right: 1px solid @panel-default-border;
+    margin: 0 @pane-padding;
 }
