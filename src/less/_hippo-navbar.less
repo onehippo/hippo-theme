@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-.hippo-navbar + .container-fluid {
-    .pane(@hippo-navbar-height, 0, 0, 0);
-    padding-top: 15px;
+.hippo-navbar + .main-content {
+    .flex-child;
+    .flex-row;
+    margin-top: @hippo-navbar-height;
+    overflow-y: auto;
 }
 
 .navbar-icons {
@@ -75,8 +77,8 @@
 }
 
 @media (min-width: @screen-sm-min) {
-    .hippo-navbar-with-sidenav + .container-fluid {
-        left: @side-navbar-width;
+    .hippo-navbar-with-sidenav + .main-content {
+        margin-left: @side-navbar-width;
     }
 
     .hippo-navbar-with-sidenav .navbar-header {
@@ -120,6 +122,6 @@
     }
 }
 
-.hippo-navbar + .container-fluid > .root-pane > .hippo-pane {
+.hippo-navbar + .main-content > .flex-full > .hippo-pane {
     border-top: none;
 }

@@ -14,855 +14,857 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<div class="row">
-  <div class="col-xs-12">
-    <h1>CSS Core <small>Typography, tables, forms and utilities</small></h1>
-  </div>
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        Headings
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>CSS Core <small>Typography, tables, forms and utilities</small></h1>
       </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
-            <h1>h1. Bootstrap heading</h1>
-            <h2>h2. Bootstrap heading</h2>
-            <h3>h3. Bootstrap heading</h3>
-            <h4>h4. Bootstrap heading</h4>
-            <h5>h5. Bootstrap heading</h5>
-            <h6>h6. Bootstrap heading</h6>
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            Headings
           </div>
-          <div class="col-sm-6">
-            <pre>
-            &lt;h1&gt;h1. Bootstrap heading&lt;/h1&gt;
-            &lt;h2&gt;h2. Bootstrap heading&lt;/h2&gt;
-            &lt;h3&gt;h3. Bootstrap heading&lt;/h3&gt;
-            &lt;h4&gt;h4. Bootstrap heading&lt;/h4&gt;
-            &lt;h5&gt;h5. Bootstrap heading&lt;/h5&gt;
-            &lt;h6&gt;h6. Bootstrap heading&lt;/h6&gt;
-            </pre>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-6">
-            <p>Create lighter, secondary text in any heading with a generic <code>&lt;small&gt;</code> tag or the <code>.small</code> class.</p>
-            <h1>h1. Bootstrap heading <small>Secondary text</small></h1>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-            &lt;h1&gt;h1. Bootstrap heading &lt;small&gt;Secondary text&lt;/small&gt;&lt;/h1&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        Body Text
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <p class="lead">This is a leading paragraph, bigger then usual</p>
-            <p>This text has <mark>a highlighted</mark> piece.</p>
-            <p><del>This text is deleted</del>, differend semantics then strikethrough</p>
-            <p><s>This text is strikethrough text</s>, differend semantics then deleted</p>
-            <p><ins>This text is inserted</ins>, different semantics then underlined</p>
-            <p><u>This text is underlined</u>, different semantics then inserted</p>
-            <p><small>This text is small</small></p>
-            <p><strong>This text is bold</strong></p>
-            <p><em>This text is in italics</em></p>
-            <p class="text-left">Left aligned text.</p>
-            <p class="text-center">Center aligned text.</p>
-            <p class="text-right">Right aligned text.</p>
-            <p class="text-justify">Justified text.</p>
-          </div>
-          <div class="col-sm-6">
-          <pre>
-            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
-            &lt;p class="lead"&gt;This is a leading paragraph, bigger then usual&lt;/p&gt;
-            &lt;p&gt;This text has &lt;mark&gt;a highlighted&lt;/mark&gt; piece.&lt;/p&gt;
-            &lt;p&gt;&lt;del&gt;This text is deleted&lt;/del&gt;, differend semantics then strikethrough&lt;/p&gt;
-            &lt;p&gt;&lt;s&gt;This text is strikethrough text&lt;/s&gt;, differend semantics then deleted&lt;/p&gt;
-            &lt;p&gt;&lt;ins&gt;This text is inserted&lt;/ins&gt;, different semantics then underlined&lt;/p&gt;
-            &lt;p&gt;&lt;u&gt;This text is underlined&lt;/u&gt;, different semantics then inserted&lt;/p&gt;
-            &lt;p&gt;&lt;small&gt;This text is small&lt;/small&gt;&lt;/p&gt;
-            &lt;p&gt;&lt;strong&gt;This text is bold&lt;/strong&gt;&lt;/p&gt;
-            &lt;p&gt;&lt;em&gt;This text is in italics&lt;/em&gt;&lt;/p&gt;
-            &lt;p class="text-left"&gt;Left aligned text.&lt;/p&gt;
-            &lt;p class="text-center"&gt;Center aligned text.&lt;/p&gt;
-            &lt;p class="text-right"&gt;Right aligned text.&lt;/p&gt;
-            &lt;p class="text-justify"&gt;Justified text.&lt;/p&gt;
-          </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">Abbreviations</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <p>This is a line with an <abbr title="abbreviation">abbr</abbr> in it.</p>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-            &lt;p&gt;This is a line with an &lt;abbr title="abbreviation"&gt;abbr&lt;/abbr&gt; in it.&lt;/p&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        BlockQuote &amp; Address
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <blockquote>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            </blockquote>
-
-            <blockquote class="pull-right">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-
-              <small>
-                Someone famous
-                <cite title="Source Title">Source Title</cite>
-              </small>
-            </blockquote>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;blockquote&gt;
-                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
-              &lt;/blockquote&gt;
-              &lt;blockquote class="pull-right"&gt;
-                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
-                &lt;small&gt;
-                  Someone famous
-                  &lt;cite title="Source Title"&gt;Source Title&lt;/cite&gt;
-                &lt;/small&gt;
-              &lt;/blockquote&gt;
-            </pre>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-6">
-            <address>
-              <strong>Twitter, Inc.</strong>
-              <br>
-              795 Folsom Ave, Suite 600
-              <br>
-              San Francisco, CA 94107
-              <br>
-              <abbr title="Phone">P:</abbr>
-              (123) 456-7890
-            </address>
-
-            <address>
-              <strong>Full Name</strong>
-              <br>
-              <a href="mailto:#">first.last@example.com</a>
-            </address>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;address&gt;
-                &lt;strong&gt;Twitter, Inc.&lt;/strong&gt;&lt;br&gt;
-                795 Folsom Ave, Suite 600&lt;br&gt;
-                San Francisco, CA 94107&lt;br&gt;
-                &lt;abbr title="Phone"&gt;P:&lt;/abbr&gt;
-                (123) 456-7890
-              &lt;/address&gt;
-
-              &lt;address&gt;
-                &lt;strong&gt;Full Name&lt;/strong&gt;&lt;br&gt;
-                &lt;a href="mailto:#"&gt;first.last@example.com&lt;/a&gt;
-              &lt;/address&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        Lists
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <ul>
-              <li>Unordered List Item</li>
-
-              <li>
-                <small>List Item in small tag</small>
-              </li>
-
-              <li>
-                <b>List Item in bold tag</b>
-              </li>
-
-              <li>
-                <i>List Item in italics tag</i>
-              </li>
-
-              <li>
-                <ul class="list-unstyled">
-                  <li>
-                    <i class="fa fa-caret-right blue"></i>
-                    Nested List Item
-                  </li>
-
-                  <li>
-                    <i class="fa fa-caret-right blue"></i>
-                    Nested List Item
-                  </li>
-
-                  <li>
-                    <i class="fa fa-caret-right blue"></i>
-                    Nested List Item
-                  </li>
-                </ul>
-              </li>
-              <li>Unordered List Item which is a longer item and may break into more lines.</li>
-
-              <li>
-                <strong>List Item in strong tag</strong>
-              </li>
-
-              <li>
-                <em>List Item in emphasis tag</em>
-              </li>
-            </ul>
-
-            <ol>
-              <li>Ordered List Item</li>
-              <li class="text-primary">.text-primary Ordered List Item</li>
-              <li class="text-danger">.text-danger Ordered List Item</li>
-
-              <li class="text-success">
-                <b>.text-success</b>
-                Ordered List Item
-              </li>
-              <li class="text-warning">.text-warning Ordered List Item</li>
-              <li class="text-muted">.text-muted Ordered List Item</li>
-            </ol>
-
-            <ul class="fa-ul">
-              <li><i class="fa-li fa fa-check-square"></i>List icons</li>
-              <li><i class="fa-li fa fa-check-square"></i>can be used</li>
-              <li><i class="fa-li fa fa-spinner fa-spin"></i>as bullets</li>
-              <li><i class="fa-li fa fa-square"></i>in lists</li>
-            </ul>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;ul&gt;
-                &lt;li&gt;Unordered List Item&lt;/li&gt;
-                &lt;li&gt;
-                  &lt;small&gt;List Item in small tag&lt;/small&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;b&gt;List Item in bold tag&lt;/b&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;i&gt;List Item in italics tag&lt;/i&gt;&lt;/li&gt;
-                &lt;li&gt;
-                  &lt;ul class="list-unstyled"&gt;
-                    &lt;li&gt;&lt;i class="fa fa-caret-right blue"&gt;&lt;/i&gt;Nested List Item&lt;/li&gt;
-                    &lt;li&gt;
-                      &lt;i class="fa fa-caret-right blue"&gt;&lt;/i&gt;
-                      Nested List Item
-                    &lt;/li&gt;
-
-                    &lt;li&gt;
-                      &lt;i class="fa fa-caret-right blue"&gt;&lt;/i&gt;
-                      Nested List Item
-                    &lt;/li&gt;
-                  &lt;/ul&gt;
-                &lt;/li&gt;
-                &lt;li&gt;Unordered List Item which is a longer item and may break into more lines.&lt;/li&gt;
-
-                &lt;li&gt;
-                  &lt;strong&gt;List Item in strong tag&lt;/strong&gt;
-                &lt;/li&gt;
-
-                &lt;li&gt;
-                  &lt;em&gt;List Item in emphasis tag&lt;/em&gt;
-                &lt;/li&gt;
-              &lt;/ul&gt;
-
-              &lt;ol&gt;
-                &lt;li&gt;Ordered List Item&lt;/li&gt;
-                &lt;li class="text-primary"&gt;.text-primary Ordered List Item&lt;/li&gt;
-                &lt;li class="text-danger"&gt;.text-danger Ordered List Item&lt;/li&gt;
-                &lt;li class="text-success"&gt;
-                  &lt;b&gt;.text-success&lt;/b&gt;
-                  Ordered List Item
-                &lt;/li&gt;
-                &lt;li class="text-warning"&gt;.text-warning Ordered List Item&lt;/li&gt;
-                &lt;li class="text-muted"&gt;.text-muted Ordered List Item&lt;/li&gt;
-              &lt;/ol&gt;
-
-              &lt;ul class="fa-ul"&gt;
-                &lt;li&gt;&lt;i class="fa-li fa fa-check-square"&gt;&lt;/i&gt;List icons&lt;/li&gt;
-                &lt;li&gt;&lt;i class="fa-li fa fa-check-square"&gt;&lt;/i&gt;can be used&lt;/li&gt;
-                &lt;li&gt;&lt;i class="fa-li fa fa-spinner fa-spin"&gt;&lt;/i&gt;as bullets&lt;/li&gt;
-                &lt;li&gt;&lt;i class="fa-li fa fa-square"&gt;&lt;/i&gt;in lists&lt;/li&gt;
-              &lt;/ul&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        Definition lists
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-          <h4>Definition list normal</h4>
-            <dl>
-              <dt>Description lists</dt>
-              <dd>A description list is perfect for defining terms.</dd>
-              <dt>Euismod</dt>
-              <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-              <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-              <dt>Malesuada porta</dt>
-              <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-              <dt>Felis euismod semper eget lacinia</dt>
-              <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
-            </dl>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;dl&gt;
-                &lt;dt&gt;Description lists&lt;/dt&gt;
-                &lt;dd&gt;A description list is perfect for defining terms.&lt;/dd&gt;
-                &lt;dt&gt;Euismod&lt;/dt&gt;
-                &lt;dd&gt;Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.&lt;/dd&gt;
-                &lt;dd&gt;Donec id elit non mi porta gravida at eget metus.&lt;/dd&gt;
-                &lt;dt&gt;Malesuada porta&lt;/dt&gt;
-                &lt;dd&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/dd&gt;
-                &lt;dt&gt;Felis euismod semper eget lacinia&lt;/dt&gt;
-                &lt;dd&gt;Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/dd&gt;
-              &lt;/dl&gt;
-            </pre>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-6">
-          <h4>Definition list horizontal</h4>
-            <dl class="dl-horizontal">
-              <dt>Description lists</dt>
-              <dd>A description list is perfect for defining terms.</dd>
-              <dt>Euismod</dt>
-              <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-              <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-              <dt>Malesuada porta</dt>
-              <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-              <dt>Felis euismod semper eget lacinia</dt>
-              <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
-            </dl>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;dl class="dl-horizontal"&gt;
-                &lt;dt&gt;Description lists&lt;/dt&gt;
-                &lt;dd&gt;A description list is perfect for defining terms.&lt;/dd&gt;
-                &lt;dt&gt;Euismod&lt;/dt&gt;
-                &lt;dd&gt;Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.&lt;/dd&gt;
-                &lt;dd&gt;Donec id elit non mi porta gravida at eget metus.&lt;/dd&gt;
-                &lt;dt&gt;Malesuada porta&lt;/dt&gt;
-                &lt;dd&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/dd&gt;
-                &lt;dt&gt;Felis euismod semper eget lacinia&lt;/dt&gt;
-                &lt;dd&gt;Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/dd&gt;
-              &lt;/dl&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">Tables</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <h4>Table Default</h4>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;table class="table"&gt;
-                &lt;thead&gt;
-                &lt;tr&gt;
-                  &lt;th&gt;#&lt;/th&gt;
-                  &lt;th&gt;First Name&lt;/th&gt;
-                  &lt;th&gt;Last Name&lt;/th&gt;
-                  &lt;th&gt;Username&lt;/th&gt;
-                &lt;/tr&gt;
-                &lt;/thead&gt;
-                &lt;tbody&gt;
-                &lt;tr&gt;
-                  &lt;td&gt;1&lt;/td&gt;
-                  &lt;td&gt;Mark&lt;/td&gt;
-                  &lt;td&gt;Otto&lt;/td&gt;
-                  &lt;td&gt;@mdo&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                  &lt;td&gt;2&lt;/td&gt;
-                  &lt;td&gt;Jacob&lt;/td&gt;
-                  &lt;td&gt;Thornton&lt;/td&gt;
-                  &lt;td&gt;@fat&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                  &lt;td&gt;3&lt;/td&gt;
-                  &lt;td&gt;Larry&lt;/td&gt;
-                  &lt;td&gt;the Bird&lt;/td&gt;
-                  &lt;td&gt;@twitter&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;/tbody&gt;
-              &lt;/table&gt;
-            </pre>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-6">
-            <h4>Table Striped</h4>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;table class="table table-striped"&gt;
-                &lt;thead&gt;
-                &lt;tr&gt;
-                  &lt;th&gt;#&lt;/th&gt;
-                  &lt;th&gt;First Name&lt;/th&gt;
-                  &lt;th&gt;Last Name&lt;/th&gt;
-                  &lt;th&gt;Username&lt;/th&gt;
-                &lt;/tr&gt;
-                &lt;/thead&gt;
-                &lt;tbody&gt;
-                &lt;tr&gt;
-                  &lt;td&gt;1&lt;/td&gt;
-                  &lt;td&gt;Mark&lt;/td&gt;
-                  &lt;td&gt;Otto&lt;/td&gt;
-                  &lt;td&gt;@mdo&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                  &lt;td&gt;2&lt;/td&gt;
-                  &lt;td&gt;Jacob&lt;/td&gt;
-                  &lt;td&gt;Thornton&lt;/td&gt;
-                  &lt;td&gt;@fat&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                  &lt;td&gt;3&lt;/td&gt;
-                  &lt;td&gt;Larry&lt;/td&gt;
-                  &lt;td&gt;the Bird&lt;/td&gt;
-                  &lt;td&gt;@twitter&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;/tbody&gt;
-              &lt;/table&gt;
-            </pre>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-6">
-            <h4>Table Hover</h4>
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;table class="table table-hover"&gt;
-                &lt;thead&gt;
-                &lt;tr&gt;
-                  &lt;th&gt;#&lt;/th&gt;
-                  &lt;th&gt;First Name&lt;/th&gt;
-                  &lt;th&gt;Last Name&lt;/th&gt;
-                  &lt;th&gt;Username&lt;/th&gt;
-                &lt;/tr&gt;
-                &lt;/thead&gt;
-                &lt;tbody&gt;
-                &lt;tr&gt;
-                  &lt;td&gt;1&lt;/td&gt;
-                  &lt;td&gt;Mark&lt;/td&gt;
-                  &lt;td&gt;Otto&lt;/td&gt;
-                  &lt;td&gt;@mdo&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                  &lt;td&gt;2&lt;/td&gt;
-                  &lt;td&gt;Jacob&lt;/td&gt;
-                  &lt;td&gt;Thornton&lt;/td&gt;
-                  &lt;td&gt;@fat&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                  &lt;td&gt;3&lt;/td&gt;
-                  &lt;td&gt;Larry&lt;/td&gt;
-                  &lt;td&gt;the Bird&lt;/td&gt;
-                  &lt;td&gt;@twitter&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;/tbody&gt;
-              &lt;/table&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">Forms</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <form>
-              <fieldset>
-                <div class="form-group">
-                  <label for="exampleInputEmail">Email address</label>
-                  <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Example block-level help text here.</p>
-                </div>
-                <div class="form-group has-feedback has-success">
-                  <label for="exampleInputAddon">Input addon</label>
-
-                  <div class="input-group">
-                    <span class="input-group-addon">www.onehippo.com</span>
-                    <input type="text" id="exampleInputAddon" class="form-control form-control-addon"
-                    placeholder="" value="" data-tooltip="" data-original-title="" title="">
-                  </div>
-                  <span class="fa fa-check form-control-feedback"></span>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox">Check me out
-                  </label>
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-              </fieldset>
-            </form>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;form&gt;
-                &lt;fieldset&gt;
-                  &lt;div class="form-group"&gt;
-                    &lt;label for="exampleInputEmail"&gt;Email address&lt;/label&gt;
-                    &lt;input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email"&gt;
-                  &lt;/div&gt;
-                  &lt;div class="form-group"&gt;
-                    &lt;label for="exampleInputPassword"&gt;Password&lt;/label&gt;
-                    &lt;input type="password" class="form-control" id="exampleInputPassword" placeholder="Password"&gt;
-                  &lt;/div&gt;
-                  &lt;div class="form-group"&gt;
-                    &lt;label for="exampleInputFile"&gt;File input&lt;/label&gt;
-                    &lt;input type="file" id="exampleInputFile"&gt;
-
-                    &lt;p class="help-block"&gt;Example block-level help text here.&lt;/p&gt;
-                  &lt;/div&gt;
-                  &lt;div class="form-group has-feedback has-success"&gt;
-                    &lt;label for="exampleInputAddon"&gt;Input addon&lt;/label&gt;
-
-                    &lt;div class="input-group"&gt;
-                      &lt;span class="input-group-addon"&gt;www.onehippo.com&lt;/span&gt;
-                      &lt;input type="text" id="exampleInputAddon" class="form-control form-control-addon"
-                             placeholder="" value="" data-tooltip="" data-original-title="" title=""&gt;
-                    &lt;/div&gt;
-                    &lt;span class="fa fa-check form-control-feedback"&gt;&lt;/span&gt;
-                  &lt;/div&gt;
-                  &lt;div class="checkbox"&gt;
-                    &lt;label&gt;
-                      &lt;input type="checkbox"&gt;Check me out&lt;/label&gt;
-                  &lt;/div&gt;
-                  &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
-                &lt;/fieldset&gt;
-              &lt;/form&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">Buttons</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <p>
-            <button type="button" class="btn btn-default">Default</button>
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-success">Success</button>
-            <button type="button" class="btn btn-info">Info</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-danger">Danger</button>
-            <button type="button" class="btn btn-link">Link</button>
-            </p>
-
-            <p>
-              <button type="button" class="btn btn-primary btn-lg">Large button</button>
-              <button type="button" class="btn btn-default btn-lg">Large button</button>
-            </p>
-            <p>
-              <button type="button" class="btn btn-primary">Default button</button>
-              <button type="button" class="btn btn-default">Default button</button>
-            </p>
-            <p>
-              <button type="button" class="btn btn-primary btn-sm">Small button</button>
-              <button type="button" class="btn btn-default btn-sm">Small button</button>
-            </p>
-            <p>
-              <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
-              <button type="button" class="btn btn-default btn-xs">Extra small button</button>
-            </p>
-
+          <div class="panel-body">
             <div class="row">
-              <div class="col-xs-6">
-                <p>
-                  <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-                </p>
+              <div class="col-sm-6">
+                <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
+                <h1>h1. Bootstrap heading</h1>
+                <h2>h2. Bootstrap heading</h2>
+                <h3>h3. Bootstrap heading</h3>
+                <h4>h4. Bootstrap heading</h4>
+                <h5>h5. Bootstrap heading</h5>
+                <h6>h6. Bootstrap heading</h6>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                &lt;h1&gt;h1. Bootstrap heading&lt;/h1&gt;
+                &lt;h2&gt;h2. Bootstrap heading&lt;/h2&gt;
+                &lt;h3&gt;h3. Bootstrap heading&lt;/h3&gt;
+                &lt;h4&gt;h4. Bootstrap heading&lt;/h4&gt;
+                &lt;h5&gt;h5. Bootstrap heading&lt;/h5&gt;
+                &lt;h6&gt;h6. Bootstrap heading&lt;/h6&gt;
+                </pre>
               </div>
             </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p>Create lighter, secondary text in any heading with a generic <code>&lt;small&gt;</code> tag or the <code>.small</code> class.</p>
+                <h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                &lt;h1&gt;h1. Bootstrap heading &lt;small&gt;Secondary text&lt;/small&gt;&lt;/h1&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <p>
-              <button type="button" class="btn btn-lg btn-primary" disabled>Primary button disabled</button>
-            </p>
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            Body Text
           </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;button type="button" class="btn btn-default"&gt;Default&lt;/button&gt;
-              &lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
-              &lt;button type="button" class="btn btn-success"&gt;Success&lt;/button&gt;
-              &lt;button type="button" class="btn btn-info"&gt;Info&lt;/button&gt;
-              &lt;button type="button" class="btn btn-warning"&gt;Warning&lt;/button&gt;
-              &lt;button type="button" class="btn btn-danger"&gt;Danger&lt;/button&gt;
-              &lt;button type="button" class="btn btn-link"&gt;Link&lt;/button&gt;
-              &lt;button type="button" class="btn btn-primary btn-lg"&gt;Large button&lt;/button&gt;
-              &lt;button type="button" class="btn btn-primary"&gt;Default button&lt;/button&gt;
-              &lt;button type="button" class="btn btn-primary btn-sm"&gt;Small button&lt;/button&gt;
-              &lt;button type="button" class="btn btn-primary btn-xs"&gt;Extra small button&lt;/button&gt;
-              &lt;button type="button" class="btn btn-primary btn-lg btn-block"&gt;Block level button&lt;/button&gt;
-              &lt;button type="button" class="btn btn-lg btn-primary" disabled&gt;Primary button disabled&lt;/button&gt;
-            </pre>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p class="lead">This is a leading paragraph, bigger then usual</p>
+                <p>This text has <mark>a highlighted</mark> piece.</p>
+                <p><del>This text is deleted</del>, differend semantics then strikethrough</p>
+                <p><s>This text is strikethrough text</s>, differend semantics then deleted</p>
+                <p><ins>This text is inserted</ins>, different semantics then underlined</p>
+                <p><u>This text is underlined</u>, different semantics then inserted</p>
+                <p><small>This text is small</small></p>
+                <p><strong>This text is bold</strong></p>
+                <p><em>This text is in italics</em></p>
+                <p class="text-left">Left aligned text.</p>
+                <p class="text-center">Center aligned text.</p>
+                <p class="text-right">Right aligned text.</p>
+                <p class="text-justify">Justified text.</p>
+              </div>
+              <div class="col-sm-6">
+              <pre>
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+                &lt;p class="lead"&gt;This is a leading paragraph, bigger then usual&lt;/p&gt;
+                &lt;p&gt;This text has &lt;mark&gt;a highlighted&lt;/mark&gt; piece.&lt;/p&gt;
+                &lt;p&gt;&lt;del&gt;This text is deleted&lt;/del&gt;, differend semantics then strikethrough&lt;/p&gt;
+                &lt;p&gt;&lt;s&gt;This text is strikethrough text&lt;/s&gt;, differend semantics then deleted&lt;/p&gt;
+                &lt;p&gt;&lt;ins&gt;This text is inserted&lt;/ins&gt;, different semantics then underlined&lt;/p&gt;
+                &lt;p&gt;&lt;u&gt;This text is underlined&lt;/u&gt;, different semantics then inserted&lt;/p&gt;
+                &lt;p&gt;&lt;small&gt;This text is small&lt;/small&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;This text is bold&lt;/strong&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;em&gt;This text is in italics&lt;/em&gt;&lt;/p&gt;
+                &lt;p class="text-left"&gt;Left aligned text.&lt;/p&gt;
+                &lt;p class="text-center"&gt;Center aligned text.&lt;/p&gt;
+                &lt;p class="text-right"&gt;Right aligned text.&lt;/p&gt;
+                &lt;p class="text-justify"&gt;Justified text.&lt;/p&gt;
+              </pre>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">Images</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <p>Images can be made responsive-friendly via the addition of the <code>.img-responsive</code> class. This applies <code>max-width: 100%;</code> and <code>height: auto;</code> to the image so that it scales nicely to the parent element.</p>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;img src="..." class="img-responsive" alt="Responsive image"&gt;
-            </pre>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-6">
-            <img class="img-rounded" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
-            <img class="img-circle" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
-            <img class="img-thumbnail" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;img src="..." alt="..." class="img-rounded"&gt;
-              &lt;img src="..." alt="..." class="img-circle"&gt;
-              &lt;img src="..." alt="..." class="img-thumbnail"&gt;
-            </pre>
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">Abbreviations</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <p>This is a line with an <abbr title="abbreviation">abbr</abbr> in it.</p>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                &lt;p&gt;This is a line with an &lt;abbr title="abbreviation"&gt;abbr&lt;/abbr&gt; in it.&lt;/p&gt;
+                </pre>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">Contextual Colors & Backgrounds</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
-            <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-            <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
-            <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            BlockQuote &amp; Address
           </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;p class="text-muted"&gt;...&lt;/p&gt;
-              &lt;p class="text-primary"&gt;...&lt;/p&gt;
-              &lt;p class="text-success"&gt;...&lt;/p&gt;
-              &lt;p class="text-info"&gt;...&lt;/p&gt;
-              &lt;p class="text-warning"&gt;...&lt;/p&gt;
-              &lt;p class="text-danger"&gt;...&lt;/p&gt;
-            </pre>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <blockquote>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                </blockquote>
+
+                <blockquote class="pull-right">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+
+                  <small>
+                    Someone famous
+                    <cite title="Source Title">Source Title</cite>
+                  </small>
+                </blockquote>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;blockquote&gt;
+                    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
+                  &lt;/blockquote&gt;
+                  &lt;blockquote class="pull-right"&gt;
+                    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
+                    &lt;small&gt;
+                      Someone famous
+                      &lt;cite title="Source Title"&gt;Source Title&lt;/cite&gt;
+                    &lt;/small&gt;
+                  &lt;/blockquote&gt;
+                </pre>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <address>
+                  <strong>Twitter, Inc.</strong>
+                  <br>
+                  795 Folsom Ave, Suite 600
+                  <br>
+                  San Francisco, CA 94107
+                  <br>
+                  <abbr title="Phone">P:</abbr>
+                  (123) 456-7890
+                </address>
+
+                <address>
+                  <strong>Full Name</strong>
+                  <br>
+                  <a href="mailto:#">first.last@example.com</a>
+                </address>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;address&gt;
+                    &lt;strong&gt;Twitter, Inc.&lt;/strong&gt;&lt;br&gt;
+                    795 Folsom Ave, Suite 600&lt;br&gt;
+                    San Francisco, CA 94107&lt;br&gt;
+                    &lt;abbr title="Phone"&gt;P:&lt;/abbr&gt;
+                    (123) 456-7890
+                  &lt;/address&gt;
+
+                  &lt;address&gt;
+                    &lt;strong&gt;Full Name&lt;/strong&gt;&lt;br&gt;
+                    &lt;a href="mailto:#"&gt;first.last@example.com&lt;/a&gt;
+                  &lt;/address&gt;
+                </pre>
+              </div>
+            </div>
           </div>
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm-6">
-          <p style="padding: 5px;" class="bg-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p style="padding: 5px;" class="bg-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-          <p style="padding: 5px;" class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-          <p style="padding: 5px;" class="bg-warning">Etiam porta sem malesuada magna mollis euismod.</p>
-          <p style="padding: 5px;" class="bg-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+      </div>
+
+
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            Lists
           </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;p class="bg-primary"&gt;Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt;
-              &lt;p class="bg-success"&gt;Duis mollis, est non commodo luctus, nisi erat porttitor ligula.&lt;/p&gt;
-              &lt;p class="bg-info"&gt;Maecenas sed diam eget risus varius blandit sit amet non magna.&lt;/p&gt;
-              &lt;p class="bg-warning"&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/p&gt;
-              &lt;p class="bg-danger"&gt;Donec ullamcorper nulla non metus auctor fringilla.&lt;/p&gt;
-            </pre>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <ul>
+                  <li>Unordered List Item</li>
+
+                  <li>
+                    <small>List Item in small tag</small>
+                  </li>
+
+                  <li>
+                    <b>List Item in bold tag</b>
+                  </li>
+
+                  <li>
+                    <i>List Item in italics tag</i>
+                  </li>
+
+                  <li>
+                    <ul class="list-unstyled">
+                      <li>
+                        <i class="fa fa-caret-right blue"></i>
+                        Nested List Item
+                      </li>
+
+                      <li>
+                        <i class="fa fa-caret-right blue"></i>
+                        Nested List Item
+                      </li>
+
+                      <li>
+                        <i class="fa fa-caret-right blue"></i>
+                        Nested List Item
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Unordered List Item which is a longer item and may break into more lines.</li>
+
+                  <li>
+                    <strong>List Item in strong tag</strong>
+                  </li>
+
+                  <li>
+                    <em>List Item in emphasis tag</em>
+                  </li>
+                </ul>
+
+                <ol>
+                  <li>Ordered List Item</li>
+                  <li class="text-primary">.text-primary Ordered List Item</li>
+                  <li class="text-danger">.text-danger Ordered List Item</li>
+
+                  <li class="text-success">
+                    <b>.text-success</b>
+                    Ordered List Item
+                  </li>
+                  <li class="text-warning">.text-warning Ordered List Item</li>
+                  <li class="text-muted">.text-muted Ordered List Item</li>
+                </ol>
+
+                <ul class="fa-ul">
+                  <li><i class="fa-li fa fa-check-square"></i>List icons</li>
+                  <li><i class="fa-li fa fa-check-square"></i>can be used</li>
+                  <li><i class="fa-li fa fa-spinner fa-spin"></i>as bullets</li>
+                  <li><i class="fa-li fa fa-square"></i>in lists</li>
+                </ul>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;ul&gt;
+                    &lt;li&gt;Unordered List Item&lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;small&gt;List Item in small tag&lt;/small&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;&lt;b&gt;List Item in bold tag&lt;/b&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;i&gt;List Item in italics tag&lt;/i&gt;&lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;ul class="list-unstyled"&gt;
+                        &lt;li&gt;&lt;i class="fa fa-caret-right blue"&gt;&lt;/i&gt;Nested List Item&lt;/li&gt;
+                        &lt;li&gt;
+                          &lt;i class="fa fa-caret-right blue"&gt;&lt;/i&gt;
+                          Nested List Item
+                        &lt;/li&gt;
+
+                        &lt;li&gt;
+                          &lt;i class="fa fa-caret-right blue"&gt;&lt;/i&gt;
+                          Nested List Item
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;Unordered List Item which is a longer item and may break into more lines.&lt;/li&gt;
+
+                    &lt;li&gt;
+                      &lt;strong&gt;List Item in strong tag&lt;/strong&gt;
+                    &lt;/li&gt;
+
+                    &lt;li&gt;
+                      &lt;em&gt;List Item in emphasis tag&lt;/em&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;
+
+                  &lt;ol&gt;
+                    &lt;li&gt;Ordered List Item&lt;/li&gt;
+                    &lt;li class="text-primary"&gt;.text-primary Ordered List Item&lt;/li&gt;
+                    &lt;li class="text-danger"&gt;.text-danger Ordered List Item&lt;/li&gt;
+                    &lt;li class="text-success"&gt;
+                      &lt;b&gt;.text-success&lt;/b&gt;
+                      Ordered List Item
+                    &lt;/li&gt;
+                    &lt;li class="text-warning"&gt;.text-warning Ordered List Item&lt;/li&gt;
+                    &lt;li class="text-muted"&gt;.text-muted Ordered List Item&lt;/li&gt;
+                  &lt;/ol&gt;
+
+                  &lt;ul class="fa-ul"&gt;
+                    &lt;li&gt;&lt;i class="fa-li fa fa-check-square"&gt;&lt;/i&gt;List icons&lt;/li&gt;
+                    &lt;li&gt;&lt;i class="fa-li fa fa-check-square"&gt;&lt;/i&gt;can be used&lt;/li&gt;
+                    &lt;li&gt;&lt;i class="fa-li fa fa-spinner fa-spin"&gt;&lt;/i&gt;as bullets&lt;/li&gt;
+                    &lt;li&gt;&lt;i class="fa-li fa fa-square"&gt;&lt;/i&gt;in lists&lt;/li&gt;
+                  &lt;/ul&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            Definition lists
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+              <h4>Definition list normal</h4>
+                <dl>
+                  <dt>Description lists</dt>
+                  <dd>A description list is perfect for defining terms.</dd>
+                  <dt>Euismod</dt>
+                  <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                  <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                  <dt>Malesuada porta</dt>
+                  <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                  <dt>Felis euismod semper eget lacinia</dt>
+                  <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+                </dl>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;dl&gt;
+                    &lt;dt&gt;Description lists&lt;/dt&gt;
+                    &lt;dd&gt;A description list is perfect for defining terms.&lt;/dd&gt;
+                    &lt;dt&gt;Euismod&lt;/dt&gt;
+                    &lt;dd&gt;Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.&lt;/dd&gt;
+                    &lt;dd&gt;Donec id elit non mi porta gravida at eget metus.&lt;/dd&gt;
+                    &lt;dt&gt;Malesuada porta&lt;/dt&gt;
+                    &lt;dd&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/dd&gt;
+                    &lt;dt&gt;Felis euismod semper eget lacinia&lt;/dt&gt;
+                    &lt;dd&gt;Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/dd&gt;
+                  &lt;/dl&gt;
+                </pre>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+              <h4>Definition list horizontal</h4>
+                <dl class="dl-horizontal">
+                  <dt>Description lists</dt>
+                  <dd>A description list is perfect for defining terms.</dd>
+                  <dt>Euismod</dt>
+                  <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                  <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                  <dt>Malesuada porta</dt>
+                  <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                  <dt>Felis euismod semper eget lacinia</dt>
+                  <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+                </dl>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;dl class="dl-horizontal"&gt;
+                    &lt;dt&gt;Description lists&lt;/dt&gt;
+                    &lt;dd&gt;A description list is perfect for defining terms.&lt;/dd&gt;
+                    &lt;dt&gt;Euismod&lt;/dt&gt;
+                    &lt;dd&gt;Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.&lt;/dd&gt;
+                    &lt;dd&gt;Donec id elit non mi porta gravida at eget metus.&lt;/dd&gt;
+                    &lt;dt&gt;Malesuada porta&lt;/dt&gt;
+                    &lt;dd&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/dd&gt;
+                    &lt;dt&gt;Felis euismod semper eget lacinia&lt;/dt&gt;
+                    &lt;dd&gt;Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/dd&gt;
+                  &lt;/dl&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">Tables</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <h4>Table Default</h4>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Username</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;table class="table"&gt;
+                    &lt;thead&gt;
+                    &lt;tr&gt;
+                      &lt;th&gt;#&lt;/th&gt;
+                      &lt;th&gt;First Name&lt;/th&gt;
+                      &lt;th&gt;Last Name&lt;/th&gt;
+                      &lt;th&gt;Username&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;1&lt;/td&gt;
+                      &lt;td&gt;Mark&lt;/td&gt;
+                      &lt;td&gt;Otto&lt;/td&gt;
+                      &lt;td&gt;@mdo&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;2&lt;/td&gt;
+                      &lt;td&gt;Jacob&lt;/td&gt;
+                      &lt;td&gt;Thornton&lt;/td&gt;
+                      &lt;td&gt;@fat&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;3&lt;/td&gt;
+                      &lt;td&gt;Larry&lt;/td&gt;
+                      &lt;td&gt;the Bird&lt;/td&gt;
+                      &lt;td&gt;@twitter&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                  &lt;/table&gt;
+                </pre>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <h4>Table Striped</h4>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Username</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;table class="table table-striped"&gt;
+                    &lt;thead&gt;
+                    &lt;tr&gt;
+                      &lt;th&gt;#&lt;/th&gt;
+                      &lt;th&gt;First Name&lt;/th&gt;
+                      &lt;th&gt;Last Name&lt;/th&gt;
+                      &lt;th&gt;Username&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;1&lt;/td&gt;
+                      &lt;td&gt;Mark&lt;/td&gt;
+                      &lt;td&gt;Otto&lt;/td&gt;
+                      &lt;td&gt;@mdo&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;2&lt;/td&gt;
+                      &lt;td&gt;Jacob&lt;/td&gt;
+                      &lt;td&gt;Thornton&lt;/td&gt;
+                      &lt;td&gt;@fat&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;3&lt;/td&gt;
+                      &lt;td&gt;Larry&lt;/td&gt;
+                      &lt;td&gt;the Bird&lt;/td&gt;
+                      &lt;td&gt;@twitter&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                  &lt;/table&gt;
+                </pre>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <h4>Table Hover</h4>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Username</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;table class="table table-hover"&gt;
+                    &lt;thead&gt;
+                    &lt;tr&gt;
+                      &lt;th&gt;#&lt;/th&gt;
+                      &lt;th&gt;First Name&lt;/th&gt;
+                      &lt;th&gt;Last Name&lt;/th&gt;
+                      &lt;th&gt;Username&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;1&lt;/td&gt;
+                      &lt;td&gt;Mark&lt;/td&gt;
+                      &lt;td&gt;Otto&lt;/td&gt;
+                      &lt;td&gt;@mdo&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;2&lt;/td&gt;
+                      &lt;td&gt;Jacob&lt;/td&gt;
+                      &lt;td&gt;Thornton&lt;/td&gt;
+                      &lt;td&gt;@fat&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;3&lt;/td&gt;
+                      &lt;td&gt;Larry&lt;/td&gt;
+                      &lt;td&gt;the Bird&lt;/td&gt;
+                      &lt;td&gt;@twitter&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                  &lt;/table&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">Forms</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <form>
+                  <fieldset>
+                    <div class="form-group">
+                      <label for="exampleInputEmail">Email address</label>
+                      <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">File input</label>
+                      <input type="file" id="exampleInputFile">
+
+                      <p class="help-block">Example block-level help text here.</p>
+                    </div>
+                    <div class="form-group has-feedback has-success">
+                      <label for="exampleInputAddon">Input addon</label>
+
+                      <div class="input-group">
+                        <span class="input-group-addon">www.onehippo.com</span>
+                        <input type="text" id="exampleInputAddon" class="form-control form-control-addon"
+                        placeholder="" value="" data-tooltip="" data-original-title="" title="">
+                      </div>
+                      <span class="fa fa-check form-control-feedback"></span>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox">Check me out
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                  </fieldset>
+                </form>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;form&gt;
+                    &lt;fieldset&gt;
+                      &lt;div class="form-group"&gt;
+                        &lt;label for="exampleInputEmail"&gt;Email address&lt;/label&gt;
+                        &lt;input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email"&gt;
+                      &lt;/div&gt;
+                      &lt;div class="form-group"&gt;
+                        &lt;label for="exampleInputPassword"&gt;Password&lt;/label&gt;
+                        &lt;input type="password" class="form-control" id="exampleInputPassword" placeholder="Password"&gt;
+                      &lt;/div&gt;
+                      &lt;div class="form-group"&gt;
+                        &lt;label for="exampleInputFile"&gt;File input&lt;/label&gt;
+                        &lt;input type="file" id="exampleInputFile"&gt;
+
+                        &lt;p class="help-block"&gt;Example block-level help text here.&lt;/p&gt;
+                      &lt;/div&gt;
+                      &lt;div class="form-group has-feedback has-success"&gt;
+                        &lt;label for="exampleInputAddon"&gt;Input addon&lt;/label&gt;
+
+                        &lt;div class="input-group"&gt;
+                          &lt;span class="input-group-addon"&gt;www.onehippo.com&lt;/span&gt;
+                          &lt;input type="text" id="exampleInputAddon" class="form-control form-control-addon"
+                                 placeholder="" value="" data-tooltip="" data-original-title="" title=""&gt;
+                        &lt;/div&gt;
+                        &lt;span class="fa fa-check form-control-feedback"&gt;&lt;/span&gt;
+                      &lt;/div&gt;
+                      &lt;div class="checkbox"&gt;
+                        &lt;label&gt;
+                          &lt;input type="checkbox"&gt;Check me out&lt;/label&gt;
+                      &lt;/div&gt;
+                      &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
+                    &lt;/fieldset&gt;
+                  &lt;/form&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">Buttons</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <p>
+                <button type="button" class="btn btn-default">Default</button>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-link">Link</button>
+                </p>
+
+                <p>
+                  <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                  <button type="button" class="btn btn-default btn-lg">Large button</button>
+                </p>
+                <p>
+                  <button type="button" class="btn btn-primary">Default button</button>
+                  <button type="button" class="btn btn-default">Default button</button>
+                </p>
+                <p>
+                  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+                  <button type="button" class="btn btn-default btn-sm">Small button</button>
+                </p>
+                <p>
+                  <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+                  <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+                </p>
+
+                <div class="row">
+                  <div class="col-xs-6">
+                    <p>
+                      <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+                    </p>
+                  </div>
+                </div>
+
+                <p>
+                  <button type="button" class="btn btn-lg btn-primary" disabled>Primary button disabled</button>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;button type="button" class="btn btn-default"&gt;Default&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-success"&gt;Success&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-info"&gt;Info&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-danger"&gt;Danger&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-link"&gt;Link&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-primary btn-lg"&gt;Large button&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-primary"&gt;Default button&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-primary btn-sm"&gt;Small button&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-primary btn-xs"&gt;Extra small button&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-primary btn-lg btn-block"&gt;Block level button&lt;/button&gt;
+                  &lt;button type="button" class="btn btn-lg btn-primary" disabled&gt;Primary button disabled&lt;/button&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">Images</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <p>Images can be made responsive-friendly via the addition of the <code>.img-responsive</code> class. This applies <code>max-width: 100%;</code> and <code>height: auto;</code> to the image so that it scales nicely to the parent element.</p>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;img src="..." class="img-responsive" alt="Responsive image"&gt;
+                </pre>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <img class="img-rounded" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
+                <img class="img-circle" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
+                <img class="img-thumbnail" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;img src="..." alt="..." class="img-rounded"&gt;
+                  &lt;img src="..." alt="..." class="img-circle"&gt;
+                  &lt;img src="..." alt="..." class="img-thumbnail"&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">Contextual Colors & Backgrounds</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+                <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;p class="text-muted"&gt;...&lt;/p&gt;
+                  &lt;p class="text-primary"&gt;...&lt;/p&gt;
+                  &lt;p class="text-success"&gt;...&lt;/p&gt;
+                  &lt;p class="text-info"&gt;...&lt;/p&gt;
+                  &lt;p class="text-warning"&gt;...&lt;/p&gt;
+                  &lt;p class="text-danger"&gt;...&lt;/p&gt;
+                </pre>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+              <p style="padding: 5px;" class="bg-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p style="padding: 5px;" class="bg-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+              <p style="padding: 5px;" class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+              <p style="padding: 5px;" class="bg-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+              <p style="padding: 5px;" class="bg-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;p class="bg-primary"&gt;Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt;
+                  &lt;p class="bg-success"&gt;Duis mollis, est non commodo luctus, nisi erat porttitor ligula.&lt;/p&gt;
+                  &lt;p class="bg-info"&gt;Maecenas sed diam eget risus varius blandit sit amet non magna.&lt;/p&gt;
+                  &lt;p class="bg-warning"&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/p&gt;
+                  &lt;p class="bg-danger"&gt;Donec ullamcorper nulla non metus auctor fringilla.&lt;/p&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">Helper Classes and Responsive Utilities</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                For now see Bootstrap documentation on <a href="http://getbootstrap.com/css/#helper-classes">Helper Classes</a> and <a href="http://getbootstrap.com/css/#responsive-utilities">Responsive Utilities</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-xs-12">
-    <div class="panel panel-info">
-      <div class="panel-heading">Helper Classes and Responsive Utilities</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            For now see Bootstrap documentation on <a href="http://getbootstrap.com/css/#helper-classes">Helper Classes</a> and <a href="http://getbootstrap.com/css/#responsive-utilities">Responsive Utilities</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

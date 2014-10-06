@@ -15,6 +15,7 @@
 */
 
 .hippo-pane {
+    .flex-column;
     border: 1px solid @pane-default-border;
 }
 
@@ -23,13 +24,7 @@
 }
 
 .hippo-pane-heading {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: @pane-bar-height;
-    border-bottom: 1px solid @pane-default-border;
-    padding: @pane-padding;
+    .solid-child;
     background: @pane-default-bg;
 
     .btn + .btn {
@@ -38,17 +33,13 @@
 }
 
 .hippo-pane-body {
-    .pane(@pane-bar-height; 0; @pane-bar-height; 0;);
+    .flex-child;
+    border-top: 1px solid @pane-default-border;
+    border-bottom: 1px solid @pane-default-border;
 }
 
 .hippo-pane-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: @pane-bar-height;
-    border-top: 1px solid @pane-default-border;
-    padding: @pane-padding;
+    .solid-child;
     background: @pane-default-bg;
 
     .btn + .btn {

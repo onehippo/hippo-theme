@@ -14,422 +14,424 @@
   limitations under the License.
 -->
 
-<div class="row">
-  <div class="col-xs-12">
-    <h1>AngularJS components <small>Angular Bootstrap and HippoCMS Angular directives</small></h1>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>AngularJS components <small>Angular Bootstrap and HippoCMS Angular directives</small></h1>
 
-    <p>
-      There is an <a href="docs/">API reference</a> available for the AngularJS components and services that are
-      part of the Hippo theme.
-    </p>
+        <p>
+          There is an <a href="docs/">API reference</a> available for the AngularJS components and services that are
+          part of the Hippo theme.
+        </p>
 
-    <div class="panel panel-primary">
-      <div class="panel-heading">Tree</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <div ng-controller="TreeCtrl">
-              <div hippo.theme.tree items="treeItems"callbacks="callbacks"class="hippo-tree ng-cloak"selected-item-id="selectedItem.id">
-                <a class="btn btn-link btn-xs"data-nodrag data-ng-click="toggleItem()"data-ng-hide="childNodes().length === 0">
-                  <span class="fa"data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"></span>
-                </a>
-                <div class="spacer" data-ng-hide="childNodes().length !== 0">&#9679;</div>
-                {{ item.title }}
+        <div class="panel panel-primary">
+          <div class="panel-heading">Tree</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div ng-controller="TreeCtrl">
+                  <div hippo.theme.tree items="treeItems"callbacks="callbacks"class="hippo-tree ng-cloak"selected-item-id="selectedItem.id">
+                    <a class="btn btn-link btn-xs"data-nodrag data-ng-click="toggleItem()"data-ng-hide="childNodes().length === 0">
+                      <span class="fa"data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"></span>
+                    </a>
+                    <div class="spacer" data-ng-hide="childNodes().length !== 0">&#9679;</div>
+                    {{ item.title }}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <p>
-              <strong>Note:</strong> toggleItem() will keep the collapsed states of your model and ui-tree in sync.
-            </p>
-
-            <h4>HTML</h4>
-            <pre>
-              &lt;div ng-controller="TreeCtrl"&gt;
-                &lt;div hippo.theme.tree
-                  items="treeItems"
-                  callbacks="callbacks"
-                  class="hippo-tree ng-cloak"
-                  selected-item-id="selectedItem.id"&gt;
-                  &lt;a class="btn btn-link btn-xs"
-                    data-nodrag data-ng-click="toggleItem()"
-                    data-ng-hide="childNodes().length === 0"&gt;
-                    &lt;span class="fa"
-                     data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"&gt;
-                    &lt;/span&gt;
-                  &lt;/a&gt;
-                  &lt;div class="spacer" data-ng-hide="childNodes().length !== 0"&gt;&#9679;&lt;/div&gt;
-                  {{ item.title }}
-                &lt;/div&gt;
-              &lt;/div&gt;
-            </pre>
-
-            <h4>Example tree data</h4>
-            <pre>
-              $scope.treeItems = [
-                  {
-                  id: 1,
-                  title: 'Item 1',
-                  collapsed: true,
-                  items: [
-                    {
-                      id: 11,
-                      title: 'Item 1.1'
-                    }
-                  ]
-                }, {
-                  id: 2,
-                  title: 'Item 2',
-                  items: []
-                }
-              ];
-            </pre>
-            <h4>Available callbacks</h4>
-            <pre>
-              $scope.callbacks = {
-                accept: function(sourceNodeScope, destNodesScope, destIndex) {},
-                dropped: function(event) {},
-                dragStart: function(event) {},
-                dragMove: function(event) {},
-                dragStop: function(event) {}
-              };
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">Select Box</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <div ng-controller="SelectBoxCtrl">
-              <div class="form-group has-feedback has-success">
-                <label class="control-label">Valid Select Box with a single value</label>
-                <select hippo.theme.select-box ng-model="singleSelectedValue"no-results-text="{{ noResultsText }}"ng-options="option.name for option in values"data-options="values"data-placeholder="{{ placeholder }}"></select>
-                <span class="form-control-feedback fa fa-check"></span>
-              </div>
-
-              <div class="form-group has-feedback has-error">
-                <label class="control-label">Invalid Select Box with multiple values</label>
-                <select hippo.theme.select-box ng-model="selectedValues"no-results-text="{{ noResultsText }}"ng-options="option.name for option in values" multiple="multiple"data-options="values"data-placeholder="{{ placeholder }}"></select>
-                <span class="form-control-feedback fa fa-times"></span>
-              </div>
-            </div>
-            <p>
-              <strong>Note:</strong> without the 'options' variable, changes to the ng-options attribute value will not be reflected in the UI.
-            </p>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;select hippo.theme.select-box
-                      multiple="multiple"
-                      ng-model="selectedValues"
-                      ng-options="v.name for v in values"
-                      options="values"
-                      no-results-text="No results found for"
-                      placeholder="Please select an item"&gt;
-              &lt;/select&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">Chart</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <div hippo.theme.chart data="data" ng-controller="ChartCtrl" style="max-width: 325px;">
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;div hippo.theme.chart data="data"&gt;
-              &lt;/div&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">Focus Me</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <div ng-controller="FocusMeCtrl">
-              <input type="text" placeholder="Click the button to focus me" hippo.theme.focus-me="field.focus"
-              class="default form-control">
-              <button ng-click="setFocus()" class="btn btn-default">Focus Me!</button>
-              <p>Field focussed: {{ field.focus }}</p>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;input hippo.theme.focus-me="focusInput"&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">Divider</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <div ng-controller="DividerCtrl">
-              <div class="dropdown">
-                <ul class="dropdown-menu" style="display: block; position: static;margin-bottom: 20px;">
-                  <li ng-repeat="item in items" hippo.theme.divider="$last">
-                    <a href="#angularjs-components">{{ item }}</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;li hippo.theme.divider="$last"ng-repeat="item in items"&gt;
-                &lt;a href="#"&gt;&#123;&#123; item &#125;&#125;&lt;/a&gt;
-              &lt;/li&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">Panel</div>
-      <div class="panel-body">
-        <div ng-controller="PanelCtrl">
-          <div class="row">
-            <div class="col-sm-6">
-              <div hippo.theme.panel-default title="title"><p>Panel HTML content</p></div>
-            </div>
-            <div class="col-sm-6">
-              <pre>
-                &lt;div hippo.theme.panel-default title="panel.title"&gt;
-                  Panel HTML content
-                &lt;/div&gt;
-              </pre>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">Confirmation Dialog</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <div ng-controller="ConfirmationDialogCtrl">
-              <div hippo.theme.confirmation-dialog confirm-icon="trash-o"perform-confirmation="confirmationClicked()"perform-cancel="cancelClicked()"confirm-label="Confirm"cancel-label="Cancel"show="confirmation.show">
-                <p><strong>Confirmation dialog title</strong></p>
-
+              <div class="col-sm-6">
                 <p>
-                  Confirmation dialog message.
+                  <strong>Note:</strong> toggleItem() will keep the collapsed states of your model and ui-tree in sync.
                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <pre>
-              &lt;div hippo.theme.confirmation-dialog
-                confirm-icon="trash-o"
-                perform-confirmation="confirmationClicked()"
-                perform-cancel="cancelClicked()"
-                confirm-label="Confirm"
-                cancel-label="Cancel"
-                show="confirmation.show"&gt;
-                &lt;p&gt;
-                  &lt;strong&gt;Confirmation dialog title&lt;/strong&gt;
-                &lt;/p&gt;
-                &lt;p&gt;
-                 Confirmation dialog message.
-                &lt;/p&gt;
-              &lt;/div&gt;
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="panel panel-primary">
-      <div class="panel-heading">Feature Items</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="feature-block" ng-controller="FeatureCtrl">
-              <div class="well">
-                <div class="feature-heading">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="media">
-                        <a href="#" class="pull-left">
-                          <img class="media-object" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZWVlIi8+PHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzIiIHk9IjMyIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEycHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9zdmc+" alt="">
-                        </a>
-                        <div class="media-body">
-                          <h4>Text here</h4>
-                          <p>Lorem Ipsum description</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6 text-right">
-                      <p class="label label-danger">Needs a rebuild</p>
-                      <button class="btn btn-default">Install Feature</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="feature-description">
-                  <h4>body text here!</h4>
-
-                  <div class="feature-description-short" ng-hide="showDescription">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid aspernatur assumenda at, atque autem commodi consequatur, ex fugit id iure modi non provident quae rem repudiandae sed tempora veniam! Ab earum, illum iure labore officia possimus quas quis tempora? A amet animi aut beatae commodi ducimus eius error esse est et facere harum hic laboriosam laudantium possimus, rerum ut. Architecto blanditiis consequatur culpa dignissimos dolor enim ex excepturi itaque maxime nam natus officiis omnis, quis quod similique temporibus voluptatem! Ad consequuntur corporis culpa maxime nam odio saepe similique velit!
-                      <a href="" data-ng-click="toggleDescription()">Read more...</a>
-                    </p>
-                  </div>
-
-                  <div class="feature-description-long" ng-show="showDescription">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid aspernatur assumenda at, atque autem commodi consequatur, ex fugit id iure modi non provident quae rem repudiandae sed tempora veniam! Ab earum, illum iure labore officia possimus quas quis tempora? A amet animi aut beatae commodi ducimus eius error esse est et facere harum hic laboriosam laudantium possimus, rerum ut. Architecto blanditiis consequatur culpa dignissimos dolor enim ex excepturi itaque maxime nam natus officiis omnis, quis quod similique temporibus voluptatem! Ad consequuntur corporis culpa maxime nam odio saepe similique velit! Accusantium, asperiores assumenda commodi cum dicta dolorem et incidunt inventore iure magni minus natus non recusandae reprehenderit voluptatibus? A aliquid beatae culpa cum eveniet incidunt, ipsam magni pariatur placeat quasi? Adipisci commodi debitis exercitationem, fuga fugit laborum minima non praesentium quae ut. A aliquid beatae dolorum.</p>
-
-                    <div class="panel panel-primary">
-                      <div class="panel-body">
-                        <div id="carousel-example-generic" ng-controller="CarouselCtrl">
-                          <carousel interval="myInterval">
-                            <slide ng-repeat="slide in slides" active="slide.active">
-                              <img ng-src="{{slide.image}}" style="margin:auto;">
-                              <div class="carousel-caption">
-                                <h4>Slide {{$index}}</h4>
-                                <p>{{slide.text}}</p>
-                              </div>
-                            </slide>
-                          </carousel>
-                        </div>
-                      </div>
-                    </div>
-
-                    <a href="" data-ng-click="toggleDescription()">Read less...</a>
-                  </div>
-                </div>
-                <div class="feature-changes">
-                  <div class="feature-changes-controls">
-                    <a class="feature-control pull-right" href="#">Documentation</a>
-                    <span class="feature-control pull-left">
-                      <span class="fa" ng-class="{'fa-chevron-right': !showChanges, 'fa-chevron-down': showChanges}"></span>
-                      <a href="" ng-click="toggleChanges()">This feature will make the following changes</a>
-                    </span>
-                  </div>
-
-                  <div class="log-messages" ng-show="showChanges">
-                    <p><span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-check-square-o fa-success"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-flag fa-warning"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-                    <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-              <pre>
-                &lt;div class="feature-block" ng-controller="FeatureCtrl"&gt;
-                  &lt;div class="well"&gt;
-                    &lt;div class="feature-heading"&gt;
-                      &lt;div class="row"&gt;
-                        &lt;div class="col-sm-6"&gt;
-                          &lt;div class="media"&gt;
-                            &lt;a href="#" class="pull-left"&gt;
-                              &lt;img class="media-object" src="..." alt=""&gt;
-                            &lt;/a&gt;
-                            &lt;div class="media-body"&gt;
-                              &lt;h4&gt;Text here&lt;/h4&gt;
-                              &lt;p&gt;Lorem Ipsum description&lt;/p&gt;
-                            &lt;/div&gt;
-                          &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class="col-sm-6 text-right"&gt;
-                          &lt;p class="label label-danger"&gt;Needs a rebuild&lt;/p&gt;
-                          &lt;button class="btn btn-default"&gt;Install Feature&lt;/button&gt;
-                        &lt;/div&gt;
-                      &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="feature-description"&gt;
-                      &lt;h4&gt;body text here!&lt;/h4&gt;
-
-                      &lt;div class="feature-description-short" ng-hide="showDescription"&gt;
-                        &lt;p&gt;
-                          Lorem ipsum
-                          &lt;a href="" data-ng-click="toggleDescription()"&gt;Read more...&lt;/a&gt;
-                        &lt;/p&gt;
-                      &lt;/div&gt;
-
-                      &lt;div class="feature-description-long" ng-show="showDescription"&gt;
-                        &lt;p&gt;Lorem ipsum&lt;/p&gt;
-
-                        &lt;div class="panel panel-primary"&gt;
-                          &lt;div class="panel-body"&gt;
-                            &lt;div id="carousel-example-generic" ng-controller="CarouselCtrl"&gt;
-                              &lt;carousel interval="myInterval"&gt;
-                                &lt;slide ng-repeat="slide in slides" active="slide.active"&gt;
-                                  &lt;img ng-src="{{slide.image}}" style="margin:auto;"&gt;
-                                  &lt;div class="carousel-caption"&gt;
-                                    &lt;h4&gt;Slide {{$index}}&lt;/h4&gt;
-                                    &lt;p&gt;{{slide.text}}&lt;/p&gt;
-                                  &lt;/div&gt;
-                                &lt;/slide&gt;
-                              &lt;/carousel&gt;
-                            &lt;/div&gt;
-                          &lt;/div&gt;
-                        &lt;/div&gt;
-
-                        &lt;a href="" data-ng-click="toggleDescription()"&gt;Read less...&lt;/a&gt;
-                      &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="feature-changes"&gt;
-                      &lt;div class="feature-changes-controls"&gt;
-                        &lt;a class="feature-control pull-right" href="#"&gt;Documentation&lt;/a&gt;
-                        &lt;span class="feature-control pull-left"&gt;
-                            &lt;span class="fa" ng-class="{'fa-chevron-right': !showChanges, 'fa-chevron-down': showChanges}"&gt;&lt;/span&gt;
-                            &lt;a href="" ng-click="toggleChanges()"&gt;This feature will make the following changes&lt;/a&gt;
+                <h4>HTML</h4>
+                <pre>
+                  &lt;div ng-controller="TreeCtrl"&gt;
+                    &lt;div hippo.theme.tree
+                      items="treeItems"
+                      callbacks="callbacks"
+                      class="hippo-tree ng-cloak"
+                      selected-item-id="selectedItem.id"&gt;
+                      &lt;a class="btn btn-link btn-xs"
+                        data-nodrag data-ng-click="toggleItem()"
+                        data-ng-hide="childNodes().length === 0"&gt;
+                        &lt;span class="fa"
+                         data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"&gt;
                         &lt;/span&gt;
-                      &lt;/div&gt;
-                      &lt;div class="log-messages" ng-show="showChanges"&gt;
-                        &lt;p&gt;
-                          &lt;span class="fa fa-fw fa-exclamation fa-danger"&gt;&lt;/span&gt; Interesting error message
-                        &lt;/p&gt;
-                        &lt;p&gt;
-                          &lt;span class="fa fa-fw fa-check-square-o fa-success"&gt;&lt;/span&gt; Interesting error message
-                        &lt;/p&gt;
-                        ...
-                      &lt;/div&gt;
+                      &lt;/a&gt;
+                      &lt;div class="spacer" data-ng-hide="childNodes().length !== 0"&gt;&#9679;&lt;/div&gt;
+                      {{ item.title }}
                     &lt;/div&gt;
                   &lt;/div&gt;
-                &lt;/div&gt;
-              </pre>
+                </pre>
+
+                <h4>Example tree data</h4>
+                <pre>
+                  $scope.treeItems = [
+                      {
+                      id: 1,
+                      title: 'Item 1',
+                      collapsed: true,
+                      items: [
+                        {
+                          id: 11,
+                          title: 'Item 1.1'
+                        }
+                      ]
+                    }, {
+                      id: 2,
+                      title: 'Item 2',
+                      items: []
+                    }
+                  ];
+                </pre>
+                <h4>Available callbacks</h4>
+                <pre>
+                  $scope.callbacks = {
+                    accept: function(sourceNodeScope, destNodesScope, destIndex) {},
+                    dropped: function(event) {},
+                    dragStart: function(event) {},
+                    dragMove: function(event) {},
+                    dragStop: function(event) {}
+                  };
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Select Box</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div ng-controller="SelectBoxCtrl">
+                  <div class="form-group has-feedback has-success">
+                    <label class="control-label">Valid Select Box with a single value</label>
+                    <select hippo.theme.select-box ng-model="singleSelectedValue"no-results-text="{{ noResultsText }}"ng-options="option.name for option in values"data-options="values"data-placeholder="{{ placeholder }}"></select>
+                    <span class="form-control-feedback fa fa-check"></span>
+                  </div>
+
+                  <div class="form-group has-feedback has-error">
+                    <label class="control-label">Invalid Select Box with multiple values</label>
+                    <select hippo.theme.select-box ng-model="selectedValues"no-results-text="{{ noResultsText }}"ng-options="option.name for option in values" multiple="multiple"data-options="values"data-placeholder="{{ placeholder }}"></select>
+                    <span class="form-control-feedback fa fa-times"></span>
+                  </div>
+                </div>
+                <p>
+                  <strong>Note:</strong> without the 'options' variable, changes to the ng-options attribute value will not be reflected in the UI.
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;select hippo.theme.select-box
+                          multiple="multiple"
+                          ng-model="selectedValues"
+                          ng-options="v.name for v in values"
+                          options="values"
+                          no-results-text="No results found for"
+                          placeholder="Please select an item"&gt;
+                  &lt;/select&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Chart</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div hippo.theme.chart data="data" ng-controller="ChartCtrl" style="max-width: 325px;">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;div hippo.theme.chart data="data"&gt;
+                  &lt;/div&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Focus Me</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div ng-controller="FocusMeCtrl">
+                  <input type="text" placeholder="Click the button to focus me" hippo.theme.focus-me="field.focus"
+                  class="default form-control">
+                  <button ng-click="setFocus()" class="btn btn-default">Focus Me!</button>
+                  <p>Field focussed: {{ field.focus }}</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;input hippo.theme.focus-me="focusInput"&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Divider</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div ng-controller="DividerCtrl">
+                  <div class="dropdown">
+                    <ul class="dropdown-menu" style="display: block; position: static;margin-bottom: 20px;">
+                      <li ng-repeat="item in items" hippo.theme.divider="$last">
+                        <a href="#angularjs-components">{{ item }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;li hippo.theme.divider="$last"ng-repeat="item in items"&gt;
+                    &lt;a href="#"&gt;&#123;&#123; item &#125;&#125;&lt;/a&gt;
+                  &lt;/li&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Panel</div>
+          <div class="panel-body">
+            <div ng-controller="PanelCtrl">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div hippo.theme.panel-default title="title"><p>Panel HTML content</p></div>
+                </div>
+                <div class="col-sm-6">
+                  <pre>
+                    &lt;div hippo.theme.panel-default title="panel.title"&gt;
+                      Panel HTML content
+                    &lt;/div&gt;
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Confirmation Dialog</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div ng-controller="ConfirmationDialogCtrl">
+                  <div hippo.theme.confirmation-dialog confirm-icon="trash-o"perform-confirmation="confirmationClicked()"perform-cancel="cancelClicked()"confirm-label="Confirm"cancel-label="Cancel"show="confirmation.show">
+                    <p><strong>Confirmation dialog title</strong></p>
+
+                    <p>
+                      Confirmation dialog message.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <pre>
+                  &lt;div hippo.theme.confirmation-dialog
+                    confirm-icon="trash-o"
+                    perform-confirmation="confirmationClicked()"
+                    perform-cancel="cancelClicked()"
+                    confirm-label="Confirm"
+                    cancel-label="Cancel"
+                    show="confirmation.show"&gt;
+                    &lt;p&gt;
+                      &lt;strong&gt;Confirmation dialog title&lt;/strong&gt;
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                     Confirmation dialog message.
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Feature Items</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="feature-block" ng-controller="FeatureCtrl">
+                  <div class="well">
+                    <div class="feature-heading">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="media">
+                            <a href="#" class="pull-left">
+                              <img class="media-object" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZWVlIi8+PHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzIiIHk9IjMyIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEycHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9zdmc+" alt="">
+                            </a>
+                            <div class="media-body">
+                              <h4>Text here</h4>
+                              <p>Lorem Ipsum description</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                          <p class="label label-danger">Needs a rebuild</p>
+                          <button class="btn btn-default">Install Feature</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="feature-description">
+                      <h4>body text here!</h4>
+
+                      <div class="feature-description-short" ng-hide="showDescription">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid aspernatur assumenda at, atque autem commodi consequatur, ex fugit id iure modi non provident quae rem repudiandae sed tempora veniam! Ab earum, illum iure labore officia possimus quas quis tempora? A amet animi aut beatae commodi ducimus eius error esse est et facere harum hic laboriosam laudantium possimus, rerum ut. Architecto blanditiis consequatur culpa dignissimos dolor enim ex excepturi itaque maxime nam natus officiis omnis, quis quod similique temporibus voluptatem! Ad consequuntur corporis culpa maxime nam odio saepe similique velit!
+                          <a href="" data-ng-click="toggleDescription()">Read more...</a>
+                        </p>
+                      </div>
+
+                      <div class="feature-description-long" ng-show="showDescription">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid aspernatur assumenda at, atque autem commodi consequatur, ex fugit id iure modi non provident quae rem repudiandae sed tempora veniam! Ab earum, illum iure labore officia possimus quas quis tempora? A amet animi aut beatae commodi ducimus eius error esse est et facere harum hic laboriosam laudantium possimus, rerum ut. Architecto blanditiis consequatur culpa dignissimos dolor enim ex excepturi itaque maxime nam natus officiis omnis, quis quod similique temporibus voluptatem! Ad consequuntur corporis culpa maxime nam odio saepe similique velit! Accusantium, asperiores assumenda commodi cum dicta dolorem et incidunt inventore iure magni minus natus non recusandae reprehenderit voluptatibus? A aliquid beatae culpa cum eveniet incidunt, ipsam magni pariatur placeat quasi? Adipisci commodi debitis exercitationem, fuga fugit laborum minima non praesentium quae ut. A aliquid beatae dolorum.</p>
+
+                        <div class="panel panel-primary">
+                          <div class="panel-body">
+                            <div id="carousel-example-generic" ng-controller="CarouselCtrl">
+                              <carousel interval="myInterval">
+                                <slide ng-repeat="slide in slides" active="slide.active">
+                                  <img ng-src="{{slide.image}}" style="margin:auto;">
+                                  <div class="carousel-caption">
+                                    <h4>Slide {{$index}}</h4>
+                                    <p>{{slide.text}}</p>
+                                  </div>
+                                </slide>
+                              </carousel>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a href="" data-ng-click="toggleDescription()">Read less...</a>
+                      </div>
+                    </div>
+                    <div class="feature-changes">
+                      <div class="feature-changes-controls">
+                        <a class="feature-control pull-right" href="#">Documentation</a>
+                        <span class="feature-control pull-left">
+                          <span class="fa" ng-class="{'fa-chevron-right': !showChanges, 'fa-chevron-down': showChanges}"></span>
+                          <a href="" ng-click="toggleChanges()">This feature will make the following changes</a>
+                        </span>
+                      </div>
+
+                      <div class="log-messages" ng-show="showChanges">
+                        <p><span class="fa fa-fw fa-exclamation fa-danger"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-check-square-o fa-success"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-flag fa-warning"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                        <p><span class="fa fa-fw fa-exclamation"></span> Interesting error message</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                  <pre>
+                    &lt;div class="feature-block" ng-controller="FeatureCtrl"&gt;
+                      &lt;div class="well"&gt;
+                        &lt;div class="feature-heading"&gt;
+                          &lt;div class="row"&gt;
+                            &lt;div class="col-sm-6"&gt;
+                              &lt;div class="media"&gt;
+                                &lt;a href="#" class="pull-left"&gt;
+                                  &lt;img class="media-object" src="..." alt=""&gt;
+                                &lt;/a&gt;
+                                &lt;div class="media-body"&gt;
+                                  &lt;h4&gt;Text here&lt;/h4&gt;
+                                  &lt;p&gt;Lorem Ipsum description&lt;/p&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-6 text-right"&gt;
+                              &lt;p class="label label-danger"&gt;Needs a rebuild&lt;/p&gt;
+                              &lt;button class="btn btn-default"&gt;Install Feature&lt;/button&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="feature-description"&gt;
+                          &lt;h4&gt;body text here!&lt;/h4&gt;
+
+                          &lt;div class="feature-description-short" ng-hide="showDescription"&gt;
+                            &lt;p&gt;
+                              Lorem ipsum
+                              &lt;a href="" data-ng-click="toggleDescription()"&gt;Read more...&lt;/a&gt;
+                            &lt;/p&gt;
+                          &lt;/div&gt;
+
+                          &lt;div class="feature-description-long" ng-show="showDescription"&gt;
+                            &lt;p&gt;Lorem ipsum&lt;/p&gt;
+
+                            &lt;div class="panel panel-primary"&gt;
+                              &lt;div class="panel-body"&gt;
+                                &lt;div id="carousel-example-generic" ng-controller="CarouselCtrl"&gt;
+                                  &lt;carousel interval="myInterval"&gt;
+                                    &lt;slide ng-repeat="slide in slides" active="slide.active"&gt;
+                                      &lt;img ng-src="{{slide.image}}" style="margin:auto;"&gt;
+                                      &lt;div class="carousel-caption"&gt;
+                                        &lt;h4&gt;Slide {{$index}}&lt;/h4&gt;
+                                        &lt;p&gt;{{slide.text}}&lt;/p&gt;
+                                      &lt;/div&gt;
+                                    &lt;/slide&gt;
+                                  &lt;/carousel&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;a href="" data-ng-click="toggleDescription()"&gt;Read less...&lt;/a&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="feature-changes"&gt;
+                          &lt;div class="feature-changes-controls"&gt;
+                            &lt;a class="feature-control pull-right" href="#"&gt;Documentation&lt;/a&gt;
+                            &lt;span class="feature-control pull-left"&gt;
+                                &lt;span class="fa" ng-class="{'fa-chevron-right': !showChanges, 'fa-chevron-down': showChanges}"&gt;&lt;/span&gt;
+                                &lt;a href="" ng-click="toggleChanges()"&gt;This feature will make the following changes&lt;/a&gt;
+                            &lt;/span&gt;
+                          &lt;/div&gt;
+                          &lt;div class="log-messages" ng-show="showChanges"&gt;
+                            &lt;p&gt;
+                              &lt;span class="fa fa-fw fa-exclamation fa-danger"&gt;&lt;/span&gt; Interesting error message
+                            &lt;/p&gt;
+                            &lt;p&gt;
+                              &lt;span class="fa fa-fw fa-check-square-o fa-success"&gt;&lt;/span&gt; Interesting error message
+                            &lt;/p&gt;
+                            ...
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Angular UI Bootstrap</div>
+          <div class="panel-body">
+            <p>To support other Bootstrap JS components use components out of the <a href="http://angular-ui.github.io/bootstrap/">Angular UI Bootstrap</a> components library.</p>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">Angular UI Bootstrap</div>
-      <div class="panel-body">
-        <p>To support other Bootstrap JS components use components out of the <a href="http://angular-ui.github.io/bootstrap/">Angular UI Bootstrap</a> components library.</p>
-      </div>
-    </div>
-  </div>
 </div>

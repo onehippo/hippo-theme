@@ -14,148 +14,195 @@
   limitations under the License.
 -->
 
-<div class="row">
-  <div class="col-xs-12">
-    <h1>Grid systems</h1>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Grid systems</h1>
 
-    <p>Hippo Theme is based on Bootstrap and thus supports the default Bootstrap grid and its breakpoints.</p>
+        <p>Hippo Theme is based on Bootstrap and thus supports the default Bootstrap grid and its breakpoints.</p>
 
-    <h4>Short summary of Bootstrap grid options:</h4>
-    <table class="table table-bordered table-striped table-responsive">
-      <thead>
-        <tr>
-          <th></th>
-          <th>
-            Extra small devices
-            <small>Phones (&lt;768px)</small>
-          </th>
-          <th>
-            Small devices
-            <small>Tablets (≥768px)</small>
-          </th>
-          <th>
-            Medium devices
-            <small>Desktops (≥992px)</small>
-          </th>
-          <th>
-            Large devices
-            <small>Desktops (≥1200px)</small>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th class="text-nowrap">Grid behavior</th>
-          <td>Horizontal at all times</td>
-          <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
-        </tr>
-        <tr>
-          <th class="text-nowrap">Container width</th>
-          <td>None (auto)</td>
-          <td>750px</td>
-          <td>970px</td>
-          <td>1170px</td>
-        </tr>
-        <tr>
-          <th class="text-nowrap">Class prefix</th>
-          <td><code>.col-xs-</code></td>
-          <td><code>.col-sm-</code></td>
-          <td><code>.col-md-</code></td>
-          <td><code>.col-lg-</code></td>
-        </tr>
-        <tr>
-          <th class="text-nowrap"># of columns</th>
-          <td colspan="4">12</td>
-        </tr>
-        <tr>
-          <th class="text-nowrap">Column width</th>
-          <td class="text-muted">Auto</td>
-          <td>~62px</td>
-          <td>~81px</td>
-          <td>~97px</td>
-        </tr>
-        <tr>
-          <th class="text-nowrap">Gutter width</th>
-          <td colspan="4">30px (15px on each side of a column)</td>
-        </tr>
-        <tr>
-          <th class="text-nowrap">Nestable</th>
-          <td colspan="4">Yes</td>
-        </tr>
-        <tr>
-          <th class="text-nowrap">Offsets</th>
-          <td colspan="4">Yes</td>
-        </tr>
-        <tr>
-          <th class="text-nowrap">Column ordering</th>
-          <td colspan="4">Yes</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-xs-12">
-    <h4>Flexible <em>pane grid</em> with full height columns</h4>
-    <p>Based on the idea of the new flexbox css module, see a full explanation <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">here</a>.</p>
+        <h4>Short summary of Bootstrap grid options:</h4>
+        <table class="table table-bordered table-striped table-responsive">
+          <thead>
+            <tr>
+              <th></th>
+              <th>
+                Extra small devices
+                <small>Phones (&lt;768px)</small>
+              </th>
+              <th>
+                Small devices
+                <small>Tablets (≥768px)</small>
+              </th>
+              <th>
+                Medium devices
+                <small>Desktops (≥992px)</small>
+              </th>
+              <th>
+                Large devices
+                <small>Desktops (≥1200px)</small>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="text-nowrap">Grid behavior</th>
+              <td>Horizontal at all times</td>
+              <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap">Container width</th>
+              <td>None (auto)</td>
+              <td>750px</td>
+              <td>970px</td>
+              <td>1170px</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap">Class prefix</th>
+              <td><code>.col-xs-</code></td>
+              <td><code>.col-sm-</code></td>
+              <td><code>.col-md-</code></td>
+              <td><code>.col-lg-</code></td>
+            </tr>
+            <tr>
+              <th class="text-nowrap"># of columns</th>
+              <td colspan="4">12</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap">Column width</th>
+              <td class="text-muted">Auto</td>
+              <td>~62px</td>
+              <td>~81px</td>
+              <td>~97px</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap">Gutter width</th>
+              <td colspan="4">30px (15px on each side of a column)</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap">Nestable</th>
+              <td colspan="4">Yes</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap">Offsets</th>
+              <td colspan="4">Yes</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap">Column ordering</th>
+              <td colspan="4">Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-12">
+        <h4><em>Flex grid</em> based on the CSS flexbox module</h4>
+        <p>For a full explanation on flexbox look <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">here</a>.</p>
 
-    <p>A pane grid can be used as a 12 column grid with full height columns.
-      It is also <em>flexible</em>, as it uses a percentage of the viewport to scale the panes.</p>
-    <p>
-      The area of a pane is defined by giving it a class with the start and end column.
-      For example, a <code>.pane-xs-1-6</code> will make the pane stretch from column 1 to 6
-      (i.e. half of the 12 column grid).</p>
+        <p>A pane grid can be used as a 12 column grid with full height columns.
+          It is also <em>flexible</em>, as it uses a percentage of the viewport to scale the panes.</p>
+        <p>
+            Define the width by the number of columns, just like the bootstrap grid.
+            For example: <code>.flex-xs-6</code> will span 6 columns (half of the 12 column grid).
+        </p>
 
-    <p>This also allows you to reorder the panes. A <code>.pane-xs-5-6</code> can be put before a <code>.pane-xs-2-4</code>
-      but it will visually still show up after the 2-4 pane.</p>
-    <p>Just like the bootstrap theme the grid has breakpoint variations allowing for different layouts per breakpoint.
-    To collapse a pane (i.e. hide it) from a specific breakpoint, use the class <code>.pane-{breakpoint}-hidden.</code></p>
-    <p>The parent of the pane, or the <code>.root-pane</code> does need its height set explicitly as absolute positioned elements are not part of the normal page flow.</p>
-    <p>Try it out! Resize your viewport and see the below grids change and switch.</p>
-    <p>One can add the following mixin to their LESS mixins to be able to set a pane with fixed dimensions:</p>
-    <pre>
-        .pane(@top: 0; @right: 0; @bottom: 0; @left: 0;) {
-            display: block;
-            margin: 0;
-            position: absolute;
-            top: @top;
-            right: @right;
-            bottom: @bottom;
-            left: @left;
-            overflow: auto;
-        }
-    </pre>
-  </div>
-  <div class="col-xs-12">
-    <div class="panel panel-warning">
-      <div class="panel-heading">Pane grid</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="root-pane" style="height: 300px;">
-              <div class="pane-xs-1-4 pane-sm-1-6 pane-md-1-2 pane-lg-5-8 bg-info">
-                <div class="pane-xs-5-8 bg-warning"></div>
+          <p>
+              Offset the columns, just like the bootstrap grid.
+              For example: <code>.flex-offset-xs-6</code> will offset the element 6 columns to the right.
+          </p>
+
+          <p>Just like the bootstrap theme the grid has breakpoint variations allowing for different layouts per breakpoint.
+            <code>.flex-xs-*</code>, <code>.flex-sm-*</code>, <code>.flex-md-*</code> and <code>.flex-lg-*</code>
+        To hide a column from a specific breakpoint, use the class <code>.flex-{breakpoint}-hidden.</code></p>
+        <p>
+            The following classes are also available:
+            <ul>
+                <li>
+                    To make a flex row with stretched columns:
+                    <code>.flex-row</code>
+                </li>
+                <li>
+                    To make a flex column with stretched rows:
+                    <code>.flex-column</code>
+                </li>
+                <li>
+                    To make a flex child that does not change dimensions when other childs change or get added:
+                    <code>.solid-child</code>
+                </li>
+                <li>
+                    To make a flex child that changes dimensions as other childs change or get added:
+                    <code>.flex-child</code>
+                </li>
+                <li>
+                    To fully stretch out a flex child disregarding any other childs:
+                    <code>.flex-full</code>
+                </li>
+                <li>
+                    To vertically and horizontally center any content in the flex child:
+                    <code>.flex-center</code>
+                </li>
+            </ul>
+        </p>
+        <p>Try it out! Resize your viewport and see the below grids change and switch.</p>
+      </div>
+      <div class="col-xs-12">
+        <div class="panel panel-warning">
+          <div class="panel-heading">Flex grid</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="flex-row" style="height: 300px;">
+                  <div class="flex-xs-4 flex-sm-6 flex-md-2 flex-lg-6 bg-info flex-row">
+                    <div class="flex-xs-6 flex-xs-offset-3 bg-warning"></div>
+                  </div>
+                  <div class="flex-xs-4 flex-sm-hidden flex-md-8 flex-lg-3 bg-success">
+                  </div>
+                  <div class="flex-xs-4 flex-sm-6 flex-md-2 flex-lg-3 bg-danger">
+                  </div>
+                </div>
               </div>
-              <div class="pane-xs-5-8 pane-sm-hidden pane-md-3-10 pane-lg-9-12 bg-success">
-              </div>
-              <div class="pane-xs-9-12 pane-sm-7-12 pane-md-11-12 pane-lg-1-4 bg-danger">
+              <div class="col-sm-6">
+                <pre>
+                    &lt;div class="flex-row" style="height: 300px;"&gt;
+                        &lt;div class="flex-xs-4 flex-sm-6 flex-md-2 flex-lg-6 bg-info flex-row"&gt;
+                            &lt;div class="flex-xs-8 flex-xs-offset-2 bg-warning"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="flex-xs-4 flex-sm-hidden flex-md-8 flex-lg-3 bg-success"&gt;
+                        &lt;/div&gt;
+                        &lt;div class="flex-xs-4 flex-sm-6 flex-md-2 flex-lg-3 bg-danger"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </pre>
+                <p>Note: Resize the viewport to see the grid change on different viewport widths</p>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <pre>
-                &lt;div class="root-pane" style="height: 300px;"&gt;
-                  &lt;div class="pane-xs-1-4 pane-sm-1-6 pane-md-1-2 pane-lg-5-8"&gt;
-                    &lt;div class="pane-xs-5-8"&gt;&lt;/div&gt;
-                  &lt;/div&gt;
-                  &lt;div class="pane-xs-5-8 pane-sm-collapsed pane-md-3-10 pane-lg-9-12"&gt;
-                  &lt;/div&gt;
-                  &lt;div class="pane-xs-9-12 pane-sm-7-12 pane-md-11-12 pane-lg-1-4"&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-            </pre>
-            <p>Note: Resize the viewport to see the grid change on different viewport widths</p>
+        </div>
+
+        <div class="panel panel-warning">
+          <div class="panel-heading">Center unknown child</div>
+          <div class="panel-body">
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="flex-center bg-info" style="height: 100px;">
+                          <div class="bg-danger">
+                              <p>This is inside the .center-content div</p>
+                              <span class="loading-icon"></span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <pre>
+                      &lt;div class="flex-center bg-info" style="height: 100px;"&gt;
+                          &lt;div class="bg-danger"&gt;
+                              &lt;p&gt;This is inside the .center-content div&lt;/p&gt;
+                              &lt;span class="loading-icon"&gt;&lt;/span&gt;
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                    </pre>
+                  </div>
+              </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </div>

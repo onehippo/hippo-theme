@@ -20,13 +20,22 @@
     display: @display !important;
 }
 
-.pane(@top: 0; @right: 0; @bottom: 0; @left: 0;) {
-    display: block;
-    margin: 0;
-    position: absolute;
-    top: @top;
-    right: @right;
-    bottom: @bottom;
-    left: @left;
-    overflow: auto;
+.generate-flex-visibility(@breakpoint) {
+    .flex-@{breakpoint}-hidden {
+        display: none;
+    }
+}
+
+.generate-flexgrid(@breakpoint; @maxCols: 12; @i: 1) when (@i =< @maxCols) {
+    @dimension: (100% / @maxCols) * @i;
+
+    .flex-@{breakpoint}-@{i} {
+        flex: 0 0 @dimension;
+    }
+
+    .flex-@{breakpoint}-offset-@{i} {
+        margin-left: @dimension;
+    }
+
+    .generate-flexgrid(@breakpoint; @maxCols; (@i + 1));
 }

@@ -1,0 +1,80 @@
+/*
+* Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*  http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+.flex-column {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.solid-child {
+    flex: 0 0 auto;
+}
+
+.flex-child {
+    flex: 1 1 auto;
+}
+
+.flex-full {
+    flex: 0 0 100%;
+}
+
+.flex-center {
+    display: flex;
+    .flex-full;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+[class *= "flex-xs-"] {
+    display: flex;
+}
+
+.generate-flexgrid(xs);
+.generate-flex-visibility(xs);
+
+@media (min-width: @screen-sm-min) {
+    [class *= "flex-sm-"] {
+        display: flex;
+    }
+
+    .generate-flexgrid(sm);
+    .generate-flex-visibility(sm);
+}
+
+@media (min-width: @screen-md-min) {
+    [class *= "flex-md-"] {
+        display: flex;
+    }
+
+    .generate-flexgrid(md);
+    .generate-flex-visibility(md);
+}
+
+@media (min-width: @screen-lg-min) {
+    [class *= "flex-lg-"] {
+        display: flex;
+    }
+
+    .generate-flexgrid(lg);
+    .generate-flex-visibility(lg);
+}
