@@ -1,0 +1,40 @@
+.dropdown {
+    .btn-group {
+        width: auto;
+    }
+
+    .media-list {
+        padding: 15px;
+    }
+
+    .media {
+        white-space: nowrap;
+        .clearfix();
+        margin-bottom: 15px;
+    }
+
+    .media + .media {
+        padding-top: 15px;
+        border-top: 1px solid @navbar-default-border;
+    }
+
+    .media-body {
+        margin: 0 50px;
+    }
+
+    .media-icon {
+        float: left;
+        padding: 0;
+        margin: 0;
+        clear: none;
+        line-height: 1;
+
+        &:hover {
+            background: none;
+        }
+
+        &.fa-times-circle {
+            font-size: 1.5em;
+        }
+    }
+}
