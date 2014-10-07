@@ -17,18 +17,37 @@
 .hippo-pane {
     .flex-column;
     border: 1px solid @pane-default-border;
+
+    & + & {
+        border-left: none;
+    }
 }
 
-.hippo-pane + .hippo-pane {
-    border-left: none;
+.hippo-pane-nav {
+    .flex-row;
+    align-items: center;
+    height: 100%;
 }
 
-.hippo-pane-heading {
-    .solid-child;
+
+.hippo-pane-heading,
+.hippo-pane-footer {
+    flex: 0 0 @pane-bar-height;
+    height: @pane-bar-height;
     background: @pane-default-bg;
+    padding: @pane-padding;
 
-    .btn + .btn {
-        margin-left: @pane-padding;
+    .btn {
+        margin: 0;
+
+        & + .btn {
+            margin-left: @pane-padding;
+        }
+    }
+
+    .breadcrumb {
+        margin: 0;
+        padding: 0;
     }
 }
 
@@ -38,24 +57,7 @@
     border-bottom: 1px solid @pane-default-border;
 }
 
-.hippo-pane-footer {
-    .solid-child;
-    background: @pane-default-bg;
-
-    .btn + .btn {
-        margin-left: @pane-padding;
-    }
-
-    .breadcrumb {
-        margin-bottom: 0;
-    }
-}
-
 .hippo-pane-divider {
-    position: relative;
-    top: -(@pane-padding);
-    display: block;
-    height: @pane-bar-height - 1;
+    display: inline-block;
     border-right: 1px solid @pane-default-border;
-    margin: 0 @pane-padding;
 }
