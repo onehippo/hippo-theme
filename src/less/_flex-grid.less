@@ -17,11 +17,15 @@
 .flex-column {
     display: flex;
     flex-flow: column nowrap;
+//    Prevent IE from rendering scrollbars as part of subpixel rendering problem
+    overflow-y: hidden;
 }
 
 .flex-row {
     display: flex;
     flex-flow: row nowrap;
+//    Prevent IE from rendering scrollbars as part of subpixel rendering problem
+    overflow-x: hidden;
 }
 
 .solid-child {
