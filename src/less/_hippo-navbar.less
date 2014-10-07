@@ -37,6 +37,15 @@
 .hippo-navbar {
     margin-bottom: 0;
 
+    .navbar-nav {
+        border-right: 1px solid @navbar-default-border;
+
+        &.navbar-right {
+            border-right: none;
+            border-left: 1px solid @navbar-default-border;
+        }
+    }
+
     .navbar-title {
         font-size: @font-size-large;
         line-height: @line-height-computed;
