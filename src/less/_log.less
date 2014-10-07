@@ -52,7 +52,6 @@
 
 .log-visible {
     display: block;
-    position: relative;
 }
 
 .log-visible + .hippo-navbar {
@@ -74,5 +73,9 @@
 @media (min-width: @screen-sm-min) {
     .log-top .alert-open .close {
         right: 25px;
+    }
+
+    .log-visible ~ .main-content {
+        margin-top: @log-alert-height + @hippo-navbar-height + 1;
     }
 }
