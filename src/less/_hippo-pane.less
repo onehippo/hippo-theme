@@ -17,16 +17,21 @@
 .hippo-pane {
     .flex-column;
     border: 1px solid @pane-default-border;
+    background: #ffffff;
 
     & + & {
         border-left: none;
     }
 }
 
-.hippo-pane-nav {
+.hippo-pane-nav,
+.hippo-pane-text {
+    float: left;
     .flex-row;
     align-items: center;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 
