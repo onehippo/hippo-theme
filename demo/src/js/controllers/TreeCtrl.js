@@ -94,12 +94,12 @@
           dragStart: function (event) {
             var sourceItem = event.source.nodeScope.$modelValue;
             $log.info('start dragging ' + sourceItem.title);
-            $scope.selectedItem = sourceItem;
           },
 
           dragStop: function (event) {
             var sourceItem = event.source.nodeScope.$modelValue;
             $log.info('stop dragging ' + sourceItem.title);
+            $scope.selectedItem = sourceItem;
           },
 
           dropped: function (event) {

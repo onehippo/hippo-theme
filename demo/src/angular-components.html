@@ -30,9 +30,9 @@
             <div class="row">
               <div class="col-sm-6">
                 <div ng-controller="TreeCtrl">
-                  <div hippo.theme.tree items="treeItems"callbacks="callbacks"class="hippo-tree ng-cloak"selected-item-id="selectedItem.id">
-                    <a class="btn btn-link btn-xs"data-nodrag data-ng-click="toggleItem()"data-ng-hide="childNodes().length === 0">
-                      <span class="fa"data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"></span>
+                  <div hippo.theme.tree items="treeItems" callbacks="callbacks" class="hippo-tree ng-cloak" selected-item-id="selectedItem.id">
+                    <a class="btn btn-link btn-xs" data-nodrag data-ng-click="toggleItem()" data-ng-hide="childNodes().length === 0">
+                      <span class="fa" data-ng-class="{'fa-caret-down': !collapsed, 'fa-caret-right': collapsed}"></span>
                     </a>
                     <div class="spacer" data-ng-hide="childNodes().length !== 0">&#9679;</div>
                     {{ item.title }}
@@ -108,13 +108,13 @@
                 <div ng-controller="SelectBoxCtrl">
                   <div class="form-group has-feedback has-success">
                     <label class="control-label">Valid Select Box with a single value</label>
-                    <select hippo.theme.select-box ng-model="singleSelectedValue"no-results-text="{{ noResultsText }}"ng-options="option.name for option in values"data-options="values"data-placeholder="{{ placeholder }}"></select>
+                    <select hippo.theme.select-box ng-model="singleSelectedValue" no-results-text="{{ noResultsText }}" ng-options="option.name for option in values" data-options="values" data-placeholder="{{ placeholder }}"></select>
                     <span class="form-control-feedback fa fa-check"></span>
                   </div>
 
                   <div class="form-group has-feedback has-error">
                     <label class="control-label">Invalid Select Box with multiple values</label>
-                    <select hippo.theme.select-box ng-model="selectedValues"no-results-text="{{ noResultsText }}"ng-options="option.name for option in values" multiple="multiple"data-options="values"data-placeholder="{{ placeholder }}"></select>
+                    <select hippo.theme.select-box ng-model="selectedValues" no-results-text="{{ noResultsText }}" ng-options="option.name for option in values" multiple="multiple" data-options="values" data-placeholder="{{ placeholder }}"></select>
                     <span class="form-control-feedback fa fa-times"></span>
                   </div>
                 </div>
@@ -229,8 +229,8 @@
             <div class="row">
               <div class="col-sm-6">
                 <div ng-controller="ConfirmationDialogCtrl">
-                  <div hippo.theme.confirmation-dialog confirm-icon="trash-o"perform-confirmation="confirmationClicked()"perform-cancel="cancelClicked()"confirm-label="Confirm"cancel-label="Cancel"show="confirmation.show">
-                    <p><strong>Confirmation dialog title</strong></p>
+                  <div hippo.theme.confirmation-dialog confirm-icon="trash-o" perform-confirmation="confirmationClicked()" perform-cancel="cancelClicked()" confirm-label="Confirm" cancel-label="Cancel" show="confirmation.show">
+                  <p><strong>Confirmation dialog title</strong></p>
 
                     <p>
                       Confirmation dialog message.
