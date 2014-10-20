@@ -102,7 +102,8 @@ module.exports = function (grunt) {
             dist: {
                 src: [
                     'src/js/main.js',
-                    'src/shared/**/*.js'
+                    'src/shared/**/*.js',
+                    '!src/shared/**/*.spec.js'
                 ],
                 dest: 'dist/js/main.js'
             },
