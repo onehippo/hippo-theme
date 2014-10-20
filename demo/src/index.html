@@ -75,17 +75,17 @@
                     <span class="icon-bar"></span>
                 </button>
                 <span class="badge badge-primary notification-badge">18</span>
-                <a class="navbar-brand" href="#/introduction">Hippo Theme</a>
+                <a class="navbar-brand" href="#/introduction" hippo.theme.blur-on-click>Hippo Theme</a>
                 <p class="navbar-text navbar-title">
                     a work in progress
                 </p>
                 <div class="navbar-text navbar-icons">
                     <span class="hidden-xs">Example navbar icons:</span>
-                    <a href="#/introduction" class="navbar-link" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                    <a href="#/introduction" class="navbar-link" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" hippo.theme.blur-on-click>
                         <span class="fa fa-refresh fa-spin"></span>
                     </a>
                     <span class="hidden-xs">View top log: </span>
-                    <a href="#" class="navbar-link" ng-click="displayLog($event)">
+                    <a href="#" class="navbar-link" ng-click="displayLog($event)" hippo.theme.blur-on-click>
                         <span class="fa fa-bell-o fa-color-danger"></span>
                     </a>
                 </div>
@@ -94,27 +94,27 @@
             <div class="navbar-collapse collapse hippo-sidenav" ng-controller="NavCtrl" collapse="isCollapsed">
                 <ul class="nav navbar-nav">
                     <li ng-class="{active: isActive('/introduction')}">
-                        <a href="#/introduction" ng-click="collapse()">
+                        <a href="#/introduction" ng-click="collapse()" hippo.theme.blur-on-click>
                             <span class="fa fa-sitemap fa-fw"></span> Introduction
                         </a>
                     </li>
                     <li ng-class="{active: isActive('/grid-systems')}">
-                        <a href="#/grid-systems" ng-click="collapse()">
+                        <a href="#/grid-systems" ng-click="collapse()" hippo.theme.blur-on-click>
                             <span class="fa fa-color-warning fa-th fa-fw"></span> Grid Systems
                         </a>
                     </li>
                     <li ng-class="{active: isActive('/css-core')}">
-                        <a href="#/css-core" ng-click="collapse()">
+                        <a href="#/css-core" ng-click="collapse()" hippo.theme.blur-on-click>
                             <span class="fa fa-color-info fa-font fa-fw"></span> CSS Core
                         </a>
                     </li>
                     <li ng-class="{active: isActive('/bootstrap-components')}">
-                        <a href="#/bootstrap-components" ng-click="collapse()">
+                        <a href="#/bootstrap-components" ng-click="collapse()" hippo.theme.blur-on-click>
                             <span class="fa fa-color-success fa-cubes fa-fw"></span> Bootstrap Components
                         </a>
                     </li>
                     <li ng-class="{active: isActive('/angular-components')}">
-                        <a href="#/angular-components" ng-click="collapse()">
+                        <a href="#/angular-components" ng-click="collapse()" hippo.theme.blur-on-click>
                             <span class="fa fa-color-primary fa-code fa-fw"></span> Angular Components
                         </a>
                     </li>
