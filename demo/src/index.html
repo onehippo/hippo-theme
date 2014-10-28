@@ -26,7 +26,7 @@
     <!-- endbuild -->
 
     <!-- build:js js/ie.min.js -->
-    <!--[if lte IE 9]>
+    <!--[if lt IE 9]>
     <script src="../../components/html5shiv/dist/html5shiv-printshiv.js"></script>
     <script src="../../components/respond/dest/respond.src.js"></script>
     <script src="../../components/es5-shim/es5-shim.js"></script>
@@ -102,9 +102,9 @@
                             <span class="fa fa-color-warning fa-th fa-fw"></span> Grid Systems
                         </a>
                     </li>
-                    <li ng-class="{active: isActive('/typography')}">
-                        <a href="#/typography">
-                            <span class="fa fa-color-info fa-font fa-fw"></span> Typography
+                    <li ng-class="{active: isActive('/css-core')}">
+                        <a href="#/css-core">
+                            <span class="fa fa-color-info fa-font fa-fw"></span> CSS Core
                         </a>
                     </li>
                     <li ng-class="{active: isActive('/bootstrap-components')}">
@@ -115,11 +115,6 @@
                     <li ng-class="{active: isActive('/angular-components')}">
                         <a href="#/angular-components">
                             <span class="fa fa-color-primary fa-code fa-fw"></span> Angular Components
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#/introduction">
-                            <span class="fa fa-color-danger fa-exclamation fa-fw"></span> Example sidebar notification badge <span class="badge badge-primary">18</span>
                         </a>
                     </li>
                 </ul>
@@ -187,6 +182,7 @@
     <script src="js/controllers/SelectBoxCtrl.js"></script>
     <script src="js/controllers/TreeCtrl.js"></script>
     <script src="js/controllers/NavbarCtrl.js"></script>
+    <script src="js/controllers/CarouselCtrl.js"></script>
     <!-- endbuild -->
 
     <!-- External scripts -->

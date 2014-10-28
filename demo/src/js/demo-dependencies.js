@@ -16,5 +16,5 @@
 (function () {
     "use strict";
 
-    angular.module('hippo.theme.example', ['hippo.theme', 'ngRoute']);
+    angular.module('hippo.theme.example', ['hippo.theme', 'ngRoute', 'ui.bootstrap']);
 })();
