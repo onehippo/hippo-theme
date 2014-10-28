@@ -141,20 +141,6 @@ module.exports = function (grunt) {
             }
         },
 
-//         Comb less files
-//         Should be combing less files but csscomb currently breaks on less mixins.
-//        csscomb: {
-//            options: {
-//                config: '.csscomb.json'
-//            },
-//            src: {
-//                expand: true,
-//                cwd: 'src/',
-//                src: ['**/*.less'],
-//                dest: 'src/',
-//            }
-//        },
-
         // Lint the css output
         csslint: {
             lessOutput: {
