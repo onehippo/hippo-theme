@@ -91,17 +91,8 @@ module.exports = function (grunt) {
             dist: {
                 src: [
                     'src/js/main.js',
-                    'src/shared/chart/chart.js',
-                    'src/shared/divider/divider.js',
-                    'src/shared/focus-me/focus-me.js',
-                    'src/shared/map/map.js',
-                    'src/shared/panel-default/panel-default.js',
-                    'src/shared/responsive/responsive.js',
-                    'src/shared/select-box/select-box.js',
-                    'src/shared/urlparser/urlparser.js',
-                    'src/shared/tree/tree.js',
-                    'src/shared/confirmation-dialog/confirmation-dialog.js',
-                    'src/shared/prettify/prettify.js'
+                    'src/shared/**/*.js',
+                    '!src/shared/**/*.spec.js'
                 ],
                 dest: 'dist/js/main.js'
             }
