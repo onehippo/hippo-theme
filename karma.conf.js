@@ -31,18 +31,14 @@ module.exports = function (config) {
             // external sources
             'http://maps.google.com/maps/api/js?sensor=false&language=en-US',
             'http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer_compiled.js',
-
-            hippo.bowerComponents + '/underscore/underscore.js',
-
-            // components
             hippo.bowerComponents + '/jquery/dist/jquery.js',
             hippo.bowerComponents + '/jasmine-jquery/lib/jasmine-jquery.js',
             hippo.bowerComponents + '/angular/angular.js',
             hippo.bowerComponents + '/angular-mocks/angular-mocks.js',
             hippo.bowerComponents + '/angular-bootstrap/**/*.js',
-            hippo.bowerComponents + '/underscore/underscore.js',
             hippo.bowerComponents + '/angular-ui-tree/dist/angular-ui-tree.js',
 
+            // components
             'src/js/main.js',
             'src/shared/**/*.js'
         ],

@@ -65,7 +65,7 @@
             this.renderTreeTemplate = $transclude;
 
             function collectNodes(items, map) {
-                _.each(items, function(item) {
+                angular.forEach(items, function(item) {
                     map[item.id] = item;
                     collectNodes(item.items, map);
                 });
@@ -73,7 +73,7 @@
             }
 
             function copyCollapsedState(srcNodes, targetNodes) {
-                _.each(srcNodes, function(srcNode) {
+                angular.forEach(srcNodes, function(srcNode) {
                     var targetNode = targetNodes[srcNode.id];
                     if (targetNode) {
                         targetNode.collapsed = srcNode.collapsed;

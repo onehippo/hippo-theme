@@ -52,7 +52,7 @@
 
                     scope.$watch('points', function(points) {
                         // points to Google latLng objects
-                        var latLngList = _.map(points, function(point) {
+                        var latLngList = points.map(function(point) {
                             return new google.maps.LatLng(point.latitude, point.longitude);
                         });
 
@@ -62,7 +62,7 @@
 
                     function drawMarkers(latLngList) {
                         // create markers
-                        var markers = _.map(latLngList, function(latLng) {
+                        var markers = latLngList.map(function(latLng) {
                             return new google.maps.Marker({
                                 'position': latLng
                             });

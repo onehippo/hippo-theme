@@ -79,7 +79,7 @@
                      * Sets the current active viewport. It also updates the $rootScope `activeViewport` property with the active viewport;
                      */
                     viewportSizes.setCurrent = function (viewport) {
-                        _.each(sizes, function (size) {
+                        angular.forEach(sizes, function (size) {
                             size.active = (viewport.name == size.name);
                         });
                     };
@@ -95,9 +95,11 @@
                      * @returns {Object} The current active viewport
                      */
                     viewportSizes.getCurrent = function () {
-                        return _.find(sizes, function (size) {
-                            return size.active === true;
-                        });
+                        for(var i = 0; i < sizes.lenght; i++) {
+                            if(sizes[i].active === true) {
+                                return sizes[i];
+                            }
+                        }
                     };
 
                     return viewportSizes;

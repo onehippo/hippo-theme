@@ -67,7 +67,7 @@
                     scope.$watch('data', function(v) {
                         // re-map data, ready to be parsed by the flot library
                         if (v) {
-                            var data = _.map(v, function(item) {
+                            var data = v.map(function(item) {
                                 return {
                                     label: item.label,
                                     data: item.value
