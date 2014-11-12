@@ -95,7 +95,7 @@
                      * @returns {Object} The current active viewport
                      */
                     viewportSizes.getCurrent = function () {
-                        for(var i = 0; i < sizes.lenght; i++) {
+                        for(var i = 0, len = sizes.length; i < len; i++) {
                             if(sizes[i].active === true) {
                                 return sizes[i];
                             }
