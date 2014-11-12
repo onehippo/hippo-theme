@@ -108,7 +108,12 @@ module.exports = function (grunt) {
                 dest: 'dist/js/main.js'
             },
             css: {
-                src: ['.tmp/css/**/*.css'],
+                src: [
+                  '.tmp/css/font-awesome.css',
+                  '.tmp/css/bootstrap.css',
+                  '.tmp/css/bootstrap-chosen.css',
+                  '.tmp/css/main.css'
+                ],
                 dest: 'dist/css/main.css'
             }
         },
