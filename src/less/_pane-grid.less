@@ -18,7 +18,7 @@
     position: relative;
 }
 
-.generate-pane-col(@maxCols; @i; @j: @i) when (@j =< @maxCols) {
+.generate-pane-col(@breakpoint; @maxCols; @i; @j: @i) when (@j =< @maxCols) {
     @columnWidthPercentage: 100% / @maxCols;
     @offsetStartPercentage: (@i - 1) * @columnWidthPercentage;
     @offsetEndPercentage: 100% - (@j * @columnWidthPercentage);
@@ -32,12 +32,12 @@
         width: @dimension;
     }
 
-    .generate-pane-col(@maxCols; @i; (@j + 1));
+    .generate-pane-col(@breakpoint; @maxCols; @i; (@j + 1));
 }
 
-.generate-pane-grid(@maxCols: 12; @i: 1) when(@i =< @maxCols) {
-    .generate-pane-col(@maxCols; @i);
-    .generate-pane-grid(@maxCols; (@i + 1));
+.generate-pane-grid(@breakpoint; @maxCols: 12; @i: 1) when(@i =< @maxCols) {
+    .generate-pane-col(@breakpoint; @maxCols; @i);
+    .generate-pane-grid(@breakpoint; @maxCols; (@i + 1));
 }
 
 .generate-grid() {
@@ -45,22 +45,18 @@
         .pane();
     }
 
-    @breakpoint: xs;
-    .generate-pane-grid();
+    .generate-pane-grid(xs);
 
     @media (min-width: @screen-sm-min) {
-        @breakpoint: sm;
-        .generate-pane-grid();
+        .generate-pane-grid(sm);
     }
 
     @media (min-width: @screen-md-min) {
-        @breakpoint: md;
-        .generate-pane-grid();
+        .generate-pane-grid(md);
     }
 
     @media (min-width: @screen-lg-min) {
-        @breakpoint: lg;
-        .generate-pane-grid();
+        .generate-pane-grid(lg);
     }
 }
 
