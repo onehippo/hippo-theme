@@ -28,7 +28,8 @@
      */
     .directive('hippo.theme.selectBox', [
         '$log',
-        function($log) {
+        '$timeout',
+        function($log, $timeout) {
             return {
                 restrict: 'A',
                 link: function(scope, element, attrs) {
@@ -38,15 +39,19 @@
 
                     // watch options
                     scope.$watch(attrs.options, function() {
-                        element.trigger('chosen:updated');
-                        element.trigger('chosen:updated.chosen');
+                        $timeout(function() {
+                            element.trigger('chosen:updated');
+                            element.trigger('chosen:updated.chosen');
+                        });
                     }, true);
 
                     // watch selected option
                     if (attrs.ngModel) {
                         scope.$watch(attrs.ngModel, function() {
-                            element.trigger('chosen:updated');
-                            element.trigger('chosen:updated.chosen');
+                            $timeout(function() {
+                                element.trigger('chosen:updated');
+                                element.trigger('chosen:updated.chosen');
+                            });
                         }, true);
                     }
 
